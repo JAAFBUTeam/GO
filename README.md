@@ -18,6 +18,7 @@ This app will be used to discover "undiscovered" places that they typically woul
 - User can view filtered page and choose category
 - Images can be viewed of all locations as well as the distance and address
 - User can be able to navigate between each page 
+- User can tap the image of a location to view its title and description
 
 ## Optional Stories
 - 
