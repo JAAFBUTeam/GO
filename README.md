@@ -6,7 +6,7 @@ This app is similar to the functionality of Pokemon Go, where people can discove
 ## Core Stories
 - pulling Google Maps API to pinpoint locations on a map
 - getting media from Instagram (if allowed)
-- 
+- "selfie spots"
 
 
 ## Optional Stories
