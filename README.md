@@ -21,3 +21,15 @@ This app will be used to discover "undiscovered" places that they typically woul
 
 ## Optional Stories
 - 
+
+
+## Potential Tourist Locations 
+- Golden Gate Bridge
+- Fisherman's Wharf
+- Pier 39
+- San Francisco Zoo
+- Ghiradelli Square
+
+## Potential "Undiscovered" Locations
+- Hidden Steps
+- Fay Park
