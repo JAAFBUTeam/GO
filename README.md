@@ -14,8 +14,8 @@ This app will be used to discover "undiscovered" places that they typically woul
 
 ## Optional Stories
 - view photos of a specific location from Instagram
-- view other "filters": such as underrated restaurants, culture spots, etc
-- rate a location
+- browse locations with "filters": such as underrated restaurants, culture spots, etc
+- rate a location based on either popularity or quality
 - upload a photo to that location
 - featured items -- places that have less than x amount of ratings
 - view these spots on Google maps
@@ -26,6 +26,8 @@ This app will be used to discover "undiscovered" places that they typically woul
 - Pier 39
 - San Francisco Zoo
 - Ghiradelli Square
+- San Francisco Botanical Garden
+- Golden Gate Park
 
 ## Potential "Undiscovered" Locations
 - Hidden Steps
