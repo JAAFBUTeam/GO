@@ -21,6 +21,8 @@
 		CC83A36220F9290600117065 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36120F9290600117065 /* MapViewController.m */; };
 		CC83A36520F9291800117065 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36420F9291800117065 /* ListViewController.m */; };
 		CC83A36820F9292200117065 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36720F9292200117065 /* DetailedViewController.m */; };
+		CC83A36B20F92D6800117065 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36A20F92D6800117065 /* Storyboard2.storyboard */; };
+		CC83A36D20F92E4F00117065 /* Storyboard3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36C20F92E4F00117065 /* Storyboard3.storyboard */; };
 		D359BCC6509AA0348034B087 /* libPods-GOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2675920497E531A7258B040 /* libPods-GOTests.a */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		CC83A36420F9291800117065 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		CC83A36620F9292200117065 /* DetailedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
 		CC83A36720F9292200117065 /* DetailedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
+		CC83A36A20F92D6800117065 /* Storyboard2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
+		CC83A36C20F92E4F00117065 /* Storyboard3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
 		CE876FD3782664AEF89FB864 /* Pods-GOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOTests/Pods-GOTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA12557BCD5C18F317EED4D6 /* Pods-GOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +157,8 @@
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
 				CC1307D220EFDEF0007E8DD5 /* Info.plist */,
 				CC1307D320EFDEF0007E8DD5 /* main.m */,
+				CC83A36A20F92D6800117065 /* Storyboard2.storyboard */,
+				CC83A36C20F92E4F00117065 /* Storyboard3.storyboard */,
 			);
 			path = GO;
 			sourceTree = "<group>";
@@ -306,6 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC83A36B20F92D6800117065 /* Storyboard2.storyboard in Resources */,
+				CC83A36D20F92E4F00117065 /* Storyboard3.storyboard in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
 				CC1307CC20EFDEEE007E8DD5 /* Main.storyboard in Resources */,
