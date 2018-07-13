@@ -24,13 +24,13 @@ This app will be used to discover "undiscovered" places that they typically woul
 - What is your product pitch?
   - When visiting a location, most people tend to visit the extremely touristy spots of the location, especially if they are unfamiliar with the area. Our solution is to help people discover those undiscovered locations, by highlighting "lowkey" areas to visit in the area. 
 - Who are the key stakeholders for this app? 
-  -
+  - add later
 - Who will be using this?
   -Travellers and people foreign to a certain area
 - What will they be using this for?
   - Looking for new places to visit with a more local touch
 - What are the core flows?
-  - 
+  - add later
 - What are the key functions?
   - Look up locations
   - View featured underrated locations
@@ -50,7 +50,7 @@ Describe the flow of your final demo
   - Merging conflicts
   - Integrating Parse and Mapkit
 - What technical features do you need help or resources for?
-  - 
+  - add later
 
 ## Potential Tourist Locations 
 - Golden Gate Bridge
