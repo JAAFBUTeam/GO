@@ -147,18 +147,13 @@
 		CC1307C320EFDEEE007E8DD5 /* GO */ = {
 			isa = PBXGroup;
 			children = (
+				CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */,
 				CC1307C420EFDEEE007E8DD5 /* AppDelegate.h */,
 				CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */,
 				CC83A36920F9292600117065 /* View Controllers */,
-				CC1307CA20EFDEEE007E8DD5 /* Main.storyboard */,
-				CC83A36020F9290600117065 /* MapViewController.h */,
-				CC83A36120F9290600117065 /* MapViewController.m */,
-				CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */,
-				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
+				CC83A36E20F92F0E00117065 /* Storyboards */,
 				CC1307D220EFDEF0007E8DD5 /* Info.plist */,
 				CC1307D320EFDEF0007E8DD5 /* main.m */,
-				CC83A36A20F92D6800117065 /* Storyboard2.storyboard */,
-				CC83A36C20F92E4F00117065 /* Storyboard3.storyboard */,
 			);
 			path = GO;
 			sourceTree = "<group>";
@@ -201,8 +196,21 @@
 				CC83A36720F9292200117065 /* DetailedViewController.m */,
 				CC83A36320F9291800117065 /* ListViewController.h */,
 				CC83A36420F9291800117065 /* ListViewController.m */,
+				CC83A36020F9290600117065 /* MapViewController.h */,
+				CC83A36120F9290600117065 /* MapViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CC83A36E20F92F0E00117065 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CC1307CA20EFDEEE007E8DD5 /* Main.storyboard */,
+				CC83A36A20F92D6800117065 /* Storyboard2.storyboard */,
+				CC83A36C20F92E4F00117065 /* Storyboard3.storyboard */,
+				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,13 +10,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="nfk-gQ-GIF">
             <objects>
-                <viewController id="vrG-32-0ix" sceneMemberID="viewController">
+                <viewController id="vrG-32-0ix" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CUa-fe-ADp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9BB-R6-YDn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gSm-V1-ya5"/>
                     </view>
@@ -27,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjT-Sh-nzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="132.68365817091455"/>
+            <point key="canvasLocation" x="658" y="133"/>
         </scene>
         <!--Storyboard3-->
         <scene sceneID="a4W-yA-hK1">
@@ -35,7 +41,7 @@
                 <viewControllerPlaceholder storyboardName="Storyboard3" id="3yL-ei-iml" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rps-j1-GSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="81"/>
+            <point key="canvasLocation" x="1127" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tQC-Bb-yoj">
