@@ -17,6 +17,7 @@
 		CC1307D420EFDEF0007E8DD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307D320EFDEF0007E8DD5 /* main.m */; };
 		CC1307DE20EFDEF0007E8DD5 /* GOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307DD20EFDEF0007E8DD5 /* GOTests.m */; };
 		CC1307E920EFDEF0007E8DD5 /* GOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307E820EFDEF0007E8DD5 /* GOUITests.m */; };
+		CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CC5AC20FD210E005E7FF1 /* Location.m */; };
 		CC83A35F20F928BF00117065 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83A35E20F928BF00117065 /* MapKit.framework */; };
 		CC83A36220F9290600117065 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36120F9290600117065 /* MapViewController.m */; };
 		CC83A36520F9291800117065 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36420F9291800117065 /* ListViewController.m */; };
@@ -67,6 +68,8 @@
 		CC1307E420EFDEF0007E8DD5 /* GOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1307E820EFDEF0007E8DD5 /* GOUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GOUITests.m; sourceTree = "<group>"; };
 		CC1307EA20EFDEF0007E8DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC3CC5AB20FD210E005E7FF1 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		CC3CC5AC20FD210E005E7FF1 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		CC83A35E20F928BF00117065 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CC83A36020F9290600117065 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CC83A36120F9290600117065 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		CC1307C320EFDEEE007E8DD5 /* GO */ = {
 			isa = PBXGroup;
 			children = (
+				CC3CC5AA20FD20EE005E7FF1 /* Models */,
 				CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */,
 				CC1307C420EFDEEE007E8DD5 /* AppDelegate.h */,
 				CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */,
@@ -174,6 +178,15 @@
 				CC1307EA20EFDEF0007E8DD5 /* Info.plist */,
 			);
 			path = GOUITests;
+			sourceTree = "<group>";
+		};
+		CC3CC5AA20FD20EE005E7FF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC3CC5AB20FD210E005E7FF1 /* Location.h */,
+				CC3CC5AC20FD210E005E7FF1 /* Location.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CC83A35D20F928BF00117065 /* Frameworks */ = {
@@ -433,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
+				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,

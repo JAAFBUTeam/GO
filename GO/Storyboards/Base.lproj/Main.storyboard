@@ -60,7 +60,7 @@
         <scene sceneID="F1h-nV-m9H">
             <objects>
                 <viewControllerPlaceholder storyboardName="MapView" id="QnX-s1-biA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hkJ-er-bT4"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="location" id="hkJ-er-bT4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yib-fQ-Brw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,4 +86,7 @@
             <point key="canvasLocation" x="-279.19999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="32" height="32"/>
+    </resources>
 </document>
