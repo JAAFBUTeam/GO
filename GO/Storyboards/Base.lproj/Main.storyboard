@@ -29,11 +29,11 @@
             </objects>
             <point key="canvasLocation" x="729" y="118"/>
         </scene>
-        <!--Storyboard3-->
+        <!--DetailView-->
         <scene sceneID="UxV-hR-LbT">
             <objects>
-                <viewControllerPlaceholder storyboardName="Storyboard3" id="tnR-Ky-c2q" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuO-48-Svo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="DetailView" id="tnR-Ky-c2q" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="2015" y="419"/>
         </scene>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="-1199" y="600"/>
         </scene>
-        <!--Storyboard2-->
+        <!--MapView-->
         <scene sceneID="F1h-nV-m9H">
             <objects>
-                <viewControllerPlaceholder storyboardName="Storyboard2" id="QnX-s1-biA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MapView" id="QnX-s1-biA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="hkJ-er-bT4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yib-fQ-Brw" userLabel="First Responder" sceneMemberID="firstResponder"/>

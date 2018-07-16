@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="938" y="132"/>
         </scene>
-        <!--Storyboard3-->
+        <!--DetailView-->
         <scene sceneID="a4W-yA-hK1">
             <objects>
-                <viewControllerPlaceholder storyboardName="Storyboard3" id="3yL-ei-iml" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailView" id="3yL-ei-iml" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rps-j1-GSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1662" y="131"/>
