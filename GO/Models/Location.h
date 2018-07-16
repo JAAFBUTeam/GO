@@ -12,7 +12,7 @@
 @interface Location : NSObject
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *synopsys;
 @property (nonatomic, strong) NSString *address;
 
 @property (nonatomic) float lat;

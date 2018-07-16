@@ -13,7 +13,7 @@
 + (Location *)createLocation {
     Location *newLocation = [Location new];
     newLocation.title = @"MOMA";
-    newLocation.description = @"Some really cool art!";
+    newLocation.synopsys = @"Some really cool art!";
     newLocation.address = @"151 3rd St, San Francisco, CA 94103";
     newLocation.lat = 37.7857;
     newLocation.lon = -122.4011;

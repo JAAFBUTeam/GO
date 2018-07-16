@@ -10,6 +10,6 @@
 
 @interface MapViewController : UIViewController
 
-- (void) addLocations:(NSArray *)locations
+- (void) addLocations:(NSArray *)locations;
 
 @end
