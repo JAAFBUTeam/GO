@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--viewcontroller3-->
+        <!--DetailViewController-->
         <scene sceneID="T4X-hy-vWa">
             <objects>
-                <viewController title="viewcontroller3" id="Lfk-ds-1CG" customClass="DetailedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" id="Lfk-ds-1CG" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f7Z-fh-Qbh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
