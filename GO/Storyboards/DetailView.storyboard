@@ -36,8 +36,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5f-wo-uf1">
-                                <rect key="frame" x="16" y="442" width="58" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5f-wo-uf1">
+                                <rect key="frame" x="16" y="442" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -63,6 +63,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ejy-uc-cYH"/>
                     </view>
+                    <connections>
+                        <outlet property="location_address" destination="w5f-wo-uf1" id="Qcr-Wv-Jb2"/>
+                        <outlet property="location_description" destination="0Fh-aM-3xN" id="buM-fl-A1f"/>
+                        <outlet property="location_image" destination="5ik-ub-OGc" id="gy3-UX-d3i"/>
+                        <outlet property="location_title" destination="zgo-2x-hh8" id="nU7-9e-hcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aF-nd-qhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

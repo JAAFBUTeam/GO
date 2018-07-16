@@ -9,6 +9,16 @@
 #import "DetailsViewController.h"
 
 @interface DetailsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *location_title;
+@property (weak, nonatomic) IBOutlet UILabel *location_description;
+@property (weak, nonatomic) IBOutlet UILabel *location_address;
+
+@property (nonatomic) float lat;
+@property (nonatomic) float lon;
+
+@property (nonatomic) double rating;
+
+@property(nonatomic, strong) NSArray<UIImage *> *images;
 
 @end
 
@@ -22,6 +32,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)displayImages {
+    self.location_image.image = [self.location.images objectAtIndex:0];
+}
+
+- (void)displayInformation {
+    self.location_title.text = self.location.title;
+    self.location_description.text = self.location.description;
+    self.location_address.text = self.location.address;
 }
 
 /*
