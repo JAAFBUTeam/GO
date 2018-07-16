@@ -10,28 +10,42 @@
 
 @interface ListViewController ()
 
+@property (strong, nonatomic) NSMutableArray *locationsArray;
+@property (weak, nonatomic) IBOutlet UITableView *locationsTimelineView;
+
 @end
 
 @implementation ListViewController
 
+#pragma mark - lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self dummyDataSetUp];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)dummyDataSetUp {
+    //TODO: populate array with location objects that have dummy data
+    Location *object1;
 }
 
-/*
+#pragma mark - tableview protocol
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.locationsArray.count;
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    LocationsTableViewCell *locationsCell = [self.locationsTimelineView dequeueReusableCellWithIdentifier:@"LocationsTableViewCell"];
+    return locationsCell;
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    LocationsTableViewCell *tappedCell = sender;
+    DetailsViewController *detailsController = [segue destinationViewController];
+    //detailsController.location = tappedCell.location;
 }
-*/
 
 @end
