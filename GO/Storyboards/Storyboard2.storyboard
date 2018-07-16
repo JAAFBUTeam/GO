@@ -14,7 +14,7 @@
         <scene sceneID="nfk-gQ-GIF">
             <objects>
                 <viewController id="vrG-32-0ix" customClass="MapViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CUa-fe-ADp">
+                    <view key="view" contentMode="scaleToFill" id="CUa-fe-ADp" customClass="MBBackgroundView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -28,12 +28,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="BuI-yL-rKP"/>
                     <connections>
+                        <outlet property="mapView" destination="9BB-R6-YDn" id="IQL-vO-muV"/>
                         <segue destination="3yL-ei-iml" kind="show" id="rae-L0-ueu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjT-Sh-nzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="133"/>
+            <point key="canvasLocation" x="938" y="132"/>
         </scene>
         <!--Storyboard3-->
         <scene sceneID="a4W-yA-hK1">
@@ -41,7 +42,7 @@
                 <viewControllerPlaceholder storyboardName="Storyboard3" id="3yL-ei-iml" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rps-j1-GSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="132"/>
+            <point key="canvasLocation" x="1662" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tQC-Bb-yoj">
