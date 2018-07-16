@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
 		CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */; };
 		CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307C820EFDEEE007E8DD5 /* ViewController.m */; };
-		CC1307CC20EFDEEE007E8DD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1307CA20EFDEEE007E8DD5 /* Main.storyboard */; };
 		CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */; };
 		CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */; };
 		CC1307D420EFDEF0007E8DD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307D320EFDEF0007E8DD5 /* main.m */; };
 		CC1307DE20EFDEF0007E8DD5 /* GOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307DD20EFDEF0007E8DD5 /* GOTests.m */; };
 		CC1307E920EFDEF0007E8DD5 /* GOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307E820EFDEF0007E8DD5 /* GOUITests.m */; };
+		CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CC5AC20FD210E005E7FF1 /* Location.m */; };
 		CC83A35F20F928BF00117065 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83A35E20F928BF00117065 /* MapKit.framework */; };
 		CC83A36220F9290600117065 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36120F9290600117065 /* MapViewController.m */; };
 		CC83A36520F9291800117065 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36420F9291800117065 /* ListViewController.m */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		19E7AF6120FD1CA1004B98CC /* LocationsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
 		19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -59,7 +61,6 @@
 		CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CC1307C720EFDEEE007E8DD5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CC1307C820EFDEEE007E8DD5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CC1307CB20EFDEEE007E8DD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC1307D020EFDEF0007E8DD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC1307D220EFDEF0007E8DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +71,8 @@
 		CC1307E420EFDEF0007E8DD5 /* GOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1307E820EFDEF0007E8DD5 /* GOUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GOUITests.m; sourceTree = "<group>"; };
 		CC1307EA20EFDEF0007E8DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC3CC5AB20FD210E005E7FF1 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		CC3CC5AC20FD210E005E7FF1 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		CC83A35E20F928BF00117065 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CC83A36020F9290600117065 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CC83A36120F9290600117065 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				19E7AF6020FD1C8B004B98CC /* Views */,
+				CC3CC5AA20FD20EE005E7FF1 /* Models */,
 				CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */,
 				CC1307C420EFDEEE007E8DD5 /* AppDelegate.h */,
 				CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */,
@@ -187,6 +191,15 @@
 				CC1307EA20EFDEF0007E8DD5 /* Info.plist */,
 			);
 			path = GOUITests;
+			sourceTree = "<group>";
+		};
+		CC3CC5AA20FD20EE005E7FF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC3CC5AB20FD210E005E7FF1 /* Location.h */,
+				CC3CC5AC20FD210E005E7FF1 /* Location.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CC83A35D20F928BF00117065 /* Frameworks */ = {
@@ -218,7 +231,7 @@
 		CC83A36E20F92F0E00117065 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				CC1307CA20EFDEEE007E8DD5 /* Main.storyboard */,
+				19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */,
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
@@ -334,10 +347,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */,
+				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
-				CC1307CC20EFDEEE007E8DD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +460,7 @@
 			files = (
 				19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
+				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
@@ -487,14 +501,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CC1307CA20EFDEEE007E8DD5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC1307CB20EFDEEE007E8DD5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -622,13 +628,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UG759YXVN;
+				DEVELOPMENT_TEAM = U8K69DFR3Q;
 				INFOPLIST_FILE = GO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = maymayliu.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = joel.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -640,13 +646,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UG759YXVN;
+				DEVELOPMENT_TEAM = U8K69DFR3Q;
 				INFOPLIST_FILE = GO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = maymayliu.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = joel.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
