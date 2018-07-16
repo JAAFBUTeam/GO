@@ -25,8 +25,9 @@
     //one degree of latitude is approximately 111 kilometers (69 miles) at all times.
     MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
     [self.mapView setRegion:sfRegion animated:false];
-    
-    self.locations = [NSArray arrayWithObjects:[Location createLocation]];
+
+    self.locations = [NSArray arrayWithObjects:[Location createLocation], nil];
+    [self addLocations:self.locations];
     
 }
 
@@ -41,9 +42,26 @@
         
         MKPointAnnotation *annotation = [MKPointAnnotation new];
         annotation.coordinate = coordinate;
-        annotation.title = @"Picture!";
+        annotation.title = place.title;
+        
+        MKAnnotationView *annotationView = [self mapView:self.mapView viewForAnnotation:annotation];
+
         [self.mapView addAnnotation:annotation];
     }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        annotationView.canShowCallout = true;
+        annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+    }
+    
+    UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
+    imageView.image = [UIImage imageNamed:@"camera"];
+    
+    return annotationView;
 }
 
 

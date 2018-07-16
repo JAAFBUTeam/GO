@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapKit/Mapkit.h"
 
 @interface MapViewController : UIViewController
 
 - (void) addLocations:(NSArray *)locations;
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation;
 
 @end
