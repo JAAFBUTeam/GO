@@ -12,14 +12,16 @@
 @interface Location : NSObject
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *synopsys;
 @property (nonatomic, strong) NSString *address;
 
 @property (nonatomic) float lat;
 @property (nonatomic) float lon;
-
 @property (nonatomic) double rating;
 
-@property(nonatomic, strong) NSArray<UIImage *> *images;
++ (Location *)createLocation;
+
+// @property(nonatomic, strong) NSArray<UIImage *> *images;
+//+ (NSArray <Location *>) *createLocations;
 
 @end

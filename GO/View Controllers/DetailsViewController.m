@@ -35,7 +35,7 @@
 }
 
 - (void)displayImages {
-    self.location_image.image = [self.location.images objectAtIndex:0];
+    //self.location_image.image = [self.location.images objectAtIndex:0];
 }
 
 - (void)displayInformation {
