@@ -6,7 +6,7 @@
 //  Copyright © 2018 Amy Liu. All rights reserved.
 //
 
-#import "DetailedViewController.h"
+#import "DetailsViewController.h"
 
 @interface DetailsViewController ()
 
