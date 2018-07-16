@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
 		CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19E7AF6120FD1CA1004B98CC /* LocationsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
+		19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
 		6087ED01F82B102665791625 /* libPods-GOUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GOUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19E7AF6020FD1C8B004B98CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19E7AF6120FD1CA1004B98CC /* LocationsTableViewCell.h */,
+				19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CB83DACF18956E6790168504 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +159,7 @@
 		CC1307C320EFDEEE007E8DD5 /* GO */ = {
 			isa = PBXGroup;
 			children = (
+				19E7AF6020FD1C8B004B98CC /* Views */,
 				CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */,
 				CC1307C420EFDEEE007E8DD5 /* AppDelegate.h */,
 				CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */,
@@ -432,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
