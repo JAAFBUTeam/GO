@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailsViewController.h"
+#import "LocationsTableViewCell.h"
 
-@interface ListViewController : UIViewController
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
