@@ -8,11 +8,11 @@
 
 #import "DetailedViewController.h"
 
-@interface DetailedViewController ()
+@interface DetailsViewController ()
 
 @end
 
-@implementation DetailedViewController
+@implementation DetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
