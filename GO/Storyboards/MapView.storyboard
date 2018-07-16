@@ -13,7 +13,7 @@
         <!--Map View Controller-->
         <scene sceneID="nfk-gQ-GIF">
             <objects>
-                <viewController id="vrG-32-0ix" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapView" id="vrG-32-0ix" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CUa-fe-ADp" customClass="MBBackgroundView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                     <navigationItem key="navigationItem" id="BuI-yL-rKP"/>
                     <connections>
                         <outlet property="mapView" destination="9BB-R6-YDn" id="IQL-vO-muV"/>
-                        <segue destination="3yL-ei-iml" kind="show" id="rae-L0-ueu"/>
+                        <segue destination="3yL-ei-iml" kind="show" identifier="segueToDetails" id="rae-L0-ueu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjT-Sh-nzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
