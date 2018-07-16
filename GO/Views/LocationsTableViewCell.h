@@ -12,5 +12,6 @@
 @interface LocationsTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Location *location;
+@property (weak, nonatomic) IBOutlet UIImageView *locationImage;
 
 @end
