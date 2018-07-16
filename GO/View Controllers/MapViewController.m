@@ -8,10 +8,12 @@
 
 #import "MapViewController.h"
 #import "MapKit/Mapkit.h"
+#import "Location.h"
 
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) NSArray *locations;
 
 @end
 
@@ -24,11 +26,24 @@
     MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
     [self.mapView setRegion:sfRegion animated:false];
     
+    self.locations = [NSArray arrayWithObjects:Location.createLocation];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) addLocations:(NSArray *)locations {
+    for (Location* place in locations) {
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.lat, place.lon);
+        
+        MKPointAnnotation *annotation = [MKPointAnnotation new];
+        annotation.coordinate = coordinate;
+        annotation.title = @"Picture!";
+        [self.mapView addAnnotation:annotation];
+    }
 }
 
 

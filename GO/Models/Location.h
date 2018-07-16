@@ -17,9 +17,11 @@
 
 @property (nonatomic) float lat;
 @property (nonatomic) float lon;
-
 @property (nonatomic) double rating;
 
-@property(nonatomic, strong) NSArray<UIImage *> *images;
++ (Location *)createLocation;
+
+// @property(nonatomic, strong) NSArray<UIImage *> *images;
+//+ (NSArray <Location *>) *createLocations;
 
 @end
