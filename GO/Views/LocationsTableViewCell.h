@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
 
 @interface LocationsTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) Location *location;
 
 @end
