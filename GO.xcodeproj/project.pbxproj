@@ -26,6 +26,7 @@
 		CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36A20F92D6800117065 /* MapView.storyboard */; };
 		CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36C20F92E4F00117065 /* DetailView.storyboard */; };
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
+		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		D359BCC6509AA0348034B087 /* libPods-GOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2675920497E531A7258B040 /* libPods-GOTests.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		CC83A36C20F92E4F00117065 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
+		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
+		CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoAnnotation.m; sourceTree = "<group>"; };
 		CE876FD3782664AEF89FB864 /* Pods-GOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOTests/Pods-GOTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA12557BCD5C18F317EED4D6 /* Pods-GOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +204,8 @@
 			children = (
 				CC3CC5AB20FD210E005E7FF1 /* Location.h */,
 				CC3CC5AC20FD210E005E7FF1 /* Location.m */,
+				CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */,
+				CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
+				CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
