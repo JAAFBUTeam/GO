@@ -31,13 +31,15 @@
     
     MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
     [self.mapView setRegion:sfRegion animated:false];
-
+    
+    //[self fetchLocations];
     self.locations = [NSArray arrayWithObjects:[Location createLocation], nil];
     [self addLocations:self.locations];
+    // [Location postLocation:nil];
     
 }
 
--(void) fetchLocations {
+- (void) fetchLocations {
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     [query whereKey:@"rating" greaterThan:@2.0];
     
