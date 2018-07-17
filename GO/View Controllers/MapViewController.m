@@ -37,6 +37,21 @@
     
 }
 
+-(void) fetchLocations {
+    PFQuery *query = [PFQuery queryWithClassName:@"Location"];
+    [query whereKey:@"rating" greaterThan:@2.0];
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
+        if (places != nil) {
+            // do something with the array of object returned by the call
+            self.locations = places;
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
 - (void) addLocations:(NSArray *)locations {
     for (Location* place in locations) {
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.lat, place.lon);
