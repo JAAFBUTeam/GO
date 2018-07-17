@@ -21,6 +21,7 @@
 
 @implementation MapViewController
 
+#pragma mark - View life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -34,11 +35,6 @@
     self.locations = [NSArray arrayWithObjects:[Location createLocation], nil];
     [self addLocations:self.locations];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) addLocations:(NSArray *)locations {
@@ -58,10 +54,14 @@
     }
 }
 
+#pragma mark - Action (unused)
+
 - (void)rightButtonTapped
 {
     NSLog(@"HELLO");
 }
+
+#pragma mark - MapView delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     NSLog(@"View for annotation entered");
@@ -78,7 +78,7 @@
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = [UIImage imageNamed:@"camera"];
+    imageView.image = [UIImage imageNamed:@"MOMA"];
     
     return annotationView;
 }
@@ -93,8 +93,6 @@
     
     [self performSegueWithIdentifier:@"segueToDetails" sender:nil];
 }
-
-
 
 #pragma mark - Navigation
 
