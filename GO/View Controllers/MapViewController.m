@@ -108,7 +108,7 @@
     }*/
     NSLog(@"Clicked pin");
     
-    [self performSegueWithIdentifier:@"segueToDetails" sender:nil];
+    [self performSegueWithIdentifier:@"segueToDetails" sender:view];
 }
 
 #pragma mark - Navigation
@@ -123,7 +123,6 @@
         Location *location = tappedPin.location;
         
         DetailsViewController *detailsViewController = [segue destinationViewController];
-        
         detailsViewController.location = location;
     }
 }
