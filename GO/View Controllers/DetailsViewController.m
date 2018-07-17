@@ -40,9 +40,10 @@
 
 - (void)displayInformation {
     self.location_title.text = self.location.title;
-    self.location_description.text = self.location.description;
+    self.location_description.text = self.location.synopsis;
     self.location_address.text = self.location.address;
 }
+
 
 /*
 #pragma mark - Navigation

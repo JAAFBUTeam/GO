@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "Location.h"
 
 @interface ListViewController ()
 
@@ -46,6 +47,7 @@
     newLocation.rating = 4.9;
     [self.locationsArray addObject:newLocation];
     NSLog(@"here");
+    
 }
 
 #pragma mark - tableview protocol
@@ -71,6 +73,7 @@
     LocationsTableViewCell *tappedCell = sender;
     DetailsViewController *detailsController = [segue destinationViewController];
     //detailsController.location = tappedCell.location;
+   // NSLog(@"%@", detailsController.location.synopsis);
 }
 
 @end
