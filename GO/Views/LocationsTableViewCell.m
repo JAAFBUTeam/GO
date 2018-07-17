@@ -21,4 +21,16 @@
     // Configure the view for the selected state
 }
 
+-(void) setLocationObject:(Location *)location {
+    self.location = location;
+    [self setDummyImageData];
+}
+
+-(void)setDummyImageData {
+    NSString * locationImageString = @"https://media.licdn.com/dms/image/C5103AQFSzkTQcTNk3A/profile-displayphoto-shrink_200_200/0?e=1537401600&v=beta&t=jRM2BEccIEAMatPgEkw0RtNf5qYE2Bqx412fqD7zESg";
+    NSURL *locationURL = [NSURL URLWithString:locationImageString];
+    self.locationImage.image = nil;
+    [self.locationImage setImageWithURL:locationURL];
+}
+
 @end

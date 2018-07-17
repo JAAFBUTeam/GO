@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Location.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface LocationsTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Location *location;
 @property (weak, nonatomic) IBOutlet UIImageView *locationImage;
+
+-(void) setLocationObject:(Location *)location;
 
 @end
