@@ -12,6 +12,7 @@ target 'GO' do
 	pod 'ParseUI'
 	pod 'DateTools'
 	pod 'MBProgressHUD'
+	pod 'iCarousel'
 
 	
   target 'GOTests' do

@@ -16,7 +16,7 @@
 @dynamic lat;
 @dynamic lon;
 @dynamic rating;
-// @dynamic images;
+@dynamic images;
 
 + (nonnull NSString *)parseClassName {
     return @"Location";

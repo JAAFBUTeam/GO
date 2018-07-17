@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) Location *location;
 @property (weak, nonatomic) IBOutlet UIImageView *locationImage;
+//TODO: SET ARRAY; and set in setlocationF() too
+//@property (strong, nonatomic) NSMutableArray *locationImages;
 
 -(void) setLocationObject:(Location *)location;
 

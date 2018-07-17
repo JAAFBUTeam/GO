@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "Location.h"
 
 @interface ListViewController ()
 
@@ -58,7 +59,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     LocationsTableViewCell *tappedCell = sender;
     DetailsViewController *detailsController = [segue destinationViewController];
-    detailsController.location = tappedCell.location;
+    
+    //detailsController.location = tappedCell.location;
+   // NSLog(@"%@", detailsController.location.synopsis);
 }
 
 @end
