@@ -23,7 +23,7 @@
 + (Location *)createLocation;
 + (void) postLocation: (PFBooleanResultBlock  _Nullable)completion;
 
-// @property(nonatomic, strong) NSArray<UIImage *> *images;
+@property(nonatomic, strong) NSArray<UIImage *> *images;
 //+ (NSArray <Location *>) *createLocations;
 
 @end
