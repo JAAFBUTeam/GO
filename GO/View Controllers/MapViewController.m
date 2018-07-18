@@ -12,6 +12,7 @@
 #import "MKPointAnnotation+Extended_Annotation.h"
 #import "DetailsViewController.h"
 #import "MKAnnotationView+Extended_View.h"
+#import "MKPinAnnotationView+Extended_Pin.h"
 
 @interface MapViewController () 
 
@@ -30,8 +31,7 @@
     
     self.mapView.delegate = self;
     
-    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
-    [self.mapView setRegion:sfRegion animated:false];
+    [self setRegion];
     
     //[self fetchLocations];
     self.locations = [NSArray arrayWithObjects:[Location createLocation], nil];
@@ -39,6 +39,8 @@
     // [Location postLocation:nil];
     
 }
+
+#pragma mark - Networking
 
 - (void) fetchLocations {
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
@@ -53,6 +55,13 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+#pragma mark - Map Creation
+
+- (void) setRegion {
+    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
+    [self.mapView setRegion:sfRegion animated:false];
 }
 
 - (void) addLocations:(NSArray *)locations {
@@ -81,10 +90,10 @@
 
 #pragma mark - MapView delegate
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
+- (MKPinAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
     NSLog(@"View for annotation entered");
     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-    annotationView.location = annotation.location;
+//    annotationView.location = annotation.location;
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
@@ -102,7 +111,7 @@
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+- (void)mapView:(MKMapView *)mapView annotationView:(MKPinAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     //id <MKAnnotation> annotation = [view annotation];
     /*if ([annotation isKindOfClass:[MKPointAnnotation class]])
     {
@@ -110,7 +119,9 @@
     }*/
     NSLog(@"Clicked pin");
     
-    [self performSegueWithIdentifier:@"segueToDetails" sender:nil];
+    MKPointAnnotation *annotation = view.annotation;
+    Location *location = annotation.location;
+    [self performSegueWithIdentifier:@"segueToDetails" sender:location];
 }
 
 #pragma mark - Navigation
@@ -120,9 +131,9 @@
     // Get the new view controller using [segue destinationViewController]
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"segueToDetails"]) {
-        MKAnnotationView *tappedPin = sender;
+//        MKPinAnnotationView *tappedPin = sender;
         
-        Location *location = tappedPin.location;
+        Location *location = sender;
         
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.location = location;

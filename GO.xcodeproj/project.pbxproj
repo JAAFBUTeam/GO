@@ -29,6 +29,7 @@
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
 		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
+		CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */; };
 		D359BCC6509AA0348034B087 /* libPods-GOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2675920497E531A7258B040 /* libPods-GOTests.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,8 @@
 		CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoAnnotation.m; sourceTree = "<group>"; };
 		CCFE2C4620FE96A90037ABF2 /* MKAnnotationView+Extended_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+Extended_View.h"; sourceTree = "<group>"; };
 		CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+Extended_View.m"; sourceTree = "<group>"; };
+		CCFE2C4920FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPinAnnotationView+Extended_Pin.h"; sourceTree = "<group>"; };
+		CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPinAnnotationView+Extended_Pin.m"; sourceTree = "<group>"; };
 		CE876FD3782664AEF89FB864 /* Pods-GOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOTests/Pods-GOTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA12557BCD5C18F317EED4D6 /* Pods-GOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +219,8 @@
 				CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */,
 				CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */,
 				CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */,
+				CCFE2C4920FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.h */,
+				CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
 				19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
