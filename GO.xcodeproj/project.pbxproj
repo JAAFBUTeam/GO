@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1964F5F820FEBB42000423B2 /* ImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1964F5F720FEBB42000423B2 /* ImageCollectionViewController.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1964F5F620FEBB42000423B2 /* ImageCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewController.h; sourceTree = "<group>"; };
+		1964F5F720FEBB42000423B2 /* ImageCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewController.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		19E7AF6120FD1CA1004B98CC /* LocationsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
 		19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				CC83A36420F9291800117065 /* ListViewController.m */,
 				CC83A36020F9290600117065 /* MapViewController.h */,
 				CC83A36120F9290600117065 /* MapViewController.m */,
+				1964F5F620FEBB42000423B2 /* ImageCollectionViewController.h */,
+				1964F5F720FEBB42000423B2 /* ImageCollectionViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
+				1964F5F820FEBB42000423B2 /* ImageCollectionViewController.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,

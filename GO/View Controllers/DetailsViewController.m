@@ -46,6 +46,9 @@
     self.location_address.text = self.location.address;
 }
 
+- (IBAction)tappedImage:(id)sender {
+    [self performSegueWithIdentifier:@"imageCollectionView" sender:nil];
+}
 
 /*
 #pragma mark - Navigation
