@@ -33,7 +33,6 @@
 }
 
 -(void)setDummyImageArray {
-    
     self.locationImagesArray = [[NSMutableArray alloc] init];
     
     NSString *one = @"cat.jpg";
@@ -55,13 +54,8 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
     view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
-    //view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
-    view.contentMode = UIViewContentModeCenter;
     ((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
-    
     return view;
 }
-
-
 
 @end
