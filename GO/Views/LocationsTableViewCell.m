@@ -12,8 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setCarouselProperties];
     [self setDummyImageArray];
+    [self setCarouselProperties];
     [self setDatasourceAndDelegate];
     
 }
@@ -24,9 +24,7 @@
 }
 
 -(void) setLocationObject:(Location *)location {
-    
     self.location = location;
-    //[self setDummyImageArray];
 }
 
 -(void)setCarouselProperties {
@@ -38,19 +36,11 @@
     
     self.locationImagesArray = [[NSMutableArray alloc] init];
     
-    NSString * locationImageString = @"https://media.licdn.com/dms/image/C5103AQFSzkTQcTNk3A/profile-displayphoto-shrink_200_200/0?e=1537401600&v=beta&t=jRM2BEccIEAMatPgEkw0RtNf5qYE2Bqx412fqD7zESg";
-    NSURL *locationURL = [NSURL URLWithString:locationImageString];
-    UIImageView *one = [[UIImageView alloc] init];
-    [one setImageWithURL:locationURL];
-
-    NSString * locationImageStringTwo = @"https://media.licdn.com/dms/image/C5103AQFSzkTQcTNk3A/profile-displayphoto-shrink_200_200/0?e=1537401600&v=beta&t=jRM2BEccIEAMatPgEkw0RtNf5qYE2Bqx412fqD7zESg";
-    NSURL *locationURLTwo = [NSURL URLWithString:locationImageStringTwo];
-    UIImageView *two = [[UIImageView alloc] init];
-    [two setImageWithURL:locationURLTwo];
+    NSString *one = @"cat.jpg";
+    NSString *two = @"dog.jpg";
     
     [self.locationImagesArray addObject:one];
     [self.locationImagesArray addObject:two];
-    
 }
 
 #pragma mark - carousel protocol methods
@@ -64,12 +54,11 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
+    view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
+    //view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
+    view.contentMode = UIViewContentModeCenter;
+    ((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
     
-    view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
-    view.backgroundColor = UIColor.blueColor;
-    UIImageView *image  = self.locationImagesArray[index];
-    //((UIImageView *)view).image = image;
-    [view addSubview:image];
     return view;
 }
 
