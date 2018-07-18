@@ -12,7 +12,8 @@ target 'GO' do
 	pod 'ParseUI'
 	pod 'DateTools'
 	pod 'MBProgressHUD'
-	pod 'iCarousel'
+	pod 'iCarousel'	
+	pod 'SPSlideTabBarController'
 
 	
   target 'GOTests' do

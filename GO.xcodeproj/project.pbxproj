@@ -26,6 +26,10 @@
 		CC83A36820F9292200117065 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36720F9292200117065 /* DetailsViewController.m */; };
 		CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36A20F92D6800117065 /* MapView.storyboard */; };
 		CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36C20F92E4F00117065 /* DetailView.storyboard */; };
+		CCB3C9E520FFABE60095CD59 /* ReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9E420FFABE60095CD59 /* ReviewsViewController.m */; };
+		CCB3C9E720FFAC300095CD59 /* Reviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9E620FFAC300095CD59 /* Reviews.storyboard */; };
+		CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */; };
+		CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */; };
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
 		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
@@ -90,6 +94,12 @@
 		CC83A36720F9292200117065 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		CC83A36A20F92D6800117065 /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		CC83A36C20F92E4F00117065 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		CCB3C9E320FFABE60095CD59 /* ReviewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsViewController.h; sourceTree = "<group>"; };
+		CCB3C9E420FFABE60095CD59 /* ReviewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsViewController.m; sourceTree = "<group>"; };
+		CCB3C9E620FFAC300095CD59 /* Reviews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reviews.storyboard; sourceTree = "<group>"; };
+		CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsTableViewCell.h; sourceTree = "<group>"; };
+		CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsTableViewCell.m; sourceTree = "<group>"; };
+		CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
 		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
@@ -140,6 +150,9 @@
 				19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */,
 				CCFE2C4C20FEC76C0037ABF2 /* CustomTabBar.h */,
 				CCFE2C4D20FEC76C0037ABF2 /* CustomTabBar.m */,
+				CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */,
+				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
+				CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +263,8 @@
 				CC83A36720F9292200117065 /* DetailsViewController.m */,
 				CC83A36320F9291800117065 /* ListViewController.h */,
 				CC83A36420F9291800117065 /* ListViewController.m */,
+				CCB3C9E320FFABE60095CD59 /* ReviewsViewController.h */,
+				CCB3C9E420FFABE60095CD59 /* ReviewsViewController.m */,
 				CC83A36020F9290600117065 /* MapViewController.h */,
 				CC83A36120F9290600117065 /* MapViewController.m */,
 				1964F5F620FEBB42000423B2 /* ImageCollectionViewController.h */,
@@ -262,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */,
+				CCB3C9E620FFAC300095CD59 /* Reviews.storyboard */,
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
@@ -377,9 +393,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */,
+				CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
+				CCB3C9E720FFAC300095CD59 /* Reviews.storyboard in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +514,8 @@
 				1964F5F820FEBB42000423B2 /* ImageCollectionViewController.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
+				CCB3C9E520FFABE60095CD59 /* ReviewsViewController.m in Sources */,
+				CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
