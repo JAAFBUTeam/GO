@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PhotoCollectionViewCell.xib">
+   </FileRef>
+   <FileRef
       location = "group:GO.xcodeproj">
    </FileRef>
    <FileRef
