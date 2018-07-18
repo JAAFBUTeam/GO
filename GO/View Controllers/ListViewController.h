@@ -11,6 +11,6 @@
 #import "LocationsTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, iCarouselDelegate, iCarouselDataSource>
 
 @end

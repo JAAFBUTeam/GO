@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Location.h"
 #import "UIImageView+AFNetworking.h"
+#import "iCarousel.h"
 
-@interface LocationsTableViewCell : UITableViewCell
+@interface LocationsTableViewCell : UITableViewCell <iCarouselDelegate, iCarouselDataSource>
 
 @property (strong, nonatomic) Location *location;
-@property (weak, nonatomic) IBOutlet UIImageView *locationImage;
-//TODO: SET ARRAY; and set in setlocationF() too
-//@property (strong, nonatomic) NSMutableArray *locationImages;
+@property (strong, nonatomic) NSMutableArray *locationImagesArray;
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
 
 -(void) setLocationObject:(Location *)location;
 
