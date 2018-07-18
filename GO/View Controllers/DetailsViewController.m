@@ -46,6 +46,7 @@
     self.location_address.text = self.location.address;
 }
 
+
 /*
 #pragma mark - Navigation
 
