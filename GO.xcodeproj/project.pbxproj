@@ -32,6 +32,7 @@
 		CCB3C9F020FFDADF0095CD59 /* TitleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9EF20FFDADF0095CD59 /* TitleViewCell.xib */; };
 		CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */; };
 		CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */; };
+		CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */; };
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
 		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
@@ -104,6 +105,8 @@
 		CCB3C9EF20FFDADF0095CD59 /* TitleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleViewCell.xib; sourceTree = "<group>"; };
 		CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableView.xib; sourceTree = "<group>"; };
+		CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
+		CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
 		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				CCFE2C4D20FEC76C0037ABF2 /* CustomTabBar.m */,
 				CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */,
 				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
+				CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */,
+				CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */,
 				CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */,
 				CCB3C9EF20FFDADF0095CD59 /* TitleViewCell.xib */,
 				CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */,
@@ -518,6 +523,7 @@
 				19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */,
 				1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
+				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
