@@ -20,6 +20,7 @@
 		CC1307DE20EFDEF0007E8DD5 /* GOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307DD20EFDEF0007E8DD5 /* GOTests.m */; };
 		CC1307E920EFDEF0007E8DD5 /* GOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307E820EFDEF0007E8DD5 /* GOUITests.m */; };
 		CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CC5AC20FD210E005E7FF1 /* Location.m */; };
+		CC6A405820FFF907005FFFEE /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC6A405720FFF907005FFFEE /* CarouselView.xib */; };
 		CC83A35F20F928BF00117065 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83A35E20F928BF00117065 /* MapKit.framework */; };
 		CC83A36220F9290600117065 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36120F9290600117065 /* MapViewController.m */; };
 		CC83A36520F9291800117065 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36420F9291800117065 /* ListViewController.m */; };
@@ -37,7 +38,6 @@
 		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
 		CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */; };
-		CCFE2C4E20FEC76C0037ABF2 /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4D20FEC76C0037ABF2 /* CustomTabBar.m */; };
 		D359BCC6509AA0348034B087 /* libPods-GOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2675920497E531A7258B040 /* libPods-GOTests.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +88,7 @@
 		CC1307EA20EFDEF0007E8DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC3CC5AB20FD210E005E7FF1 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		CC3CC5AC20FD210E005E7FF1 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		CC6A405720FFF907005FFFEE /* CarouselView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
 		CC83A35E20F928BF00117065 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CC83A36020F9290600117065 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CC83A36120F9290600117065 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -115,8 +116,6 @@
 		CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+Extended_View.m"; sourceTree = "<group>"; };
 		CCFE2C4920FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPinAnnotationView+Extended_Pin.h"; sourceTree = "<group>"; };
 		CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPinAnnotationView+Extended_Pin.m"; sourceTree = "<group>"; };
-		CCFE2C4C20FEC76C0037ABF2 /* CustomTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
-		CCFE2C4D20FEC76C0037ABF2 /* CustomTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
 		CE876FD3782664AEF89FB864 /* Pods-GOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOTests/Pods-GOTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA12557BCD5C18F317EED4D6 /* Pods-GOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,8 +154,6 @@
 			children = (
 				19E7AF6120FD1CA1004B98CC /* LocationsTableViewCell.h */,
 				19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */,
-				CCFE2C4C20FEC76C0037ABF2 /* CustomTabBar.h */,
-				CCFE2C4D20FEC76C0037ABF2 /* CustomTabBar.m */,
 				CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */,
 				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
 				CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */,
@@ -164,6 +161,7 @@
 				CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */,
 				CCB3C9EF20FFDADF0095CD59 /* TitleViewCell.xib */,
 				CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */,
+				CC6A405720FFF907005FFFEE /* CarouselView.xib */,
 				CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */,
 				1964F5FB20FFE340000423B2 /* PhotoCollectionViewCell.h */,
 				1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */,
@@ -407,6 +405,7 @@
 				CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
+				CC6A405820FFF907005FFFEE /* CarouselView.xib in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */,
@@ -534,7 +533,6 @@
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
-				CCFE2C4E20FEC76C0037ABF2 /* CustomTabBar.m in Sources */,
 				CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

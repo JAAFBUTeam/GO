@@ -25,6 +25,9 @@
     [self createLocationsArray];
     [self dummyDataSetUp];
     [self setDataSourceAndDelegate];
+    
+    CGPoint offset = CGPointMake(0, 44);
+    [self.locationsTimelineView setContentOffset:offset];
 }
 
 - (void) setDataSourceAndDelegate {
