@@ -59,9 +59,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     LocationsTableViewCell *tappedCell = sender;
     DetailsViewController *detailsController = [segue destinationViewController];
-    
-    //detailsController.location = tappedCell.location;
-   // NSLog(@"%@", detailsController.location.synopsis);
+    detailsController.location = tappedCell.location;
 }
 
 @end
