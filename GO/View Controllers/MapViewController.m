@@ -11,6 +11,7 @@
 #import "Location.h"
 #import "MKPointAnnotation+Extended_Annotation.h"
 #import "DetailsViewController.h"
+#import "MKAnnotationView+Extended_View.h"
 
 @interface MapViewController () 
 
@@ -80,9 +81,10 @@
 
 #pragma mark - MapView delegate
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
     NSLog(@"View for annotation entered");
     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    annotationView.location = annotation.location;
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
@@ -108,7 +110,7 @@
     }*/
     NSLog(@"Clicked pin");
     
-    [self performSegueWithIdentifier:@"segueToDetails" sender:view];
+    [self performSegueWithIdentifier:@"segueToDetails" sender:nil];
 }
 
 #pragma mark - Navigation
@@ -118,7 +120,7 @@
     // Get the new view controller using [segue destinationViewController]
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"segueToDetails"]) {
-        MKPointAnnotation *tappedPin = sender;
+        MKAnnotationView *tappedPin = sender;
         
         Location *location = tappedPin.location;
         
