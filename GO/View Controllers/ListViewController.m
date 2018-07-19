@@ -26,7 +26,7 @@
     [self setDataSourceAndDelegate];
     [self setAutolayout];
     [self registerNibs];
-    //[self createSearchBar];
+    [self createSearchBar];
 }
 
 -(void)createLocationsArray {
@@ -45,7 +45,7 @@
 
 -(void) setAutolayout {
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
-    self.listTableView.estimatedRowHeight = 140;
+    self.listTableView.estimatedRowHeight = 300;
 }
 
 -(void) registerNibs {
