@@ -51,7 +51,6 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
         switch(indexPath.section){
             //read online that you shouldnt be declaring variables inside case blocks?
         case CAROUSEL: {
