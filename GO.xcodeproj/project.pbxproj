@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		192A138D210002C90005481A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A138C210002C90005481A /* TitleTableViewCell.m */; };
-		192A139021000BB10005481A /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A138F21000BB10005481A /* CarouselTableViewCell.m */; };
 		1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */; };
@@ -23,7 +22,6 @@
 		CC1307E920EFDEF0007E8DD5 /* GOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307E820EFDEF0007E8DD5 /* GOUITests.m */; };
 		CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CC5AC20FD210E005E7FF1 /* Location.m */; };
 		CC6A405820FFF907005FFFEE /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC6A405720FFF907005FFFEE /* CarouselView.xib */; };
-		CC6A405B21001061005FFFEE /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6A405A21001061005FFFEE /* CarouselTableViewCell.m */; };
 		CC83A35F20F928BF00117065 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83A35E20F928BF00117065 /* MapKit.framework */; };
 		CC83A36220F9290600117065 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36120F9290600117065 /* MapViewController.m */; };
 		CC83A36520F9291800117065 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36420F9291800117065 /* ListViewController.m */; };
@@ -64,8 +62,6 @@
 /* Begin PBXFileReference section */
 		192A138B210002C90005481A /* TitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleTableViewCell.h; sourceTree = "<group>"; };
 		192A138C210002C90005481A /* TitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleTableViewCell.m; sourceTree = "<group>"; };
-		192A138E21000BB10005481A /* CarouselTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
-		192A138F21000BB10005481A /* CarouselTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
 		1964F5FB20FFE340000423B2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -96,8 +92,6 @@
 		CC3CC5AB20FD210E005E7FF1 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		CC3CC5AC20FD210E005E7FF1 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		CC6A405720FFF907005FFFEE /* CarouselView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
-		CC6A405921001061005FFFEE /* CarouselTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
-		CC6A405A21001061005FFFEE /* CarouselTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
 		CC83A35E20F928BF00117065 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CC83A36020F9290600117065 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CC83A36120F9290600117065 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -167,8 +161,6 @@
 				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
 				CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */,
 				CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */,
-				CC6A405921001061005FFFEE /* CarouselTableViewCell.h */,
-				CC6A405A21001061005FFFEE /* CarouselTableViewCell.m */,
 				CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */,
 				CCB3C9EF20FFDADF0095CD59 /* TitleTableViewCell.xib */,
 				CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */,
@@ -178,8 +170,6 @@
 				1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */,
 				192A138B210002C90005481A /* TitleTableViewCell.h */,
 				192A138C210002C90005481A /* TitleTableViewCell.m */,
-				192A138E21000BB10005481A /* CarouselTableViewCell.h */,
-				192A138F21000BB10005481A /* CarouselTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -534,12 +524,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
-				192A139021000BB10005481A /* CarouselTableViewCell.m in Sources */,
 				19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */,
 				1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
-				CC6A405B21001061005FFFEE /* CarouselTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				192A138D210002C90005481A /* TitleTableViewCell.m in Sources */,
