@@ -21,11 +21,11 @@
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-Tv-Z6B" customClass="iCarousel">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-94.5" y="-46"/>
+            <point key="canvasLocation" x="-215" y="-38"/>
         </tableViewCell>
     </objects>
 </document>

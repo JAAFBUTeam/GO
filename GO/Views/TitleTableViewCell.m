@@ -1,15 +1,14 @@
 //
-//  CarouselTableViewCell.m
+//  TitleTableViewCell.m
 //  GO
 //
-<<<<<<< HEAD
-//  Created by Amy Liu on 7/18/18.
+//  Created by Ajaita Saini on 7/18/18.
 //  Copyright © 2018 Amy Liu. All rights reserved.
 //
 
-#import "CarouselTableViewCell.h"
+#import "TitleTableViewCell.h"
 
-@implementation CarouselTableViewCell
+@implementation TitleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
