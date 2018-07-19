@@ -11,7 +11,7 @@
 #import "TitleTableViewCell.h"
 #import "ReviewsTableViewCell.h"
 
-@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 typedef enum {
@@ -51,7 +51,6 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
         switch(indexPath.section){
             //read online that you shouldnt be declaring variables inside case blocks?
         case CAROUSEL: {
