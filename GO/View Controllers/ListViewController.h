@@ -11,7 +11,7 @@
 #import "Location.h"
 #import "InfoTableViewCell.h"
 #import "CarouselTableViewCell.h"
-	
+
 @interface ListViewController : UIViewController <UITableViewDelegate, 	UITableViewDataSource, iCarouselDelegate, iCarouselDataSource>
 
 @end
