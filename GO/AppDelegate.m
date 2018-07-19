@@ -23,7 +23,7 @@
         
         configuration.applicationId = @"fbugo";
         configuration.clientKey = @"nickswift";
-        configuration.server = @"http://fbugo.herokuapp.com/parse";
+        configuration.server = @"https://fbugo.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
