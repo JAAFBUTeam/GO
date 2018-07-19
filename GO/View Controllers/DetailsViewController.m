@@ -17,7 +17,7 @@
 typedef enum {
     CAROUSEL = 0,
     INFO = 1,
-    TITLE_INFO = 2,
+    TITLE_REVIEW = 2,
     REVIEW_1 = 3,
     REVIEW_2 = 4,
     REVIEW_3 = 5,
@@ -51,77 +51,65 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //enum cell_state current_state = indexPath.row;
-    
-//    @property (weak, nonatomic) IBOutlet UIImageView *userImage;
-//    @property (weak, nonatomic) IBOutlet UILabel *username;
-//    @property (weak, nonatomic) IBOutlet UILabel *rating;
-//    @property (weak, nonatomic) IBOutlet UILabel *reviewText;
-    
-    if (indexPath.section == 0){ // carousel
-        TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-        titleTableViewCell.title.text = @"Placeholder";
-        return titleTableViewCell;
-    } else if (indexPath.section == 1){ // info
-        InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        infoTableViewCell.title.text = _location.title;
-        infoTableViewCell.address.text = _location.address;
-        infoTableViewCell.synopsis.text = _location.description;
-        return infoTableViewCell;
-    } else if (indexPath.section == 2){ //title of reviews
-        TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-        titleTableViewCell.title.text = @"Reviews";
-        return titleTableViewCell;
-    } else if (indexPath.section == 3){ // review 1
-        ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-        reviewTableViewCell.userImage.image = [UIImage imageNamed:@"cat.jpg"];
-        reviewTableViewCell.username.text = @"Cat";
-        reviewTableViewCell.rating.text = @"1 star";
-        reviewTableViewCell.reviewText.text = @"Cats were not allowed in";
-        return reviewTableViewCell;
-    } else if (indexPath.section == 4){ // review 2
-        ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-        reviewTableViewCell.userImage.image = [UIImage imageNamed:@"dog.jpg"];
-        reviewTableViewCell.username.text = @"Dog1";
-        reviewTableViewCell.rating.text = @"5 star";
-        reviewTableViewCell.reviewText.text = @"So much love for dogs!";
-        return reviewTableViewCell;
-    } else if (indexPath.section == 5){ // review 3
-        ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-        reviewTableViewCell.userImage.image = [UIImage imageNamed:@"dog.jpg"];
-        reviewTableViewCell.username.text = @"Dog2";
-        reviewTableViewCell.rating.text = @"4 stars";
-        reviewTableViewCell.reviewText.text = @"Nice art, and no cats!";
-        return reviewTableViewCell;
-    } else if (indexPath.section == 6){ // title of photos
-        TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-        titleTableViewCell.title.text = @"Photos";
-        return titleTableViewCell;
-    } else if (indexPath.section == 7){ // collection view
-        TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-        titleTableViewCell.title.text = @"Placeholder";
-        return titleTableViewCell;
-    } else {
-        TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-        titleTableViewCell.title.text = @"Placeholder";
-        return titleTableViewCell;
+    switch(indexPath.section){
+            //read online that you shouldnt be declaring variables inside case blocks?
+        case CAROUSEL: {
+            TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
+            titleTableViewCell.title.text = @"Placeholder";
+            return titleTableViewCell;
+        }
+        case INFO: {
+            InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
+            infoTableViewCell.title.text = _location.title;
+            infoTableViewCell.address.text = _location.address;
+            infoTableViewCell.synopsis.text = _location.description;
+            return infoTableViewCell;
+        }
+        case TITLE_REVIEW: {
+            TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
+            titleTableViewCell.title.text = @"Reviews";
+            return titleTableViewCell;
+        }
+        case REVIEW_1: {
+            ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
+            reviewTableViewCell.userImage.image = [UIImage imageNamed:@"cat.jpg"];
+            reviewTableViewCell.username.text = @"Cat";
+            reviewTableViewCell.rating.text = @"1 star";
+            reviewTableViewCell.reviewText.text = @"review text for Cat";
+            return reviewTableViewCell;
+        }
+        case REVIEW_2: {
+            ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
+            reviewTableViewCell.userImage.image = [UIImage imageNamed:@"dog.jpg"];
+            reviewTableViewCell.username.text = @"Dog1";
+            reviewTableViewCell.rating.text = @"5 star";
+            reviewTableViewCell.reviewText.text = @"review text for Dog1";
+            return reviewTableViewCell;
+        }
+        case REVIEW_3: {
+            ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
+            reviewTableViewCell.userImage.image = [UIImage imageNamed:@"dog.jpg"];
+            reviewTableViewCell.username.text = @"Dog2";
+            reviewTableViewCell.rating.text = @"4 stars";
+            reviewTableViewCell.reviewText.text = @"review text for Dog2";
+            return reviewTableViewCell;
+        }
+        case TITLE_PHOTOS: {
+            TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
+            titleTableViewCell.title.text = @"Photos";
+            return titleTableViewCell;
+        }
+        case IMAGE_COLLECTION: {
+            TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
+            titleTableViewCell.title.text = @"Placeholder";
+            return titleTableViewCell;
+        }
+        default:{
+            TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
+            titleTableViewCell.title.text = @"Placeholder";
+            return titleTableViewCell;
+        }
     }
-
-//    switch(indexPath.row){
-//        case CAROUSEL:
-//        case INFO:
-//            InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-//            infoTableViewCell.title.text = _location.title;
-//            infoTableViewCell.address.text = _location.address;
-//            infoTableViewCell.synopsis.text = _location.description;
-//            return infoTableViewCell;
-//        case TITLE_INFO:
-//        case REVIEW_1:
-//        case REVIEW_2:
-//        case REVIEW_3:
-//        case TITLE_PHOTOS:
-//        case IMAGE_COLLECTION:
-//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
