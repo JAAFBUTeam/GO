@@ -111,6 +111,7 @@
 		CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableView.xib; sourceTree = "<group>"; };
 		CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
 		CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
+		CCFBA08921010CFE00A532FF /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PhotoCollectionViewCell.xib; path = /Users/maymayliu/fbu/GO/GO/Views/PhotoCollectionViewCell.xib; sourceTree = "<absolute>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
 		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 				CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */,
 				CC6A405720FFF907005FFFEE /* CarouselView.xib */,
 				CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */,
+				CCFBA08921010CFE00A532FF /* PhotoCollectionViewCell.xib */,
 				1964F5FB20FFE340000423B2 /* PhotoCollectionViewCell.h */,
 				1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */,
 				192A138B210002C90005481A /* TitleTableViewCell.h */,
