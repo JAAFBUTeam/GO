@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		192A138D210002C90005481A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A138C210002C90005481A /* TitleTableViewCell.m */; };
-		192A139021000BB10005481A /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A138F21000BB10005481A /* CarouselTableViewCell.m */; };
 		1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */; };
@@ -64,8 +63,6 @@
 /* Begin PBXFileReference section */
 		192A138B210002C90005481A /* TitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleTableViewCell.h; sourceTree = "<group>"; };
 		192A138C210002C90005481A /* TitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleTableViewCell.m; sourceTree = "<group>"; };
-		192A138E21000BB10005481A /* CarouselTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
-		192A138F21000BB10005481A /* CarouselTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
 		1964F5FB20FFE340000423B2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 				1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */,
 				192A138B210002C90005481A /* TitleTableViewCell.h */,
 				192A138C210002C90005481A /* TitleTableViewCell.m */,
-				192A138E21000BB10005481A /* CarouselTableViewCell.h */,
-				192A138F21000BB10005481A /* CarouselTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -534,7 +529,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
-				192A139021000BB10005481A /* CarouselTableViewCell.m in Sources */,
 				19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */,
 				1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
