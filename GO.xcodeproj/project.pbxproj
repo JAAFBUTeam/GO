@@ -10,6 +10,8 @@
 		192A138D210002C90005481A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A138C210002C90005481A /* TitleTableViewCell.m */; };
 		192A139221010E1A0005481A /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192A139121010E1A0005481A /* PhotoCollectionViewCell.xib */; };
 		1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */; };
+		19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */; };
+		19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A251DF21011C2A00860637 /* CarouselTableViewCell.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -27,7 +29,6 @@
 		CC83A36820F9292200117065 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36720F9292200117065 /* DetailsViewController.m */; };
 		CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36A20F92D6800117065 /* MapView.storyboard */; };
 		CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36C20F92E4F00117065 /* DetailView.storyboard */; };
-		CCB3C9E520FFABE60095CD59 /* ReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9E420FFABE60095CD59 /* ReviewsViewController.m */; };
 		CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */; };
 		CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */; };
 		CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9EF20FFDADF0095CD59 /* TitleTableViewCell.xib */; };
@@ -64,6 +65,9 @@
 		192A139121010E1A0005481A /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		1964F5FB20FFE340000423B2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselTableViewCell.xib; sourceTree = "<group>"; };
+		19A251DE21011C2A00860637 /* CarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
+		19A251DF21011C2A00860637 /* CarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,8 +102,6 @@
 		CC83A36720F9292200117065 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		CC83A36A20F92D6800117065 /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		CC83A36C20F92E4F00117065 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
-		CCB3C9E320FFABE60095CD59 /* ReviewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsViewController.h; sourceTree = "<group>"; };
-		CCB3C9E420FFABE60095CD59 /* ReviewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsViewController.m; sourceTree = "<group>"; };
 		CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsTableViewCell.h; sourceTree = "<group>"; };
 		CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsTableViewCell.m; sourceTree = "<group>"; };
 		CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +154,9 @@
 		19E7AF6020FD1C8B004B98CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19A251DE21011C2A00860637 /* CarouselTableViewCell.h */,
+				19A251DF21011C2A00860637 /* CarouselTableViewCell.m */,
+				19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */,
 				CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */,
 				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
 				CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */,
@@ -275,8 +280,6 @@
 				CC83A36720F9292200117065 /* DetailsViewController.m */,
 				CC83A36320F9291800117065 /* ListViewController.h */,
 				CC83A36420F9291800117065 /* ListViewController.m */,
-				CCB3C9E320FFABE60095CD59 /* ReviewsViewController.h */,
-				CCB3C9E420FFABE60095CD59 /* ReviewsViewController.m */,
 				CC83A36020F9290600117065 /* MapViewController.h */,
 				CC83A36120F9290600117065 /* MapViewController.m */,
 			);
@@ -407,6 +410,7 @@
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
+				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */,
 				CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */,
 				192A139221010E1A0005481A /* PhotoCollectionViewCell.xib in Resources */,
@@ -523,11 +527,11 @@
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
+				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				192A138D210002C90005481A /* TitleTableViewCell.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
-				CCB3C9E520FFABE60095CD59 /* ReviewsViewController.m in Sources */,
 				CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,

@@ -81,25 +81,19 @@
     }
 }
 
-#pragma mark - Action (unused)
-
-- (void)rightButtonTapped
-{
-    NSLog(@"HELLO");
-}
-
 #pragma mark - MapView delegate
 
-- (MKPinAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
     NSLog(@"View for annotation entered");
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-//    annotationView.location = annotation.location;
+    MKAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    // annotationView.location = annotation.location;
     if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
         // annotationView.image = annotation.location.pinImage;
-        annotationView.image = [UIImage imageNamed:@"icons8-marker-64"];
-        // annotationView.calloutOffset = CGPointMake(0, 32);
+        [annotationView setImage:[UIImage imageNamed:@"icons8-marker-64"]];
+        // annotationView.image = [UIImage imageNamed:@"icons8-marker-64"];
+        annotationView.calloutOffset = CGPointMake(0, 64);
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -113,7 +107,7 @@
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKPinAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     //id <MKAnnotation> annotation = [view annotation];
     /*if ([annotation isKindOfClass:[MKPointAnnotation class]])
     {
