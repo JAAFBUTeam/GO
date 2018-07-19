@@ -17,7 +17,7 @@
 @interface MapViewController () 
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic, strong) NSArray *locations;
+@property (nonatomic, strong) NSMutableArray *locations;
 
 @end
 
@@ -32,10 +32,11 @@
     self.mapView.delegate = self;
     
     [self setRegion];
-    
-    //[self fetchLocations];
-    self.locations = [NSArray arrayWithObjects:[Location createLocation], nil];
-    [self addLocations:self.locations];
+    self.locations = [[NSMutableArray alloc] init];
+    // [self fetchLocations];
+    self.locations = [NSMutableArray arrayWithObjects:[Location createLocation], nil];
+    [self addLocations];
+
     // [Location postLocation:nil];
     
 }
@@ -45,12 +46,14 @@
 - (void) fetchLocations {
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     [query whereKey:@"rating" greaterThan:@2.0];
-    
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
         if (places != nil) {
             // do something with the array of object returned by the call
-            self.locations = places;
+            for (Location *location in places){
+                [self.locations addObject:location];
+            }
+            [self addLocations];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -64,14 +67,15 @@
     [self.mapView setRegion:sfRegion animated:false];
 }
 
-- (void) addLocations:(NSArray *)locations {
-    for (Location* place in locations) {
+- (void) addLocations {
+    for (Location *place in self.locations) {
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.lat, place.lon);
         
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
+        annotation.image = place.pinImage[0];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         
@@ -83,17 +87,16 @@
 
 #pragma mark - MapView delegate
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
+- (MKPinAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
     NSLog(@"View for annotation entered");
-    MKAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
     // annotationView.location = annotation.location;
     if (annotationView == nil) {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
         // annotationView.image = annotation.location.pinImage;
-        [annotationView setImage:[UIImage imageNamed:@"icons8-marker-64"]];
-        // annotationView.image = [UIImage imageNamed:@"icons8-marker-64"];
-        annotationView.calloutOffset = CGPointMake(0, 64);
+        //[annotationView setImage:[UIImage imageNamed:@"icons8-marker-64"]];
+        // annotationView.calloutOffset = CGPointMake(0, 64);
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -102,7 +105,7 @@
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = [UIImage imageNamed:@"MOMA"];
+    imageView.image = annotation.image;
     
     return annotationView;
 }

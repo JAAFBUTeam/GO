@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a description. This is a description. This is a description. This is a description." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muj-GS-K9r">
-                        <rect key="frame" x="24" y="75" width="343" height="33.5"/>
+                        <rect key="frame" x="24" y="75" width="343" height="40.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="343" id="DgA-KR-IR3"/>
                         </constraints>
@@ -46,9 +46,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxg-Yz-RZZ">
-                        <rect key="frame" x="326" y="25" width="33" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxg-Yz-RZZ">
+                        <rect key="frame" x="326" y="32" width="33" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="LWV-pE-VXt"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -57,9 +59,12 @@
                 <constraints>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="trailing" secondItem="g4E-Gh-Ha9" secondAttribute="trailingMargin" constant="8" id="4aQ-1x-cW1"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ar7-rb-RAa" secondAttribute="trailing" constant="8" id="7yo-Mf-4JX"/>
+                    <constraint firstAttribute="bottom" secondItem="Muj-GS-K9r" secondAttribute="bottom" constant="8" id="AJ7-DK-WrP"/>
+                    <constraint firstAttribute="trailing" secondItem="wxg-Yz-RZZ" secondAttribute="trailing" constant="16" id="CUl-6x-KzA"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="top" secondItem="ar7-rb-RAa" secondAttribute="bottom" constant="8" id="Hxz-X3-Uxc"/>
                     <constraint firstItem="ar7-rb-RAa" firstAttribute="top" secondItem="6vz-7h-yFp" secondAttribute="bottom" constant="4" id="XAF-vn-ij4"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="8" id="Zrt-6T-Qs0"/>
+                    <constraint firstItem="wxg-Yz-RZZ" firstAttribute="bottom" secondItem="6vz-7h-yFp" secondAttribute="bottom" id="eN7-GB-0h1"/>
                     <constraint firstItem="6vz-7h-yFp" firstAttribute="top" secondItem="g4E-Gh-Ha9" secondAttribute="topMargin" constant="8" id="gsS-8k-Qwd"/>
                     <constraint firstItem="6vz-7h-yFp" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="ovx-vm-qvN"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="pEK-rX-DhX"/>
