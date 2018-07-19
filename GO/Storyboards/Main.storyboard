@@ -51,7 +51,7 @@
         <scene sceneID="U6Q-Xu-rj6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dAA-Hh-9wA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" id="VyK-PY-ssi"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list-50" id="VyK-PY-ssi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BTs-UE-0wu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -83,7 +83,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="l2m-cT-EE3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="f3c-7e-pMX"/>
+                    <navigationItem key="navigationItem" id="f3c-7e-pMX">
+                        <barButtonItem key="rightBarButtonItem" title="filter" image="filter-50" id="zpL-6c-A3f"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="listTableView" destination="7yl-XD-MB1" id="wZs-WI-uSy"/>
                         <segue destination="tnR-Ky-c2q" kind="show" identifier="listToDetailsSegue" id="t6n-Sv-1gJ"/>
@@ -95,6 +97,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="filter-50" width="50" height="50"/>
         <image name="icons8-map-32" width="32" height="32"/>
+        <image name="list-50" width="50" height="50"/>
     </resources>
 </document>
