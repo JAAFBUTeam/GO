@@ -31,6 +31,7 @@
     newLocation.lat = 37.7857;
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
+    //newLocation.pinImage = [UIImage imageNamed:@"icons8-marker-64"];
 
     return newLocation;
 }

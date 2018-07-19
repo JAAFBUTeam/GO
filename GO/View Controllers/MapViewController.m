@@ -97,9 +97,11 @@
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
+        // annotationView.image = annotation.location.pinImage;
+        annotationView.image = [UIImage imageNamed:@"icons8-marker-64"];
+        // annotationView.calloutOffset = CGPointMake(0, 32);
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         
-        // MKAnnotationView *annotationView = [self mapView:self.mapView viewForAnnotation:annotation];
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
         //[rightButton addTarget:self action:@selector(rightButtonTapped) forControlEvents:UIControlEventTouchUpInside];

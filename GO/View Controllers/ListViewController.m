@@ -8,6 +8,8 @@
 
 #import "ListViewController.h"
 #import "Location.h"
+#import "InfoTableViewCell.h"
+#import "CarouselTableViewCell.h"
 
 @interface ListViewController ()
 
@@ -25,7 +27,11 @@
     [self createLocationsArray];
     [self dummyDataSetUp];
     [self setDataSourceAndDelegate];
-    
+    [self createSearchBar];
+
+}
+
+-(void) createSearchBar {
     CGPoint offset = CGPointMake(0, 44);
     [self.locationsTimelineView setContentOffset:offset];
 }
@@ -47,14 +53,36 @@
 #pragma mark - tableview protocol
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.locationsArray.count;
+    if (section == 0) { // Carousel
+        return 1;
+    } else if (section == 1) { // Title + Info
+        return 2;
+    } else {
+        return 0;
+    }
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    /* if (indexPath.section == 1) { // Carousel
+        LocationsTableViewCell *carouselTableViewCell = [self.locationsTimelineView dequeueReusableCellWithIdentifier:@"LocationsTableViewCell"];
+        return carouselTableViewCell;
+    } else if (indexPath.section == 0) { // Title + Info
+        InfoTableViewCell *infoTableViewCell = [self.locationsTimelineView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
+        infoTableViewCell.title.text = @"I am a location";
+        return infoTableViewCell;
+    } else {
+        return nil;
+    } */
+    
+    
     LocationsTableViewCell *locationCell = [self.locationsTimelineView dequeueReusableCellWithIdentifier:@"LocationsTableViewCell"];
     [locationCell setLocationObject:self.locationsArray[indexPath.row]];
 
     return locationCell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 

@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "UIImage+AFNetworking.h"
 #import "Parse/Parse.h"
+#import "ParseUI.h"
 
 @interface Location : PFObject <PFSubclassing>
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *synopsis;
 @property (nonatomic, strong) NSString *address;
+
+//@property (nonatomic, strong) PFFile *pinImage;
 
 @property (nonatomic) float lat;
 @property (nonatomic) float lon;
