@@ -33,9 +33,10 @@
     
     [self setRegion];
     self.locations = [[NSMutableArray alloc] init];
-    [self fetchLocations];
-    // self.locations = [NSArray arrayWithObjects:[Location createLocation], nil];
-    NSLog(@"3");
+    // [self fetchLocations];
+    self.locations = [NSMutableArray arrayWithObjects:[Location createLocation], nil];
+    [self addLocations];
+
     // [Location postLocation:nil];
     
 }
@@ -74,6 +75,7 @@
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
+        annotation.image = place.pinImage[0];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         
@@ -103,7 +105,7 @@
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = annotation.location.pinImage[0];
+    imageView.image = annotation.image;
     
     return annotationView;
 }
