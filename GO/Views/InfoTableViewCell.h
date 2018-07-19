@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
 
 @interface InfoTableViewCell : UITableViewCell
 
@@ -14,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (weak, nonatomic) IBOutlet UILabel *synopsis;
 @property (weak, nonatomic) IBOutlet UILabel *rating;
+
+-(void) setTableProperties:(Location *)location;
 
 @end

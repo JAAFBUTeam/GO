@@ -12,13 +12,18 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+-(void)setTableProperties:(Location *)location{
+    self.title.text = location.title;
+    self.address.text = location.address;
+    self.synopsis.text = location.synopsis;
+    double ratingDouble = location.rating;
+    self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
 }
 
 @end

@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,20 +16,23 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarouselTableViewCell" rowHeight="221" id="wvO-Ax-kc5" customClass="CarouselTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="376" height="221"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wvO-Ax-kc5" id="zS1-9y-JXY">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wvO-Ax-kc5" id="zS1-9y-JXY">
                 <rect key="frame" x="0.0" y="0.0" width="376" height="220.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1N-xM-Of7" customClass="iCarousel">
-                        <rect key="frame" x="0.0" y="0.0" width="376" height="221"/>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1N-xM-Of7" customClass="iCarousel">
+                        <rect key="frame" x="32" y="22" width="246" height="177"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="c1N-xM-Of7" secondAttribute="height" multiplier="25:18" id="vmq-sy-EiA"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="c1N-xM-Of7" firstAttribute="leading" secondItem="zS1-9y-JXY" secondAttribute="leading" id="RC1-bT-dY6"/>
-                    <constraint firstAttribute="bottom" secondItem="c1N-xM-Of7" secondAttribute="bottom" id="aKz-E1-qAR"/>
-                    <constraint firstAttribute="trailing" secondItem="c1N-xM-Of7" secondAttribute="trailing" id="iSB-TN-RYH"/>
-                    <constraint firstItem="c1N-xM-Of7" firstAttribute="top" secondItem="zS1-9y-JXY" secondAttribute="top" id="yBT-9U-sz0"/>
+                    <constraint firstItem="c1N-xM-Of7" firstAttribute="leading" secondItem="zS1-9y-JXY" secondAttribute="leadingMargin" id="Blz-hP-ZR3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="c1N-xM-Of7" secondAttribute="bottom" id="W0o-Cb-vLe"/>
+                    <constraint firstItem="c1N-xM-Of7" firstAttribute="top" secondItem="zS1-9y-JXY" secondAttribute="topMargin" id="XvX-QP-8nm"/>
+                    <constraint firstAttribute="trailing" secondItem="c1N-xM-Of7" secondAttribute="trailing" constant="16" id="ees-nd-0Tp"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

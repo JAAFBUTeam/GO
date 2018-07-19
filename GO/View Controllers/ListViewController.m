@@ -26,7 +26,7 @@
     [self setDataSourceAndDelegate];
     [self setAutolayout];
     [self registerNibs];
-    //[self createSearchBar];
+    [self createSearchBar];
 }
 
 -(void)createLocationsArray {
@@ -45,7 +45,7 @@
 
 -(void) setAutolayout {
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
-    self.listTableView.estimatedRowHeight = 140;
+    self.listTableView.estimatedRowHeight = 300;
 }
 
 -(void) registerNibs {
@@ -74,6 +74,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
+        [infoTableViewCell setTableProperties:self.locationsArray[indexPath.row]];
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
