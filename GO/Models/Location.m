@@ -31,7 +31,7 @@
     newLocation.lat = 37.7857;
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
-    //newLocation.pinImage = [UIImage imageNamed:@"icons8-marker-64"];
+    [newLocation.pinImage arrayByAddingObject:[UIImage imageNamed:@"MOMA"]];
 
     return newLocation;
 }
@@ -40,12 +40,12 @@
     
     NSLog(@"uploading hopefully");
     Location *newLocation = [Location new];
-    newLocation.title = @"MOMA";
-    newLocation.synopsis = @"Some really cool art!";
-    newLocation.address = @"151 3rd St, San Francisco, CA 94103";
-    newLocation.lat = 37.7857;
-    newLocation.lon = -122.4011;
-    newLocation.rating = 4.9;
+    newLocation.title = @"Sunnyside Conservatory";
+    newLocation.synopsis = @"A botanic jewel!";
+    newLocation.address = @"236 Monterey Blvd, San Francisco, CA 94131";
+    newLocation.lat = 37.731928;
+    newLocation.lon = -122.440789;
+    newLocation.rating = 4.0;
     
     [newLocation saveInBackgroundWithBlock: completion];
 }

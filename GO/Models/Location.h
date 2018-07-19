@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString *synopsis;
 @property (nonatomic, strong) NSString *address;
 
-//@property (nonatomic, strong) PFFile *pinImage;
+@property (nonatomic, strong) NSArray<UIImage *> *pinImage;
 
 @property (nonatomic) float lat;
 @property (nonatomic) float lon;
@@ -26,8 +26,8 @@
 + (Location *)createLocation;
 + (void) postLocation: (PFBooleanResultBlock  _Nullable)completion;
 
-@property(nonatomic, strong) NSArray<UIImage *> *images;
-@property(nonatomic, strong) NSArray<NSString *> *tags;
+@property(nonatomic, strong) NSMutableArray<UIImage *> *images;
+@property(nonatomic, strong) NSMutableArray<NSString *> *tags;
 
 //+ (NSArray <Location *>) *createLocations;
 
