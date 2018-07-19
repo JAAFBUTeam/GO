@@ -11,7 +11,6 @@
 		192A139221010E1A0005481A /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192A139121010E1A0005481A /* PhotoCollectionViewCell.xib */; };
 		1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
-		19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
 		CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307C520EFDEEE007E8DD5 /* AppDelegate.m */; };
@@ -66,8 +65,6 @@
 		1964F5FB20FFE340000423B2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		1964F5FC20FFE340000423B2 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		19E7AF6120FD1CA1004B98CC /* LocationsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsTableViewCell.h; sourceTree = "<group>"; };
-		19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsTableViewCell.m; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
 		6087ED01F82B102665791625 /* libPods-GOUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GOUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,8 +152,6 @@
 		19E7AF6020FD1C8B004B98CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				19E7AF6120FD1CA1004B98CC /* LocationsTableViewCell.h */,
-				19E7AF6220FD1CA1004B98CC /* LocationsTableViewCell.m */,
 				CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */,
 				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
 				CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */,
@@ -524,7 +519,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
-				19E7AF6320FD1CA1004B98CC /* LocationsTableViewCell.m in Sources */,
 				1964F5FD20FFE340000423B2 /* PhotoCollectionViewCell.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
