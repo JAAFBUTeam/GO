@@ -9,7 +9,6 @@
 #import "ListViewController.h"
 #import "Location.h"
 #import "InfoTableViewCell.h"
-#import "CarouselTableViewCell.h"
 
 @interface ListViewController ()
 
