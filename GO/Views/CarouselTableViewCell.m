@@ -2,7 +2,6 @@
 //  CarouselTableViewCell.m
 //  GO
 //
-<<<<<<< HEAD
 //  Created by Amy Liu on 7/18/18.
 //  Copyright © 2018 Amy Liu. All rights reserved.
 //
