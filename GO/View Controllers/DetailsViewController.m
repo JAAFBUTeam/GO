@@ -123,7 +123,10 @@ typedef enum {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 2){
+    NSLog(@"entering this");
+    NSLog(@"%ld", (long)indexPath.row);
+    if (indexPath.section == 2){
+        NSLog(@"clicked review segue");
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
 }

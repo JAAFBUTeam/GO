@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="167.76611694152925"/>
         </scene>
-        <!--DetailsSegues-->
+        <!--ReviewViewController-->
         <scene sceneID="ytP-e2-YQF">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailsSegues" id="uQT-td-ogf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailsSegues" referencedIdentifier="ReviewViewController" id="uQT-td-ogf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWd-Do-wPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="175"/>
