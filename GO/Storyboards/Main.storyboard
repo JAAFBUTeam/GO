@@ -69,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="-279.19999999999999" y="118.29085457271366"/>
         </scene>
-        <!--LIST-->
+        <!--List-->
         <scene sceneID="nPE-HY-oau">
             <objects>
                 <viewController id="pQW-ct-aXZ" customClass="ListViewController" sceneMemberID="viewController">
@@ -92,7 +92,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l2m-cT-EE3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="LIST" id="f3c-7e-pMX">
+                    <navigationItem key="navigationItem" title="List" id="f3c-7e-pMX">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-slider-32" id="AET-nG-y8o"/>
                     </navigationItem>
                     <connections>

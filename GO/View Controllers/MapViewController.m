@@ -75,7 +75,7 @@
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
-        //annotation.image = place.pinImage[0];
+        //annotation.picture = place.pinImage[0];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         
@@ -105,7 +105,8 @@
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = annotation.image;
+    //imageView.image = annotation.picture;
+    imageView.image = [UIImage imageNamed:@"MOMA"];
     
     return annotationView;
 }
