@@ -9,9 +9,9 @@
 #import "MapViewController.h"
 #import "MapKit/Mapkit.h"
 #import "Location.h"
-#import "MKPointAnnotation+Extended_Annotation.h"
 #import "DetailsViewController.h"
 #import "MKAnnotationView+Extended_View.h"
+#import "MKPointAnnotation+Extended_Annotation.h"
 #import "MKPinAnnotationView+Extended_Pin.h"
 
 @interface MapViewController () 
@@ -94,7 +94,7 @@
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
-        // annotationView.image = annotation.location.pinImage;
+        // annotationView.image = annotation.image;
         //[annotationView setImage:[UIImage imageNamed:@"icons8-marker-64"]];
         // annotationView.calloutOffset = CGPointMake(0, 64);
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];

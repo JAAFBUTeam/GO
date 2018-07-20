@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString *synopsis;
 @property (nonatomic, strong) NSString *address;
 
-@property (nonatomic, strong) NSArray<UIImage *> *pinImage;
+@property (nonatomic, strong) NSMutableArray<UIImage *> *pinImage;
 
 @property (nonatomic) float lat;
 @property (nonatomic) float lon;

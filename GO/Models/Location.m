@@ -32,7 +32,7 @@
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
     newLocation.pinImage = [[NSMutableArray alloc] init];
-    // [newLocation.pinImage addObject: [UIImage]] 
+    [newLocation.pinImage addObject: [UIImage imageNamed:@"MOMA"]];
     return newLocation;
 }
 
