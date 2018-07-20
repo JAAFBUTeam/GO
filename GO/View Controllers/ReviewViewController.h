@@ -11,6 +11,8 @@
 
 @interface ReviewViewController : UIViewController
 
+@property (nonatomic, strong) Location *location;
+
 -(void) fetchReviews;
 
 @end
