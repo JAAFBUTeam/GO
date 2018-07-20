@@ -12,6 +12,7 @@
 #import "ReviewsTableViewCell.h"
 #import "PhotoCollectionView.h"
 #import "CarouselTableViewCell.h"
+#import "ReviewViewController.h"
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -64,7 +65,7 @@ typedef enum {
             //read online that you shouldnt be declaring variables inside case blocks?
         case CAROUSEL: {
             CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-            //[carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
+            [carouselTableViewCell setLocationObject:_location];
             return carouselTableViewCell;
         }
         case INFO: {
@@ -135,6 +136,12 @@ typedef enum {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 9;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CarouselTableViewCell *tappedCell = sender;
+    ReviewViewController *reviewsController = [segue destinationViewController];
+    reviewsController.location = tappedCell.location;
 }
 
 @end
