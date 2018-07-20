@@ -11,30 +11,33 @@
 
 @implementation PhotoCollectionView
 
+# pragma mark - Lifecycle
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
     //[self createCollectionViewCell];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
-}
+# pragma mark - Collection View setup
 
 -(void)createCollectionViewCell {
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+    layout.minimumInteritemSpacing = 1;
+    layout.minimumLineSpacing = 1;
+    CGFloat imagesInEachLine = 3;
+    CGFloat imageWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (imagesInEachLine -1)) / imagesInEachLine;
+    CGFloat imageHeight = imageWidth;
+    layout.itemSize = CGSizeMake(imageWidth, imageHeight);
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    //UINib *photoCollectionViewCell = [UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil]
              forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
-    //[_collectionView registerNib:photoCollectionViewCell forCellReuseIdentifier:@"PhotoCollectionViewCell"];
-    //[self.collectionView registerNib:[UINib nibWithNibName:@"YourNibName" bundle:nil]];
-//             forCellWithReuseIdentifier:@"YourIdentifierForCell"];
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell" forIndexPath:indexPath];
     
     cell.galleryImage.image = [UIImage imageNamed:@"dog.jpg"];
@@ -42,7 +45,11 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 6;
+    return 3;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 2;
 }
 
 @end

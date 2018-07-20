@@ -29,16 +29,20 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="i1P-Ie-qLJ" id="6MF-lj-QHW"/>
+                        <segue destination="uQT-td-ogf" kind="presentation" identifier="reviewsSegue" id="VPy-ug-w8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aF-nd-qhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="zXa-en-4nO">
-                    <connections>
-                        <action selector="tappedImage:" destination="Lfk-ds-1CG" id="pCW-LY-dnv"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="167.76611694152925"/>
+        </scene>
+        <!--ReviewViewController-->
+        <scene sceneID="ytP-e2-YQF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailsSegues" referencedIdentifier="ReviewViewController" id="uQT-td-ogf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWd-Do-wPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864" y="175"/>
         </scene>
     </scenes>
 </document>

@@ -13,6 +13,7 @@
 #import "MKAnnotationView+Extended_View.h"
 #import "MKPointAnnotation+Extended_Annotation.h"
 #import "MKPinAnnotationView+Extended_Pin.h"
+#import "Review.h"
 
 @interface MapViewController () 
 
@@ -36,7 +37,8 @@
     // [self fetchLocations];
     self.locations = [NSMutableArray arrayWithObjects:[Location createLocation], nil];
     [self addLocations];
-
+    
+    // [Review postReview:nil];
     // [Location postLocation:nil];
     
 }
@@ -75,7 +77,7 @@
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
-        //annotation.image = place.pinImage[0];
+        //annotation.picture = place.pinImage[0];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         
@@ -105,7 +107,8 @@
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = annotation.image;
+    //imageView.image = annotation.picture;
+    imageView.image = [UIImage imageNamed:@"MOMA"];
     
     return annotationView;
 }

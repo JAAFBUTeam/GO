@@ -13,6 +13,6 @@
 @interface MKPointAnnotation (Extended_Annotation)
 
 @property (nonatomic, strong) Location *location;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *picture;
 
 @end
