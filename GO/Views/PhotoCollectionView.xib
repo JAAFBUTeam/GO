@@ -33,6 +33,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="LQG-lA-GFI" firstAttribute="top" secondItem="oEG-BJ-7Dl" secondAttribute="top" id="FKT-CN-loL"/>
                     <constraint firstAttribute="trailing" secondItem="LQG-lA-GFI" secondAttribute="trailing" id="QyX-ZX-zv0"/>

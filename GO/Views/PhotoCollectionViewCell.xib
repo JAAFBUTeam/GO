@@ -25,6 +25,7 @@
                     </imageView>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="nP3-sd-TEu"/>
             <size key="customSize" width="95" height="99"/>
             <connections>
