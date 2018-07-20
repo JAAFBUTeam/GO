@@ -14,8 +14,9 @@
 @dynamic username;
 @dynamic reviewText;
 @dynamic rating;
+@dynamic location;
 
-- (void) postLocation: (PFBooleanResultBlock  _Nullable)completion {
+- (void) postReview: (PFBooleanResultBlock  _Nullable)completion {
     
     NSLog(@"uploading hopefully");
     Review *newReview = [Review new];

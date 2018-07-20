@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Review.h"
 
 @interface ReviewsTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) Review *review;
 
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
 @property (weak, nonatomic) IBOutlet UILabel *username;

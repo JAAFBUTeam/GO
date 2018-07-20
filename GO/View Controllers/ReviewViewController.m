@@ -8,10 +8,12 @@
 
 #import "ReviewViewController.h"
 #import "ReviewsTableViewCell.h"
+#import "Review.h"
 
 @interface ReviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *reviews;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -20,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -30,7 +36,7 @@
     
     ReviewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
     
-    cell.tweet = self.tweetArray[indexPath.row];
+    cell.review = self.reviews[indexPath.row];
     
     return cell;
 }
