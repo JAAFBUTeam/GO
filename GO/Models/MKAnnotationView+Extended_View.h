@@ -8,9 +8,11 @@
 
 #import <MapKit/MapKit.h>
 #import "Location.h"
+#import "UIImage+AFNetworking.h"
 
 @interface MKAnnotationView (Extended_View)
 
 @property (nonatomic, strong) Location *location;
+@property (nonatomic, strong) UIImage *image;
 
 @end

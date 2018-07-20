@@ -10,8 +10,9 @@
 #import "InfoTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import "ReviewsTableViewCell.h"
+#import "PhotoCollectionView.h"
 
-@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 typedef enum {
@@ -45,8 +46,8 @@ typedef enum {
     UINib *reviewTableViewCell = [UINib nibWithNibName:@"ReviewTableViewCell" bundle:nil];
     [_tableView registerNib:reviewTableViewCell forCellReuseIdentifier:@"ReviewTableViewCell"];
     
-//    UINib *photoCollectionViewCell = [UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil];
-//    [_tableView registerNib:photoCollectionViewCell forCellReuseIdentifier:@"photoCollectionViewCell"];
+    UINib *photoCollectionView = [UINib nibWithNibName:@"PhotoCollectionView" bundle:nil];
+    [_tableView registerNib:photoCollectionView forCellReuseIdentifier:@"PhotoCollectionView"];
     
 }
 
@@ -100,9 +101,9 @@ typedef enum {
             return titleTableViewCell;
         }
         case IMAGE_COLLECTION: {
-            TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-            titleTableViewCell.title.text = @"Placeholder";
-            return titleTableViewCell;
+            PhotoCollectionView *collectionViewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"PhotoCollectionView"];
+            [collectionViewTableViewCell createCollectionViewCell];
+            return collectionViewTableViewCell;
         }
         default:{
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
