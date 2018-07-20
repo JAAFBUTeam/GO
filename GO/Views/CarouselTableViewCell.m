@@ -27,6 +27,7 @@
 
 -(void)setDefaultCarouselProperties {
     self.carousel.type = iCarouselTypeLinear;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.carousel.pagingEnabled = YES;
 }
 
