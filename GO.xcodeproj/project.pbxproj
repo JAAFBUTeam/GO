@@ -25,6 +25,10 @@
 		CC1307DE20EFDEF0007E8DD5 /* GOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307DD20EFDEF0007E8DD5 /* GOTests.m */; };
 		CC1307E920EFDEF0007E8DD5 /* GOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307E820EFDEF0007E8DD5 /* GOUITests.m */; };
 		CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CC5AC20FD210E005E7FF1 /* Location.m */; };
+		CC73AE05210235A7001DA31A /* DetailsSegues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */; };
+		CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0721023658001DA31A /* ReviewViewController.m */; };
+		CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */; };
+		CC73AE0E2102383E001DA31A /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0D2102383E001DA31A /* Review.m */; };
 		CC83A35F20F928BF00117065 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83A35E20F928BF00117065 /* MapKit.framework */; };
 		CC83A36220F9290600117065 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36120F9290600117065 /* MapViewController.m */; };
 		CC83A36520F9291800117065 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36420F9291800117065 /* ListViewController.m */; };
@@ -98,6 +102,13 @@
 		CC1307EA20EFDEF0007E8DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC3CC5AB20FD210E005E7FF1 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		CC3CC5AC20FD210E005E7FF1 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsSegues.storyboard; sourceTree = "<group>"; };
+		CC73AE0621023658001DA31A /* ReviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
+		CC73AE0721023658001DA31A /* ReviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
+		CC73AE092102366C001DA31A /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
+		CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
+		CC73AE0C2102383E001DA31A /* Review.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
+		CC73AE0D2102383E001DA31A /* Review.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
 		CC83A35E20F928BF00117065 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CC83A36020F9290600117065 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CC83A36120F9290600117065 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -256,6 +267,8 @@
 			children = (
 				CC3CC5AB20FD210E005E7FF1 /* Location.h */,
 				CC3CC5AC20FD210E005E7FF1 /* Location.m */,
+				CC73AE0C2102383E001DA31A /* Review.h */,
+				CC73AE0D2102383E001DA31A /* Review.m */,
 				CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */,
 				CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */,
 				CCFE2C4620FE96A90037ABF2 /* MKAnnotationView+Extended_View.h */,
@@ -290,6 +303,10 @@
 				CC83A36420F9291800117065 /* ListViewController.m */,
 				CC83A36020F9290600117065 /* MapViewController.h */,
 				CC83A36120F9290600117065 /* MapViewController.m */,
+				CC73AE0621023658001DA31A /* ReviewViewController.h */,
+				CC73AE0721023658001DA31A /* ReviewViewController.m */,
+				CC73AE092102366C001DA31A /* PhotoCollectionViewController.h */,
+				CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -301,6 +318,7 @@
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
+				CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -421,6 +439,7 @@
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */,
+				CC73AE05210235A7001DA31A /* DetailsSegues.storyboard in Resources */,
 				192A139921014CC80005481A /* PhotoCollectionViewCell.xib in Resources */,
 				CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
@@ -534,11 +553,14 @@
 				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */,
+				CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				192A138D210002C90005481A /* TitleTableViewCell.m in Sources */,
+				CC73AE0E2102383E001DA31A /* Review.m in Sources */,
+				CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */,
 				192A13962101499A0005481A /* PhotoCollectionView.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
