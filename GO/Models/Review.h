@@ -12,7 +12,7 @@
 #import "ParseUI.h"
 #import "Location.h"
 
-@interface Review : PFObject
+@interface Review : PFObject <PFSubclassing>
 
 @property (nonatomic, strong) NSString *location;
 
