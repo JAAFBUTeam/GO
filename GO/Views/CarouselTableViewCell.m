@@ -12,7 +12,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setDummyImageArray];
-    [self setCarouselProperties];
+    [self setDefaultCarouselProperties];
     [self setDatasourceAndDelegate];
 }
 
@@ -25,8 +25,13 @@
     self.location = location;
 }
 
--(void)setCarouselProperties {
+-(void)setDefaultCarouselProperties {
     self.carousel.type = iCarouselTypeLinear;
+    self.carousel.pagingEnabled = YES;
+}
+
+-(void)setCarouselProperties:(iCarouselType) carouselType {
+    self.carousel.type = carouselType;
     self.carousel.pagingEnabled = YES;
 }
 

@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 
 -(void) setLocationObject:(Location *)location;
+-(void)setCarouselProperties:(iCarouselType) carouselType;
 
 @end

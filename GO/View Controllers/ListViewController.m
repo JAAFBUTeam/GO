@@ -92,12 +92,12 @@
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
-
-        UIGestureRecognizer *pinchGesture = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
-        [carouselTableViewCell addGestureRecognizer:pinchGesture];
-        
         return carouselTableViewCell;
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -106,12 +106,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 5;
-}
-
-- (void)handlePinch:(UIGestureRecognizer *)recognizer {
-    if (recognizer.state == UIGestureRecognizerStateRecognized) {
-        NSLog(@"Pinch Handled Here");
-    }
 }
 
 #pragma mark - Navigation
