@@ -75,7 +75,7 @@
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
-        annotation.image = place.pinImage[0];
+        //annotation.image = place.pinImage[0];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         

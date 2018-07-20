@@ -52,7 +52,7 @@
         <scene sceneID="U6Q-Xu-rj6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dAA-Hh-9wA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="icons8-list-26" id="VyK-PY-ssi">
+                    <tabBarItem key="tabBarItem" title="List" image="icons8-menu-26" id="VyK-PY-ssi">
                         <color key="badgeColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -93,9 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="l2m-cT-EE3"/>
                     </view>
                     <navigationItem key="navigationItem" title="LIST" id="f3c-7e-pMX">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-filter-26" id="zpL-6c-A3f">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-slider-32" id="AET-nG-y8o"/>
                     </navigationItem>
                     <connections>
                         <outlet property="listTableView" destination="7yl-XD-MB1" id="wZs-WI-uSy"/>
@@ -108,8 +106,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-filter-26" width="26" height="26"/>
-        <image name="icons8-list-26" width="26" height="26"/>
         <image name="icons8-map-32" width="32" height="32"/>
+        <image name="icons8-menu-26" width="26" height="26"/>
+        <image name="icons8-slider-32" width="32" height="32"/>
     </resources>
 </document>
