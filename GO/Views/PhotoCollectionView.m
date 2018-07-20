@@ -29,6 +29,12 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    //UINib *photoCollectionViewCell = [UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil]
+             forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
+    //[_collectionView registerNib:photoCollectionViewCell forCellReuseIdentifier:@"PhotoCollectionViewCell"];
+    //[self.collectionView registerNib:[UINib nibWithNibName:@"YourNibName" bundle:nil]];
+//             forCellWithReuseIdentifier:@"YourIdentifierForCell"];
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell" forIndexPath:indexPath];
     
     cell.galleryImage.image = [UIImage imageNamed:@"dog.jpg"];
