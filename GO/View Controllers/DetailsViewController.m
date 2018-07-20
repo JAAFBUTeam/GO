@@ -11,6 +11,7 @@
 #import "TitleTableViewCell.h"
 #import "ReviewsTableViewCell.h"
 #import "PhotoCollectionView.h"
+#import "CarouselTableViewCell.h"
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -29,6 +30,8 @@ typedef enum {
 @end
 
 @implementation DetailsViewController
+
+# pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,15 +52,20 @@ typedef enum {
     UINib *photoCollectionView = [UINib nibWithNibName:@"PhotoCollectionView" bundle:nil];
     [_tableView registerNib:photoCollectionView forCellReuseIdentifier:@"PhotoCollectionView"];
     
+    UINib *carouselTableViewCell = [UINib nibWithNibName:@"CarouselTableViewCell" bundle:nil];
+    [self.tableView registerNib:carouselTableViewCell forCellReuseIdentifier:@"CarouselTableViewCell"];
+    
 }
+
+# pragma mark - Table view setup
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         switch(indexPath.section){
             //read online that you shouldnt be declaring variables inside case blocks?
         case CAROUSEL: {
-            TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-            titleTableViewCell.title.text = @"Placeholder";
-            return titleTableViewCell;
+            CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+            //[carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
+            return carouselTableViewCell;
         }
         case INFO: {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];

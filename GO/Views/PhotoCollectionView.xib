@@ -6,35 +6,44 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCollectionView" rowHeight="105" id="mrn-oh-hAU" customClass="PhotoCollectionView">
-            <rect key="frame" x="0.0" y="0.0" width="253" height="105"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCollectionView" id="mrn-oh-hAU" customClass="PhotoCollectionView">
+            <rect key="frame" x="0.0" y="0.0" width="736" height="351"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrn-oh-hAU" id="oEG-BJ-7Dl">
-                <rect key="frame" x="0.0" y="0.0" width="253" height="104.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrn-oh-hAU" id="oEG-BJ-7Dl">
+                <rect key="frame" x="0.0" y="0.0" width="736" height="350.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LQG-lA-GFI">
-                        <rect key="frame" x="0.0" y="0.0" width="735" height="336"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LQG-lA-GFI">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="351"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="LQG-lA-GFI" secondAttribute="height" multiplier="25:18" id="mxU-ur-pqg"/>
+                        </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8nd-OI-Myc">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="50" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="LQG-lA-GFI" firstAttribute="top" secondItem="oEG-BJ-7Dl" secondAttribute="top" id="FKT-CN-loL"/>
+                    <constraint firstAttribute="trailing" secondItem="LQG-lA-GFI" secondAttribute="trailing" id="QyX-ZX-zv0"/>
+                    <constraint firstAttribute="bottom" secondItem="LQG-lA-GFI" secondAttribute="bottom" id="bB2-Kw-WbA"/>
+                    <constraint firstItem="LQG-lA-GFI" firstAttribute="leading" secondItem="oEG-BJ-7Dl" secondAttribute="leading" id="l2O-37-isl"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="collectionView" destination="LQG-lA-GFI" id="4U5-32-7ES"/>
             </connections>
-            <point key="canvasLocation" x="61.5" y="-400.5"/>
+            <point key="canvasLocation" x="303" y="-284.5"/>
         </tableViewCell>
     </objects>
 </document>
