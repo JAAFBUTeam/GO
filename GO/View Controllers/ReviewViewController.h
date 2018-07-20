@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Location.h"
 
 @interface ReviewViewController : UIViewController
 

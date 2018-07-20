@@ -13,7 +13,7 @@
         <!--Photo Collection View Controller-->
         <scene sceneID="tPV-A8-LEI">
             <objects>
-                <viewController id="Oug-Tn-VNn" customClass="PhotoCollectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoCollectionController" id="Oug-Tn-VNn" customClass="PhotoCollectionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ogu-hz-omk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +45,7 @@
         <!--Review View Controller-->
         <scene sceneID="inw-FL-VJ0">
             <objects>
-                <viewController id="EwE-HD-WQK" customClass="ReviewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewViewController" id="EwE-HD-WQK" customClass="ReviewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nah-NT-4hY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
