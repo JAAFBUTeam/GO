@@ -27,8 +27,7 @@
     [self setTableProperties];
     [self setNavigationBarSettings];
     [self registerNibs];
-    //AppDelegate* shared=[UIApplication sharedApplication].delegate;
-    //shared.blockRotation=YES;
+    [self disableAutoRotate];
 }
 
 -(void)createLocationsArray {
@@ -68,6 +67,11 @@
     [self.listTableView registerNib:carouselTableViewCell forCellReuseIdentifier:@"CarouselTableViewCell"];
 }
 
+-(void) disableAutoRotate {
+    AppDelegate* shared = [UIApplication sharedApplication].delegate;
+    shared.blockRotation=YES;
+}
+
 #pragma mark - search bar protocol
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
@@ -92,6 +96,7 @@
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
+        
         return carouselTableViewCell;
     }
 }
