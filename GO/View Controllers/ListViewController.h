@@ -12,6 +12,6 @@
 #import "InfoTableViewCell.h"
 #import "CarouselTableViewCell.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @end

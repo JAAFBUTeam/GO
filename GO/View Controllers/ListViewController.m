@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) NSMutableArray *locationsArray;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -24,7 +27,7 @@
     [self createLocationsArray];
     [self addDummyDataToArray];
     [self setDataSourceAndDelegate];
-    [self setAutolayout];
+    [self setTableAutolayout];
     [self registerNibs];
     [self createSearchBar];
 }
@@ -43,9 +46,10 @@
     self.listTableView.dataSource = self;
 }
 
--(void) setAutolayout {
+-(void) setTableAutolayout {
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
     self.listTableView.estimatedRowHeight = 300;
+    self.listTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
 }
 
 -(void) registerNibs {
@@ -57,8 +61,10 @@
 }
 
 -(void) createSearchBar {
-    CGPoint offset = CGPointMake(0, 44);
-    [self.listTableView setContentOffset:offset];
+//    CGPoint offset = CGPointMake(0, 44);
+//    [self.listTableView setContentOffset:offset];
+//    UISearchBar *mySearchBar = [[UISearchBar alloc] init];
+//    self.listTableView.tableHeaderView = mySearchBar;
 }
 
 #pragma mark - tableview protocol
