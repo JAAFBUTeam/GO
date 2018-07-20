@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) Location *location;
 @property (strong, nonatomic) NSMutableArray *locationImagesArray;
+@property (strong, nonatomic) NSMutableArray *imageDataArray;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 
 -(void) setLocationObject:(Location *)location;

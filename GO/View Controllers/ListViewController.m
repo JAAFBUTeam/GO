@@ -12,9 +12,6 @@
 
 @property (strong, nonatomic) NSMutableArray *locationsArray;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
-@property (strong, nonatomic) UISearchBar *searchBar;
-@property (strong, nonatomic) UIRefreshControl *refreshControl;
-
 
 @end
 
@@ -27,9 +24,11 @@
     [self createLocationsArray];
     [self addDummyDataToArray];
     [self setDataSourceAndDelegate];
-    [self setTableAutolayout];
+    [self setTableProperties];
+    [self setNavigationBarSettings];
     [self registerNibs];
-    [self createSearchBar];
+    //AppDelegate* shared=[UIApplication sharedApplication].delegate;
+    //shared.blockRotation=YES;
 }
 
 -(void)createLocationsArray {
@@ -46,10 +45,19 @@
     self.listTableView.dataSource = self;
 }
 
--(void) setTableAutolayout {
+-(void) setTableProperties {
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
     self.listTableView.estimatedRowHeight = 300;
-    self.listTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
+    self.listTableView.contentInset = UIEdgeInsetsMake(-0, 0, 0, 0);
+    self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.listTableView.separatorColor = [UIColor clearColor];
+}
+
+-(void) setNavigationBarSettings {
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    searchController.searchResultsUpdater = self;
+    self.navigationItem.searchController = searchController;
 }
 
 -(void) registerNibs {
@@ -60,11 +68,10 @@
     [self.listTableView registerNib:carouselTableViewCell forCellReuseIdentifier:@"CarouselTableViewCell"];
 }
 
--(void) createSearchBar {
-//    CGPoint offset = CGPointMake(0, 44);
-//    [self.listTableView setContentOffset:offset];
-//    UISearchBar *mySearchBar = [[UISearchBar alloc] init];
-//    self.listTableView.tableHeaderView = mySearchBar;
+#pragma mark - search bar protocol
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSLog(@"search");
 }
 
 #pragma mark - tableview protocol
@@ -85,12 +92,12 @@
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
+
+        UIGestureRecognizer *pinchGesture = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+        [carouselTableViewCell addGestureRecognizer:pinchGesture];
+        
         return carouselTableViewCell;
     }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -99,6 +106,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 5;
+}
+
+- (void)handlePinch:(UIGestureRecognizer *)recognizer {
+    if (recognizer.state == UIGestureRecognizerStateRecognized) {
+        NSLog(@"Pinch Handled Here");
+    }
 }
 
 #pragma mark - Navigation

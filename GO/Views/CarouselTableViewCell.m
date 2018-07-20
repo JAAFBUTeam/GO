@@ -47,6 +47,11 @@
     self.carousel.dataSource = self;
 }
 
+-(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
+    NSLog(@"pic");
+    //[self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
+}
+
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     return self.locationImagesArray.count;
 }
@@ -56,5 +61,8 @@
     ((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
     return view;
 }
+
+
+
 
 @end

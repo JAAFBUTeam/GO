@@ -23,6 +23,7 @@
                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1N-xM-Of7" customClass="iCarousel">
                         <rect key="frame" x="32" y="22" width="246" height="177"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="c1N-xM-Of7" secondAttribute="height" multiplier="25:18" id="vmq-sy-EiA"/>
                         </constraints>
@@ -35,6 +36,7 @@
                     <constraint firstAttribute="trailing" secondItem="c1N-xM-Of7" secondAttribute="trailing" constant="16" id="ees-nd-0Tp"/>
                 </constraints>
             </tableViewCellContentView>
+            <gestureRecognizers/>
             <connections>
                 <outlet property="carousel" destination="c1N-xM-Of7" id="3ES-d1-3jQ"/>
             </connections>
