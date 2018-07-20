@@ -92,12 +92,10 @@
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
         [infoTableViewCell setTableProperties:self.locationsArray[indexPath.row]];
-        //infoTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
-        //carouselTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return carouselTableViewCell;
     }
 }
