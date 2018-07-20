@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ReviewViewController : UIViewController
+
+-(void) fetchReviews;
 
 @end

@@ -13,6 +13,7 @@
 #import "MKAnnotationView+Extended_View.h"
 #import "MKPointAnnotation+Extended_Annotation.h"
 #import "MKPinAnnotationView+Extended_Pin.h"
+#import "Review.h"
 
 @interface MapViewController () 
 
@@ -36,7 +37,8 @@
     // [self fetchLocations];
     self.locations = [NSMutableArray arrayWithObjects:[Location createLocation], nil];
     [self addLocations];
-
+    
+    // [Review postReview:nil];
     // [Location postLocation:nil];
     
 }

@@ -16,13 +16,17 @@
 @dynamic rating;
 @dynamic location;
 
-- (void) postReview: (PFBooleanResultBlock  _Nullable)completion {
++ (nonnull NSString *)parseClassName {
+    return @"Review";
+}
+
++ (void) postReview: (PFBooleanResultBlock  _Nullable)completion {
     
     NSLog(@"uploading hopefully");
     Review *newReview = [Review new];
     newReview.location = @"MOMA";
-    newReview.userImage = [[NSMutableArray alloc] init];
-    [newReview.userImage addObject: [UIImage imageNamed:@"amy"]];
+    //newReview.userImage = [[NSMutableArray alloc] init];
+    //[newReview.userImage addObject: [UIImage imageNamed:@"amy"]];
     newReview.reviewText = @"Wow, this place really is super cool!";
     newReview.username = @"CoolUser264";
     newReview.rating = 5.0;
