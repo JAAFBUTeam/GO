@@ -71,7 +71,7 @@ typedef enum {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
             infoTableViewCell.title.text = _location.title;
             infoTableViewCell.address.text = _location.address;
-            infoTableViewCell.synopsis.text = _location.description;
+            infoTableViewCell.synopsis.text = _location.synopsis;
             return infoTableViewCell;
         }
         case TITLE_REVIEW: {
