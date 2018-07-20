@@ -47,9 +47,9 @@
 -(void) setTableProperties {
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
     self.listTableView.estimatedRowHeight = 300;
-    self.listTableView.contentInset = UIEdgeInsetsMake(-0, 0, 0, 0);
+    self.listTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
     self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //self.listTableView.separatorColor = [UIColor clearColor];
+    self.listTableView.backgroundColor = [UIColor whiteColor];
 }
 
 -(void) setNavigationBarSettings {
@@ -96,7 +96,6 @@
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
-        
         return carouselTableViewCell;
     }
 }
