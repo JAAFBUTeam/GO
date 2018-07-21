@@ -78,6 +78,12 @@
     NSLog(@"search");
 }
 
+#pragma mark - carousel image tap protocol
+
+-(void)ImageTapped {
+    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
+}
+
 #pragma mark - tableview protocol
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -96,6 +102,8 @@
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
+        [carouselTableViewCell setSectionIDForCarousel:indexPath.section];
+        carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;
     }
 }

@@ -13,6 +13,6 @@
 #import "CarouselTableViewCell.h"
 #import "AppDelegate.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating>
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate>
 
 @end

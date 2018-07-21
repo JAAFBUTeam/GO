@@ -25,13 +25,16 @@
     self.location = location;
 }
 
+-(void)setSectionIDForCarousel:(NSInteger)sectionID {
+    self.sectionID = sectionID;
+}
+
 -(void)setDefaultCarouselProperties {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.pagingEnabled = YES;
     self.carousel.bounceDistance = 0.3;
 }
-
 
 -(void)setCarouselProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
@@ -57,8 +60,7 @@
 
 //TODO: do function
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
-    NSLog(@"pic");
-    //[self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
+    [self.imageDelegate ImageTapped];
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
@@ -74,7 +76,6 @@
 }
 
 -(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
-    
     CGFloat result;
     switch(option) {
         case iCarouselOptionSpacing:

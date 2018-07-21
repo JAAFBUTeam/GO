@@ -10,14 +10,23 @@
 #import "UIImageView+AFNetworking.h"
 #import "iCarousel.h"
 
+@protocol CarouselImageTapDelegate
+
+-(void) ImageTapped;
+
+@end
+
 @interface CarouselTableViewCell : UITableViewCell <iCarouselDelegate, iCarouselDataSource>
 
 @property (strong, nonatomic) Location *location;
 @property (strong, nonatomic) NSMutableArray *locationImagesArray;
 @property (strong, nonatomic) NSMutableArray *imageDataArray;
+@property (nonatomic, assign) NSInteger sectionID;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (nonatomic, weak) id<CarouselImageTapDelegate> imageDelegate;
 
 -(void) setLocationObject:(Location *)location;
 -(void)setCarouselProperties:(iCarouselType) carouselType;
+-(void)setSectionIDForCarousel:(NSInteger)sectionID;
 
 @end
