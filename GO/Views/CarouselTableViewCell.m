@@ -29,6 +29,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.pagingEnabled = YES;
+    self.carousel.bounceDistance = 0.3;
 }
 
 
@@ -67,6 +68,8 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
     view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
     ((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
+    view.layer.cornerRadius = 5;
+    view.layer.masksToBounds = true;
     return view;
 }
 
