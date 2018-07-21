@@ -26,10 +26,11 @@
 }
 
 -(void)setDefaultCarouselProperties {
-    self.carousel.type = iCarouselTypeLinear;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.carousel.type = iCarouselTypeLinear;
     self.carousel.pagingEnabled = YES;
 }
+
 
 -(void)setCarouselProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
@@ -53,6 +54,7 @@
     self.carousel.dataSource = self;
 }
 
+//TODO: do function
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
     NSLog(@"pic");
     //[self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
@@ -67,8 +69,5 @@
     ((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
     return view;
 }
-
-
-
 
 @end
