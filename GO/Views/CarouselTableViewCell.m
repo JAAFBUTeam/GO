@@ -70,4 +70,18 @@
     return view;
 }
 
+-(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
+    
+    CGFloat result;
+    switch(option) {
+        case iCarouselOptionSpacing:
+            result = 1.025f;
+            break;
+        default:
+            result = value;
+            break;
+    }
+    return result;
+}
+
 @end

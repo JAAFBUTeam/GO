@@ -33,7 +33,7 @@
                     <constraint firstItem="c1N-xM-Of7" firstAttribute="leading" secondItem="zS1-9y-JXY" secondAttribute="leadingMargin" id="Blz-hP-ZR3"/>
                     <constraint firstAttribute="bottomMargin" secondItem="c1N-xM-Of7" secondAttribute="bottom" id="W0o-Cb-vLe"/>
                     <constraint firstItem="c1N-xM-Of7" firstAttribute="top" secondItem="zS1-9y-JXY" secondAttribute="topMargin" id="XvX-QP-8nm"/>
-                    <constraint firstAttribute="trailing" secondItem="c1N-xM-Of7" secondAttribute="trailing" constant="16" id="ees-nd-0Tp"/>
+                    <constraint firstAttribute="trailing" secondItem="c1N-xM-Of7" secondAttribute="trailing" constant="32" id="ees-nd-0Tp"/>
                 </constraints>
             </tableViewCellContentView>
             <gestureRecognizers/>
