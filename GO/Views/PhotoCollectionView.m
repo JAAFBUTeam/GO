@@ -15,8 +15,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-    //[self createCollectionViewCell];
 }
 
 
@@ -34,6 +32,9 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
 }
+
+
+# pragma mark - Collection View Datasource
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil]

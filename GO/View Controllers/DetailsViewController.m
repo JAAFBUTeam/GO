@@ -41,6 +41,13 @@ typedef enum {
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
+    [self registerNibs];
+}
+
+
+# pragma mark - Register nibs
+
+-(void)registerNibs {
     UINib *infoTableViewCell = [UINib nibWithNibName:@"InfoTableViewCell" bundle:nil];
     [_tableView registerNib:infoTableViewCell forCellReuseIdentifier:@"InfoTableViewCell"];
     
@@ -55,20 +62,16 @@ typedef enum {
     
     UINib *carouselTableViewCell = [UINib nibWithNibName:@"CarouselTableViewCell" bundle:nil];
     [self.tableView registerNib:carouselTableViewCell forCellReuseIdentifier:@"CarouselTableViewCell"];
-    
 }
 
-# pragma mark - Table view setup
+# pragma mark - Tableview Datasource
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         switch(indexPath.section){
-            //read online that you shouldnt be declaring variables inside case blocks?
         case CAROUSEL: {
             CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
             [carouselTableViewCell setCarouselProperties:iCarouselTypeRotary];
             [carouselTableViewCell.carousel scrollByNumberOfItems:1 duration:1.5];
-            //- (void)scrollByNumberOfItems:(NSInteger)itemCount duration:(NSTimeInterval)duration;
-            //carouselTableViewCell.carousel.autoscroll = 0.5;
             [carouselTableViewCell setLocationObject:_location];
             return carouselTableViewCell;
         }
@@ -126,11 +129,11 @@ typedef enum {
     }
 }
 
+
+# pragma mark - Tableview Delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"entering this");
-    NSLog(@"%ld", (long)indexPath.row);
     if (indexPath.section == 2){
-        NSLog(@"clicked review segue");
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
 }
@@ -150,6 +153,9 @@ typedef enum {
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 9;
 }
+
+
+# pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     CarouselTableViewCell *tappedCell = sender;
