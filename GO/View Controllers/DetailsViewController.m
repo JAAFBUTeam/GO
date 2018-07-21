@@ -65,6 +65,10 @@ typedef enum {
             //read online that you shouldnt be declaring variables inside case blocks?
         case CAROUSEL: {
             CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+            [carouselTableViewCell setCarouselProperties:iCarouselTypeRotary];
+            [carouselTableViewCell.carousel scrollByNumberOfItems:1 duration:1.5];
+            //- (void)scrollByNumberOfItems:(NSInteger)itemCount duration:(NSTimeInterval)duration;
+            //carouselTableViewCell.carousel.autoscroll = 0.5;
             [carouselTableViewCell setLocationObject:_location];
             return carouselTableViewCell;
         }
