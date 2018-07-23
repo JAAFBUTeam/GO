@@ -32,8 +32,10 @@
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
     newLocation.pinImage = [[NSMutableArray alloc] init];
-    [newLocation.pinImage addObject: [UIImage imageNamed:@"MOMA"]];
-    [newLocation.images addObject: [UIImage imageNamed:@"MOMA_1"]];
+    // [newLocation.pinImage addObject: [UIImage imageNamed:@"MOMA"]];
+    newLocation.imageURLs = [[NSMutableArray alloc] init];
+    [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/O1na7VIebCKV.jpg"];
+    NSLog(@"%@", newLocation.imageURLs);
     return newLocation;
 }
 
@@ -51,17 +53,46 @@
     [newLocation saveInBackgroundWithBlock: completion];
 }
 
+- (void) fillArray: (NSMutableArray *) pictures {
+    self.images = [[NSMutableArray alloc] init];
+    for (NSString *picture in pictures) {
+        NSURL *url = [[NSURL alloc] initWithString:picture];
+        NSData *imageData = [NSData dataWithContentsOfURL:url];
+        [self.images addObject:[UIImage imageWithData:imageData]];
+    }
+}
+
++ (NSMutableArray *) createLocations {
+    
+    NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
+    Location *newLocation = [Location new];
+    newLocation.title = @"MOMA";
+    newLocation.synopsis = @"Some really cool art!";
+    newLocation.address = @"151 3rd St, San Francisco, CA 94103";
+    newLocation.lat = 37.7857;
+    newLocation.lon = -122.4011;
+    newLocation.rating = 4.9;
+    newLocation.pinImage = [[NSMutableArray alloc] init];
+    // [newLocation.pinImage addObject: [UIImage imageNamed:@"MOMA"]];
+    newLocation.imageURLs = [[NSMutableArray alloc] init];
+    [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/O1na7VIebCKV.jpg"];
+    [locations addObject:newLocation];
+    
+    Location *newLocation2 = [Location new];
+    newLocation2.title = @"Sunnyside Conservatory";
+    newLocation2.synopsis = @"A botanic jewel!";
+    newLocation2.address = @"236 Monterey Blvd, San Francisco, CA 94131";
+    newLocation2.lat = 37.731928;
+    newLocation2.lon = -122.440789;
+    newLocation2.rating = 4.0;
+    newLocation2.pinImage = [[NSMutableArray alloc] init];
+    // [newLocation.pinImage addObject: [UIImage imageNamed:@"MOMA"]];
+    newLocation2.imageURLs = [[NSMutableArray alloc] init];
+    [newLocation2.imageURLs addObject:@"https://static1.squarespace.com/static/5115ccdae4b04c436ed83ed4/572810e737013ba5d459b4f3/572810efe32140b8013928a0/1462243575441/Sunnyside+Conservatory+Wedding-15.jpg"];
+    [locations addObject:newLocation2];
+ 
+    return locations;
+    
+}
 
 @end
-
-/* + (NSArray <Location *>) createLocations {
- 
- Location *newLocation = [Location new];
- newLocation.title = @"MOMA";
- newLocation.synopsis = @"Some really cool art!";
- newLocation.address = @"151 3rd St, San Francisco, CA 94103";
- newLocation.lat = 37.7857;
- newLocation.lon = -122.4011;
- newLocation.rating = 4.9;
-    [newLocation saveInBackgroundWithBlock: completion];
-}  */
