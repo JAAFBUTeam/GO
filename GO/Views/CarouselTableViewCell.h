@@ -28,5 +28,6 @@
 -(void) setLocationObject:(Location *)location;
 -(void)setCarouselProperties:(iCarouselType) carouselType;
 -(void)setSectionIDForCarousel:(NSInteger)sectionID;
+-(void)setupCarouselCell;
 
 @end

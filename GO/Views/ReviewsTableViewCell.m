@@ -21,4 +21,11 @@
     // Configure the view for the selected state
 }
 
+-(void)setupReviewsTableViewCell:(UIImage *)image setupUsername:(NSString *)username setupRating:(NSString *)rating setupReviewText:(NSString *)reviewText {
+    self.userImage.image = image;
+    self.username.text = username;
+    self.rating.text = rating;
+    self.reviewText.text = reviewText;
+}
+
 @end

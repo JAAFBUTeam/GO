@@ -16,7 +16,7 @@
     [self setDatasourceAndDelegate];
 }
 
-//TODO: DELETE
+# pragma mark -- Setup
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
@@ -49,6 +49,12 @@
     
     [self.locationImagesArray addObject:one];
     [self.locationImagesArray addObject:two];
+}
+
+-(void)setupCarouselCell {
+    [self setCarouselProperties:iCarouselTypeInvertedTimeMachine];
+    [self.carousel scrollByNumberOfItems:1 duration:1.5];
+    [self setLocationObject:_location];
 }
 
 #pragma mark - carousel protocol methods

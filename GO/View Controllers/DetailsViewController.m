@@ -70,50 +70,37 @@ typedef enum {
         switch(indexPath.section){
         case CAROUSEL: {
             CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-            [carouselTableViewCell setCarouselProperties:iCarouselTypeRotary];
-            [carouselTableViewCell.carousel scrollByNumberOfItems:1 duration:1.5];
-            [carouselTableViewCell setLocationObject:_location];
+            [carouselTableViewCell setupCarouselCell];
             return carouselTableViewCell;
         }
         case INFO: {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-            infoTableViewCell.title.text = _location.title;
-            infoTableViewCell.address.text = _location.address;
-            infoTableViewCell.synopsis.text = _location.synopsis;
+            [infoTableViewCell setTableProperties:_location];
             return infoTableViewCell;
         }
         case TITLE_REVIEW: {
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-            titleTableViewCell.title.text = @"Reviews";
+            [titleTableViewCell setupTitleCell:@"Reviews"];
             return titleTableViewCell;
         }
         case REVIEW_1: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            reviewTableViewCell.userImage.image = [UIImage imageNamed:@"cat.jpg"];
-            reviewTableViewCell.username.text = @"Cat";
-            reviewTableViewCell.rating.text = @"1 star";
-            reviewTableViewCell.reviewText.text = @"review text for Cat";
+            [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"cat.jpg"] setupUsername:@"Cat" setupRating:@"1 star" setupReviewText:@"review text for Cat"];
             return reviewTableViewCell;
         }
         case REVIEW_2: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            reviewTableViewCell.userImage.image = [UIImage imageNamed:@"dog.jpg"];
-            reviewTableViewCell.username.text = @"Dog1";
-            reviewTableViewCell.rating.text = @"5 star";
-            reviewTableViewCell.reviewText.text = @"review text for Dog1";
+            [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"dog.jpg"] setupUsername:@"Dog1" setupRating:@"3 stars" setupReviewText:@"review text for Dog1"];
             return reviewTableViewCell;
         }
         case REVIEW_3: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            reviewTableViewCell.userImage.image = [UIImage imageNamed:@"dog.jpg"];
-            reviewTableViewCell.username.text = @"Dog2";
-            reviewTableViewCell.rating.text = @"4 stars";
-            reviewTableViewCell.reviewText.text = @"review text for Dog2";
+            [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"dog.jpg"] setupUsername:@"Dog2" setupRating:@"4 stars" setupReviewText:@"review text for Dog2"];
             return reviewTableViewCell;
         }
         case TITLE_PHOTOS: {
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-            titleTableViewCell.title.text = @"Photos";
+            [titleTableViewCell setupTitleCell:@"Photos"];
             return titleTableViewCell;
         }
         case IMAGE_COLLECTION: {
@@ -123,7 +110,7 @@ typedef enum {
         }
         default:{
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
-            titleTableViewCell.title.text = @"Placeholder";
+            [titleTableViewCell setupTitleCell:@"Placeholder"];
             return titleTableViewCell;
         }
     }
@@ -151,7 +138,7 @@ typedef enum {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 9;
+    return 8;
 }
 
 

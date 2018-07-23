@@ -11,4 +11,6 @@
 @interface TitleTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
 
+-(void)setupTitleCell:(NSString *)stringTextValue;
+
 @end

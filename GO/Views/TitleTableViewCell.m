@@ -21,4 +21,8 @@
     // Configure the view for the selected state
 }
 
+-(void)setupTitleCell:(NSString *)stringTextValue {
+    self.title.text = stringTextValue;
+}
+
 @end
