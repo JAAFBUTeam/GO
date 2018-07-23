@@ -35,7 +35,8 @@
     [self setRegion];
     self.locations = [[NSMutableArray alloc] init];
     // [self fetchLocations];
-    self.locations = [NSMutableArray arrayWithObjects:[Location createLocation], nil];
+    self.locations = [Location createLocations];
+    NSLog(@"%lu", (unsigned long)[self.locations count]);
     [self addLocations];
     
     // [Review postReview:nil];
@@ -77,7 +78,8 @@
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
-        //annotation.picture = place.pinImage[0];
+        [annotation.location fillArray:annotation.location.imageURLs];
+        // annotation.picture = place.images[0];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         
@@ -96,19 +98,16 @@
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
-        // annotationView.image = annotation.image;
-        //[annotationView setImage:[UIImage imageNamed:@"icons8-marker-64"]];
+        annotationView.image = annotation.location.images[0];
         // annotationView.calloutOffset = CGPointMake(0, 64);
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
-        //[rightButton addTarget:self action:@selector(rightButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    //imageView.image = annotation.picture;
-    imageView.image = [UIImage imageNamed:@"MOMA"];
+    imageView.image = annotationView.image;
     
     return annotationView;
 }
@@ -132,8 +131,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController]
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"segueToDetails"]) {
-//        MKPinAnnotationView *tappedPin = sender;
+    if ([segue.identifier isEqualToString:@"segueToDetails"]) {\
         
         Location *location = sender;
         
