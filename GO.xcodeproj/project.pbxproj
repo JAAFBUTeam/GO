@@ -14,6 +14,7 @@
 		192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A139B21014CE70005481A /* PhotoCollectionViewCell.m */; };
 		19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */; };
 		19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A251DF21011C2A00860637 /* CarouselTableViewCell.m */; };
+		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -78,6 +79,7 @@
 		19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselTableViewCell.xib; sourceTree = "<group>"; };
 		19A251DE21011C2A00860637 /* CarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
 		19A251DF21011C2A00860637 /* CarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
+		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		CC83A36E20F92F0E00117065 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */,
 				19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */,
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
@@ -439,6 +442,7 @@
 				192A13972101499A0005481A /* PhotoCollectionView.xib in Resources */,
 				CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
+				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
