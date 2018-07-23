@@ -11,7 +11,9 @@
 @interface ListViewController ()
 
 @property (strong, nonatomic) NSMutableArray *locationsArray;
+@property (strong, nonatomic) NSArray *filteredLocationsArray;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
+@property (strong, nonatomic) UISearchController *searchController;
 
 @end
 
@@ -21,22 +23,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createLocationsArray];
+    [self setNavigationBarSettings];
+    [self initLocationsArray];
     [self addDummyDataToArray];
+    [self copyDataToFilteredArray];
     [self setDataSourceAndDelegate];
     [self setTableProperties];
-    [self setNavigationBarSettings];
     [self registerNibs];
     [self disableAutoRotate];
 }
 
--(void)createLocationsArray {
+-(void) setNavigationBarSettings {
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.navigationItem.searchController = self.searchController;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    
+    //[self.searchController.searchBar sizeToFit];
+    //self.listTableView.tableHeaderView = self.searchController.searchBar;
+    //self.definesPresentationContext = YES;
+}
+
+-(void)initLocationsArray {
     self.locationsArray = [[NSMutableArray alloc]init];
 }
 
 -(void)addDummyDataToArray {
     [self.locationsArray addObject:[Location createLocation]];
     [self.locationsArray addObject:[Location createLocation]];
+}
+
+-(void)copyDataToFilteredArray {
+    self.filteredLocationsArray = self.locationsArray;
 }
 
 - (void) setDataSourceAndDelegate {
@@ -50,13 +69,6 @@
     self.listTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
     self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.listTableView.backgroundColor = [UIColor whiteColor];
-}
-
--(void) setNavigationBarSettings {
-    self.navigationController.navigationBar.prefersLargeTitles = YES;
-    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    searchController.searchResultsUpdater = self;
-    self.navigationItem.searchController = searchController;
 }
 
 -(void) registerNibs {
@@ -75,7 +87,16 @@
 #pragma mark - search bar protocol
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSLog(@"search");
+    NSString *searchText = self.searchController.searchBar.text;
+    if (searchText) {
+        if (searchText.length != 0) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@",searchText];
+            self.filteredLocationsArray = [self.locationsArray filteredArrayUsingPredicate:predicate];
+        } else {
+            self.filteredLocationsArray = self.locationsArray;
+        }
+        [self.listTableView reloadData];
+    }
 }
 
 #pragma mark - carousel image tap protocol
@@ -91,17 +112,17 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.locationsArray.count;
+    return self.filteredLocationsArray.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        [infoTableViewCell setTableProperties:self.locationsArray[indexPath.row]];
+        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.row]];
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setLocationObject:self.locationsArray[indexPath.row]];
+        [carouselTableViewCell setLocationObject:self.filteredLocationsArray[indexPath.row]];
         [carouselTableViewCell setSectionIDForCarousel:indexPath.section];
         carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;
