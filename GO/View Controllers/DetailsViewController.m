@@ -16,6 +16,7 @@
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic, strong) NSMutableArray<UIImage *> *imagesCopy;
 
 typedef enum {
     CAROUSEL = 0,
@@ -40,8 +41,12 @@ typedef enum {
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
+    [self setImageArray];
     [self registerNibs];
+}
+
+-(void)setImageArray {
+    _imagesCopy = _location.images;
 }
 
 

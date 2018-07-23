@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,9 +54,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-star-48" translatesAutoresizingMaskIntoConstraints="NO" id="wRC-4K-G1E">
+                        <rect key="frame" x="304" y="31" width="18" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="0rd-AE-FV0"/>
+                            <constraint firstAttribute="width" constant="18" id="N8d-h5-NbO"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="trailing" secondItem="g4E-Gh-Ha9" secondAttribute="trailingMargin" constant="8" id="4aQ-1x-cW1"/>
+                    <constraint firstItem="wRC-4K-G1E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="50" id="7pQ-kh-mIx"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ar7-rb-RAa" secondAttribute="trailing" constant="8" id="7yo-Mf-4JX"/>
                     <constraint firstAttribute="bottom" secondItem="Muj-GS-K9r" secondAttribute="bottom" constant="8" id="AJ7-DK-WrP"/>
                     <constraint firstAttribute="trailing" secondItem="wxg-Yz-RZZ" secondAttribute="trailing" constant="16" id="CUl-6x-KzA"/>
@@ -66,8 +73,10 @@
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="8" id="Zrt-6T-Qs0"/>
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="bottom" secondItem="6vz-7h-yFp" secondAttribute="bottom" id="eN7-GB-0h1"/>
                     <constraint firstItem="6vz-7h-yFp" firstAttribute="top" secondItem="g4E-Gh-Ha9" secondAttribute="topMargin" constant="8" id="gsS-8k-Qwd"/>
+                    <constraint firstItem="wxg-Yz-RZZ" firstAttribute="leading" secondItem="wRC-4K-G1E" secondAttribute="trailing" constant="4" id="i5l-3o-FUZ"/>
                     <constraint firstItem="6vz-7h-yFp" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="ovx-vm-qvN"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="pEK-rX-DhX"/>
+                    <constraint firstItem="wxg-Yz-RZZ" firstAttribute="centerY" secondItem="wRC-4K-G1E" secondAttribute="centerY" id="r2B-sF-bGZ"/>
                     <constraint firstItem="ar7-rb-RAa" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="rqO-sO-z1S"/>
                 </constraints>
             </tableViewCellContentView>
@@ -80,4 +89,7 @@
             <point key="canvasLocation" x="238.5" y="20"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icons8-star-48" width="48" height="48"/>
+    </resources>
 </document>
