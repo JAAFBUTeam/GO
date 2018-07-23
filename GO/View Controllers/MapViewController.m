@@ -79,12 +79,8 @@
         annotation.title = place.title;
         annotation.location = place;
         [annotation.location fillArray:annotation.location.imageURLs];
-        // annotation.picture = place.images[0];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
-        
-        NSLog(@"he l l o");
-        //[self mapView:self.mapView annotationView:annotationView calloutAccessoryControlTapped: rightButton];
         
     }
 }
@@ -113,12 +109,6 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    //id <MKAnnotation> annotation = [view annotation];
-    /*if ([annotation isKindOfClass:[MKPointAnnotation class]])
-    {
-        NSLog(@"Clicked pin");
-    }*/
-    NSLog(@"Clicked pin");
     
     MKPointAnnotation *annotation = view.annotation;
     Location *location = annotation.location;
