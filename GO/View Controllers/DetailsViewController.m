@@ -41,6 +41,8 @@ typedef enum {
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    //_tableView.backgroundColor = [UIColor whiteColor];
+    //_UITableViewCellSeparator
     [self setImageArray];
     [self registerNibs];
 }
@@ -130,13 +132,13 @@ typedef enum {
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 5;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 5;
+//}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 5;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return 5;
+//}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -145,7 +147,6 @@ typedef enum {
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 8;
 }
-
 
 # pragma mark - Navigation
 

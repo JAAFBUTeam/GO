@@ -28,8 +28,14 @@
     
     [Parse initializeWithConfiguration:config];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"AgreeToTerms" bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"AgreeToTermsViewController"];
+    self.window.rootViewController = viewController;
+    
     return YES;
 }
+
+
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     if (self.blockRotation) {
