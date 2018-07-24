@@ -14,6 +14,13 @@
 		192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A139B21014CE70005481A /* PhotoCollectionViewCell.m */; };
 		19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */; };
 		19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A251DF21011C2A00860637 /* CarouselTableViewCell.m */; };
+		19A2528B210788D300860637 /* LargeImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2528A210788D300860637 /* LargeImageTableViewCell.m */; };
+		19A2528D2107890A00860637 /* LargeImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A2528C2107890A00860637 /* LargeImageTableViewCell.xib */; };
+		19A2529021078A3300860637 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2528F21078A3300860637 /* CategoriesViewController.m */; };
+		19A2529221078BF600860637 /* CategoryCollectionViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A2529121078BF600860637 /* CategoryCollectionViewTableViewCell.xib */; };
+		19A2529521078C1900860637 /* CategoryCollectionViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2529421078C1900860637 /* CategoryCollectionViewTableViewCell.m */; };
+		19A252972107914600860637 /* CategoryCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A252962107914600860637 /* CategoryCollectionView.xib */; };
+		19A2529A2107917500860637 /* CategoryCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A252992107917500860637 /* CategoryCollectionView.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
@@ -86,6 +93,17 @@
 		19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselTableViewCell.xib; sourceTree = "<group>"; };
 		19A251DE21011C2A00860637 /* CarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
 		19A251DF21011C2A00860637 /* CarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
+		19A25289210788D300860637 /* LargeImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LargeImageTableViewCell.h; sourceTree = "<group>"; };
+		19A2528A210788D300860637 /* LargeImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LargeImageTableViewCell.m; sourceTree = "<group>"; };
+		19A2528C2107890A00860637 /* LargeImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeImageTableViewCell.xib; sourceTree = "<group>"; };
+		19A2528E21078A3300860637 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		19A2528F21078A3300860637 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		19A2529121078BF600860637 /* CategoryCollectionViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewTableViewCell.xib; sourceTree = "<group>"; };
+		19A2529321078C1900860637 /* CategoryCollectionViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewTableViewCell.h; sourceTree = "<group>"; };
+		19A2529421078C1900860637 /* CategoryCollectionViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewTableViewCell.m; sourceTree = "<group>"; };
+		19A252962107914600860637 /* CategoryCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionView.xib; sourceTree = "<group>"; };
+		19A252982107917500860637 /* CategoryCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionView.h; sourceTree = "<group>"; };
+		19A252992107917500860637 /* CategoryCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionView.m; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -208,20 +226,29 @@
 				19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */,
 				CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */,
 				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
+				CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */,
 				CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */,
 				CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */,
 				CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */,
-				CCB3C9EF20FFDADF0095CD59 /* TitleTableViewCell.xib */,
 				CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */,
-				CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */,
 				192A138B210002C90005481A /* TitleTableViewCell.h */,
 				192A138C210002C90005481A /* TitleTableViewCell.m */,
+				CCB3C9EF20FFDADF0095CD59 /* TitleTableViewCell.xib */,
 				192A13932101499A0005481A /* PhotoCollectionView.h */,
 				192A13942101499A0005481A /* PhotoCollectionView.m */,
 				192A13952101499A0005481A /* PhotoCollectionView.xib */,
-				192A139821014CC80005481A /* PhotoCollectionViewCell.xib */,
 				192A139A21014CE70005481A /* PhotoCollectionViewCell.h */,
 				192A139B21014CE70005481A /* PhotoCollectionViewCell.m */,
+				192A139821014CC80005481A /* PhotoCollectionViewCell.xib */,
+				19A25289210788D300860637 /* LargeImageTableViewCell.h */,
+				19A2528A210788D300860637 /* LargeImageTableViewCell.m */,
+				19A2528C2107890A00860637 /* LargeImageTableViewCell.xib */,
+				19A2529321078C1900860637 /* CategoryCollectionViewTableViewCell.h */,
+				19A2529421078C1900860637 /* CategoryCollectionViewTableViewCell.m */,
+				19A2529121078BF600860637 /* CategoryCollectionViewTableViewCell.xib */,
+				19A252982107917500860637 /* CategoryCollectionView.h */,
+				19A252992107917500860637 /* CategoryCollectionView.m */,
+				19A252962107914600860637 /* CategoryCollectionView.xib */,
 				CCEF41A821068EF200A13DA2 /* ProfileTableViewCell.h */,
 				CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */,
 			);
@@ -333,12 +360,14 @@
 		CC83A36920F9292600117065 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				19A2528E21078A3300860637 /* CategoriesViewController.h */,
+				19A2528F21078A3300860637 /* CategoriesViewController.m */,
+				CC83A36320F9291800117065 /* ListViewController.h */,
+				CC83A36420F9291800117065 /* ListViewController.m */,
 				CC1307C720EFDEEE007E8DD5 /* ViewController.h */,
 				CC1307C820EFDEEE007E8DD5 /* ViewController.m */,
 				CC83A36620F9292200117065 /* DetailsViewController.h */,
 				CC83A36720F9292200117065 /* DetailsViewController.m */,
-				CC83A36320F9291800117065 /* ListViewController.h */,
-				CC83A36420F9291800117065 /* ListViewController.m */,
 				CC83A36020F9290600117065 /* MapViewController.h */,
 				CC83A36120F9290600117065 /* MapViewController.m */,
 				CCEF41A02106859B00A13DA2 /* LoginViewController.h */,
@@ -477,6 +506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19A2529221078BF600860637 /* CategoryCollectionViewTableViewCell.xib in Resources */,
 				CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */,
 				192A13972101499A0005481A /* PhotoCollectionView.xib in Resources */,
 				CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */,
@@ -484,6 +514,7 @@
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
+				19A2528D2107890A00860637 /* LargeImageTableViewCell.xib in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
@@ -493,6 +524,7 @@
 				CCEF41A4210687A700A13DA2 /* Profile.storyboard in Resources */,
 				CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
+				19A252972107914600860637 /* CategoryCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,15 +640,19 @@
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */,
 				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
+				19A2529021078A3300860637 /* CategoriesViewController.m in Sources */,
+				19A2529521078C1900860637 /* CategoryCollectionViewTableViewCell.m in Sources */,
 				CCEF41A721068E1400A13DA2 /* ProfileViewController.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				CCEF419D2106650200A13DA2 /* User.m in Sources */,
+				19A2529A2107917500860637 /* CategoryCollectionView.m in Sources */,
 				192A138D210002C90005481A /* TitleTableViewCell.m in Sources */,
 				CC73AE0E2102383E001DA31A /* Review.m in Sources */,
 				CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */,
 				192A13962101499A0005481A /* PhotoCollectionView.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
+				19A2528B210788D300860637 /* LargeImageTableViewCell.m in Sources */,
 				CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
