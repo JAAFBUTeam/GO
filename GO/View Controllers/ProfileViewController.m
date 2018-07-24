@@ -10,6 +10,7 @@
 #import "ReviewsTableViewCell.h"
 #import "CarouselTableViewCell.h"
 #import "TitleTableViewCell.h"
+#import "ProfileTableViewCell.h"
 
 @interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -25,6 +26,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self registerNibs];
     
 }
 
@@ -46,6 +49,9 @@
     UINib *titleTableViewCell = [UINib nibWithNibName:@"TitleTableViewCell" bundle:nil];
     [self.tableView registerNib:titleTableViewCell forCellReuseIdentifier:@"TitleTableViewCell"];
     
+    UINib *profileTableViewCell = [UINib nibWithNibName:@"ProfileTableViewCell" bundle:nil];
+    [self.tableView registerNib:profileTableViewCell forCellReuseIdentifier:@"ProfileTableViewCell"];
+    
 }
 
 # pragma mark - Tableview Delegate
@@ -60,8 +66,11 @@
     }
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1) { // Carousel
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) { // Profile
+        ProfileTableViewCell *profileTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ProfileTableViewCell"];
+        return profileTableViewCell;
+    } else if (indexPath.section == 1) { // Carousel
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setupCarouselCell];
         return carouselTableViewCell;
@@ -69,12 +78,10 @@
         TitleTableViewCell *titleTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
         [titleTableViewCell setupTitleCell:@"Reviews"];
         return titleTableViewCell;
-    } else if (indexPath.section == 3) { // Review
+    } else { // Review
         ReviewsTableViewCell *reviewTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
         [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"cat.jpg"] setupUsername:@"Cat" setupRating:@"1 star" setupReviewText:@"review text for Cat"];
         return reviewTableViewCell;
-    } else {
-        return nil;
     }
 }
     

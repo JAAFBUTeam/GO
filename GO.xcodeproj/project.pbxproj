@@ -57,6 +57,7 @@
 		CCEF41A4210687A700A13DA2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEF41A3210687A700A13DA2 /* Profile.storyboard */; };
 		CCEF41A721068E1400A13DA2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A621068E1400A13DA2 /* ProfileViewController.m */; };
 		CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */; };
+		CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEF41AB21079F1600A13DA2 /* ProfileTableViewCell.xib */; };
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
 		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
@@ -168,6 +169,7 @@
 		CCEF41A621068E1400A13DA2 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CCEF41A821068EF200A13DA2 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
 		CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
+		CCEF41AB21079F1600A13DA2 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
 		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				19A252962107914600860637 /* CategoryCollectionView.xib */,
 				CCEF41A821068EF200A13DA2 /* ProfileTableViewCell.h */,
 				CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */,
+				CCEF41AB21079F1600A13DA2 /* ProfileTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
 				19A2528D2107890A00860637 /* LargeImageTableViewCell.xib in Resources */,
+				CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
