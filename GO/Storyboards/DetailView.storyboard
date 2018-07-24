@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +38,7 @@
         <!--ReviewViewController-->
         <scene sceneID="ytP-e2-YQF">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailsSegues" referencedIdentifier="ReviewViewController" id="uQT-td-ogf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ReviewsView" referencedIdentifier="ReviewViewController" id="uQT-td-ogf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWd-Do-wPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="175"/>

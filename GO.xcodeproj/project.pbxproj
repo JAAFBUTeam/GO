@@ -15,6 +15,7 @@
 		19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */; };
 		19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A251DF21011C2A00860637 /* CarouselTableViewCell.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
+		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -26,7 +27,7 @@
 		CC1307DE20EFDEF0007E8DD5 /* GOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307DD20EFDEF0007E8DD5 /* GOTests.m */; };
 		CC1307E920EFDEF0007E8DD5 /* GOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307E820EFDEF0007E8DD5 /* GOUITests.m */; };
 		CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CC5AC20FD210E005E7FF1 /* Location.m */; };
-		CC73AE05210235A7001DA31A /* DetailsSegues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */; };
+		CC73AE05210235A7001DA31A /* ReviewsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73AE04210235A7001DA31A /* ReviewsView.storyboard */; };
 		CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0721023658001DA31A /* ReviewViewController.m */; };
 		CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */; };
 		CC73AE0E2102383E001DA31A /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0D2102383E001DA31A /* Review.m */; };
@@ -80,6 +81,8 @@
 		19A251DE21011C2A00860637 /* CarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
 		19A251DF21011C2A00860637 /* CarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
+		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
+		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +108,7 @@
 		CC1307EA20EFDEF0007E8DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC3CC5AB20FD210E005E7FF1 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		CC3CC5AC20FD210E005E7FF1 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsSegues.storyboard; sourceTree = "<group>"; };
+		CC73AE04210235A7001DA31A /* ReviewsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewsView.storyboard; sourceTree = "<group>"; };
 		CC73AE0621023658001DA31A /* ReviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
 		CC73AE0721023658001DA31A /* ReviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
 		CC73AE092102366C001DA31A /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				CC73AE0721023658001DA31A /* ReviewViewController.m */,
 				CC73AE092102366C001DA31A /* PhotoCollectionViewController.h */,
 				CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */,
+				19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */,
+				19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -326,7 +331,7 @@
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
-				CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */,
+				CC73AE04210235A7001DA31A /* ReviewsView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -448,7 +453,7 @@
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */,
-				CC73AE05210235A7001DA31A /* DetailsSegues.storyboard in Resources */,
+				CC73AE05210235A7001DA31A /* ReviewsView.storyboard in Resources */,
 				192A139921014CC80005481A /* PhotoCollectionViewCell.xib in Resources */,
 				CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
@@ -565,6 +570,7 @@
 				CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
+				19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */,
 				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				CCEF419D2106650200A13DA2 /* User.m in Sources */,
