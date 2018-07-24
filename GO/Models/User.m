@@ -21,8 +21,4 @@
 @dynamic favorites;
 @dynamic reviews;
 
-+ (nonnull NSString *)parseClassName {
-    return @"User";
-}
-
 @end

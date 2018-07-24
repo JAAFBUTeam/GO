@@ -11,13 +11,13 @@
 #import "Parse/Parse.h"
 #import "ParseUI.h"
 #import "Location.h"
+#import "User.h"
 
 @interface Review : PFObject <PFSubclassing>
 
 @property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) User *user;
 
-@property (strong, nonatomic) NSMutableArray <UIImage *> *userImage;
-@property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *reviewText;
 @property (nonatomic) double rating;
 

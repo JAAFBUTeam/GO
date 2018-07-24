@@ -18,4 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 
+- (void)setProfile:(User *)user;
+- (void)setProfile;
+
+
 @end

@@ -7,8 +7,27 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
 
 @implementation LoginViewController
+
+#pragma mark - View Life Cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    if (
+}
+
+#pragma mark - Actions
+
+- (IBAction)didTapSignUp:(id)sender {
+    [self registerUser];
+}
+
+- (IBAction)didTapLogIn:(id)sender {
+    [self loginUser];
+}
 
 #pragma mark - Users
 
@@ -17,8 +36,8 @@
     PFUser *newUser = [PFUser user];
     
     // set user properties
-    newUser.username = self.username;
-    newUser.password = self.password;
+    newUser.username = self.username.text;
+    newUser.password = self.password.text;
     
     // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
@@ -33,8 +52,8 @@
 }
 
 - (void)loginUser {
-    NSString *username = self.username;
-    NSString *password = self.password;
+    NSString *username = self.username.text;
+    NSString *password = self.password.text;
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {

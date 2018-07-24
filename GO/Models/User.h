@@ -9,7 +9,7 @@
 #import "PFUser.h"
 #import "Parse/Parse.h"
 
-@interface User : PFObject <PFSubclassing>
+@interface User : PFUser <PFSubclassing>
 
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
