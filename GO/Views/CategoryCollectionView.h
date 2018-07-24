@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryCollectionViewCell.h"
 
 @interface CategoryCollectionView : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSMutableArray *categoriesImagesArray;
+@property (strong, nonatomic) NSMutableArray *categoriesLabelsArray;
+@property (nonatomic, assign) NSInteger rows;
+@property (nonatomic, assign) NSInteger columns;
 
 @end
