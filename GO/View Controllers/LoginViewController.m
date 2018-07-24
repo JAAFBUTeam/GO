@@ -7,8 +7,17 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
 
 @implementation LoginViewController
+
+#pragma mark - View Life Cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    if (
+}
 
 #pragma mark - Actions
 
