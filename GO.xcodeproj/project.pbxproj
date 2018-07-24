@@ -16,6 +16,7 @@
 		19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A251DF21011C2A00860637 /* CarouselTableViewCell.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
+		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -88,6 +89,8 @@
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
+		19AD70AE21079368008A72EF /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		19AD70AF21079368008A72EF /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +191,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19AD70AD210791EC008A72EF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				19AD70AE21079368008A72EF /* APIManager.h */,
+				19AD70AF21079368008A72EF /* APIManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		19E7AF6020FD1C8B004B98CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +266,7 @@
 		CC1307C320EFDEEE007E8DD5 /* GO */ = {
 			isa = PBXGroup;
 			children = (
+				19AD70AD210791EC008A72EF /* API */,
 				19E7AF6020FD1C8B004B98CC /* Views */,
 				CC3CC5AA20FD20EE005E7FF1 /* Models */,
 				CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */,
@@ -609,6 +622,7 @@
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
+				19AD70B021079368008A72EF /* APIManager.m in Sources */,
 				CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */,
 				CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */,
 				CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */,
