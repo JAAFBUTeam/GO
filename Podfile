@@ -7,7 +7,8 @@ target 'GO' do
 
 
   # Pods for GO
-	pod 'AFNetworking'
+    pod 'AFNetworking'
+    pod 'BDBOAuth1Manager'
 	pod 'Parse'
 	pod 'ParseUI'
 	pod 'DateTools'
