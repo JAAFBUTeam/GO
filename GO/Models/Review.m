@@ -10,11 +10,10 @@
 
 @implementation Review
 
-@dynamic userImage;
-@dynamic username;
 @dynamic reviewText;
 @dynamic rating;
 @dynamic location;
+@dynamic user;
 
 + (nonnull NSString *)parseClassName {
     return @"Review";
@@ -28,7 +27,7 @@
     //newReview.userImage = [[NSMutableArray alloc] init];
     //[newReview.userImage addObject: [UIImage imageNamed:@"amy"]];
     newReview.reviewText = @"Wow, this place really is super cool!";
-    newReview.username = @"CoolUser264";
+    newReview.user.username = @"CoolUser264";
     newReview.rating = 5.0;
     
     [newReview saveInBackgroundWithBlock: completion];

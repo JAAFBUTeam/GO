@@ -30,7 +30,7 @@
 
 - (void)setProfile {
     PFFile *picture = [self getPFFileFromImage:[UIImage imageNamed:@"icons8-user-32"]];
-    // self.image.file = [UIImage imageNamed:@"icons8-user-32"];
+    self.image.file = picture;
     self.username.text = @"Username";
     self.name.text = @"Profile";
 }
