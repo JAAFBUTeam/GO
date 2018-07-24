@@ -6,9 +6,13 @@
 //  Copyright © 2018 Amy Liu. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "PFUser.h"
 
-@interface LoginViewController : PFUser
+@interface LoginViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 - (void)loginUser;
 - (void)registerUser;
