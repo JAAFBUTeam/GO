@@ -22,6 +22,8 @@
 		19A252972107914600860637 /* CategoryCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A252962107914600860637 /* CategoryCollectionView.xib */; };
 		19A2529A2107917500860637 /* CategoryCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A252992107917500860637 /* CategoryCollectionView.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
+		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
+		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -33,7 +35,7 @@
 		CC1307DE20EFDEF0007E8DD5 /* GOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307DD20EFDEF0007E8DD5 /* GOTests.m */; };
 		CC1307E920EFDEF0007E8DD5 /* GOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1307E820EFDEF0007E8DD5 /* GOUITests.m */; };
 		CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CC5AC20FD210E005E7FF1 /* Location.m */; };
-		CC73AE05210235A7001DA31A /* DetailsSegues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */; };
+		CC73AE05210235A7001DA31A /* ReviewsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73AE04210235A7001DA31A /* ReviewsView.storyboard */; };
 		CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0721023658001DA31A /* ReviewViewController.m */; };
 		CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */; };
 		CC73AE0E2102383E001DA31A /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73AE0D2102383E001DA31A /* Review.m */; };
@@ -50,6 +52,11 @@
 		CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */; };
 		CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */; };
 		CCEF419D2106650200A13DA2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF419C2106650200A13DA2 /* User.m */; };
+		CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEF419E2106831800A13DA2 /* Login.storyboard */; };
+		CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A12106859B00A13DA2 /* LoginViewController.m */; };
+		CCEF41A4210687A700A13DA2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEF41A3210687A700A13DA2 /* Profile.storyboard */; };
+		CCEF41A721068E1400A13DA2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A621068E1400A13DA2 /* ProfileViewController.m */; };
+		CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */; };
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
 		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
@@ -98,6 +105,10 @@
 		19A252982107917500860637 /* CategoryCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionView.h; sourceTree = "<group>"; };
 		19A252992107917500860637 /* CategoryCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionView.m; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
+		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
+		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
+		19AD70AE21079368008A72EF /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		19AD70AF21079368008A72EF /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +134,7 @@
 		CC1307EA20EFDEF0007E8DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC3CC5AB20FD210E005E7FF1 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		CC3CC5AC20FD210E005E7FF1 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsSegues.storyboard; sourceTree = "<group>"; };
+		CC73AE04210235A7001DA31A /* ReviewsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewsView.storyboard; sourceTree = "<group>"; };
 		CC73AE0621023658001DA31A /* ReviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
 		CC73AE0721023658001DA31A /* ReviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
 		CC73AE092102366C001DA31A /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
@@ -149,6 +160,14 @@
 		CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 		CCEF419B2106650200A13DA2 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CCEF419C2106650200A13DA2 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CCEF419E2106831800A13DA2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CCEF41A02106859B00A13DA2 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CCEF41A12106859B00A13DA2 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CCEF41A3210687A700A13DA2 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CCEF41A521068E1400A13DA2 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CCEF41A621068E1400A13DA2 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CCEF41A821068EF200A13DA2 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
 		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
@@ -190,6 +209,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19AD70AD210791EC008A72EF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				19AD70AE21079368008A72EF /* APIManager.h */,
+				19AD70AF21079368008A72EF /* APIManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		19E7AF6020FD1C8B004B98CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +249,8 @@
 				19A252982107917500860637 /* CategoryCollectionView.h */,
 				19A252992107917500860637 /* CategoryCollectionView.m */,
 				19A252962107914600860637 /* CategoryCollectionView.xib */,
+				CCEF41A821068EF200A13DA2 /* ProfileTableViewCell.h */,
+				CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +293,7 @@
 		CC1307C320EFDEEE007E8DD5 /* GO */ = {
 			isa = PBXGroup;
 			children = (
+				19AD70AD210791EC008A72EF /* API */,
 				19E7AF6020FD1C8B004B98CC /* Views */,
 				CC3CC5AA20FD20EE005E7FF1 /* Models */,
 				CC1307CD20EFDEF0007E8DD5 /* Assets.xcassets */,
@@ -339,10 +370,16 @@
 				CC83A36720F9292200117065 /* DetailsViewController.m */,
 				CC83A36020F9290600117065 /* MapViewController.h */,
 				CC83A36120F9290600117065 /* MapViewController.m */,
+				CCEF41A02106859B00A13DA2 /* LoginViewController.h */,
+				CCEF41A12106859B00A13DA2 /* LoginViewController.m */,
 				CC73AE0621023658001DA31A /* ReviewViewController.h */,
 				CC73AE0721023658001DA31A /* ReviewViewController.m */,
+				CCEF41A521068E1400A13DA2 /* ProfileViewController.h */,
+				CCEF41A621068E1400A13DA2 /* ProfileViewController.m */,
 				CC73AE092102366C001DA31A /* PhotoCollectionViewController.h */,
 				CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */,
+				19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */,
+				19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -353,9 +390,11 @@
 				19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */,
 				19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */,
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
+				CCEF419E2106831800A13DA2 /* Login.storyboard */,
+				CCEF41A3210687A700A13DA2 /* Profile.storyboard */,
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
-				CC73AE04210235A7001DA31A /* DetailsSegues.storyboard */,
+				CC73AE04210235A7001DA31A /* ReviewsView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -470,6 +509,7 @@
 				19A2529221078BF600860637 /* CategoryCollectionViewTableViewCell.xib in Resources */,
 				CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */,
 				192A13972101499A0005481A /* PhotoCollectionView.xib in Resources */,
+				CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */,
 				CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
@@ -479,8 +519,9 @@
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */,
-				CC73AE05210235A7001DA31A /* DetailsSegues.storyboard in Resources */,
+				CC73AE05210235A7001DA31A /* ReviewsView.storyboard in Resources */,
 				192A139921014CC80005481A /* PhotoCollectionViewCell.xib in Resources */,
+				CCEF41A4210687A700A13DA2 /* Profile.storyboard in Resources */,
 				CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
 				19A252972107914600860637 /* CategoryCollectionView.xib in Resources */,
@@ -597,9 +638,11 @@
 				CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
+				19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */,
 				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
 				19A2529021078A3300860637 /* CategoriesViewController.m in Sources */,
 				19A2529521078C1900860637 /* CategoryCollectionViewTableViewCell.m in Sources */,
+				CCEF41A721068E1400A13DA2 /* ProfileViewController.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				CCEF419D2106650200A13DA2 /* User.m in Sources */,
 				19A2529A2107917500860637 /* CategoryCollectionView.m in Sources */,
@@ -615,6 +658,9 @@
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
+				19AD70B021079368008A72EF /* APIManager.m in Sources */,
+				CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */,
+				CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */,
 				CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,14 +824,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U8K69DFR3Q;
+				DEVELOPMENT_TEAM = 2UG759YXVN;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = joel.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = Amy.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -797,14 +843,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U8K69DFR3Q;
+				DEVELOPMENT_TEAM = 2UG759YXVN;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = joel.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = Amy.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
