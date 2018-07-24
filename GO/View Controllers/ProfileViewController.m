@@ -51,7 +51,7 @@
 # pragma mark - Tableview Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2){
+    if (indexPath.section == 3){
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
 }
