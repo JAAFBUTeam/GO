@@ -12,4 +12,17 @@
 
 @implementation User
 
+@dynamic username;
+@dynamic password;
+@dynamic name;
+
+@dynamic image;
+
+@dynamic favorites;
+@dynamic reviews;
+
++ (nonnull NSString *)parseClassName {
+    return @"User";
+}
+
 @end

@@ -7,12 +7,15 @@
 //
 
 #import "PFUser.h"
+#import "Parse/Parse.h"
 
-@interface User : PFUser
+@interface User : PFObject <PFSubclassing>
 
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *name;
+
+@property (nonatomic, strong) PFFile *image;
 
 @property (nonatomic, strong) NSMutableArray *favorites;
 @property (nonatomic, strong) NSMutableArray *reviews;

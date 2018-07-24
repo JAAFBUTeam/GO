@@ -44,6 +44,11 @@
 		CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9F320FFDD2D0095CD59 /* MoreTableView.xib */; };
 		CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */; };
 		CCEF419D2106650200A13DA2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF419C2106650200A13DA2 /* User.m */; };
+		CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEF419E2106831800A13DA2 /* Login.storyboard */; };
+		CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A12106859B00A13DA2 /* LoginViewController.m */; };
+		CCEF41A4210687A700A13DA2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEF41A3210687A700A13DA2 /* Profile.storyboard */; };
+		CCEF41A721068E1400A13DA2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A621068E1400A13DA2 /* ProfileViewController.m */; };
+		CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */; };
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
 		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
@@ -134,6 +139,14 @@
 		CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 		CCEF419B2106650200A13DA2 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CCEF419C2106650200A13DA2 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CCEF419E2106831800A13DA2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CCEF41A02106859B00A13DA2 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CCEF41A12106859B00A13DA2 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CCEF41A3210687A700A13DA2 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CCEF41A521068E1400A13DA2 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CCEF41A621068E1400A13DA2 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CCEF41A821068EF200A13DA2 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
 		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
@@ -197,6 +210,8 @@
 				192A139821014CC80005481A /* PhotoCollectionViewCell.xib */,
 				192A139A21014CE70005481A /* PhotoCollectionViewCell.h */,
 				192A139B21014CE70005481A /* PhotoCollectionViewCell.m */,
+				CCEF41A821068EF200A13DA2 /* ProfileTableViewCell.h */,
+				CCEF41A921068EF200A13DA2 /* ProfileTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,8 +328,12 @@
 				CC83A36420F9291800117065 /* ListViewController.m */,
 				CC83A36020F9290600117065 /* MapViewController.h */,
 				CC83A36120F9290600117065 /* MapViewController.m */,
+				CCEF41A02106859B00A13DA2 /* LoginViewController.h */,
+				CCEF41A12106859B00A13DA2 /* LoginViewController.m */,
 				CC73AE0621023658001DA31A /* ReviewViewController.h */,
 				CC73AE0721023658001DA31A /* ReviewViewController.m */,
+				CCEF41A521068E1400A13DA2 /* ProfileViewController.h */,
+				CCEF41A621068E1400A13DA2 /* ProfileViewController.m */,
 				CC73AE092102366C001DA31A /* PhotoCollectionViewController.h */,
 				CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */,
 				19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */,
@@ -329,6 +348,8 @@
 				19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */,
 				19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */,
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
+				CCEF419E2106831800A13DA2 /* Login.storyboard */,
+				CCEF41A3210687A700A13DA2 /* Profile.storyboard */,
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
 				CC73AE04210235A7001DA31A /* ReviewsView.storyboard */,
@@ -445,6 +466,7 @@
 			files = (
 				CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */,
 				192A13972101499A0005481A /* PhotoCollectionView.xib in Resources */,
+				CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */,
 				CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
@@ -455,6 +477,7 @@
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */,
 				CC73AE05210235A7001DA31A /* ReviewsView.storyboard in Resources */,
 				192A139921014CC80005481A /* PhotoCollectionViewCell.xib in Resources */,
+				CCEF41A4210687A700A13DA2 /* Profile.storyboard in Resources */,
 				CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */,
 				CC1307CE20EFDEF0007E8DD5 /* Assets.xcassets in Resources */,
 			);
@@ -572,6 +595,7 @@
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */,
 				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
+				CCEF41A721068E1400A13DA2 /* ProfileViewController.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
 				CCEF419D2106650200A13DA2 /* User.m in Sources */,
 				192A138D210002C90005481A /* TitleTableViewCell.m in Sources */,
@@ -585,6 +609,8 @@
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
+				CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */,
+				CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */,
 				CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,14 +774,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U8K69DFR3Q;
+				DEVELOPMENT_TEAM = 2UG759YXVN;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = joel.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = Amy.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -767,14 +793,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U8K69DFR3Q;
+				DEVELOPMENT_TEAM = 2UG759YXVN;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = joel.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = Amy.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
