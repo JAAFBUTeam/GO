@@ -75,7 +75,7 @@
                     <connections>
                         <outlet property="password" destination="jYW-QL-4vo" id="SCN-gd-AWy"/>
                         <outlet property="username" destination="2jh-6q-a87" id="2Dx-Bh-iGP"/>
-                        <segue destination="OHZ-ai-dlX" kind="show" animates="NO" id="C4y-lw-wiL"/>
+                        <segue destination="OHZ-ai-dlX" kind="show" identifier="profileSegue" animates="NO" id="C4y-lw-wiL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5B8-R7-5Ja" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,7 +16,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (
+    if (User.currentUser != nil) {
+        [self performSegueWithIdentifier:@"profileSegue" sender:nil];
+    }
 }
 
 #pragma mark - Actions
