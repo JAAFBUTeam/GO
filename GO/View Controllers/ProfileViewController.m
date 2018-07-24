@@ -53,6 +53,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 3){
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
+    } else if (indexPath.section == 3){
+        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
+    } else if (indexPath.section == 3){
+        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
 }
 
@@ -61,11 +65,11 @@
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setupCarouselCell];
         return carouselTableViewCell;
-    } else if (indexPath.section == 2) { // Title + Info
+    } else if (indexPath.section == 2) { // Title
         TitleTableViewCell *titleTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
         [titleTableViewCell setupTitleCell:@"Reviews"];
         return titleTableViewCell;
-    } else if (indexPath.section == 3) { // Title + Info
+    } else if (indexPath.section == 3) { // Review
         ReviewsTableViewCell *reviewTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
         [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"cat.jpg"] setupUsername:@"Cat" setupRating:@"1 star" setupReviewText:@"review text for Cat"];
         return reviewTableViewCell;
@@ -89,6 +93,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"segueToDetails"]) {
+        
+        Location *location = sender;
+        
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.location = location;
+    } else if ([segue.identifier isEqualToString:@"segueToDetails"]) {\
+        
+        Location *location = sender;
+        
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.location = location;
+    }
 }
 */
 

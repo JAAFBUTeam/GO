@@ -12,7 +12,7 @@
         <!--Profile View Controller-->
         <scene sceneID="eO2-Zc-2mf">
             <objects>
-                <viewController id="K5r-b2-Pla" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="K5r-b2-Pla" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3pb-iF-pBC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,6 +97,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuJ-EU-FqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="-399.85007496251876"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="G8G-TL-CJ4">
+            <objects>
+                <viewControllerPlaceholder id="iQa-rs-agm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQd-9s-ixL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-535"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="9vo-mJ-oOK">
+            <objects>
+                <viewControllerPlaceholder id="uEB-ci-OhM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8sr-AD-Ztb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-439"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="vgd-jr-076">
+            <objects>
+                <viewControllerPlaceholder id="o9O-gL-GA2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCH-ZX-6xY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="-331"/>
         </scene>
     </scenes>
 </document>
