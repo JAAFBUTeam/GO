@@ -29,8 +29,8 @@
     UINib *imageNib = [UINib nibWithNibName:@"LargeImageTableViewCell" bundle:nil];
     [self.categoriesTableView registerNib:imageNib forCellReuseIdentifier:@"LargeImageTableViewCell"];
     
-    UINib *categoryNib = [UINib nibWithNibName:@"CategoryCollectionView" bundle:nil];
-    [self.categoriesTableView registerNib:categoryNib forCellReuseIdentifier:@"CategoryCollectionView"];
+    UINib *collectionNib = [UINib nibWithNibName:@"CategoryCollectionView" bundle:nil];
+    [self.categoriesTableView registerNib:collectionNib forCellReuseIdentifier:@"CategoryCollectionView"];
 }
 
 #pragma mark - tableview protocol

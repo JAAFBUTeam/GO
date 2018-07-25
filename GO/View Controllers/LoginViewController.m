@@ -7,8 +7,19 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
 
 @implementation LoginViewController
+
+#pragma mark - View Life Cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    if (User.currentUser != nil) {
+        [self performSegueWithIdentifier:@"profileSegue" sender:nil];
+    }
+}
 
 #pragma mark - Actions
 
