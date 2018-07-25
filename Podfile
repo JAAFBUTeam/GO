@@ -8,6 +8,8 @@ target 'GO' do
 
   # Pods for GO
     pod 'AFNetworking'
+    pod 'InstagramKit'
+    pod 'InstagramKit/UICKeyChainStore'
     pod 'BDBOAuth1Manager'
 	pod 'Parse'
 	pod 'ParseUI'
