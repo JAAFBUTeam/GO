@@ -27,6 +27,11 @@
                         <viewLayoutGuide key="safeArea" id="EFa-kb-m2p"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="3mf-CF-ygR">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Aea-Vh-1B2">
+                            <connections>
+                                <action selector="didTapLogout:" destination="K5r-b2-Pla" id="GGc-WT-MU0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="bop-y3-0jc">
                             <connections>
                                 <segue destination="6ui-GT-eTX" kind="presentation" id="Ea4-cK-mMi"/>
@@ -35,6 +40,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2yT-zE-XFf" id="zOh-yf-eqN"/>
+                        <segue destination="iQa-rs-agm" kind="presentation" id="SNe-8k-Sj3"/>
+                        <segue destination="uEB-ci-OhM" kind="presentation" id="vc7-on-Sln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuJ-EU-FqK" userLabel="First Responder" sceneMemberID="firstResponder"/>

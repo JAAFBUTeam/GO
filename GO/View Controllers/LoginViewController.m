@@ -48,7 +48,7 @@
         } else {
             NSLog(@"User registered successfully");
             // manually segue to logged in view
-            // [self performSegueWithIdentifier:@"FeedViewController" sender:nil];
+            [self performSegueWithIdentifier:@"animatedSegue" sender:nil];
         }
     }];
 }
@@ -63,7 +63,7 @@
         } else {
             NSLog(@"User logged in successfully");
             // display view controller that needs to shown after successful login
-            // [self performSegueWithIdentifier:@"FeedViewController" sender:nil];
+            [self performSegueWithIdentifier:@"animatedSegue" sender:nil];
         }
     }];
 }

@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="42" id="Cn6-pc-73u"/>
                                     <constraint firstAttribute="width" constant="308" id="LqG-XU-qHr"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Oux-s5-071"/>
                                     <constraint firstAttribute="width" constant="308" id="jC4-Za-5oZ"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -64,6 +64,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2jh-6q-a87" firstAttribute="leading" secondItem="FI3-fe-82E" secondAttribute="leading" constant="32" id="R3G-yV-axl"/>
                             <constraint firstItem="jYW-QL-4vo" firstAttribute="leading" secondItem="FI3-fe-82E" secondAttribute="leading" constant="32" id="SWS-yI-VyZ"/>
@@ -76,6 +77,7 @@
                         <outlet property="password" destination="jYW-QL-4vo" id="SCN-gd-AWy"/>
                         <outlet property="username" destination="2jh-6q-a87" id="2Dx-Bh-iGP"/>
                         <segue destination="OHZ-ai-dlX" kind="show" identifier="profileSegue" animates="NO" id="C4y-lw-wiL"/>
+                        <segue destination="7fJ-Yf-Y9b" kind="presentation" identifier="animatedSegue" id="0bt-kA-e2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5B8-R7-5Ja" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,6 +115,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewa-tc-m33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="640" y="1373"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Hrh-ar-UCn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="7fJ-Yf-Y9b" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzh-o6-r7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="1371"/>
         </scene>
     </scenes>
 </document>
