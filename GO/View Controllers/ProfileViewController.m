@@ -13,6 +13,9 @@
 #import "ProfileTableViewCell.h"
 #import "ParseUI/ParseUI.h"
 #import "Parse/Parse.h"
+#import "DetailsViewController.h"
+#import "ReviewViewController.h"
+#import "User.h"
 
 @interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate>
 
@@ -59,10 +62,8 @@
 # pragma mark - Tableview Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 3){
-        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
-    } else if (indexPath.section == 3){
-        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
+    if (indexPath.section == 1){
+        [self performSegueWithIdentifier:@"detailsSegue" sender:nil];
     } else if (indexPath.section == 3){
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
@@ -164,7 +165,7 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -172,20 +173,21 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.identifier isEqualToString:@"segueToDetails"]) {
+    if ([segue.identifier isEqualToString:@"detailsSegue"]) {
         
         Location *location = sender;
         
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.location = location;
-    } else if ([segue.identifier isEqualToString:@"segueToDetails"]) {\
+    } else if ([segue.identifier isEqualToString:@"reviewsSegue"]) {
         
         Location *location = sender;
         
-        DetailsViewController *detailsViewController = [segue destinationViewController];
-        detailsViewController.location = location;
+        ReviewViewController *reviewsViewController = [segue destinationViewController];
+        reviewsViewController.location = location;
+        reviewsViewController.user = User.currentUser;
     }
 }
-*/
+
 
 @end
