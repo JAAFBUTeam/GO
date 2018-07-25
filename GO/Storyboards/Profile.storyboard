@@ -40,8 +40,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2yT-zE-XFf" id="zOh-yf-eqN"/>
-                        <segue destination="iQa-rs-agm" kind="presentation" identifier="detailsSegue" id="SNe-8k-Sj3"/>
-                        <segue destination="uEB-ci-OhM" kind="presentation" identifier="reviewsSegue" id="vc7-on-Sln"/>
+                        <segue destination="iQa-rs-agm" kind="show" identifier="detailsSegue" id="SNe-8k-Sj3"/>
+                        <segue destination="uEB-ci-OhM" kind="show" identifier="reviewsSegue" id="vc7-on-Sln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuJ-EU-FqK" userLabel="First Responder" sceneMemberID="firstResponder"/>

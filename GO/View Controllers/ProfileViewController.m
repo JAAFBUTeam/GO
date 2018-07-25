@@ -17,7 +17,7 @@
 #import "ReviewViewController.h"
 #import "User.h"
 
-@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate>
+@interface ProfileViewController () <ProfileTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -25,20 +25,15 @@
 
 @implementation ProfileViewController 
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
+    [self setupTableView];
     [self registerNibs];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 # pragma mark - Register nibs
@@ -59,7 +54,13 @@
     
 }
 
-# pragma mark - Tableview Delegate
+# pragma mark - Tableview
+
+- (void) setupTableView {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1){
@@ -72,11 +73,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) { // Profile
         ProfileTableViewCell *profileTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ProfileTableViewCell"];
-        if (User.currentUser != nil) {
-            [profileTableViewCell setProfile:User.currentUser];
-        } else {
-            [profileTableViewCell setProfile];
-        }
+        [profileTableViewCell setProfile:User.currentUser];
+        /*UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapProfile)];
+        [profileTableViewCell.image addGestureRecognizer:tap]; */
+//        tap.delegate = self;
+    
         return profileTableViewCell;
     } else if (indexPath.section == 1) { // Carousel
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
@@ -92,7 +93,7 @@
         return reviewTableViewCell;
     }
 }
-    
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
@@ -122,7 +123,10 @@
 
 #pragma mark - Actions
 
-- (IBAction)didTapProfile:(id)sender { // connect to imageview
+- (void) didTapProfile { // connect to imageview
+    
+    NSLog(@"thanks for tapping me!");
+    
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
