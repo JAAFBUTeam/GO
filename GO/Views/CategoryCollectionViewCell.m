@@ -10,9 +10,4 @@
 
 @implementation CategoryCollectionViewCell
 
--(void) setCategoryCell:(NSInteger)rows cols:(NSInteger)columns {
-
-}
-
-
 @end

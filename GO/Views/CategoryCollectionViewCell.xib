@@ -28,6 +28,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hO-08-ecp">
                         <rect key="frame" x="57.5" y="93" width="48" height="14.5"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="14.5" id="P6p-bb-DTu"/>
                             <constraint firstAttribute="width" constant="48" id="QCd-GG-qJi"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
