@@ -130,6 +130,9 @@ typedef enum {
     if (indexPath.section == 2){
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
+    if (indexPath.section == 6){
+        [self performSegueWithIdentifier:@"photoGalleryViewSegue" sender:nil];
+    }
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -151,9 +154,11 @@ typedef enum {
 # pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CarouselTableViewCell *tappedCell = sender;
-    ReviewViewController *reviewsController = [segue destinationViewController];
-    reviewsController.location = tappedCell.location;
+    if ([segue.identifier isEqualToString:@"reviewsSegue"]){
+        CarouselTableViewCell *tappedCell = sender;
+        ReviewViewController *reviewsController = [segue destinationViewController];
+        reviewsController.location = tappedCell.location;
+    }
 }
 
 @end

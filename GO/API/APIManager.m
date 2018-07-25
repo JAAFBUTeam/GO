@@ -15,7 +15,7 @@ static NSString * const tailRedirectURLString = @"&redirect_uri=REDIRECT-URI&res
 
 @implementation APIManager
 
--(NSURL *)redirectToInstagram {
++(NSURL *)redirectToInstagram {
 //    NSString *redirectURLString = [baseRedirectURLString stringByAppendingString:clientID];
 //    redirectURLString = [baseRedirectURLString stringByAppendingString:tailRedirectURLString];
 //    NSURL *redirectURL = [NSURL URLWithString:redirectURLString];
