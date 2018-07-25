@@ -10,4 +10,7 @@
 
 @interface APIManager : BDBOAuth1SessionManager
 
+
+-(NSURL *)redirectToInstagram;
+
 @end
