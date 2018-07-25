@@ -1,0 +1,1 @@
+../../../InstagramKit/InstagramKit/Classes/Models/InstagramPaginationInfo.h

@@ -139,6 +139,13 @@
     [self reloadInputViews];
 }
 
+- (IBAction)didTapLogout:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Images
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
