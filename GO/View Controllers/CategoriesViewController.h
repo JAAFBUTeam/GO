@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LargeImageTableViewCell.h"
-#import "CategoryCollectionView.h"
+#import "LargeImageCollectionViewCell.h"
+#import "CategoryCollectionViewCell.h"
 #import "ListViewController.h"
 
-@interface CategoriesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end

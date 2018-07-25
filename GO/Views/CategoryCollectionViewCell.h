@@ -13,6 +13,4 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
--(void) setCategoryCell:(NSInteger)rows cols:(NSInteger)columns ;
-
 @end
