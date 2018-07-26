@@ -32,6 +32,8 @@
     [self setTableProperties];
     [self registerNibs];
     [self disableAutoRotate];
+    
+    [GlobalFilters sharedInstance].categoryType = ALL;
 }
 
 -(void) setNavigationBarSettings {

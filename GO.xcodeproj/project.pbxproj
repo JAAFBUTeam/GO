@@ -19,6 +19,7 @@
 		19A2529F2107DEFA00860637 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A2529E2107DEFA00860637 /* CategoryCollectionViewCell.xib */; };
 		19A252A42108E9EC00860637 /* LargeImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A252A32108E9EC00860637 /* LargeImageCollectionViewCell.xib */; };
 		19A252A72108EA6900860637 /* LargeImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A252A62108EA6900860637 /* LargeImageCollectionViewCell.m */; };
+		19A252AF210A6EC700860637 /* GlobalFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A252AE210A6EC700860637 /* GlobalFilters.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
@@ -102,6 +103,8 @@
 		19A252A32108E9EC00860637 /* LargeImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		19A252A52108EA6900860637 /* LargeImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LargeImageCollectionViewCell.h; sourceTree = "<group>"; };
 		19A252A62108EA6900860637 /* LargeImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LargeImageCollectionViewCell.m; sourceTree = "<group>"; };
+		19A252AD210A6EC700860637 /* GlobalFilters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalFilters.h; sourceTree = "<group>"; };
+		19A252AE210A6EC700860637 /* GlobalFilters.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobalFilters.m; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */,
 				CCFE2C4920FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.h */,
 				CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */,
+				19A252AD210A6EC700860637 /* GlobalFilters.h */,
+				19A252AE210A6EC700860637 /* GlobalFilters.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -640,6 +645,7 @@
 				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */,
+				19A252AF210A6EC700860637 /* GlobalFilters.m in Sources */,
 				CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
