@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSArray *filteredLocationsArray;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
 @property (strong, nonatomic) UISearchController *searchController;
+@property (nonatomic, assign) NSInteger selectedRow;
 
 @end
 
@@ -97,8 +98,8 @@
 
 #pragma mark - carousel image tap protocol
 
--(void)ImageTapped {
-    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
+-(void)ImageTapped:(NSUInteger)section {
+    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:self.locationsArray[section]];
 }
 
 #pragma mark - tableview protocol
@@ -126,7 +127,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
+    self.selectedRow = indexPath.row;
+    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:indexPath];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -140,9 +142,15 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CarouselTableViewCell *tappedCell = sender;
-    DetailsViewController *detailsController = [segue destinationViewController];
-    detailsController.location = tappedCell.location;
+    if([sender isKindOfClass:[Location class]]) { //image tapped
+        NSLog(@"location type recognized");
+        DetailsViewController *detailsController = [segue destinationViewController];
+        detailsController.location = sender;
+    } else { //info section tapped
+        NSLog(@"location type passed");
+        DetailsViewController *detailsController = [segue destinationViewController];
+        detailsController.location = self.locationsArray[self.selectedRow];
+    }
 }
 
 @end
