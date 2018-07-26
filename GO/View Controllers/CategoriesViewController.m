@@ -15,7 +15,11 @@
 @property (strong, nonatomic) NSMutableArray *categoriesLabelsArray;
 @property (nonatomic, assign) NSInteger numberOfCategories;
 @property (nonatomic, assign) NSInteger sections;
-
+@property (nonatomic, assign) NSInteger categoriesPerLine;
+@property (nonatomic, assign) NSInteger imageHeight;
+@property (nonatomic, assign) NSInteger categorySectionInset;
+@property (nonatomic, assign) CGFloat phoneWidth;
+@property (nonatomic, assign) CGFloat minInteritemSpacing;
 
 @end
 
@@ -25,8 +29,7 @@
     [super viewDidLoad];
     [self setDelegateAndDataSource];
     [self registerNibs];
-    [self setRowsAndColumns];
-    [self autolayout];
+    [self setTableDimensions];
     [self initCategoriesArray];
 }
 
@@ -43,19 +46,15 @@
     [self.categoriesCollectionView registerNib:collectionNib forCellWithReuseIdentifier:@"CategoryCollectionViewCell"];
 }
 
--(void)setRowsAndColumns {
+-(void)setTableDimensions {
     self.sections = 2;
     self.numberOfCategories = 6;
-}
-
--(void)autolayout {
-    //    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
-    //    layout.minimumInteritemSpacing = 1;
-    //    layout.minimumLineSpacing = 1;
-    //    CGFloat imagesInEachLine = self.columns;
-    //    CGFloat imageWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (imagesInEachLine -1)) / imagesInEachLine;
-    //    CGFloat imageHeight = imageWidth;
-    //    layout.itemSize = CGSizeMake(imageWidth, imageHeight);
+    self.categoriesPerLine = 2;
+    self.phoneWidth = [UIScreen mainScreen].bounds.size.width;
+    
+    self.imageHeight = 250;
+    self.categorySectionInset = 15;
+    self.minInteritemSpacing = 15;
 }
 
 -(void)initCategoriesArray {
@@ -122,16 +121,28 @@
 # pragma mark - collection view layout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(100, 100);
+    if(indexPath.section == 0) { //big image
+        return CGSizeMake(self.phoneWidth, self.imageHeight);
+    } else {
+        return [self getCategoryItemSize];
+    }
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == 1) {
-//        return 600;
-//    } else {
-//        return UITableViewAutomaticDimension;
-//    }
-//}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    if(section == 0) {
+        return UIEdgeInsetsMake(0, 0, 0, 0);
+    } else {
+        return UIEdgeInsetsMake(self.categorySectionInset, self.categorySectionInset, self.categorySectionInset, self.categorySectionInset);
+    }
+}
+
+-(CGSize)getCategoryItemSize {
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)self.categoriesCollectionView.collectionViewLayout;
+    CGFloat categoryWidth = (self.phoneWidth - (self.minInteritemSpacing * (self.categoriesPerLine - 1) ) - (2 * self.categorySectionInset)) / self.categoriesPerLine;
+    CGFloat categoryHeight = categoryWidth;
+    layout.itemSize = CGSizeMake(categoryWidth, categoryHeight);
+    return layout.itemSize;
+}
 
 #pragma mark - Navigation
 
