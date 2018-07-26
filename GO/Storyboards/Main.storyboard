@@ -56,17 +56,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrh-TE-zNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1159.2" y="115.59220389805098"/>
+            <point key="canvasLocation" x="-886" y="117"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1bV-LF-rVa">
             <objects>
                 <tabBarController id="zBM-Gp-bv1" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Gxb-RP-4n9">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-filter-27" id="AET-nG-y8o">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Gxb-RP-4n9"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cdP-kq-jH5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -149,7 +145,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l2m-cT-EE3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="List" id="f3c-7e-pMX"/>
+                    <navigationItem key="navigationItem" title="List" id="f3c-7e-pMX">
+                        <barButtonItem key="leftBarButtonItem" image="back-24" id="aQR-l6-5el">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="5MY-hT-Geg" kind="showDetail" id="PkU-b8-cwJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-filter-27" id="AET-nG-y8o">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="listTableView" destination="7yl-XD-MB1" id="wZs-WI-uSy"/>
                         <segue destination="tnR-Ky-c2q" kind="show" identifier="listToDetailsSegue" id="t6n-Sv-1gJ"/>
@@ -159,26 +165,9 @@
             </objects>
             <point key="canvasLocation" x="1351" y="116"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3XW-Ix-Gzg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tbG-so-Kw0" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ynH-TM-kQy">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5MY-hT-Geg" kind="relationship" relationship="rootViewController" id="8kK-J1-shq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MqU-rU-901" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1964" y="116"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="back-24" width="24" height="24"/>
         <image name="icons8-filter-27" width="26" height="26"/>
         <image name="icons8-map-32" width="32" height="32"/>
         <image name="icons8-menu-26" width="26" height="26"/>

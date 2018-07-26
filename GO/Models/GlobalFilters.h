@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    ALL = 1,
+    ALL = 0,
     RESTAURANTS,
     SELFIESPOTS,
     HOTELS,
