@@ -28,21 +28,6 @@
     [self.image loadInBackground];
 }
 
-- (void)setProfile {
-    PFFile *picture = [self getPFFileFromImage:[UIImage imageNamed:@"icons8-user-32"]];
-    self.image.file = picture;
-    self.username.text = @"Username";
-    self.name.text = @"Profile";
-}
-
-#pragma mark - Action
-
-- (IBAction)tappedProfile:(id)sender {
-    NSLog(@"We did it!");
-    [self.delegate didTapProfile];
-}
-
-
 #pragma mark - Conversion
 
 - (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
@@ -67,6 +52,7 @@
     
     if (selected) {
         self.contentView.backgroundColor = UIColor.whiteColor;
+        self.image.backgroundColor = UIColor.lightGrayColor;
     }
 }
 
@@ -75,6 +61,7 @@
     
     if (highlighted) {
         self.contentView.backgroundColor = UIColor.whiteColor;
+        self.image.backgroundColor = UIColor.lightGrayColor;
     }
 }
 

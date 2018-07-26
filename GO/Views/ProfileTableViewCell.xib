@@ -55,26 +55,12 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4B-NH-TKL">
-                        <rect key="frame" x="142" y="25" width="90" height="90"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="90" id="dcS-Qs-bVy"/>
-                            <constraint firstAttribute="height" constant="90" id="q9c-5N-vsc"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                        <connections>
-                            <action selector="tappedProfile:" destination="CkK-L2-aQP" eventType="touchUpInside" id="0kj-zW-eIV"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="1ab-qu-dAA" firstAttribute="leading" secondItem="bi4-yU-nzM" secondAttribute="leadingMargin" constant="141" id="6bT-Z2-e5X"/>
-                    <constraint firstItem="I4B-NH-TKL" firstAttribute="top" secondItem="bi4-yU-nzM" secondAttribute="topMargin" constant="14" id="GcX-yb-xfK"/>
                     <constraint firstItem="gjX-em-nhl" firstAttribute="top" secondItem="bi4-yU-nzM" secondAttribute="topMargin" constant="14" id="H4J-ao-abG"/>
                     <constraint firstAttribute="bottomMargin" secondItem="qnt-jC-nmf" secondAttribute="bottom" constant="16" id="KOF-fN-M7m"/>
                     <constraint firstItem="qnt-jC-nmf" firstAttribute="leading" secondItem="bi4-yU-nzM" secondAttribute="leadingMargin" constant="142" id="MDy-nn-6Fi"/>
-                    <constraint firstItem="I4B-NH-TKL" firstAttribute="leading" secondItem="bi4-yU-nzM" secondAttribute="leadingMargin" constant="126" id="MF1-eD-dsP"/>
                     <constraint firstItem="1ab-qu-dAA" firstAttribute="top" secondItem="gjX-em-nhl" secondAttribute="bottom" constant="8" id="NFn-zZ-S3I"/>
                     <constraint firstItem="qnt-jC-nmf" firstAttribute="top" secondItem="gjX-em-nhl" secondAttribute="bottom" constant="35" id="PFc-kk-xlO"/>
                     <constraint firstItem="gjX-em-nhl" firstAttribute="leading" secondItem="bi4-yU-nzM" secondAttribute="leadingMargin" constant="126" id="cne-uz-YeS"/>

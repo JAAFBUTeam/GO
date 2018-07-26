@@ -73,15 +73,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJl-qq-sts">
-                                <rect key="frame" x="142" y="96" width="90" height="90"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="NcM-yF-kAT"/>
-                                    <constraint firstAttribute="width" constant="90" id="u7z-rv-dRE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfg-m8-jGb" customClass="PFImageView">
                                 <rect key="frame" x="142" y="96" width="90" height="90"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,20 +116,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePv-d4-TkL">
-                                <rect key="frame" x="133" y="202" width="109" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHV-d3-u4m">
+                                <rect key="frame" x="138" y="194" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change Photo"/>
+                                <connections>
+                                    <action selector="didTapProfile:" destination="BL8-0d-vlM" eventType="touchUpInside" id="xpP-bV-Z9O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fJl-qq-sts" firstAttribute="centerX" secondItem="fI3-Yg-6RH" secondAttribute="centerX" id="6Dd-6T-crC"/>
-                            <constraint firstItem="ePv-d4-TkL" firstAttribute="top" secondItem="fJl-qq-sts" secondAttribute="bottom" constant="16" id="FMB-NO-cPh"/>
                             <constraint firstItem="rfg-m8-jGb" firstAttribute="top" secondItem="hfX-MK-gtb" secondAttribute="top" constant="32" id="ItQ-9R-aOb"/>
-                            <constraint firstItem="ePv-d4-TkL" firstAttribute="centerX" secondItem="fI3-Yg-6RH" secondAttribute="centerX" id="lVZ-3e-l0K"/>
-                            <constraint firstItem="fJl-qq-sts" firstAttribute="top" secondItem="hfX-MK-gtb" secondAttribute="top" constant="32" id="rnJ-Bo-z8R"/>
                             <constraint firstItem="rfg-m8-jGb" firstAttribute="centerX" secondItem="fI3-Yg-6RH" secondAttribute="centerX" id="z3R-i8-Tw6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hfX-MK-gtb"/>
@@ -149,8 +138,18 @@
                                 <action selector="didTapCancel:" destination="BL8-0d-vlM" id="Nbx-DB-qWg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="PeP-Il-75R"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="PeP-Il-75R">
+                            <connections>
+                                <action selector="didTapSave:" destination="BL8-0d-vlM" id="f9h-6w-hl3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="changePhoto" destination="KHV-d3-u4m" id="hT3-AG-gQR"/>
+                        <outlet property="image" destination="rfg-m8-jGb" id="8Od-hd-cGx"/>
+                        <outlet property="name" destination="uVx-va-Xir" id="aIN-Si-vGO"/>
+                        <outlet property="username" destination="rgJ-gl-nLi" id="8Bm-hG-WFt"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2988" y="-400.74962518740631"/>
