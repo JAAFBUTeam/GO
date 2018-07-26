@@ -23,7 +23,7 @@
     
     self.image.file = self.user.image;
     self.username.text = self.user.username;
-    //self.name.text = self.user.name;
+    self.name.text = self.user.name;
     
     [self.image loadInBackground];
 }

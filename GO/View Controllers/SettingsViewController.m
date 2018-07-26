@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setProfile];
 }
 
 - (void)setProfile {
@@ -39,9 +41,13 @@
 }
 
 - (IBAction)didTapSave:(id)sender {
-    User.currentUser.image = self.image.file;
-    User.currentUser.username = self.username.text;
-    User.currentUser.name = self.name.text;
+    [User.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        User.currentUser.image = self.image.file;
+        User.currentUser.username = self.username.text;
+        User.currentUser.name = self.name.text;
+    }];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapProfile:(id)sender { // connect to imageview
@@ -77,9 +83,6 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
         self.image.file = [self getPFFileFromImage:originalImage];
-        [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        
-        }];
     }];
 }
 
