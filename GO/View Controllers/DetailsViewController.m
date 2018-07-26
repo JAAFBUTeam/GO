@@ -13,10 +13,13 @@
 #import "PhotoCollectionView.h"
 #import "CarouselTableViewCell.h"
 #import "ReviewViewController.h"
+#import "InstagramKit.h"
+#import "APIManager.h"
+#import "PhotoCollectionViewController.h"
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property(nonatomic, strong) NSMutableArray<UIImage *> *imagesCopy;
+@property (weak, nonatomic) InstagramEngine *engine;
 
 typedef enum {
     CAROUSEL = 0,
@@ -39,17 +42,12 @@ typedef enum {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    //_tableView.backgroundColor = [UIColor whiteColor];
-    //_UITableViewCellSeparator
-    [self setImageArray];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+
     [self registerNibs];
 }
 
--(void)setImageArray {
-    _imagesCopy = _location.images;
-}
 
 
 # pragma mark - Register nibs
@@ -112,7 +110,7 @@ typedef enum {
         }
         case IMAGE_COLLECTION: {
             PhotoCollectionView *collectionViewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"PhotoCollectionView"];
-            [collectionViewTableViewCell createCollectionViewCell];
+            [collectionViewTableViewCell createCollectionViewCell:_location];
             return collectionViewTableViewCell;
         }
         default:{
@@ -123,7 +121,6 @@ typedef enum {
     }
 }
 
-
 # pragma mark - Tableview Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,17 +128,10 @@ typedef enum {
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
     if (indexPath.section == 6){
+        NSLog(@"%lu", (unsigned long)[_mediaGalleryByLocation count]);
         [self performSegueWithIdentifier:@"photoGalleryViewSegue" sender:nil];
     }
 }
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 5;
-//}
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 5;
-//}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -158,6 +148,13 @@ typedef enum {
         CarouselTableViewCell *tappedCell = sender;
         ReviewViewController *reviewsController = [segue destinationViewController];
         reviewsController.location = tappedCell.location;
+    }
+    
+    if ([segue.identifier isEqualToString:@"photoGalleryViewSegue"]){
+        TitleTableViewCell *tappedCell = sender;
+        PhotoCollectionViewController *photoCollectionController = [segue destinationViewController];
+        photoCollectionController.location = self.location;
+        //photoCollectionController.isPreviewCell = true;
     }
 }
 

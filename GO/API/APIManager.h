@@ -7,10 +7,10 @@
 //
 
 #import "BDBOAuth1SessionManager.h"
+#import "InstagramKit.h"
 
 @interface APIManager : BDBOAuth1SessionManager
 
-
-+(NSURL *)redirectToInstagram;
++(void)redirectToInstagram:(InstagramEngine *)engine;
 
 @end

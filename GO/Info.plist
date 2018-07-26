@@ -4,6 +4,11 @@
 <dict>
 	<key>InstagramAppRedirectURL</key>
 	<string>https://github.com/JAAFBUTeam/go</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>InstagramAppClientId</key>
 	<string>daa39e5d2da244f49fc0470bfd996154</string>
 	<key>CFBundleDevelopmentRegion</key>

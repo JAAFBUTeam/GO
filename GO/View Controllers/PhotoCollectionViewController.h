@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Location.h"
 @interface PhotoCollectionViewController : UIViewController
+
+@property (nonatomic, strong) Location *location;
+@property (nonatomic, strong) BOOL isPreviewCell;
 
 @end
