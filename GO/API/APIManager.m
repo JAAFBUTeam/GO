@@ -15,13 +15,19 @@ static NSString * const tailRedirectURLString = @"&redirect_uri=REDIRECT-URI&res
 
 @implementation APIManager
 
--(NSURL *)redirectToInstagram {
-//    NSString *redirectURLString = [baseRedirectURLString stringByAppendingString:clientID];
-//    redirectURLString = [baseRedirectURLString stringByAppendingString:tailRedirectURLString];
-//    NSURL *redirectURL = [NSURL URLWithString:redirectURLString];
-    NSURL *authURL = [[InstagramEngine sharedEngine] authorizationURL];
-    return authURL;
-    //[self.webView loadRequest:[NSURLRequest requestWithURL:authURL]];
++(void)redirectToInstagram:(InstagramEngine *)engine {
+    //mediaGallery = [[NSMutableArray alloc] init];
+    [[InstagramEngine sharedEngine] setAccessToken:@"8282989252.1677ed0.7c78fb4fa96e45f2b7b8aa27d0aedfc5"];
+    
+//    [engine getSelfRecentMediaWithSuccess:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
+//        NSLog(@"Accessing media");
+//        //return media;
+//        [mediaGallery addObjectsFromArray:media];
+//        //NSLog(@"%@", [mediaGallery objectAtIndex:0]);
+//    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
+//        NSLog(@"Error in getting media");
+//        NSLog(@"%@", response);
+//    }];
 }
 
 @end

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Location.h"
+#import "InstagramKit.h"
 
 @interface DetailsViewController : UIViewController
 
 @property (strong, nonatomic) Location *location;
 @property (weak, nonatomic) IBOutlet UIImageView *location_image;
+@property (strong, nonatomic) NSMutableArray<InstagramMedia *> *mediaGalleryByLocation;
 
 @end

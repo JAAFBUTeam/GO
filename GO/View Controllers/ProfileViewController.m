@@ -13,8 +13,11 @@
 #import "ProfileTableViewCell.h"
 #import "ParseUI/ParseUI.h"
 #import "Parse/Parse.h"
+#import "DetailsViewController.h"
+#import "ReviewViewController.h"
+#import "User.h"
 
-@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate>
+@interface ProfileViewController () <ProfileTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -22,20 +25,15 @@
 
 @implementation ProfileViewController 
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
+    [self setupTableView];
     [self registerNibs];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 # pragma mark - Register nibs
@@ -56,13 +54,17 @@
     
 }
 
-# pragma mark - Tableview Delegate
+# pragma mark - Tableview
+
+- (void) setupTableView {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 3){
-        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
-    } else if (indexPath.section == 3){
-        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
+    if (indexPath.section == 1){
+        [self performSegueWithIdentifier:@"detailsSegue" sender:nil];
     } else if (indexPath.section == 3){
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
@@ -71,11 +73,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) { // Profile
         ProfileTableViewCell *profileTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ProfileTableViewCell"];
-        if (User.currentUser != nil) {
-            [profileTableViewCell setProfile:User.currentUser];
-        } else {
-            [profileTableViewCell setProfile];
-        }
+        [profileTableViewCell setProfile:User.currentUser];
+        /*UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapProfile)];
+        [profileTableViewCell.image addGestureRecognizer:tap]; */
+//        tap.delegate = self;
+    
         return profileTableViewCell;
     } else if (indexPath.section == 1) { // Carousel
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
@@ -91,7 +93,7 @@
         return reviewTableViewCell;
     }
 }
-    
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
@@ -121,7 +123,10 @@
 
 #pragma mark - Actions
 
-- (IBAction)didTapProfile:(id)sender { // connect to imageview
+- (void) didTapProfile { // connect to imageview
+    
+    NSLog(@"thanks for tapping me!");
+    
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
@@ -164,7 +169,7 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -172,20 +177,21 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.identifier isEqualToString:@"segueToDetails"]) {
+    if ([segue.identifier isEqualToString:@"detailsSegue"]) {
         
         Location *location = sender;
         
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.location = location;
-    } else if ([segue.identifier isEqualToString:@"segueToDetails"]) {\
+    } else if ([segue.identifier isEqualToString:@"reviewsSegue"]) {
         
         Location *location = sender;
         
-        DetailsViewController *detailsViewController = [segue destinationViewController];
-        detailsViewController.location = location;
+        ReviewViewController *reviewsViewController = [segue destinationViewController];
+        reviewsViewController.location = location;
+        reviewsViewController.user = User.currentUser;
     }
 }
-*/
+
 
 @end

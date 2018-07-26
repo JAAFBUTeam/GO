@@ -59,7 +59,6 @@
     return _sharedEngine;
 }
 
-
 - (instancetype)init {
     
     if (self = [super init])
@@ -67,7 +66,7 @@
         NSURL *baseURL = [NSURL URLWithString:kInstagramKitBaseURL];
         self.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
         self.httpManager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
-
+        
         NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
         if (INSTAGRAMKIT_TEST_TARGET) {
             info = [[NSBundle bundleForClass:[self class]] infoDictionary];

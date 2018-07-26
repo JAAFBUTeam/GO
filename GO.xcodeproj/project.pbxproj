@@ -22,6 +22,7 @@
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
+		19AD70B22108EAF8008A72EF /* PhotoGallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -106,6 +107,7 @@
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
 		19AD70AE21079368008A72EF /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		19AD70AF21079368008A72EF /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoGallery.storyboard; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				CC83A36C20F92E4F00117065 /* DetailView.storyboard */,
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
 				CC73AE04210235A7001DA31A /* ReviewsView.storyboard */,
+				19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				19A2529F2107DEFA00860637 /* CategoryCollectionViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
+				19AD70B22108EAF8008A72EF /* PhotoGallery.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
 				CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,

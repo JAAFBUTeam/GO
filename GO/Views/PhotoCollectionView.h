@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
+#import "InstagramKit.h"
 
 @interface PhotoCollectionView : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
--(void)createCollectionViewCell;
+-(void)createCollectionViewCell:(Location *)location;
 
 @end

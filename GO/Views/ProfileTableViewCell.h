@@ -11,8 +11,15 @@
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
 
+@protocol ProfileTableViewCellDelegate
+
+-(void)didTapProfile;
+
+@end
+
 @interface ProfileTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) id<ProfileTableViewCellDelegate> delegate;
 @property (nonatomic, strong) User *user;
 @property (weak, nonatomic) IBOutlet PFImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *name;

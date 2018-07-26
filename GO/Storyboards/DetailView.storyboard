@@ -30,6 +30,7 @@
                     <connections>
                         <outlet property="tableView" destination="i1P-Ie-qLJ" id="6MF-lj-QHW"/>
                         <segue destination="uQT-td-ogf" kind="presentation" identifier="reviewsSegue" id="VPy-ug-w8e"/>
+                        <segue destination="bEl-IX-hA0" kind="show" identifier="photoGalleryViewSegue" id="SJD-xq-UMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aF-nd-qhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,6 +44,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWd-Do-wPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1802.4000000000001" y="174.51274362818592"/>
+        </scene>
+        <!--PhotoGallery-->
+        <scene sceneID="6tB-HG-JVj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotoGallery" id="bEl-IX-hA0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hD-oR-mPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="314"/>
         </scene>
     </scenes>
 </document>
