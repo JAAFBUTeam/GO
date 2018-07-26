@@ -66,7 +66,7 @@
 
 //TODO: do function
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
-    [self.imageDelegate ImageTapped];
+    [self.imageDelegate ImageTapped:self.sectionID];
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
