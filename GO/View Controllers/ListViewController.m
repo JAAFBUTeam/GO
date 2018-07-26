@@ -63,7 +63,7 @@
 -(void) setTableProperties {
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
     self.listTableView.estimatedRowHeight = 300;
-    self.listTableView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0);
+    self.listTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
     self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.listTableView.backgroundColor = [UIColor whiteColor];
 }
@@ -146,7 +146,7 @@
         NSLog(@"location type recognized");
         DetailsViewController *detailsController = [segue destinationViewController];
         detailsController.location = sender;
-    } else { //info section tapped
+    } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
         NSLog(@"location type passed");
         DetailsViewController *detailsController = [segue destinationViewController];
         detailsController.location = self.locationsArray[self.selectedRow];

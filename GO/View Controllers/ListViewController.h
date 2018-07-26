@@ -12,6 +12,7 @@
 #import "InfoTableViewCell.h"
 #import "CarouselTableViewCell.h"
 #import "AppDelegate.h"
+#import "GlobalFilters.h"
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate>
 

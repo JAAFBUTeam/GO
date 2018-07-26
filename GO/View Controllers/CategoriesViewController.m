@@ -113,8 +113,20 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 1) {
+        if(indexPath.item == 0) {
+            [GlobalFilters sharedInstance].categoryType = ALL;
+        } else if (indexPath.item == 1) {
+            [GlobalFilters sharedInstance].categoryType = RESTAURANTS;
+        } else if (indexPath.item == 2) {
+            [GlobalFilters sharedInstance].categoryType = SELFIESPOTS;
+        } else if (indexPath.item == 3) {
+            [GlobalFilters sharedInstance].categoryType = HOTELS;
+        } else if (indexPath.item == 4) {
+            [GlobalFilters sharedInstance].categoryType = EVENTS;
+        } else { //== 5
+            [GlobalFilters sharedInstance].categoryType = GAS;
+        }
         [self performSegueWithIdentifier:@"categoriesToListSegue" sender:nil];
-        NSLog(@"category selected - segue and send other data through");
     }
 }
 
@@ -146,10 +158,6 @@
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //categor
-    ListViewController *listController = [segue destinationViewController];
-    //ListViewController.location = tappedCell.location;
-}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {}
 
 @end
