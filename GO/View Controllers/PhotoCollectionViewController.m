@@ -11,19 +11,16 @@
 #import "InstagramKit.h"
 #import <WebKit/WebKit.h>
 #import "DetailsViewController.h"
-#import "InfoTableViewCell.h"
-#import "TitleTableViewCell.h"
-#import "ReviewsTableViewCell.h"
 #import "PhotoCollectionView.h"
+#import "PhotoCollectionViewCell.h"
 #import "CarouselTableViewCell.h"
-#import "ReviewViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 
-@interface PhotoCollectionViewController () <UITableViewDelegate, UITableViewDataSource, WKNavigationDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface PhotoCollectionViewController () <WKNavigationDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *instagramButton;
-@property (weak, nonatomic) InstagramEngine *engine;
-@property (strong, nonatomic) NSMutableArray *mediaGallery;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray<InstagramMedia *> *mediaGallery;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -33,46 +30,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _mediaGallery = [[NSMutableArray alloc] init];
-    _engine = [InstagramEngine sharedEngine];
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     
-    [self registerNibs];
-}
-
-# pragma mark - Register nibs
-
--(void)registerNibs {
-    UINib *photoCollectionView = [UINib nibWithNibName:@"PhotoCollectionView" bundle:nil];
-    [_tableView registerNib:photoCollectionView forCellReuseIdentifier:@"PhotoCollectionView"];
-}
-
-- (IBAction)onTapConnectInstagramButton:(id)sender {
-    [APIManager redirectToInstagram:_engine];
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+    layout.minimumInteritemSpacing = 1;
+    layout.minimumLineSpacing = 1;
+    CGFloat imagesInEachLine = 3;
+    CGFloat imageWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (imagesInEachLine -1)) / imagesInEachLine;
+    CGFloat imageHeight = imageWidth;
+    layout.itemSize = CGSizeMake(imageWidth, imageHeight);
     
-    [_engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo *paginationInfo) {
-        NSLog(@"Accessing media!!!");
-        //return media;
-        [self.mediaGallery addObjectsFromArray:media];
-        NSLog(@"%@", [self.mediaGallery objectAtIndex:0]);
-    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-        NSLog(@"Error in getting media!!!");
-        NSLog(@"%@", response);
+    [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
+    
+    [APIManager fetchMediaFromInstagram:self.location completionHandler:^(NSArray<InstagramMedia *> *media) {
+        self.mediaGallery = [[NSMutableArray alloc] initWithArray:media];
+        [self.collectionView reloadData];
     }];
 }
 
-# pragma mark - Tableview Datasource
+# pragma mark - CollectionView Datasource
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PhotoCollectionView *collectionViewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"PhotoCollectionView"];
-    [collectionViewTableViewCell createCollectionViewCell:_location];
-    return collectionViewTableViewCell;
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell" forIndexPath:indexPath];
+    [cell.galleryImage setImageWithURL:[_mediaGallery objectAtIndex:indexPath.item].thumbnailURL];
+    
+    return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.mediaGallery.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
 }
 
 @end

@@ -154,7 +154,6 @@ typedef enum {
         TitleTableViewCell *tappedCell = sender;
         PhotoCollectionViewController *photoCollectionController = [segue destinationViewController];
         photoCollectionController.location = self.location;
-        //photoCollectionController.isPreviewCell = true;
     }
 }
 

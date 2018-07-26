@@ -17,7 +17,7 @@
 #import "ReviewViewController.h"
 #import "User.h"
 
-@interface ProfileViewController () <ProfileTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
+@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -74,10 +74,6 @@
     if (indexPath.section == 0) { // Profile
         ProfileTableViewCell *profileTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ProfileTableViewCell"];
         [profileTableViewCell setProfile:User.currentUser];
-        /*UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapProfile)];
-        [profileTableViewCell.image addGestureRecognizer:tap]; */
-//        tap.delegate = self;
-    
         return profileTableViewCell;
     } else if (indexPath.section == 1) { // Carousel
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
@@ -102,47 +98,7 @@
     return 4;
 }
 
-#pragma mark - Conversion
-
-- (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
-    
-    // check if image is not nil
-    if (!image) {
-        return nil;
-    }
-    
-    NSData *imageData = UIImagePNGRepresentation(image);
-    
-    // get image data and check if that is not nil
-    if (!imageData) {
-        return nil;
-    }
-    
-    return [PFFile fileWithName:@"image.png" data:imageData];
-}
-
 #pragma mark - Actions
-
-- (void) didTapProfile { // connect to imageview
-    
-    NSLog(@"thanks for tapping me!");
-    
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    imagePickerVC.allowsEditing = YES;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        NSLog(@"Camera 🚫 available so we will use photo library instead");
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
-    
-    [self reloadInputViews];
-}
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -150,25 +106,6 @@
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-#pragma mark - Images
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-        User.currentUser.image = [self getPFFileFromImage:originalImage];
-        [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            
-        }];
-    }];
-}
-
 
 #pragma mark - Navigation
 
