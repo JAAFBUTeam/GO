@@ -1,11 +1,3 @@
-//
-//  PhotoCollectionView.m
-//  GO
-//
-//  Created by Ajaita Saini on 7/19/18.
-//  Copyright © 2018 Amy Liu. All rights reserved.
-//
-
 #import "PhotoCollectionView.h"
 #import "PhotoCollectionViewCell.h"
 #import "InstagramKit.h"
@@ -18,7 +10,6 @@ InstagramEngine *engine;
 NSMutableArray<InstagramMedia *> *mediaGallery;
 Location *currentLocation;
 CLLocationCoordinate2D coordinates;
-int indexVal;
 
 @implementation PhotoCollectionView
 
@@ -29,9 +20,12 @@ int indexVal;
     
     engine = [InstagramEngine sharedEngine];
     mediaGallery = [[NSMutableArray alloc] init];
-    indexVal = 0;
-}
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
 
+}
 
 # pragma mark - Collection View setup
 
@@ -44,60 +38,32 @@ int indexVal;
     CGFloat imageHeight = imageWidth;
     layout.itemSize = CGSizeMake(imageWidth, imageHeight);
     currentLocation = location;
-
-    [self setupInstagramImages];
-}
-
--(void)setupInstagramImages{
-    [APIManager redirectToInstagram:engine];
-    CLLocationCoordinate2D coordinates;
-    coordinates.latitude = currentLocation.lat;
-    coordinates.longitude = currentLocation.lon;
     
-    [engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo *paginationInfo) {
-        NSLog(@"Accessing media!!!!");
-        for (int i = 0; i < [media count]; i++){
-            NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-            [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-            [formatter setMaximumFractionDigits:2];
-            
-            NSString *instagram_latitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.latitude)];
-            NSString *current_latitude = [formatter stringFromNumber:@(coordinates.latitude)];
-            NSString *instagram_longitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.longitude)];
-            NSString *current_longitude = [formatter stringFromNumber:@(coordinates.longitude)];
-            if (instagram_latitude == current_latitude && instagram_longitude == current_longitude){
-                [mediaGallery addObject:[media objectAtIndex:i]];
-            }
-        }
-        self.collectionView.delegate = self;
-        self.collectionView.dataSource = self;
-        DetailsViewController *detailViewController = [[DetailsViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-        [detailViewController.mediaGalleryByLocation addObjectsFromArray:media];
-    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-        NSLog(@"Error in getting media!!!");
-        NSLog(@"%@", response);
+    [APIManager fetchMediaFromInstagram:currentLocation completionHandler:^(NSArray<InstagramMedia *> *media) {
+        mediaGallery = [[NSMutableArray alloc] initWithArray:media];
+        [self.collectionView reloadData];
     }];
 }
 
 # pragma mark - Collection View Datasource
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil]
-             forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell" forIndexPath:indexPath];
     
-    [cell.galleryImage setImageWithURL:[mediaGallery objectAtIndex:indexVal].thumbnailURL];
-    indexVal++;
-    
+    if (indexPath.row >= mediaGallery.count) {
+        
+    } else {
+        [cell.galleryImage setImageWithURL:[mediaGallery objectAtIndex:indexPath.row].thumbnailURL];
+    }
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+    return mediaGallery.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return 1;
 }
 
 @end
