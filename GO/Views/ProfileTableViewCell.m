@@ -23,7 +23,7 @@
     
     self.image.file = self.user.image;
     self.username.text = self.user.username;
-    self.name.text = self.user.name;
+    //self.name.text = self.user.name;
     
     [self.image loadInBackground];
 }
@@ -34,6 +34,14 @@
     self.username.text = @"Username";
     self.name.text = @"Profile";
 }
+
+#pragma mark - Action
+
+- (IBAction)tappedProfile:(id)sender {
+    NSLog(@"We did it!");
+    [self.delegate didTapProfile];
+}
+
 
 #pragma mark - Conversion
 

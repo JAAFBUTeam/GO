@@ -7,6 +7,8 @@
 //
 
 #import "Location.h"
+#import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
 
 @implementation Location
 
@@ -94,5 +96,25 @@
     return locations;
     
 }
+
+/* #pragma mark - Networking
+
+- (NSMutableArray *) fetchLocations: (NSMutableArray *) locations {
+    PFQuery *query = [PFQuery queryWithClassName:@"Location"];
+    [query whereKey:@"rating" greaterThan:@2.0];
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
+        if (places != nil) {
+            // do something with the array of object returned by the call
+            for (Location *location in places){
+                [locations addObject:location];
+            }
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        return locations;
+    }];
+}
+*/
 
 @end
