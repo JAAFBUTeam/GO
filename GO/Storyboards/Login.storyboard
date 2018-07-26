@@ -50,6 +50,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapSignUp:" destination="8X3-KB-ilU" eventType="touchUpInside" id="w2T-te-h1i"/>
+                                    <segue destination="Ws0-cE-Y1d" kind="show" identifier="setupSegue" id="uxY-8p-sdD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jng-iq-Pcj">
@@ -124,6 +125,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzh-o6-r7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1778" y="1333"/>
+        </scene>
+        <!--SettingsViewController-->
+        <scene sceneID="tgZ-E9-RaW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="SettingsViewController" id="Ws0-cE-Y1d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oeN-Pq-AMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="1411"/>
         </scene>
         <!--Profile-->
         <scene sceneID="TcT-ll-cen">

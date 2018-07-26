@@ -16,9 +16,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (User.currentUser != nil) {
+    if (PFSession.getCurrentSessionInBackground != nil) {
         [self performSegueWithIdentifier:@"profileSegue" sender:nil];
     }
+    
 }
 
 #pragma mark - Actions
@@ -35,11 +36,13 @@
 
 - (void)registerUser {
     // initialize a user object
-    PFUser *newUser = [PFUser user];
+    User *newUser = [User user];
     
     // set user properties
     newUser.username = self.username.text;
     newUser.password = self.password.text;
+    newUser.name = nil;
+    
     
     // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
@@ -57,7 +60,7 @@
     NSString *username = self.username.text;
     NSString *password = self.password.text;
     
-    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+    [User logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {

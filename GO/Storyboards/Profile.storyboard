@@ -68,7 +68,7 @@
         <scene sceneID="e8h-HS-4eC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfI-jw-FTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="BL8-0d-vlM" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BL8-0d-vlM" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fI3-Yg-6RH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
