@@ -39,10 +39,6 @@
     self.searchController.searchResultsUpdater = self;
     self.navigationItem.searchController = self.searchController;
     self.searchController.dimsBackgroundDuringPresentation = NO;
-    
-    //[self.searchController.searchBar sizeToFit];
-    //self.listTableView.tableHeaderView = self.searchController.searchBar;
-    //self.definesPresentationContext = YES;
 }
 
 -(void)initLocationsArray {
@@ -66,7 +62,7 @@
 -(void) setTableProperties {
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
     self.listTableView.estimatedRowHeight = 300;
-    self.listTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
+    self.listTableView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0);
     self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.listTableView.backgroundColor = [UIColor whiteColor];
 }

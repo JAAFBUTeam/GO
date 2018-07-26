@@ -19,18 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhY-Ko-Fzd">
-                        <rect key="frame" x="57" y="41" width="48" height="48"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="48" id="JsW-vV-oVe"/>
-                            <constraint firstAttribute="height" constant="48" id="jjG-9z-5gR"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="0.0" width="163" height="130"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hO-08-ecp">
-                        <rect key="frame" x="57.5" y="93" width="48" height="14.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14.5" id="P6p-bb-DTu"/>
-                            <constraint firstAttribute="width" constant="48" id="QCd-GG-qJi"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="111.5" width="163" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,11 +30,14 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="bhY-Ko-Fzd" firstAttribute="centerY" secondItem="pfn-ec-pm7" secondAttribute="centerY" id="Jtk-vm-by3"/>
-                <constraint firstItem="6hO-08-ecp" firstAttribute="top" secondItem="bhY-Ko-Fzd" secondAttribute="bottom" constant="4" id="Ofs-HM-Dh8"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6hO-08-ecp" secondAttribute="bottom" constant="4" id="kX2-9U-bbG"/>
-                <constraint firstItem="6hO-08-ecp" firstAttribute="centerX" secondItem="bhY-Ko-Fzd" secondAttribute="centerX" id="pVd-hf-pxO"/>
-                <constraint firstItem="bhY-Ko-Fzd" firstAttribute="centerX" secondItem="pfn-ec-pm7" secondAttribute="centerX" id="vIs-BQ-lae"/>
+                <constraint firstItem="bhY-Ko-Fzd" firstAttribute="top" secondItem="pfn-ec-pm7" secondAttribute="top" id="5iO-Z9-5rh"/>
+                <constraint firstAttribute="bottom" secondItem="6hO-08-ecp" secondAttribute="bottom" constant="4" id="JT5-vp-z9V"/>
+                <constraint firstItem="bhY-Ko-Fzd" firstAttribute="leading" secondItem="pfn-ec-pm7" secondAttribute="leading" id="Osg-yM-tha"/>
+                <constraint firstItem="6hO-08-ecp" firstAttribute="centerX" secondItem="pfn-ec-pm7" secondAttribute="centerX" id="cvZ-Qa-etl"/>
+                <constraint firstAttribute="trailing" secondItem="bhY-Ko-Fzd" secondAttribute="trailing" id="dGq-iV-2g7"/>
+                <constraint firstAttribute="bottom" secondItem="bhY-Ko-Fzd" secondAttribute="bottom" id="epf-wO-EHB"/>
+                <constraint firstItem="6hO-08-ecp" firstAttribute="leading" secondItem="pfn-ec-pm7" secondAttribute="leading" id="fyT-lk-6Md"/>
+                <constraint firstAttribute="trailing" secondItem="6hO-08-ecp" secondAttribute="trailing" id="vKc-6o-C6L"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="9Aq-EF-fwD"/>
             <size key="customSize" width="163" height="130"/>
