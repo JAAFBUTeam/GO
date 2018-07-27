@@ -42,7 +42,7 @@
     }
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
-        if (reviews != nil) { 
+        if (reviews != nil) {
             // do something with the array of object returned by the call
             for (Review *review in reviews){
                 [self.reviews addObject:review];
@@ -69,9 +69,9 @@
 
 #pragma mark - Review Delegate
 
-- (void) didTapMore:(Review *) sender {
+- (void) didTapMore:(User *) sender {
     
-    if (sender.user == User.currentUser) {
+    if (sender != nil && sender == User.currentUser) {
         
         UIAlertController * view=   [UIAlertController
                                      alertControllerWithTitle:nil
@@ -99,16 +99,44 @@
         [view addAction:edit];
         [view addAction:cancel];
         [self presentViewController:view animated:YES completion:nil];
+    } else {
+        UIAlertController * view=   [UIAlertController
+                                     alertControllerWithTitle:nil
+                                     message:nil
+                                     preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction* flag = [UIAlertAction
+                               actionWithTitle:@"Flag Review"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                                   //Do some thing here
+                                   [view dismissViewControllerAnimated:YES completion:nil];
+                                   
+                               }];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"Cancel"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [view dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+        
+        [view addAction:flag];
+        [view addAction:cancel];
+        [self presentViewController:view animated:YES completion:nil];
     }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
-
-@end
+    
+    /*
+     #pragma mark - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    @end

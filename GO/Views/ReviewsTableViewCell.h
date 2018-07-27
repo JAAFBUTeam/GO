@@ -11,7 +11,7 @@
 
 @protocol ReviewsTableViewCellDelegate
 
-- (void) didTapMore;
+- (void) didTapMore:(User *) sender;
 
 @end
 

@@ -142,9 +142,9 @@
 
 #pragma mark - Review Delegate
 
-- (void) didTapMore:(Review *) sender {
+- (void) didTapMore:(User *) sender {
     
-    if (sender.user == User.currentUser) {
+    if (sender != nil && sender == User.currentUser) {
         
         UIAlertController * view=   [UIAlertController
                                      alertControllerWithTitle:nil
@@ -172,20 +172,48 @@
         [view addAction:edit];
         [view addAction:cancel];
         [self presentViewController:view animated:YES completion:nil];
-    }
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([sender isKindOfClass:[Location class]]) { //image tapped
-        NSLog(@"location type recognized");
-        DetailsViewController *detailsController = [segue destinationViewController];
-        detailsController.location = sender;
-    } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
-        NSLog(@"location type passed");
-        DetailsViewController *detailsController = [segue destinationViewController];
-        detailsController.location = self.locationsArray[self.selectedRow];
+    } else {
+        UIAlertController * view=   [UIAlertController
+                                     alertControllerWithTitle:nil
+                                     message:nil
+                                     preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction* flag = [UIAlertAction
+                               actionWithTitle:@"Flag Review"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                                   //Do some thing here
+                                   [view dismissViewControllerAnimated:YES completion:nil];
+                                   
+                               }];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"Cancel"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [view dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+        
+        [view addAction:flag];
+        [view addAction:cancel];
+        [self presentViewController:view animated:YES completion:nil];
     }
 }
-
-@end
+    
+#pragma mark - Navigation
+    
+    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+        if([sender isKindOfClass:[Location class]]) { //image tapped
+            NSLog(@"location type recognized");
+            DetailsViewController *detailsController = [segue destinationViewController];
+            detailsController.location = sender;
+        } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
+            NSLog(@"location type passed");
+            DetailsViewController *detailsController = [segue destinationViewController];
+            detailsController.location = self.locationsArray[self.selectedRow];
+        }
+    }
+    
+    @end

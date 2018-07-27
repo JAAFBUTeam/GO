@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="icons8-more-26"/>
                         <connections>
-                            <action selector="didTapMore:" destination="z9j-Vr-ITr" eventType="touchUpInside" id="4zP-z6-UYG"/>
+                            <action selector="tappedMore:" destination="z9j-Vr-ITr" eventType="touchUpInside" id="9yv-TN-WfZ"/>
                         </connections>
                     </button>
                 </subviews>
