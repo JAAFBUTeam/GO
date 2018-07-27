@@ -63,7 +63,6 @@
 		CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEF41AB21079F1600A13DA2 /* ProfileTableViewCell.xib */; };
 		CCEF41AF2107D80200A13DA2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41AE2107D80200A13DA2 /* SettingsViewController.m */; };
 		CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */; };
-		CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */; };
 		CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */; };
 		CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */; };
 		D359BCC6509AA0348034B087 /* libPods-GOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2675920497E531A7258B040 /* libPods-GOTests.a */; };
@@ -183,8 +182,6 @@
 		CCEF41AE2107D80200A13DA2 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+Extended_Annotation.h"; sourceTree = "<group>"; };
 		CCFE2C4120FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+Extended_Annotation.m"; sourceTree = "<group>"; };
-		CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
-		CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoAnnotation.m; sourceTree = "<group>"; };
 		CCFE2C4620FE96A90037ABF2 /* MKAnnotationView+Extended_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+Extended_View.h"; sourceTree = "<group>"; };
 		CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+Extended_View.m"; sourceTree = "<group>"; };
 		CCFE2C4920FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPinAnnotationView+Extended_Pin.h"; sourceTree = "<group>"; };
@@ -347,8 +344,6 @@
 				CC73AE0D2102383E001DA31A /* Review.m */,
 				CCEF419B2106650200A13DA2 /* User.h */,
 				CCEF419C2106650200A13DA2 /* User.m */,
-				CCFE2C4320FD757B0037ABF2 /* PhotoAnnotation.h */,
-				CCFE2C4420FD757B0037ABF2 /* PhotoAnnotation.m */,
 				CCFE2C4620FE96A90037ABF2 /* MKAnnotationView+Extended_View.h */,
 				CCFE2C4720FE96A90037ABF2 /* MKAnnotationView+Extended_View.m */,
 				CCFE2C4020FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.h */,
@@ -687,7 +682,6 @@
 				19AD70B021079368008A72EF /* APIManager.m in Sources */,
 				CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */,
 				CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */,
-				CCFE2C4520FD757B0037ABF2 /* PhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

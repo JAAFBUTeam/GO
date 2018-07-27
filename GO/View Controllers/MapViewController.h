@@ -12,8 +12,8 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate, UIPageViewControllerDelegate>
 
 - (void) addLocations:(NSMutableArray *)locations;
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation;
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
 - (void) fetchLocations;
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation;
 
 @end
