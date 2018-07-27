@@ -69,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="691" y="-46"/>
         </scene>
-        <!--Terms And Conditions View Controller-->
+        <!--Terms and Conditions-->
         <scene sceneID="smZ-hq-5MD">
             <objects>
                 <viewController id="BPm-HO-vfH" customClass="TermsAndConditionsViewController" sceneMemberID="viewController">
@@ -77,15 +77,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMB-eR-7kA">
-                                <rect key="frame" x="47" y="110" width="280" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ubZ-OO-3LU">
-                                <rect key="frame" x="47" y="154" width="280" height="462"/>
+                                <rect key="frame" x="47" y="96" width="280" height="520"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,7 +88,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DsI-Q1-Dlw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5HM-81-CzG">
+                    <navigationItem key="navigationItem" title="Terms and Conditions" id="5HM-81-CzG">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="kVM-U7-KwM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1CY-Z5-VwU">
                                 <rect key="frame" x="16" y="4" width="83" height="36"/>

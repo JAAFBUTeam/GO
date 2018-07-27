@@ -16,6 +16,7 @@
 #import "InstagramKit.h"
 #import "APIManager.h"
 #import "PhotoCollectionViewController.h"
+#import "MoreTableViewCell.h"
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -27,9 +28,10 @@ typedef enum {
     TITLE_REVIEW = 2,
     REVIEW_1 = 3,
     REVIEW_2 = 4,
-    REVIEW_3 = 5,
+    MORE_REVIEWS = 5,
     TITLE_PHOTOS = 6,
-    IMAGE_COLLECTION = 7
+    IMAGE_COLLECTION = 7,
+    MORE_IMAGES = 8
 } cell_state;
 
 @end
@@ -67,6 +69,9 @@ typedef enum {
     
     UINib *carouselTableViewCell = [UINib nibWithNibName:@"CarouselTableViewCell" bundle:nil];
     [self.tableView registerNib:carouselTableViewCell forCellReuseIdentifier:@"CarouselTableViewCell"];
+    
+    UINib *moreTableViewCell = [UINib nibWithNibName:@"MoreTableViewCell" bundle:nil];
+    [self.tableView registerNib:moreTableViewCell forCellReuseIdentifier:@"MoreTableViewCell"];
 }
 
 # pragma mark - Tableview Datasource
@@ -98,10 +103,9 @@ typedef enum {
             [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"dog.jpg"] setupUsername:@"Dog1" setupRating:@"3 stars" setupReviewText:@"review text for Dog1"];
             return reviewTableViewCell;
         }
-        case REVIEW_3: {
-            ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"dog.jpg"] setupUsername:@"Dog2" setupRating:@"4 stars" setupReviewText:@"review text for Dog2"];
-            return reviewTableViewCell;
+        case MORE_REVIEWS: {
+            MoreTableViewCell *moreTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"MoreTableViewCell"];
+            return moreTableViewCell;
         }
         case TITLE_PHOTOS: {
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
@@ -112,6 +116,10 @@ typedef enum {
             PhotoCollectionView *collectionViewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"PhotoCollectionView"];
             [collectionViewTableViewCell createCollectionViewCell:_location];
             return collectionViewTableViewCell;
+        }
+        case MORE_IMAGES: {
+            MoreTableViewCell *moreTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"MoreTableViewCell"];
+            return moreTableViewCell;
         }
         default:{
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
@@ -124,10 +132,10 @@ typedef enum {
 # pragma mark - Tableview Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2){
+    if (indexPath.section == 5){
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
-    if (indexPath.section == 6){
+    if (indexPath.section == 8){
         NSLog(@"%lu", (unsigned long)[_mediaGalleryByLocation count]);
         [self performSegueWithIdentifier:@"photoGalleryViewSegue" sender:nil];
     }
@@ -138,7 +146,7 @@ typedef enum {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 8;
+    return 9;
 }
 
 # pragma mark - Navigation
