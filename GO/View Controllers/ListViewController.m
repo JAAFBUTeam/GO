@@ -143,7 +143,7 @@
 #pragma mark - Review Delegate
 
 - (void) didTapMore:(User *) sender {
-    
+    NSLog(@"We made it!");
     if (sender != nil && sender == User.currentUser) {
         
         UIAlertController * view=   [UIAlertController

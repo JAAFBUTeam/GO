@@ -34,6 +34,7 @@
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
     newLocation.pinImage = [[NSMutableArray alloc] init];
+    newLocation.tags = [[NSMutableArray alloc] init];
     // [newLocation.pinImage addObject: [UIImage imageNamed:@"MOMA"]];
     newLocation.imageURLs = [[NSMutableArray alloc] init];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/O1na7VIebCKV.jpg"];
@@ -51,6 +52,8 @@
     newLocation.lat = 37.731928;
     newLocation.lon = -122.440789;
     newLocation.rating = 4.0;
+    newLocation.tags = [[NSMutableArray alloc] init];
+
     
     [newLocation saveInBackgroundWithBlock: completion];
 }
