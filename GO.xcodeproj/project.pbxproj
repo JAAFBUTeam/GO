@@ -27,6 +27,7 @@
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
 		19AD70B22108EAF8008A72EF /* PhotoGallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */; };
 		19AD70B8210B86A1008A72EF /* MoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */; };
+		19AD70BB210BBFF6008A72EF /* CurrentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70BA210BBFF6008A72EF /* CurrentLocation.m */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -119,6 +120,8 @@
 		19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoGallery.storyboard; sourceTree = "<group>"; };
 		19AD70B6210B86A1008A72EF /* MoreTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreTableViewCell.h; sourceTree = "<group>"; };
 		19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewCell.m; sourceTree = "<group>"; };
+		19AD70B9210BBFF6008A72EF /* CurrentLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocation.h; sourceTree = "<group>"; };
+		19AD70BA210BBFF6008A72EF /* CurrentLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocation.m; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 				CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */,
 				19A252AD210A6EC700860637 /* GlobalFilters.h */,
 				19A252AE210A6EC700860637 /* GlobalFilters.m */,
+				19AD70B9210BBFF6008A72EF /* CurrentLocation.h */,
+				19AD70BA210BBFF6008A72EF /* CurrentLocation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */,
 				192A13962101499A0005481A /* PhotoCollectionView.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
+				19AD70BB210BBFF6008A72EF /* CurrentLocation.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
 				CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
