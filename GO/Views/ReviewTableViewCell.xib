@@ -53,6 +53,9 @@
                         <rect key="frame" x="343" y="11" width="17" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="icons8-more-26"/>
+                        <connections>
+                            <action selector="didTapMore:" destination="z9j-Vr-ITr" eventType="touchUpInside" id="4zP-z6-UYG"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

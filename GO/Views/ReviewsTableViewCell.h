@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "Review.h"
 
+@protocol ReviewsTableViewCellDelegate
+
+- (void) didTapMore;
+
+@end
+
 @interface ReviewsTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<ReviewsTableViewCellDelegate> delegate;
 
 @property (nonatomic, strong) Review *review;
 

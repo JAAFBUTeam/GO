@@ -18,7 +18,7 @@
 #import "PhotoCollectionViewController.h"
 #import "MoreTableViewCell.h"
 
-@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface DetailsViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) InstagramEngine *engine;
 
@@ -148,6 +148,40 @@ typedef enum {
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 9;
 }
+
+#pragma mark - Review Delegate
+
+- (void) didTapMore:(Review *) sender {
+    
+    if (sender.user == User.currentUser) {
+        
+        UIAlertController * view=   [UIAlertController
+                                     alertControllerWithTitle:nil
+                                     message:nil
+                                     preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction* edit = [UIAlertAction
+                             actionWithTitle:@"Edit Review"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 //Do some thing here
+                                 [view dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"Cancel"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [view dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+        
+        [view addAction:edit];
+        [view addAction:cancel];
+        [self presentViewController:view animated:YES completion:nil];
+    }
 
 # pragma mark - Navigation
 
