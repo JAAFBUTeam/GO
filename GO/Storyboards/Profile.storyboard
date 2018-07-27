@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ydo-ZT-rC4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K5r-b2-Pla">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,7 +34,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="bop-y3-0jc">
                             <connections>
-                                <segue destination="6ui-GT-eTX" kind="presentation" id="Ea4-cK-mMi"/>
+                                <segue destination="BL8-0d-vlM" kind="presentation" id="JY8-PD-Ba2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfg-m8-jGb" customClass="PFImageView">
-                                <rect key="frame" x="142" y="96" width="90" height="90"/>
+                                <rect key="frame" x="142" y="52" width="90" height="90"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -152,7 +152,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2988" y="-400.74962518740631"/>
+            <point key="canvasLocation" x="1842" y="-400"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FJt-xz-fFa">
@@ -175,24 +175,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBg-lq-PY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="-399.85007496251876"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9iG-6R-8rV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ui-GT-eTX" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oX7-CY-tSn">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BL8-0d-vlM" kind="relationship" relationship="rootViewController" id="czg-Op-VR4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ctx-TR-6Yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2048.8000000000002" y="-400.74962518740631"/>
         </scene>
     </scenes>
     <resources>

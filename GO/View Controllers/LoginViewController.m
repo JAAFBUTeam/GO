@@ -51,7 +51,7 @@
         } else {
             NSLog(@"User registered successfully");
             // manually segue to logged in view
-            [self performSegueWithIdentifier:@"animatedSegue" sender:nil];
+            [self performSegueWithIdentifier:@"setupSegue" sender:nil];
         }
     }];
 }
