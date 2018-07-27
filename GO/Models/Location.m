@@ -20,6 +20,8 @@
 @dynamic rating;
 @dynamic images;
 @dynamic tags;
+@dynamic imageURLs
+@dynamic tags;
 
 + (nonnull NSString *)parseClassName {
     return @"Location";
