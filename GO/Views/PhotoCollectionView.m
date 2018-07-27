@@ -53,8 +53,9 @@ CLLocationCoordinate2D coordinates;
     if (indexPath.row >= mediaGallery.count) {
         
     } else {
-        [cell.galleryImage setImageWithURL:[mediaGallery objectAtIndex:indexPath.row].thumbnailURL];
+        [cell.galleryImage setImageWithURL:[mediaGallery objectAtIndex:indexPath.item].thumbnailURL];
     }
+    
     return cell;
 }
 
@@ -64,6 +65,10 @@ CLLocationCoordinate2D coordinates;
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0;
 }
 
 @end
