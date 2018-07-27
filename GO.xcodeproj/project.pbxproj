@@ -20,6 +20,8 @@
 		19A252A42108E9EC00860637 /* LargeImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A252A32108E9EC00860637 /* LargeImageCollectionViewCell.xib */; };
 		19A252A72108EA6900860637 /* LargeImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A252A62108EA6900860637 /* LargeImageCollectionViewCell.m */; };
 		19A252AF210A6EC700860637 /* GlobalFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A252AE210A6EC700860637 /* GlobalFilters.m */; };
+		19A252B2210A9FE700860637 /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A252B1210A9FE700860637 /* FiltersViewController.m */; };
+		19A252B4210AA09400860637 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A252B3210AA09400860637 /* Filters.storyboard */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
@@ -105,6 +107,9 @@
 		19A252A62108EA6900860637 /* LargeImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LargeImageCollectionViewCell.m; sourceTree = "<group>"; };
 		19A252AD210A6EC700860637 /* GlobalFilters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalFilters.h; sourceTree = "<group>"; };
 		19A252AE210A6EC700860637 /* GlobalFilters.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobalFilters.m; sourceTree = "<group>"; };
+		19A252B0210A9FE700860637 /* FiltersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FiltersViewController.h; sourceTree = "<group>"; };
+		19A252B1210A9FE700860637 /* FiltersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
+		19A252B3210AA09400860637 /* Filters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -365,6 +370,8 @@
 		CC83A36920F9292600117065 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				19A252B0210A9FE700860637 /* FiltersViewController.h */,
+				19A252B1210A9FE700860637 /* FiltersViewController.m */,
 				19A2528E21078A3300860637 /* CategoriesViewController.h */,
 				19A2528F21078A3300860637 /* CategoriesViewController.m */,
 				CC83A36320F9291800117065 /* ListViewController.h */,
@@ -396,6 +403,7 @@
 			children = (
 				19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */,
 				19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */,
+				19A252B3210AA09400860637 /* Filters.storyboard */,
 				CC83A36A20F92D6800117065 /* MapView.storyboard */,
 				CCEF419E2106831800A13DA2 /* Login.storyboard */,
 				CCEF41A3210687A700A13DA2 /* Profile.storyboard */,
@@ -526,6 +534,7 @@
 				CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
+				19A252B4210AA09400860637 /* Filters.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableView.xib in Resources */,
 				CC73AE05210235A7001DA31A /* ReviewsView.storyboard in Resources */,
@@ -651,6 +660,7 @@
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */,
 				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
+				19A252B2210A9FE700860637 /* FiltersViewController.m in Sources */,
 				19A2529021078A3300860637 /* CategoriesViewController.m in Sources */,
 				CCEF41A721068E1400A13DA2 /* ProfileViewController.m in Sources */,
 				CC3CC5AD20FD210E005E7FF1 /* Location.m in Sources */,
