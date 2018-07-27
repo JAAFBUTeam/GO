@@ -10,5 +10,4 @@
 
 @interface FiltersViewController : UIViewController
 
-
 @end

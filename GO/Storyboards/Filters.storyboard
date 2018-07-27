@@ -16,10 +16,116 @@
                     <view key="view" contentMode="scaleToFill" id="L9t-gZ-e8J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" minimumValueImage="star-half-empty-16" maximumValueImage="star-filled-16" translatesAutoresizingMaskIntoConstraints="NO" id="ZtT-IH-vhx">
+                                <rect key="frame" x="17" y="286" width="344" height="31"/>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IAw-gb-Pre">
+                                <rect key="frame" x="16" y="161" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Hidden Gems"/>
+                                </segments>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9aS-yG-bv5">
+                                <rect key="frame" x="310" y="371" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JuT-Do-WWp">
+                                <rect key="frame" x="310" y="452" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show location type of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svV-KX-7R3">
+                                <rect key="frame" x="16" y="124" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show minimum rating of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se1-cs-0Wt">
+                                <rect key="frame" x="16" y="249" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show only open locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ags-xi-Ylm">
+                                <rect key="frame" x="16" y="376" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show nearest locations first" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMX-P2-yGJ">
+                                <rect key="frame" x="16" y="457" width="211.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-IL-Mwa">
+                                <rect key="frame" x="16" y="543" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="z0W-Ub-Pg5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Apply">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="applyButtonTap:" destination="UxB-tO-twy" eventType="touchUpInside" id="WU7-GW-AEs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ags-xi-Ylm" firstAttribute="top" secondItem="ZtT-IH-vhx" secondAttribute="bottom" constant="60" id="1Mb-SN-JMc"/>
+                            <constraint firstItem="Yrt-IL-Mwa" firstAttribute="top" secondItem="JuT-Do-WWp" secondAttribute="bottom" constant="60" id="3al-on-waw"/>
+                            <constraint firstItem="9aS-yG-bv5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ags-xi-Ylm" secondAttribute="trailing" constant="60" id="5uS-QP-mpd"/>
+                            <constraint firstItem="ZtT-IH-vhx" firstAttribute="top" secondItem="se1-cs-0Wt" secondAttribute="bottom" constant="16" id="6RB-Tg-A9E"/>
+                            <constraint firstItem="sMX-P2-yGJ" firstAttribute="top" secondItem="ags-xi-Ylm" secondAttribute="bottom" constant="60" id="7OH-RA-qjr"/>
+                            <constraint firstItem="se1-cs-0Wt" firstAttribute="leading" secondItem="Vpi-MI-1OK" secondAttribute="leading" constant="16" id="9c7-RG-L3k"/>
+                            <constraint firstItem="IAw-gb-Pre" firstAttribute="top" secondItem="svV-KX-7R3" secondAttribute="bottom" constant="16" id="A3c-KI-NKT"/>
+                            <constraint firstItem="Vpi-MI-1OK" firstAttribute="trailing" secondItem="Yrt-IL-Mwa" secondAttribute="trailing" constant="16" id="JZI-Nj-wcC"/>
+                            <constraint firstItem="se1-cs-0Wt" firstAttribute="top" secondItem="IAw-gb-Pre" secondAttribute="bottom" constant="60" id="Lhi-uB-TIg"/>
+                            <constraint firstItem="IAw-gb-Pre" firstAttribute="top" secondItem="svV-KX-7R3" secondAttribute="bottom" constant="16" id="NXP-yn-l0E"/>
+                            <constraint firstItem="svV-KX-7R3" firstAttribute="leading" secondItem="Vpi-MI-1OK" secondAttribute="leading" constant="16" id="UNB-Lv-7Cx"/>
+                            <constraint firstItem="JuT-Do-WWp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sMX-P2-yGJ" secondAttribute="trailing" constant="80" id="VGm-YV-VWm"/>
+                            <constraint firstItem="sMX-P2-yGJ" firstAttribute="leading" secondItem="Vpi-MI-1OK" secondAttribute="leading" constant="16" id="VIv-MB-q7R"/>
+                            <constraint firstItem="Vpi-MI-1OK" firstAttribute="trailing" secondItem="JuT-Do-WWp" secondAttribute="trailing" constant="16" id="Xsw-1V-pcS"/>
+                            <constraint firstItem="Vpi-MI-1OK" firstAttribute="trailing" secondItem="9aS-yG-bv5" secondAttribute="trailing" constant="16" id="azN-l8-6Mg"/>
+                            <constraint firstItem="ZtT-IH-vhx" firstAttribute="leading" secondItem="Vpi-MI-1OK" secondAttribute="leading" constant="19" id="dDn-xk-xEG"/>
+                            <constraint firstItem="Vpi-MI-1OK" firstAttribute="trailing" secondItem="ZtT-IH-vhx" secondAttribute="trailing" constant="16" id="eIu-c3-d57"/>
+                            <constraint firstItem="ZtT-IH-vhx" firstAttribute="top" secondItem="se1-cs-0Wt" secondAttribute="bottom" constant="16" id="f2k-kI-NYC"/>
+                            <constraint firstItem="Vpi-MI-1OK" firstAttribute="trailing" secondItem="svV-KX-7R3" secondAttribute="trailing" constant="16" id="fXl-bu-mLY"/>
+                            <constraint firstItem="Yrt-IL-Mwa" firstAttribute="leading" secondItem="Vpi-MI-1OK" secondAttribute="leading" constant="16" id="g5I-e3-rzR"/>
+                            <constraint firstItem="9aS-yG-bv5" firstAttribute="centerY" secondItem="ags-xi-Ylm" secondAttribute="centerY" id="jcM-Fk-Tp0"/>
+                            <constraint firstItem="Vpi-MI-1OK" firstAttribute="trailing" secondItem="IAw-gb-Pre" secondAttribute="trailing" constant="16" id="k7c-r0-ZMX"/>
+                            <constraint firstItem="se1-cs-0Wt" firstAttribute="top" secondItem="IAw-gb-Pre" secondAttribute="bottom" constant="60" id="kV3-cZ-iHZ"/>
+                            <constraint firstItem="svV-KX-7R3" firstAttribute="top" secondItem="Vpi-MI-1OK" secondAttribute="top" constant="60" id="lys-nv-BlK"/>
+                            <constraint firstItem="JuT-Do-WWp" firstAttribute="centerY" secondItem="sMX-P2-yGJ" secondAttribute="centerY" id="peU-sD-VZx"/>
+                            <constraint firstItem="IAw-gb-Pre" firstAttribute="leading" secondItem="Vpi-MI-1OK" secondAttribute="leading" constant="16" id="sv3-0c-WBt"/>
+                            <constraint firstItem="ags-xi-Ylm" firstAttribute="leading" secondItem="Vpi-MI-1OK" secondAttribute="leading" constant="16" id="uiP-ud-ugI"/>
+                            <constraint firstItem="Vpi-MI-1OK" firstAttribute="trailing" secondItem="se1-cs-0Wt" secondAttribute="trailing" constant="16" id="yk4-9p-VD6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Vpi-MI-1OK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ii2-ZB-e2P"/>
+                    <navigationItem key="navigationItem" title="Filters" id="ii2-ZB-e2P">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="9m8-oJ-Uz3">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cancelButtonTap:" destination="UxB-tO-twy" id="w8k-Oh-dHM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Jrh-BT-DiX">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="resetButtonTap:" destination="UxB-tO-twy" id="XGI-Px-Hgb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="applyButton" destination="Yrt-IL-Mwa" id="zJt-85-uQP"/>
+                        <outlet property="hiddenGemSegmentedControl" destination="IAw-gb-Pre" id="56m-ce-FcL"/>
+                        <outlet property="minRatingSlider" destination="ZtT-IH-vhx" id="q0X-HB-Voj"/>
+                        <outlet property="nearestLocationsSwitch" destination="JuT-Do-WWp" id="T82-Ej-gSE"/>
+                        <outlet property="openLocationSwitch" destination="9aS-yG-bv5" id="IpO-EI-4M7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvQ-nK-taV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,4 +150,8 @@
             <point key="canvasLocation" x="-6591.1999999999998" y="119.1904047976012"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star-filled-16" width="16" height="16"/>
+        <image name="star-half-empty-16" width="16" height="16"/>
+    </resources>
 </document>
