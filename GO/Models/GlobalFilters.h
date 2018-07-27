@@ -21,6 +21,12 @@ typedef enum {
 
 @property (assign, nonatomic) CategoryType categoryType;
 
+@property (assign, nonatomic) BOOL appliedFilters;
+@property (assign, nonatomic) NSInteger hiddenGemSegmented;
+@property (assign, nonatomic) NSInteger minRatingSlider;
+@property (assign, nonatomic) BOOL openLocationSwitch;
+@property (assign, nonatomic) BOOL nearestLocationSwitch;
+
 + (GlobalFilters *)sharedInstance;
 
 @end

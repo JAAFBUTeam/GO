@@ -20,6 +20,7 @@
 @dynamic rating;
 @dynamic images;
 @dynamic tags;
+@dynamic imageURLs;
 
 + (nonnull NSString *)parseClassName {
     return @"Location";
@@ -33,9 +34,7 @@
     newLocation.lat = 37.7857;
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
-    newLocation.pinImage = [[NSMutableArray alloc] init];
     newLocation.tags = [[NSMutableArray alloc] init];
-    // [newLocation.pinImage addObject: [UIImage imageNamed:@"MOMA"]];
     newLocation.imageURLs = [[NSMutableArray alloc] init];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/O1na7VIebCKV.jpg"];
     NSLog(@"%@", newLocation.imageURLs);
@@ -77,7 +76,6 @@
     newLocation.lat = 37.7857;
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
-    newLocation.pinImage = [[NSMutableArray alloc] init];
     newLocation.tags = [[NSMutableArray alloc] init];
     newLocation.imageURLs = [[NSMutableArray alloc] init];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/O1na7VIebCKV.jpg"];
@@ -90,7 +88,6 @@
     newLocation2.lat = 37.731928;
     newLocation2.lon = -122.440789;
     newLocation2.rating = 4.0;
-    newLocation2.pinImage = [[NSMutableArray alloc] init];
     newLocation2.tags = [[NSMutableArray alloc] init];
     newLocation2.imageURLs = [[NSMutableArray alloc] init];
     [newLocation2.imageURLs addObject:@"https://static1.squarespace.com/static/5115ccdae4b04c436ed83ed4/572810e737013ba5d459b4f3/572810efe32140b8013928a0/1462243575441/Sunnyside+Conservatory+Wedding-15.jpg"];

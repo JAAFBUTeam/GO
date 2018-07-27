@@ -20,13 +20,13 @@
 
 @implementation ReviewViewController
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
+    [self setDelegate];
     [self fetchReviews];
     
 }
@@ -53,7 +53,12 @@
     }];
 }
 
-#pragma mark - table view
+#pragma mark - Table View Delegate
+
+- (void) setDelegate {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.reviews.count;
@@ -128,15 +133,5 @@
         [self presentViewController:view animated:YES completion:nil];
     }
 }
-    
-    /*
-     #pragma mark - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    @end
+
+@end
