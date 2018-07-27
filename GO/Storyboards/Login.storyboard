@@ -79,6 +79,7 @@
                         <outlet property="username" destination="2jh-6q-a87" id="2Dx-Bh-iGP"/>
                         <segue destination="OHZ-ai-dlX" kind="show" identifier="profileSegue" animates="NO" id="C4y-lw-wiL"/>
                         <segue destination="7fJ-Yf-Y9b" kind="show" identifier="animatedSegue" id="S9Z-zn-h6p"/>
+                        <segue destination="Ws0-cE-Y1d" kind="show" identifier="setupSegue" id="bkP-2r-fPD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5B8-R7-5Ja" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,7 +113,9 @@
         <!--Profile-->
         <scene sceneID="eTE-nC-XMk">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="OHZ-ai-dlX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="OHZ-ai-dlX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fY7-J2-L9H"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewa-tc-m33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1181" y="1333"/>
@@ -124,6 +127,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzh-o6-r7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1778" y="1333"/>
+        </scene>
+        <!--SettingsViewController-->
+        <scene sceneID="tgZ-E9-RaW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="SettingsViewController" id="Ws0-cE-Y1d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oeN-Pq-AMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="1411"/>
         </scene>
         <!--Profile-->
         <scene sceneID="TcT-ll-cen">
