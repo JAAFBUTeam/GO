@@ -10,6 +10,7 @@
 #import "LargeImageCollectionViewCell.h"
 #import "CategoryCollectionViewCell.h"
 #import "ListViewController.h"
+#import "GlobalFilters.h"
 
 @interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 
