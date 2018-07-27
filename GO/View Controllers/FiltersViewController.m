@@ -23,11 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self LayoutUI];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if([GlobalFilters sharedInstance].appliedFilters == YES) {
+        [self showCurrentFilters];
+    } else {
+        [self showDefaults];
+    }
 }
 
 -(void)LayoutUI {
@@ -42,6 +42,21 @@
     [self.nearestLocationsSwitch setOn:NO];
 }
 
+-(void)showCurrentFilters {
+    self.hiddenGemSegmentedControl.selectedSegmentIndex = [GlobalFilters sharedInstance].hiddenGemSegmented;
+    self.minRatingSlider.value = [GlobalFilters sharedInstance].minRatingSlider;
+    [self.openLocationSwitch setOn:[GlobalFilters sharedInstance].openLocationSwitch];
+    [self.nearestLocationsSwitch setOn:[GlobalFilters sharedInstance].nearestLocationSwitch];
+}
+
+-(void)applyFilters {
+    [GlobalFilters sharedInstance].hiddenGemSegmented = [self.hiddenGemSegmentedControl selectedSegmentIndex];
+    [GlobalFilters sharedInstance].minRatingSlider = [self.minRatingSlider value];
+    [GlobalFilters sharedInstance].openLocationSwitch = [self.openLocationSwitch isOn];
+    [GlobalFilters sharedInstance].nearestLocationSwitch = [self.nearestLocationsSwitch isOn];
+    [GlobalFilters sharedInstance].appliedFilters = YES;
+}
+
 #pragma mark - actions
 
 - (IBAction)cancelButtonTap:(id)sender {
@@ -53,7 +68,7 @@
 }
 
 - (IBAction)applyButtonTap:(id)sender {
-    
+    [self applyFilters];
     [self dismissViewControllerAnimated:YES completion:nil]; //change nil?
 }
 

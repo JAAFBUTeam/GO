@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GlobalFilters.h"
 
 @interface FiltersViewController : UIViewController
 
