@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (PFSession.getCurrentSessionInBackground != nil) {
+    if (User.currentUser != nil) {
         [self performSegueWithIdentifier:@"profileSegue" sender:nil];
     }
     

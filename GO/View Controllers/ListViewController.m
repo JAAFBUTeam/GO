@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "ReviewsTableViewCell.h"
 
 @interface ListViewController ()
 
@@ -138,19 +139,19 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 5;
 }
-
+    
 #pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([sender isKindOfClass:[Location class]]) { //image tapped
-        NSLog(@"location type recognized");
-        DetailsViewController *detailsController = [segue destinationViewController];
-        detailsController.location = sender;
-    } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
-        NSLog(@"location type passed");
-        DetailsViewController *detailsController = [segue destinationViewController];
-        detailsController.location = self.locationsArray[self.selectedRow];
+    
+    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+        if([sender isKindOfClass:[Location class]]) { //image tapped
+            NSLog(@"location type recognized");
+            DetailsViewController *detailsController = [segue destinationViewController];
+            detailsController.location = sender;
+        } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
+            NSLog(@"location type passed");
+            DetailsViewController *detailsController = [segue destinationViewController];
+            detailsController.location = self.locationsArray[self.selectedRow];
+        }
     }
-}
-
-@end
+    
+    @end

@@ -28,4 +28,10 @@
     self.reviewText.text = reviewText;
 }
 
+- (IBAction)tappedMore:(id)sender {
+    [self.delegate didTapMore:self.review.user];
+    NSLog(@"Thanks for the tap!");
+}
+
+
 @end
