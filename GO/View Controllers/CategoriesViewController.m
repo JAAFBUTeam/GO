@@ -126,6 +126,7 @@
         } else { //== 5
             [GlobalFilters sharedInstance].categoryType = GAS;
         }
+        [GlobalFilters sharedInstance].appliedFilters = NO;
         [self performSegueWithIdentifier:@"categoriesToListSegue" sender:nil];
     }
 }
