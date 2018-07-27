@@ -12,7 +12,7 @@
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
 
-@interface SettingsViewController ()
+@interface SettingsViewController () <UIActionSheetDelegate>
 
 @end
 
@@ -59,7 +59,34 @@
     imagePickerVC.allowsEditing = YES;
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        UIAlertController * view =   [UIAlertController
+                                     alertControllerWithTitle:@"Change Profile Photo"
+                                     message:nil
+                                     preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction* camera = [UIAlertAction
+                             actionWithTitle:@"Take Photo"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                 [view dismissViewControllerAnimated:YES completion:nil];
+                             }];
+        UIAlertAction* gallery = [UIAlertAction
+                                 actionWithTitle:@"Choose from Library"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                     [view dismissViewControllerAnimated:YES completion:nil];
+                                 }];
+        
+        
+        [view addAction:camera];
+        [view addAction:gallery];
+        [self presentViewController:view animated:YES completion:nil];
+        
     }
     else {
         NSLog(@"Camera 🚫 available so we will use photo library instead");
@@ -67,7 +94,6 @@
     }
     
     [self presentViewController:imagePickerVC animated:YES completion:nil];
-    
     [self reloadInputViews];
 }
 

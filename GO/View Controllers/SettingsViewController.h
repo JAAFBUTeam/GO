@@ -17,5 +17,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *username;
 
-
 @end

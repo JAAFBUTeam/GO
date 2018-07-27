@@ -34,7 +34,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="bop-y3-0jc">
                             <connections>
-                                <segue destination="BL8-0d-vlM" kind="presentation" id="JY8-PD-Ba2"/>
+                                <segue destination="4Wi-bx-tm4" kind="presentation" id="JY8-PD-Ba2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,14 +67,13 @@
         <!--Edit-->
         <scene sceneID="e8h-HS-4eC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BfI-jw-FTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BL8-0d-vlM" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fI3-Yg-6RH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfg-m8-jGb" customClass="PFImageView">
-                                <rect key="frame" x="142" y="52" width="90" height="90"/>
+                                <rect key="frame" x="142" y="96" width="90" height="90"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -151,8 +150,9 @@
                         <outlet property="username" destination="rgJ-gl-nLi" id="8Bm-hG-WFt"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BfI-jw-FTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="-400"/>
+            <point key="canvasLocation" x="3096.8000000000002" y="-399.85007496251876"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FJt-xz-fFa">
@@ -175,6 +175,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBg-lq-PY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="-399.85007496251876"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GEx-8W-awF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Wi-bx-tm4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0gS-fe-gdB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BL8-0d-vlM" kind="relationship" relationship="rootViewController" id="O34-7I-iuI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FBW-wc-wug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2157.5999999999999" y="-400.74962518740631"/>
         </scene>
     </scenes>
     <resources>

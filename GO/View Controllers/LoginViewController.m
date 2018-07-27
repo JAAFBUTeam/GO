@@ -11,7 +11,7 @@
 
 @implementation LoginViewController
 
-#pragma mark - View Life Cyclerrfvrgkrubttuktbbclkinltubtregcv
+#pragma mark - View Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
