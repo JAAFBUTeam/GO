@@ -9,7 +9,7 @@
 #import "ListViewController.h"
 #import "ReviewsTableViewCell.h"
 
-@interface ListViewController () <ReviewsTableViewCellDelegate>
+@interface ListViewController ()
 
 @property (strong, nonatomic) NSMutableArray *locationsArray;
 @property (strong, nonatomic) NSArray *filteredLocationsArray;
@@ -138,68 +138,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 5;
-}
-
-#pragma mark - Review Delegate
-
-- (void) didTapMore:(User *) sender {
-    NSLog(@"We made it!");
-    if (sender != nil && sender == User.currentUser) {
-        
-        UIAlertController * view=   [UIAlertController
-                                     alertControllerWithTitle:nil
-                                     message:nil
-                                     preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction* edit = [UIAlertAction
-                               actionWithTitle:@"Edit Review"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action)
-                               {
-                                   //Do some thing here
-                                   [view dismissViewControllerAnimated:YES completion:nil];
-                                   
-                               }];
-        UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"Cancel"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [view dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
-        
-        [view addAction:edit];
-        [view addAction:cancel];
-        [self presentViewController:view animated:YES completion:nil];
-    } else {
-        UIAlertController * view=   [UIAlertController
-                                     alertControllerWithTitle:nil
-                                     message:nil
-                                     preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction* flag = [UIAlertAction
-                               actionWithTitle:@"Flag Review"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action)
-                               {
-                                   //Do some thing here
-                                   [view dismissViewControllerAnimated:YES completion:nil];
-                                   
-                               }];
-        UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"Cancel"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [view dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
-        
-        [view addAction:flag];
-        [view addAction:cancel];
-        [self presentViewController:view animated:YES completion:nil];
-    }
 }
     
 #pragma mark - Navigation
