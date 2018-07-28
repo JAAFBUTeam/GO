@@ -14,10 +14,13 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) CLLocationManager *currentLocation;
 
 @property (nonatomic, strong) PFFile *image;
 
 @property (nonatomic, strong) NSMutableArray *favorites;
 @property (nonatomic, strong) NSMutableArray *reviews;
+
+-(void)setUserCurrentLocation;
 
 @end

@@ -36,7 +36,6 @@
     self.locations = [[NSMutableArray alloc] init];
     // [self fetchLocations];
     self.locations = [Location createLocations];
-    NSLog(@"%lu", (unsigned long)[self.locations count]);
     [self addLocations];
     
     // [Review postReview:nil];
@@ -95,7 +94,6 @@
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
         annotationView.image = annotation.location.images[0];
-        // annotationView.calloutOffset = CGPointMake(0, 64);
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
