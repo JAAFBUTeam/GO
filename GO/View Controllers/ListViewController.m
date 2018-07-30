@@ -28,9 +28,6 @@
     [self setNavigationBarSettings];
     [self initLocationsArray];
     [self fetchLocations];
-    [self setDataSourceAndDelegate];
-    [self setTableProperties];
-    [self registerNibs];
     [self disableAutoRotate];
 }
 
@@ -91,6 +88,9 @@
                 [self.locationsArray addObject:location];
             }
             [self copyDataToFilteredArray];
+            [self setDataSourceAndDelegate];
+            [self setTableProperties];
+            [self registerNibs];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
