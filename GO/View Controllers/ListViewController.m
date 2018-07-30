@@ -87,7 +87,6 @@
     // [query whereKey:@"rating" greaterThan:@2.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
         if (LocationsArray != nil) {
-            // do something with the array of object returned by the call
             for (Location *location in LocationsArray){
                 [self.locationsArray addObject:location];
             }
