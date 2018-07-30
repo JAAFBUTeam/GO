@@ -39,6 +39,7 @@
     newLocation.tags = [[NSMutableArray alloc] init];
     newLocation.imageURLs = [[NSMutableArray alloc] init];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/O1na7VIebCKV.jpg"];
+    //newLocation.images = [newLocation fillArray:newLocation.imageURLs];
     [locations addObject:newLocation];
     
     Location *newLocation2 = [Location new];
@@ -51,6 +52,7 @@
     newLocation2.tags = [[NSMutableArray alloc] init];
     newLocation2.imageURLs = [[NSMutableArray alloc] init];
     [newLocation2.imageURLs addObject:@"https://static1.squarespace.com/static/5115ccdae4b04c436ed83ed4/572810e737013ba5d459b4f3/572810efe32140b8013928a0/1462243575441/Sunnyside+Conservatory+Wedding-15.jpg"];
+    //newLocation.images = [newLocation fillArray:newLocation.imageURLs];
     [locations addObject:newLocation2];
     
     Location *newLocation3 = [Location new];
@@ -63,6 +65,7 @@
     newLocation.tags = [[NSMutableArray alloc] init];
     newLocation.imageURLs = [[NSMutableArray alloc] init];
     [newLocation.imageURLs addObject:@"https://3.bp.blogspot.com/-UgBRK5ITezU/V1ZFDxTs9GI/AAAAAAAAB1I/y_W-RAJnibAbckLz5y2xjcG2hSWLnuOoACLcB/s1600/san%2Bfrancisco%2B16th%2Bave%2Btiled%2Bsteps%2B330x396x53kb.jpg"];
+    //newLocation.images = [newLocation fillArray:newLocation.imageURLs];
     
     [newLocation saveInBackgroundWithBlock: completion];
     [newLocation2 saveInBackgroundWithBlock: completion];
@@ -70,13 +73,18 @@
     
 }
 
-- (void) fillArray: (NSMutableArray *) pictures {
+- (NSMutableArray *) fillArray: (NSMutableArray *) pictures {
     self.images = [[NSMutableArray alloc] init];
     for (NSString *picture in pictures) {
         NSURL *url = [[NSURL alloc] initWithString:picture];
         NSData *imageData = [NSData dataWithContentsOfURL:url];
-        [self.images addObject:[UIImage imageWithData:imageData]];
+        /* PFImageView *image = [[PFImageView alloc] init];
+        image.file = [self getPFFileFromImage:[UIImage imageWithData:imageData]]; */
+        UIImage *image = [UIImage imageWithData:imageData];
+
+        [self.images addObject:image];
     }
+    return self.images;
 }
 
 + (NSMutableArray *) createLocations {
@@ -119,6 +127,25 @@
     
     return locations;
     
+}
+
+#pragma mark - Conversion
+
+- (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
+    
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
 /* #pragma mark - Networking

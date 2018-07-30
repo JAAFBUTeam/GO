@@ -21,7 +21,10 @@
 - (void)setProfile:(User *)user {
     self.user = user;
     
+    self.image.layer.cornerRadius = self.image.frame.size.width / 2;
+    self.image.clipsToBounds = YES;
     self.image.file = self.user.image;
+    
     self.username.text = self.user.username;
     self.name.text = self.user.name;
     

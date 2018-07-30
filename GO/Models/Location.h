@@ -29,6 +29,6 @@
 @property(nonatomic, strong) NSMutableArray *tags;
 
 + (NSMutableArray *) createLocations;
-- (void) fillArray: (NSMutableArray *) pictures;
+- (NSMutableArray *) fillArray: (NSMutableArray *) pictures;
 
 @end

@@ -21,6 +21,6 @@
 @property (strong, nonatomic) NSString *reviewText;
 @property (nonatomic) double rating;
 
-+ (void) postReview: (PFBooleanResultBlock  _Nullable)completion;
++ (void) postReviews: (PFBooleanResultBlock  _Nullable)completion;
 
 @end
