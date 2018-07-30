@@ -136,12 +136,8 @@ typedef enum {
 # pragma mark - Tableview Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1){
-        CLLocationCoordinate2D mapCoordinate = CLLocationCoordinate2DMake(_location.lat, _location.lon);
-        MKPlacemark *mapPlacemark = [[MKPlacemark alloc] initWithCoordinate:mapCoordinate addressDictionary:nil];
-        MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:mapPlacemark];
-        [item setName:_location.title];
-        [item openInMapsWithLaunchOptions:nil];
+    if(indexPath.section == 5){
+        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
     if (indexPath.section == 8){
         NSLog(@"%lu", (unsigned long)[_mediaGalleryByLocation count]);
