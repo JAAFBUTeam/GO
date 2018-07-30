@@ -51,6 +51,7 @@
 		CC83A36820F9292200117065 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC83A36720F9292200117065 /* DetailsViewController.m */; };
 		CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36A20F92D6800117065 /* MapView.storyboard */; };
 		CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83A36C20F92E4F00117065 /* DetailView.storyboard */; };
+		CCA5D1FC210FD282000D4F0C /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA5D1FB210FD282000D4F0C /* WriteViewController.m */; };
 		CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */; };
 		CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */; };
 		CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9EF20FFDADF0095CD59 /* TitleTableViewCell.xib */; };
@@ -167,6 +168,8 @@
 		CC83A36720F9292200117065 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		CC83A36A20F92D6800117065 /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		CC83A36C20F92E4F00117065 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		CCA5D1FA210FD282000D4F0C /* WriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WriteViewController.h; sourceTree = "<group>"; };
+		CCA5D1FB210FD282000D4F0C /* WriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
 		CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewsTableViewCell.h; sourceTree = "<group>"; };
 		CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewsTableViewCell.m; sourceTree = "<group>"; };
 		CCB3C9EB20FFCB8E0095CD59 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 				CC73AE0A2102366D001DA31A /* PhotoCollectionViewController.m */,
 				19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */,
 				19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */,
+				CCA5D1FA210FD282000D4F0C /* WriteViewController.h */,
+				CCA5D1FB210FD282000D4F0C /* WriteViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -683,6 +688,7 @@
 				19A252A72108EA6900860637 /* LargeImageCollectionViewCell.m in Sources */,
 				192A138D210002C90005481A /* TitleTableViewCell.m in Sources */,
 				CC73AE0E2102383E001DA31A /* Review.m in Sources */,
+				CCA5D1FC210FD282000D4F0C /* WriteViewController.m in Sources */,
 				CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */,
 				192A13962101499A0005481A /* PhotoCollectionView.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,

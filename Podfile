@@ -17,6 +17,8 @@ target 'GO' do
 	pod 'MBProgressHUD'
 	pod 'iCarousel'	
 	pod 'SPSlideTabBarController'
+	pod 'HCSStarRatingView', '~> 1.5'
+
 
 	
   target 'GOTests' do
