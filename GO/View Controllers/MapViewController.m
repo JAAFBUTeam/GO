@@ -34,16 +34,13 @@
     
     [self setRegion];
     
-    
-    [Location postLocation:nil];
+    self.locations = [[NSMutableArray alloc]init];
+
+    // [Location postLocation:nil];
     [self fetchLocations];
-    
-    self.locations = [[NSMutableArray alloc] init];
-    self.locations = [Location createLocations];
-    
+
     //[self addLocations];
-    
-    // [Review postReview:nil];
+    //[Review postReviews:nil];
     
 }
 
@@ -81,7 +78,7 @@
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
-        [annotation.location fillArray:annotation.location.imageURLs];
+        annotation.location.images = [annotation.location fillArray:annotation.location.imageURLs];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         
@@ -93,13 +90,12 @@
 - (MKPinAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
     NSLog(@"View for annotation entered");
     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-    // annotationView.location = annotation.location;
+    annotationView.location = annotation.location;
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
-        annotationView.image = annotation.location.images[0];
+        // annotationView.image = annotation.location.images[0];
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
-        
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
     }

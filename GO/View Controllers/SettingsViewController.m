@@ -47,6 +47,7 @@
         User.currentUser.name = self.name.text;
     }];
     
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -109,6 +110,7 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
         self.image.file = [self getPFFileFromImage:originalImage];
+        [self.image loadInBackground];
     }];
 }
 
