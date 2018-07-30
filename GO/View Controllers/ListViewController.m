@@ -27,11 +27,7 @@
     [super viewDidLoad];
     [self setNavigationBarSettings];
     [self initLocationsArray];
-    [self addDummyDataToArray];
-    [self copyDataToFilteredArray];
-    [self setDataSourceAndDelegate];
-    [self setTableProperties];
-    [self registerNibs];
+    [self fetchLocations];
     [self disableAutoRotate];
 }
 
@@ -47,10 +43,9 @@
     self.locationsArray = [[NSMutableArray alloc]init];
 }
 
--(void)addDummyDataToArray {
-    [self.locationsArray addObject:[Location createLocation]];
-    [self.locationsArray addObject:[Location createLocation]];
-}
+/* -(void)addDummyDataToArray {
+    self.locationsArray = [Location createLocations];
+} */
 
 -(void)copyDataToFilteredArray {
     self.filteredLocationsArray = self.locationsArray;
@@ -80,6 +75,28 @@
 -(void) disableAutoRotate {
     AppDelegate* shared = [UIApplication sharedApplication].delegate;
     shared.blockRotation=YES;
+}
+
+#pragma mark - Networking
+
+- (void) fetchLocations { // grabs locations from heroku
+    PFQuery *query = [PFQuery queryWithClassName:@"Location"];
+    // [query whereKey:@"rating" greaterThan:@2.0];
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
+        if (places != nil) {
+            // do something with the array of object returned by the call
+            for (Location *location in places){
+                [self.locationsArray addObject:location];
+            }
+            [self copyDataToFilteredArray];
+            [self setDataSourceAndDelegate];
+            [self setTableProperties];
+            [self registerNibs];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 #pragma mark - search bar protocol
@@ -116,11 +133,11 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.row]];
+        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setLocationObject:self.filteredLocationsArray[indexPath.row]];
+        [carouselTableViewCell setLocationObject:self.filteredLocationsArray[indexPath.section]];
         [carouselTableViewCell setSectionIDForCarousel:indexPath.section];
         carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;

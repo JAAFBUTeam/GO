@@ -33,19 +33,23 @@
     self.mapView.delegate = self;
     
     [self setRegion];
+    
+    
+    [Location postLocation:nil];
+    [self fetchLocations];
+    
     self.locations = [[NSMutableArray alloc] init];
-    // [self fetchLocations];
     self.locations = [Location createLocations];
-    [self addLocations];
+    
+    //[self addLocations];
     
     // [Review postReview:nil];
-    // [Location postLocation:nil];
     
 }
 
 #pragma mark - Networking
 
-- (void) fetchLocations {
+- (void) fetchLocations { // grabs locations from heroku
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     [query whereKey:@"rating" greaterThan:@2.0];
     // fetch data asynchronously
@@ -69,7 +73,7 @@
     [self.mapView setRegion:sfRegion animated:false];
 }
 
-- (void) addLocations {
+- (void) addLocations { // add locations into location array 
     for (Location *place in self.locations) {
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.lat, place.lon);
         
