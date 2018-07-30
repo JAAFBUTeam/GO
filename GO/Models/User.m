@@ -37,7 +37,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"Location manager not work");
+    NSLog(@"Location manager does not work");
 }
 
 @end

@@ -15,5 +15,6 @@
 @property (strong, nonatomic) Location *location;
 @property (weak, nonatomic) IBOutlet UIImageView *location_image;
 @property (strong, nonatomic) NSMutableArray<InstagramMedia *> *mediaGalleryByLocation;
+@property (nonatomic, strong) CLLocationManager *currentLocation;
 
 @end

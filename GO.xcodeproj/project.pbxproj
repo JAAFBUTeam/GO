@@ -27,7 +27,9 @@
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
 		19AD70B22108EAF8008A72EF /* PhotoGallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */; };
 		19AD70B8210B86A1008A72EF /* MoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */; };
-		19AD70BB210BBFF6008A72EF /* CurrentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70BA210BBFF6008A72EF /* CurrentLocation.m */; };
+		19AD70C2210E64FE008A72EF /* CurrentLocationPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70C1210E64FE008A72EF /* CurrentLocationPosition.m */; };
+		19AD70C6210EE9AB008A72EF /* DetailInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70C4210EE9AB008A72EF /* DetailInfoTableViewCell.m */; };
+		19AD70C7210EE9AB008A72EF /* DetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70C5210EE9AB008A72EF /* DetailInfoTableViewCell.xib */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -119,8 +121,11 @@
 		19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoGallery.storyboard; sourceTree = "<group>"; };
 		19AD70B6210B86A1008A72EF /* MoreTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreTableViewCell.h; sourceTree = "<group>"; };
 		19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewCell.m; sourceTree = "<group>"; };
-		19AD70B9210BBFF6008A72EF /* CurrentLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocation.h; sourceTree = "<group>"; };
-		19AD70BA210BBFF6008A72EF /* CurrentLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocation.m; sourceTree = "<group>"; };
+		19AD70C0210E64FE008A72EF /* CurrentLocationPosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationPosition.h; sourceTree = "<group>"; };
+		19AD70C1210E64FE008A72EF /* CurrentLocationPosition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationPosition.m; sourceTree = "<group>"; };
+		19AD70C3210EE9AB008A72EF /* DetailInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailInfoTableViewCell.h; sourceTree = "<group>"; };
+		19AD70C4210EE9AB008A72EF /* DetailInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailInfoTableViewCell.m; sourceTree = "<group>"; };
+		19AD70C5210EE9AB008A72EF /* DetailInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoTableViewCell.xib; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +269,9 @@
 				19A252A32108E9EC00860637 /* LargeImageCollectionViewCell.xib */,
 				19AD70B6210B86A1008A72EF /* MoreTableViewCell.h */,
 				19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */,
+				19AD70C3210EE9AB008A72EF /* DetailInfoTableViewCell.h */,
+				19AD70C4210EE9AB008A72EF /* DetailInfoTableViewCell.m */,
+				19AD70C5210EE9AB008A72EF /* DetailInfoTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,8 +363,8 @@
 				CCFE2C4A20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m */,
 				19A252AD210A6EC700860637 /* GlobalFilters.h */,
 				19A252AE210A6EC700860637 /* GlobalFilters.m */,
-				19AD70B9210BBFF6008A72EF /* CurrentLocation.h */,
-				19AD70BA210BBFF6008A72EF /* CurrentLocation.m */,
+				19AD70C0210E64FE008A72EF /* CurrentLocationPosition.h */,
+				19AD70C1210E64FE008A72EF /* CurrentLocationPosition.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -539,6 +547,7 @@
 				CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
+				19AD70C7210EE9AB008A72EF /* DetailInfoTableViewCell.xib in Resources */,
 				19A252B4210AA09400860637 /* Filters.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableViewCell.xib in Resources */,
@@ -677,14 +686,15 @@
 				CC73AE0821023658001DA31A /* ReviewViewController.m in Sources */,
 				192A13962101499A0005481A /* PhotoCollectionView.m in Sources */,
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
-				19AD70BB210BBFF6008A72EF /* CurrentLocation.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
 				CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */,
+				19AD70C6210EE9AB008A72EF /* DetailInfoTableViewCell.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CCEF41AF2107D80200A13DA2 /* SettingsViewController.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
+				19AD70C2210E64FE008A72EF /* CurrentLocationPosition.m in Sources */,
 				19AD70B021079368008A72EF /* APIManager.m in Sources */,
 				CCEF41AA21068EF200A13DA2 /* ProfileTableViewCell.m in Sources */,
 				CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */,
@@ -850,14 +860,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UG759YXVN;
+				DEVELOPMENT_TEAM = AHZV25Q2LU;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Amy.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajaita.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -869,14 +879,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UG759YXVN;
+				DEVELOPMENT_TEAM = AHZV25Q2LU;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Amy.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajaita.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

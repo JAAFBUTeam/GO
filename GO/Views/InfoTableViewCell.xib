@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoTableViewCell" rowHeight="124" id="t2G-5M-e7E" customClass="InfoTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoTableViewCell" rowHeight="169" id="t2G-5M-e7E" customClass="InfoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t2G-5M-e7E" id="g4E-Gh-Ha9">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="123.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="168.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a description. This is a description. This is a description. This is a description." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muj-GS-K9r">
-                        <rect key="frame" x="24" y="75" width="343" height="40.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a description. This is a description. This is a description. This is a description." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muj-GS-K9r">
+                        <rect key="frame" x="24" y="83" width="343" height="85.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="343" id="DgA-KR-IR3"/>
                         </constraints>
@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Hacker Way, Menlo Park" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar7-rb-RAa">
-                        <rect key="frame" x="24" y="52" width="145.5" height="15"/>
+                        <rect key="frame" x="24" y="73" width="145.5" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="reP-kD-ux6"/>
                         </constraints>
@@ -61,6 +61,15 @@
                             <constraint firstAttribute="width" constant="18" id="N8d-h5-NbO"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 mi away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmD-YA-Kzf">
+                        <rect key="frame" x="24" y="54" width="56.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="SOb-Zg-E9o"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="trailing" secondItem="g4E-Gh-Ha9" secondAttribute="trailingMargin" constant="8" id="4aQ-1x-cW1"/>
@@ -69,24 +78,27 @@
                     <constraint firstAttribute="bottom" secondItem="Muj-GS-K9r" secondAttribute="bottom" constant="8" id="AJ7-DK-WrP"/>
                     <constraint firstAttribute="trailing" secondItem="wxg-Yz-RZZ" secondAttribute="trailing" constant="16" id="CUl-6x-KzA"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="top" secondItem="ar7-rb-RAa" secondAttribute="bottom" constant="8" id="Hxz-X3-Uxc"/>
-                    <constraint firstItem="ar7-rb-RAa" firstAttribute="top" secondItem="6vz-7h-yFp" secondAttribute="bottom" constant="4" id="XAF-vn-ij4"/>
+                    <constraint firstItem="ar7-rb-RAa" firstAttribute="top" secondItem="tmD-YA-Kzf" secondAttribute="bottom" constant="4" id="IbB-N3-L1i"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="8" id="Zrt-6T-Qs0"/>
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="bottom" secondItem="6vz-7h-yFp" secondAttribute="bottom" id="eN7-GB-0h1"/>
+                    <constraint firstItem="tmD-YA-Kzf" firstAttribute="top" secondItem="6vz-7h-yFp" secondAttribute="bottom" constant="6" id="fkU-tv-Obw"/>
                     <constraint firstItem="6vz-7h-yFp" firstAttribute="top" secondItem="g4E-Gh-Ha9" secondAttribute="topMargin" constant="8" id="gsS-8k-Qwd"/>
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="leading" secondItem="wRC-4K-G1E" secondAttribute="trailing" constant="4" id="i5l-3o-FUZ"/>
                     <constraint firstItem="6vz-7h-yFp" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="ovx-vm-qvN"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="pEK-rX-DhX"/>
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="centerY" secondItem="wRC-4K-G1E" secondAttribute="centerY" id="r2B-sF-bGZ"/>
                     <constraint firstItem="ar7-rb-RAa" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="rqO-sO-z1S"/>
+                    <constraint firstItem="tmD-YA-Kzf" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="sDU-oB-PM6"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="address" destination="ar7-rb-RAa" id="hYi-3x-pu1"/>
+                <outlet property="distanceAway" destination="tmD-YA-Kzf" id="JOH-mf-rhv"/>
                 <outlet property="rating" destination="wxg-Yz-RZZ" id="d6U-To-xop"/>
                 <outlet property="synopsis" destination="Muj-GS-K9r" id="hrR-4a-ZTt"/>
                 <outlet property="title" destination="6vz-7h-yFp" id="Pc8-KW-Hek"/>
             </connections>
-            <point key="canvasLocation" x="238.5" y="20"/>
+            <point key="canvasLocation" x="238.5" y="42.5"/>
         </tableViewCell>
     </objects>
     <resources>
