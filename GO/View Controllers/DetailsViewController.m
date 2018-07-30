@@ -157,6 +157,13 @@ typedef enum {
     return 9;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 7){
+        return 250;
+    }
+    return UITableViewAutomaticDimension;
+}
+
 #pragma mark - Review Delegate
 
 - (void) didTapMore:(User *) sender {
