@@ -28,6 +28,9 @@
     [self setNavigationBarSettings];
     [self initLocationsArray];
     [self fetchLocations];
+    [self setDataSourceAndDelegate];
+    [self setTableProperties];
+    [self registerNibs];
     [self disableAutoRotate];
 }
 
@@ -41,14 +44,6 @@
 
 -(void)initLocationsArray {
     self.locationsArray = [[NSMutableArray alloc]init];
-}
-
-/* -(void)addDummyDataToArray {
-    self.locationsArray = [Location createLocations];
-} */
-
--(void)copyDataToFilteredArray {
-    self.filteredLocationsArray = self.locationsArray;
 }
 
 - (void) setDataSourceAndDelegate {
@@ -77,22 +72,25 @@
     shared.blockRotation=YES;
 }
 
+/* -(void)addDummyDataToArray {
+ self.locationsArray = [Location createLocations];
+ } */
+
+-(void)copyDataToFilteredArray {
+    self.filteredLocationsArray = self.locationsArray;
+}
+
 #pragma mark - Networking
 
-- (void) fetchLocations { // grabs locations from heroku
+- (void) fetchLocations {
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     // [query whereKey:@"rating" greaterThan:@2.0];
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
-        if (places != nil) {
-            // do something with the array of object returned by the call
-            for (Location *location in places){
+    [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
+        if (LocationsArray != nil) {
+            for (Location *location in LocationsArray){
                 [self.locationsArray addObject:location];
             }
             [self copyDataToFilteredArray];
-            [self setDataSourceAndDelegate];
-            [self setTableProperties];
-            [self registerNibs];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
