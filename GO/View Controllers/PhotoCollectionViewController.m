@@ -15,6 +15,7 @@
 #import "PhotoCollectionViewCell.h"
 #import "CarouselTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "User.h"
 
 
 @interface PhotoCollectionViewController () <WKNavigationDelegate, UICollectionViewDelegate, UICollectionViewDataSource>

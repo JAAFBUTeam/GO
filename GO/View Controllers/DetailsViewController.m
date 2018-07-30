@@ -17,6 +17,7 @@
 #import "APIManager.h"
 #import "PhotoCollectionViewController.h"
 #import "MoreTableViewCell.h"
+#import "DetailInfoTableViewCell.h"
 
 @interface DetailsViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -72,6 +73,9 @@ typedef enum {
     
     UINib *moreTableViewCell = [UINib nibWithNibName:@"MoreTableViewCell" bundle:nil];
     [self.tableView registerNib:moreTableViewCell forCellReuseIdentifier:@"MoreTableViewCell"];
+    
+    UINib *detailInfoTableViewCell = [UINib nibWithNibName:@"DetailInfoTableViewCell" bundle:nil];
+    [self.tableView registerNib:detailInfoTableViewCell forCellReuseIdentifier:@"DetailInfoTableViewCell"];
 }
 
 # pragma mark - Tableview Datasource
@@ -84,9 +88,9 @@ typedef enum {
             return carouselTableViewCell;
         }
         case INFO: {
-            InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-            [infoTableViewCell setTableProperties:_location];
-            return infoTableViewCell;
+            DetailInfoTableViewCell *detailInfoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"DetailInfoTableViewCell"];
+            [detailInfoTableViewCell setTableProperties:_location];
+            return detailInfoTableViewCell;
         }
         case TITLE_REVIEW: {
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
@@ -132,8 +136,12 @@ typedef enum {
 # pragma mark - Tableview Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 5){
-        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
+    if (indexPath.section == 1){
+        CLLocationCoordinate2D mapCoordinate = CLLocationCoordinate2DMake(_location.lat, _location.lon);
+        MKPlacemark *mapPlacemark = [[MKPlacemark alloc] initWithCoordinate:mapCoordinate addressDictionary:nil];
+        MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:mapPlacemark];
+        [item setName:_location.title];
+        [item openInMapsWithLaunchOptions:nil];
     }
     if (indexPath.section == 8){
         NSLog(@"%lu", (unsigned long)[_mediaGalleryByLocation count]);
