@@ -16,4 +16,6 @@
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate>
 
+@property (nonatomic, strong) CLLocationManager *currentLocation;
+
 @end

@@ -22,5 +22,7 @@
 @property (nonatomic) double rating;
 
 + (void) postReviews: (PFBooleanResultBlock  _Nullable)completion;
++ (void) postReview: (Review *)review withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
 
 @end
