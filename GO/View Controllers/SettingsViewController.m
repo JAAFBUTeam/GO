@@ -25,8 +25,14 @@
     [self setProfile];
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [self setProfile];
+}
+
 - (void)setProfile {
     
+    self.image.layer.cornerRadius = self.image.frame.size.width / 2;
+    self.image.clipsToBounds = YES;
     self.image.file = User.currentUser.image;
     self.username.text = User.currentUser.username;
     self.name.text = User.currentUser.name;
@@ -41,14 +47,16 @@
 }
 
 - (IBAction)didTapSave:(id)sender {
+    
+    User.currentUser.image = self.image.file;
+    User.currentUser.username = self.username.text;
+    User.currentUser.name = self.name.text;
+        
     [User.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        User.currentUser.image = self.image.file;
-        User.currentUser.username = self.username.text;
-        User.currentUser.name = self.name.text;
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
     }];
-    
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+     
 }
 
 - (IBAction)didTapProfile:(id)sender { // connect to imageview
@@ -108,9 +116,8 @@
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:^{
-        
         self.image.file = [self getPFFileFromImage:originalImage];
-        [self.image loadInBackground];
+        [self setProfile];
     }];
 }
 
