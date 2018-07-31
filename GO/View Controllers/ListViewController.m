@@ -13,7 +13,8 @@
 @interface ListViewController ()
 
 @property (strong, nonatomic) NSMutableArray *locationsArray;
-@property (strong, nonatomic) NSArray *filteredLocationsArray;
+@property (strong, nonatomic) NSArray *categoriesLocationArray;
+@property (strong, nonatomic) NSArray *filteredLocationArray;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
 @property (strong, nonatomic) UISearchController *searchController;
 @property (nonatomic, assign) NSInteger selectedRow;
@@ -27,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBarSettings];
-    [self initLocationsArray];
+    [self initLocationsArrays];
     [self setDataSourceAndDelegate];
     [self setTableProperties];
     [self registerNibs];
@@ -35,7 +36,7 @@
     if([GlobalFilters sharedInstance].appliedFilters) {
         //do filters search
     } else {
-        [self fetchCategoryLocations];
+        [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     }
 }
 
@@ -52,8 +53,10 @@
     self.searchController.dimsBackgroundDuringPresentation = NO;
 }
 
--(void)initLocationsArray {
+-(void)initLocationsArrays {
     self.locationsArray = [[NSMutableArray alloc]init];
+    self.categoriesLocationArray = [[NSArray alloc]init];
+    self.filteredLocationArray = [[NSArray alloc]init];
 }
 
 - (void) setDataSourceAndDelegate {
@@ -82,13 +85,13 @@
     shared.blockRotation=YES;
 }
 
--(void)copyDataToFilteredArray {
-    self.filteredLocationsArray = self.locationsArray;
+-(void)copyDataToCategoriesArray {
+    self.categoriesLocationArray = self.locationsArray;
 }
 
 #pragma mark - Networking
 
-- (void) fetchCategoryLocations {
+- (void)fetchCategoryLocations:(CategoryType)categoryType {
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     // [query whereKey:@"rating" greaterThan:@2.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
@@ -96,12 +99,16 @@
             for (Location *location in LocationsArray){
                 [self.locationsArray addObject:location];
             }
-            [self copyDataToFilteredArray];
+            [self copyDataToCategoriesArray];
             [self.listTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+-(void)fetchFilteredLocations {
+    
 }
 
 #pragma mark - search bar protocol
@@ -111,9 +118,9 @@
     if (searchText) {
         if (searchText.length != 0) {
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@",searchText];
-            self.filteredLocationsArray = [self.locationsArray filteredArrayUsingPredicate:predicate];
+            self.categoriesLocationArray = [self.locationsArray filteredArrayUsingPredicate:predicate];
         } else {
-            self.filteredLocationsArray = self.locationsArray;
+            self.categoriesLocationArray = self.locationsArray;
         }
         [self.listTableView reloadData];
     }
@@ -132,17 +139,17 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.filteredLocationsArray.count;
+    return self.categoriesLocationArray.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
+        [infoTableViewCell setTableProperties:self.categoriesLocationArray[indexPath.section]];
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setLocationProperty:self.filteredLocationsArray[indexPath.section]];
+        [carouselTableViewCell setLocationProperty:self.categoriesLocationArray[indexPath.section]];
         [carouselTableViewCell setSectionIDProperty:indexPath.section];
         [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
