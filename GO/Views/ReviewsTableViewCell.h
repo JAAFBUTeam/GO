@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Review.h"
+#import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
 
 @protocol ReviewsTableViewCellDelegate
 
@@ -21,7 +23,7 @@
 
 @property (nonatomic, strong) Review *review;
 
-@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+@property (weak, nonatomic) IBOutlet PFImageView *userImage;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *rating;
 @property (weak, nonatomic) IBOutlet UILabel *reviewText;

@@ -229,9 +229,8 @@ typedef enum {
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"reviewsSegue"]){
         NSLog(@"hello!");
-        CarouselTableViewCell *tappedCell = sender;
         ReviewViewController *reviewsController = [segue destinationViewController];
-        reviewsController.location = tappedCell.location;
+        reviewsController.location = self.location;
     }
     
     if ([segue.identifier isEqualToString:@"photoGalleryViewSegue"]){

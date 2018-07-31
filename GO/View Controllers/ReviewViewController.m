@@ -38,9 +38,9 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Review"];
     if (self.user == nil) {
         [query whereKey:@"location" equalTo:self.location.title];
-    } else {
+    } /* else {
         [query whereKey:@"user" equalTo:self.user];
-    }
+    } */
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
         if (reviews != nil) {
@@ -48,6 +48,7 @@
             for (Review *review in reviews){
                 [self.reviews addObject:review];
             }
+            [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -57,7 +58,8 @@
 #pragma mark - Actions
 
 - (IBAction)didTapAdd:(id)sender {
-    
+    [self performSegueWithIdentifier:@"writeSegue" sender:nil];
+
 }
 
 #pragma mark - Table View Delegate
