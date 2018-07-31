@@ -22,10 +22,21 @@
 }
 
 -(void)setupReviewsTableViewCell:(UIImage *)image setupUsername:(NSString *)username setupRating:(NSString *)rating setupReviewText:(NSString *)reviewText {
-    self.userImage.image = image;
+    // self.userImage = image;
     self.username.text = username;
     self.rating.text = rating;
     self.reviewText.text = reviewText;
+}
+
+-(void)setupReviewsTableViewCell:(Review *) review {
+    self.userImage.file = review.user.image;
+    self.username.text = review.user.username;
+    
+    self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
+    self.reviewText.text = review.reviewText;
+    
+    [self.userImage loadInBackground];
+
 }
 
 - (IBAction)tappedMore:(id)sender {
