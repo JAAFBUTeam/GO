@@ -31,8 +31,12 @@
     [self setDataSourceAndDelegate];
     [self setTableProperties];
     [self registerNibs];
-    [self fetchLocations];
     [self disableAutoRotate];
+    if([GlobalFilters sharedInstance].appliedFilters) {
+        //do filters search
+    } else {
+        [self fetchCategoryLocations];
+    }
 }
 
 -(void)authorizeLocation{
@@ -78,17 +82,13 @@
     shared.blockRotation=YES;
 }
 
-/* -(void)addDummyDataToArray {
- self.locationsArray = [Location createLocations];
- } */
-
 -(void)copyDataToFilteredArray {
     self.filteredLocationsArray = self.locationsArray;
 }
 
 #pragma mark - Networking
 
-- (void) fetchLocations {
+- (void) fetchCategoryLocations {
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     // [query whereKey:@"rating" greaterThan:@2.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {

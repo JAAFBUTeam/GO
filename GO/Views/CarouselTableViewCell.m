@@ -17,6 +17,10 @@
 
 # pragma mark - Setup
 
+-(void)allocImagesArray {
+    self.locationImagesArray = [[NSMutableArray alloc] init];
+}
+
 -(void)setLocationProperty:(Location *)location {
     self.location = location;
     for (NSString* imageString in location.imageURLs){
@@ -38,10 +42,6 @@
 -(void)setCarouselTypeProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
     self.carousel.pagingEnabled = YES;
-}
-
--(void)allocImagesArray {
-    self.locationImagesArray = [[NSMutableArray alloc] init];
 }
 
 -(void)setupCarouselCell {
