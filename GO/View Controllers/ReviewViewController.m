@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view.
     
     [self setDelegate];
+    [self registerNibs];
     [self fetchReviews];
     
 }
@@ -36,11 +37,11 @@
 
 - (void) fetchReviews {
     PFQuery *query = [PFQuery queryWithClassName:@"Review"];
-    if (self.user == nil) {
+    //if (self.user == nil) {
         [query whereKey:@"location" equalTo:self.location.title];
-    } /* else {
-        [query whereKey:@"user" equalTo:self.user];
-    } */
+    //} else {
+       // [query whereKey:@"user" equalTo:self.user];
+    //}
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
         if (reviews != nil) {
@@ -62,6 +63,10 @@
 
 }
 
+- (IBAction)didTapDone:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table View Delegate
 
 - (void) setDelegate {
@@ -77,8 +82,14 @@
     
     ReviewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
     cell.review = self.reviews[indexPath.row];
-    
+    [cell setupReviewsTableViewCell:cell.review];
     return cell;
+    
+}
+
+-(void) registerNibs {
+    UINib *reviewTableViewCell = [UINib nibWithNibName:@"ReviewTableViewCell" bundle:nil];
+    [_tableView registerNib:reviewTableViewCell forCellReuseIdentifier:@"ReviewTableViewCell"];
 }
 
 #pragma mark - Review Delegate
