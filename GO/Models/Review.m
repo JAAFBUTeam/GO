@@ -20,7 +20,9 @@
     return @"Review";
 }
 
-+ (void) postReview: (Location *)location withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void) postReview: (Location *)location withText: (NSString *)text withRating: (double) rating withCompletion: (PFBooleanResultBlock  _Nullable)completion {
+    
+}
 
 + (void) postReviews: (PFBooleanResultBlock  _Nullable)completion {
     

@@ -45,6 +45,7 @@
     newReview.user = User.currentUser;
     newReview.reviewText = self.reviewText.text;
     newReview.rating = 5.0;
+    
 }
 
 - (IBAction)didTapCancel:(id)sender {
