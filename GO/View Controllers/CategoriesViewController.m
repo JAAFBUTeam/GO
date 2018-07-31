@@ -116,11 +116,11 @@
         if(indexPath.item == 0) {
             [GlobalFilters sharedInstance].categoryType = ALL;
         } else if (indexPath.item == 1) {
-            [GlobalFilters sharedInstance].categoryType = RESTAURANTS;
+            [GlobalFilters sharedInstance].categoryType = FOOD;
         } else if (indexPath.item == 2) {
             [GlobalFilters sharedInstance].categoryType = SELFIESPOTS;
         } else if (indexPath.item == 3) {
-            [GlobalFilters sharedInstance].categoryType = HOTELS;
+            [GlobalFilters sharedInstance].categoryType = MUSEUM;
         } else if (indexPath.item == 4) {
             [GlobalFilters sharedInstance].categoryType = EVENTS;
         } else { //== 5
