@@ -31,8 +31,12 @@
     [self setDataSourceAndDelegate];
     [self setTableProperties];
     [self registerNibs];
-    [self fetchLocations];
     [self disableAutoRotate];
+    if([GlobalFilters sharedInstance].appliedFilters) {
+        //do filters search
+    } else {
+        [self fetchCategoryLocations];
+    }
 }
 
 -(void)authorizeLocation{
@@ -78,17 +82,13 @@
     shared.blockRotation=YES;
 }
 
-/* -(void)addDummyDataToArray {
- self.locationsArray = [Location createLocations];
- } */
-
 -(void)copyDataToFilteredArray {
     self.filteredLocationsArray = self.locationsArray;
 }
 
 #pragma mark - Networking
 
-- (void) fetchLocations {
+- (void) fetchCategoryLocations {
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     // [query whereKey:@"rating" greaterThan:@2.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
@@ -142,15 +142,16 @@
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setLocationObject:self.filteredLocationsArray[indexPath.section]];
-        [carouselTableViewCell setSectionIDForCarousel:indexPath.section];
+        [carouselTableViewCell setLocationProperty:self.filteredLocationsArray[indexPath.section]];
+        [carouselTableViewCell setSectionIDProperty:indexPath.section];
+        [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;
     }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.selectedRow = indexPath.row;
+    self.selectedRow = indexPath.section;
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:indexPath];
 }
 
