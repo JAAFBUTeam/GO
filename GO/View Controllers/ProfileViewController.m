@@ -36,6 +36,11 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self setupTableView];
+    [self registerNibs];
+}
+
 # pragma mark - Register nibs
 
 -(void)registerNibs {
