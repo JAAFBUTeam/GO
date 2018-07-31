@@ -96,9 +96,14 @@
     // [query whereKey:@"rating" greaterThan:@2.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
         if (LocationsArray != nil) {
-            for (Location *location in LocationsArray){
-                [self.locationsArray addObject:location];
+            for(Location *location in LocationsArray) {
+                for(NSNumber *tagNumber in location.tags) {
+                    if(tagNumber == [NSNumber numberWithInteger:[GlobalFilters sharedInstance].categoryType]) {
+                        [self.locationsArray addObject:location];
+                    }
+                }
             }
+
             [self copyDataToCategoriesArray];
             [self.listTableView reloadData];
         } else {
