@@ -142,8 +142,9 @@
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setLocationObject:self.filteredLocationsArray[indexPath.section]];
-        [carouselTableViewCell setSectionIDForCarousel:indexPath.section];
+        [carouselTableViewCell setLocationProperty:self.filteredLocationsArray[indexPath.section]];
+        [carouselTableViewCell setSectionIDProperty:indexPath.section];
+        [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;
     }

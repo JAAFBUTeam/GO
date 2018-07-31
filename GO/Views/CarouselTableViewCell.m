@@ -12,35 +12,30 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self allocImagesArray];
+    [self setDefaultCarouselStyle];
 }
 
-# pragma mark -- Setup
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-}
+# pragma mark - Setup
 
--(void) setLocationObject:(Location *)location {
+-(void)setLocationProperty:(Location *)location {
     self.location = location;
-    [self setDefaultCarouselProperties];
     for (NSString* imageString in location.imageURLs){
         [self.locationImagesArray addObject:imageString];
     }
-    [self setDatasourceAndDelegate];
-
 }
 
--(void)setSectionIDForCarousel:(NSInteger)sectionID {
+-(void)setSectionIDProperty:(NSInteger)sectionID {
     self.sectionID = sectionID;
 }
 
--(void)setDefaultCarouselProperties {
+-(void)setDefaultCarouselStyle {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.pagingEnabled = YES;
     self.carousel.bounceDistance = 0.3;
 }
 
--(void)setCarouselProperties:(iCarouselType) carouselType {
+-(void)setCarouselTypeProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
     self.carousel.pagingEnabled = YES;
 }
@@ -49,25 +44,15 @@
     self.locationImagesArray = [[NSMutableArray alloc] init];
 }
 
-//-(void)setDummyImageArray {
-//    self.locationImagesArray = [[NSMutableArray alloc] init];
-//    
-//    NSString *one = @"cat.jpg";
-//    NSString *two = @"dog.jpg";
-//    
-//    [self.locationImagesArray addObject:one];
-//    [self.locationImagesArray addObject:two];
-//}
-
 -(void)setupCarouselCell {
-    [self setCarouselProperties:iCarouselTypeInvertedTimeMachine];
+    [self setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
     [self.carousel scrollByNumberOfItems:1 duration:1.5];
-    [self setLocationObject:_location];
+    [self setLocationProperty:_location];
 }
 
 #pragma mark - carousel protocol methods
 
--(void) setDatasourceAndDelegate {
+-(void)setDatasourceAndDelegate {
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
 }
@@ -82,7 +67,6 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
     view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
-    //((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
     [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = true;
