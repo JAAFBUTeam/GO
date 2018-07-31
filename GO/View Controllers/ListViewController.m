@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 #import "ReviewsTableViewCell.h"
+#import "CurrentLocationPosition.h"
 
 @interface ListViewController ()
 
@@ -27,8 +28,16 @@
     [super viewDidLoad];
     [self setNavigationBarSettings];
     [self initLocationsArray];
+    [self setDataSourceAndDelegate];
+    [self setTableProperties];
+    [self registerNibs];
     [self fetchLocations];
     [self disableAutoRotate];
+}
+
+-(void)authorizeLocation{
+    CurrentLocationPosition *distanceFromLocation = [[CurrentLocationPosition alloc] init];
+    [distanceFromLocation setUserCurrentLocation];
 }
 
 -(void) setNavigationBarSettings {
@@ -88,9 +97,7 @@
                 [self.locationsArray addObject:location];
             }
             [self copyDataToFilteredArray];
-            [self setDataSourceAndDelegate];
-            [self setTableProperties];
-            [self registerNibs];
+            [self.listTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
