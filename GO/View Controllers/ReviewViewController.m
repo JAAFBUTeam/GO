@@ -10,6 +10,7 @@
 #import "ReviewsTableViewCell.h"
 #import "Review.h"
 #import "Location.h"
+#import "WriteViewController.h"
 
 @interface ReviewViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -51,6 +52,12 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+#pragma mark - Actions
+
+- (IBAction)didTapAdd:(id)sender {
+    
 }
 
 #pragma mark - Table View Delegate
@@ -133,5 +140,17 @@
         [self presentViewController:view animated:YES completion:nil];
     }
 }
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     if ([segue.identifier isEqualToString:@"writeSegue"]){
+         WriteViewController *writeController = [segue destinationViewController];
+         writeController.location = self.location;
+     }
+ }
 
 @end

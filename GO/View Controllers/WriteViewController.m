@@ -8,6 +8,7 @@
 
 #import "WriteViewController.h"
 #import "HCSStarRatingView.h"
+#import "Review.h"
 
 @interface WriteViewController ()
 
@@ -35,6 +36,23 @@
     [starRatingView addTarget:self action:@selector(didChangeValue:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:starRatingView];
 }
+
+#pragma mark - Actions
+
+- (IBAction)didTapSubmit:(id)sender {
+    Review *newReview = [Review new];
+    newReview.location = self.location.title;
+    newReview.user = User.currentUser;
+    newReview.reviewText = self.reviewText.text;
+    newReview.rating = 5.0;
+    
+    [Review postReview:newReview withCompletion:nil];
+}
+
+- (IBAction)didTapCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 /*

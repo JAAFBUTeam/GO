@@ -20,6 +20,10 @@
     return @"Review";
 }
 
++ (void) postReview: (Review *)review withCompletion: (PFBooleanResultBlock  _Nullable)completion {
+    [review saveInBackgroundWithBlock: completion];
+}
+
 + (void) postReviews: (PFBooleanResultBlock  _Nullable)completion {
     
     NSLog(@"uploading hopefully");
