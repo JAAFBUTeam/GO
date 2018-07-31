@@ -151,7 +151,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.selectedRow = indexPath.row;
+    self.selectedRow = indexPath.section;
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:indexPath];
 }
 
