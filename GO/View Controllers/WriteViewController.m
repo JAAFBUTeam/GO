@@ -46,6 +46,7 @@
     newReview.reviewText = self.reviewText.text;
     newReview.rating = 5.0;
     
+    [Review postReview:newReview withCompletion:nil];
 }
 
 - (IBAction)didTapCancel:(id)sender {

@@ -137,6 +137,7 @@ typedef enum {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 5){
+        NSLog(@"hello!");
         [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
     }
     if (indexPath.section == 8){
@@ -227,6 +228,7 @@ typedef enum {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"reviewsSegue"]){
+        NSLog(@"hello!");
         CarouselTableViewCell *tappedCell = sender;
         ReviewViewController *reviewsController = [segue destinationViewController];
         reviewsController.location = tappedCell.location;

@@ -20,8 +20,8 @@
     return @"Review";
 }
 
-+ (void) postReview: (Location *)location withText: (NSString *)text withRating: (double) rating withCompletion: (PFBooleanResultBlock  _Nullable)completion {
-    
++ (void) postReview: (Review *)review withCompletion: (PFBooleanResultBlock  _Nullable)completion {
+    [review saveInBackgroundWithBlock: completion];
 }
 
 + (void) postReviews: (PFBooleanResultBlock  _Nullable)completion {
