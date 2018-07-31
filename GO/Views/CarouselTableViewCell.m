@@ -11,7 +11,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setDummyImageArray];
+    //[self setDummyImageArray];
     [self setDefaultCarouselProperties];
     [self setDatasourceAndDelegate];
 }
@@ -23,6 +23,9 @@
 
 -(void) setLocationObject:(Location *)location {
     self.location = location;
+    for (NSString* imageString in location.imageURLs){
+        [self.locationImagesArray addObject:imageString];
+    }
 }
 
 -(void)setSectionIDForCarousel:(NSInteger)sectionID {
