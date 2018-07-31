@@ -41,13 +41,14 @@
 
 -(void)setCarouselTypeProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
+    [self.carousel scrollByNumberOfItems:1 duration:1.5];
     self.carousel.pagingEnabled = YES;
 }
 
 -(void)setupCarouselCell {
     [self setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
     [self.carousel scrollByNumberOfItems:1 duration:1.5];
-    [self setLocationProperty:_location];
+    //[self setLocationProperty:_location];
 }
 
 #pragma mark - carousel protocol methods

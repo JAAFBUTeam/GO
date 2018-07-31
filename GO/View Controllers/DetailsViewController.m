@@ -84,7 +84,9 @@ typedef enum {
         switch(indexPath.section){
         case CAROUSEL: {
             CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-            [carouselTableViewCell setupCarouselCell];
+            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
+            [carouselTableViewCell setLocationProperty:_location];
+            [carouselTableViewCell setDatasourceAndDelegate];
             return carouselTableViewCell;
         }
         case INFO: {
