@@ -20,6 +20,8 @@
     return @"Review";
 }
 
++ (void) postReview: (Location *)location withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
 + (void) postReviews: (PFBooleanResultBlock  _Nullable)completion {
     
     NSLog(@"uploading hopefully");
