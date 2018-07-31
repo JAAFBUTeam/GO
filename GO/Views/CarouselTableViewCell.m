@@ -11,9 +11,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    //[self setDummyImageArray];
-    [self setDefaultCarouselProperties];
-    [self setDatasourceAndDelegate];
+    [self allocImagesArray];
 }
 
 # pragma mark -- Setup
@@ -23,9 +21,12 @@
 
 -(void) setLocationObject:(Location *)location {
     self.location = location;
+    [self setDefaultCarouselProperties];
     for (NSString* imageString in location.imageURLs){
         [self.locationImagesArray addObject:imageString];
     }
+    [self setDatasourceAndDelegate];
+
 }
 
 -(void)setSectionIDForCarousel:(NSInteger)sectionID {
@@ -44,15 +45,19 @@
     self.carousel.pagingEnabled = YES;
 }
 
--(void)setDummyImageArray {
+-(void)allocImagesArray {
     self.locationImagesArray = [[NSMutableArray alloc] init];
-    
-    NSString *one = @"cat.jpg";
-    NSString *two = @"dog.jpg";
-    
-    [self.locationImagesArray addObject:one];
-    [self.locationImagesArray addObject:two];
 }
+
+//-(void)setDummyImageArray {
+//    self.locationImagesArray = [[NSMutableArray alloc] init];
+//    
+//    NSString *one = @"cat.jpg";
+//    NSString *two = @"dog.jpg";
+//    
+//    [self.locationImagesArray addObject:one];
+//    [self.locationImagesArray addObject:two];
+//}
 
 -(void)setupCarouselCell {
     [self setCarouselProperties:iCarouselTypeInvertedTimeMachine];
@@ -67,7 +72,6 @@
     self.carousel.dataSource = self;
 }
 
-//TODO: do function
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
     [self.imageDelegate ImageTapped:self.sectionID];
 }
@@ -78,7 +82,8 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
     view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
-    ((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
+    //((UIImageView *)view).image = [UIImage imageNamed:self.locationImagesArray[index]];
+    [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = true;
     return view;
