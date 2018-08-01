@@ -34,7 +34,6 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     [self disableAutoRotate];
-    [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
 }
 
 -(void)calculateLocation{
@@ -84,8 +83,33 @@
     shared.blockRotation=YES;
 }
 
--(void)copyDataToCategoriesArray {
+-(void)copyDataToFilteredArray {
     self.filteredLocationsArray = self.categoriesLocationsArray;
+}
+
+-(void)fetchFilteredLocations {
+    //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
+    
+    [self filterOutByMinRating];
+    
+    if([GlobalFilters sharedInstance].nearestLocationSwitch) {
+        [self sortByNearestLocation];
+    }
+    
+    self.searchfilteredLocationArray = self.filteredLocationsArray;
+    [self.listTableView reloadData];
+}
+
+-(void)filterOutByMinRating {
+    NSNumber *minValue = [NSNumber numberWithInteger:[GlobalFilters sharedInstance].minRatingSlider];
+    NSPredicate *ratingPredicate = [NSPredicate predicateWithFormat:@"rating >= %@", minValue];
+    self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:ratingPredicate];
+}
+
+-(void)sortByNearestLocation {
+    NSSortDescriptor *firstDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distanceAway" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
+    self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 #pragma mark - Networking
@@ -112,24 +136,6 @@
         }
         [MBProgressHUD hideHUDForView:self.listTableView animated:YES];
     }];
-}
-
--(void)fetchFilteredLocations {
-    //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
-    
-    //min rating
-    NSNumber *minValue = [NSNumber numberWithInteger:[GlobalFilters sharedInstance].minRatingSlider];
-    NSPredicate *ratingPredicate = [NSPredicate predicateWithFormat:@"rating >= %@", minValue];
-    self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:ratingPredicate];
-    
-    //nearestloc - sort - need distance property before sorting
-    ////self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingSelector: @selector(compare:)];
-//    NSSortDescriptor *firstDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
-//    NSArray *sortDescriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
-//    self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingDescriptors:sortDescriptors];
-    
-    self.searchfilteredLocationArray = self.filteredLocationsArray;
-    [self.listTableView reloadData];
 }
 
 #pragma mark - search bar protocol
