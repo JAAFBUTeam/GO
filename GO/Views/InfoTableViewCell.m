@@ -31,12 +31,7 @@
     self.synopsis.text = location.synopsis;
     double ratingDouble = location.rating;
     self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
-    
-    //set distance
-    CurrentLocationPosition *distanceFromLocation = [[CurrentLocationPosition alloc] init];
-    [distanceFromLocation setUserCurrentLocation];
-    double distance = [distanceFromLocation setDistance:location];
-    self.distanceAway.text = [[NSString stringWithFormat:@"%.1f", distance] stringByAppendingString:@" miles away"];
+    self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
 }
 
 @end

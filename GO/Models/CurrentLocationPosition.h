@@ -11,10 +11,11 @@
 #import "Location.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface CurrentLocationPosition : NSObject <CLLocationManagerDelegate>
+@interface CurrentLocationPosition : NSObject
 
-@property (nonatomic, strong) CLLocationManager *currentLocation;
+@property (nonatomic, strong) CLLocation *currentLocation;
 
++ (CurrentLocationPosition *)sharedInstance;
 -(void)setUserCurrentLocation;
 -(double)setDistance:(Location *)location;
 

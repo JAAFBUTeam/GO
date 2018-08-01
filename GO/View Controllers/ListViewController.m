@@ -31,6 +31,7 @@
     [self setDataSourceAndDelegate];
     [self setTableProperties];
     [self registerNibs];
+    [self fetchCategoryLocations];
     [self disableAutoRotate];
     if([GlobalFilters sharedInstance].appliedFilters) {
         //do filters search
@@ -39,9 +40,11 @@
     }
 }
 
--(void)authorizeLocation{
+-(void)calculateLocation{
     CurrentLocationPosition *distanceFromLocation = [[CurrentLocationPosition alloc] init];
-    [distanceFromLocation setUserCurrentLocation];
+    for (Location *location in _filteredLocationsArray){
+        location.distanceAway = [distanceFromLocation setDistance:location];
+    }
 }
 
 -(void) setNavigationBarSettings {
@@ -97,6 +100,7 @@
                 [self.locationsArray addObject:location];
             }
             [self copyDataToFilteredArray];
+            [self calculateLocation];
             [self.listTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);

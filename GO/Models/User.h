@@ -21,6 +21,4 @@
 @property (nonatomic, strong) NSMutableArray *favorites;
 @property (nonatomic, strong) NSMutableArray *reviews;
 
--(void)setUserCurrentLocation;
-
 @end

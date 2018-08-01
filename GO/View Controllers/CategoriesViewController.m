@@ -7,6 +7,7 @@
 //
 
 #import "CategoriesViewController.h"
+#import "CurrentLocationPosition.h"
 
 @interface CategoriesViewController ()
 
@@ -31,6 +32,8 @@
     [self registerNibs];
     [self setTableDimensions];
     [self initCategoriesArray];
+    [CurrentLocationPosition sharedInstance];
+    
 }
 
 -(void)setDelegateAndDataSource {
