@@ -123,7 +123,8 @@
 //    NSSortDescriptor *firstDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
 //    NSArray *sortDescriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
 //    self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingDescriptors:sortDescriptors];
-
+    
+    self.searchfilteredLocationArray = self.filteredLocationsArray;
     [self.listTableView reloadData];
 }
 
@@ -133,7 +134,6 @@
     NSString *searchText = self.searchController.searchBar.text;
     if (searchText) {
         if([GlobalFilters sharedInstance].appliedFilters) {
-            self.searchfilteredLocationArray = self.filteredLocationsArray;
             if (searchText.length != 0) {
                 NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@",searchText];
                 self.filteredLocationsArray = [self.searchfilteredLocationArray filteredArrayUsingPredicate:predicate];
