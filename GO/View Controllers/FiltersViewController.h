@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "GlobalFilters.h"
 
+@protocol ApplyFilterDelegate
+
+-(void) applyButtonTap;
+
+@end
+
 @interface FiltersViewController : UIViewController
+
+@property (nonatomic, weak) id<ApplyFilterDelegate> applyButtonDelegate;
 
 @end

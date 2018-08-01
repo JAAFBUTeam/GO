@@ -7,6 +7,7 @@
 //
 
 #import "CategoriesViewController.h"
+#import "CurrentLocationPosition.h"
 
 @interface CategoriesViewController ()
 
@@ -31,6 +32,8 @@
     [self registerNibs];
     [self setTableDimensions];
     [self initCategoriesArray];
+    [CurrentLocationPosition sharedInstance];
+    
 }
 
 -(void)setDelegateAndDataSource {
@@ -65,13 +68,13 @@
     [self.categoriesLabelsArray addObject:@"All"];
     
     [self.categoriesImagesArray addObject:@"icons8-food-40.png"]; //1
-    [self.categoriesLabelsArray addObject:@"Restaurants"];
+    [self.categoriesLabelsArray addObject:@"Food"];
     
     [self.categoriesImagesArray addObject:@"icons8-selfie-48.png"]; //2
     [self.categoriesLabelsArray addObject:@"Selfie Spots"];
     
     [self.categoriesImagesArray addObject:@"icons8-bed-48.png"]; //3
-    [self.categoriesLabelsArray addObject:@"Hotels"];
+    [self.categoriesLabelsArray addObject:@"Museum"];
     
     [self.categoriesImagesArray addObject:@"icons8-two-tickets-40"]; //4
     [self.categoriesLabelsArray addObject:@"Events"];
@@ -113,18 +116,26 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 1) {
-        if(indexPath.item == 0) {
-            [GlobalFilters sharedInstance].categoryType = ALL;
-        } else if (indexPath.item == 1) {
-            [GlobalFilters sharedInstance].categoryType = FOOD;
-        } else if (indexPath.item == 2) {
-            [GlobalFilters sharedInstance].categoryType = SELFIESPOTS;
-        } else if (indexPath.item == 3) {
-            [GlobalFilters sharedInstance].categoryType = MUSEUM;
-        } else if (indexPath.item == 4) {
-            [GlobalFilters sharedInstance].categoryType = EVENTS;
-        } else { //== 5
-            [GlobalFilters sharedInstance].categoryType = GAS;
+        switch(indexPath.item) {
+            case ALL: {
+                [GlobalFilters sharedInstance].categoryType = ALL;
+                break;
+            } case FOOD: {
+                [GlobalFilters sharedInstance].categoryType = FOOD;
+                break;
+            } case SELFIESPOTS: {
+                [GlobalFilters sharedInstance].categoryType = SELFIESPOTS;
+                break;
+            } case MUSEUM: {
+                [GlobalFilters sharedInstance].categoryType = MUSEUM;
+                break;
+            } case EVENTS: {
+                [GlobalFilters sharedInstance].categoryType = EVENTS;
+                break;
+            } case GAS: {
+                [GlobalFilters sharedInstance].categoryType = GAS;
+                break;
+            }
         }
         [GlobalFilters sharedInstance].appliedFilters = NO;
         [self performSegueWithIdentifier:@"categoriesToListSegue" sender:nil];
