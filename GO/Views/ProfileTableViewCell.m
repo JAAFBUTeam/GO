@@ -28,7 +28,9 @@
     self.username.text = self.user.username;
     self.name.text = self.user.name;
     
-    [self.image loadInBackground];
+    [self.image loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        NSLog(@"WOAH");
+    }];
 }
 
 #pragma mark - Conversion

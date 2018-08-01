@@ -69,6 +69,7 @@
 
 - (IBAction)applyButtonTap:(id)sender {
     [self applyFilters];
+    [self.applyButtonDelegate applyButtonTap];
     [self dismissViewControllerAnimated:YES completion:nil]; //change nil?
 }
 

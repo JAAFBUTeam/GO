@@ -10,9 +10,9 @@
 
 typedef enum {
     ALL = 0,
-    RESTAURANTS,
+    FOOD,
     SELFIESPOTS,
-    HOTELS,
+    MUSEUM,
     EVENTS,
     GAS
 } CategoryType;

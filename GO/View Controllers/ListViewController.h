@@ -13,8 +13,10 @@
 #import "CarouselTableViewCell.h"
 #import "AppDelegate.h"
 #import "GlobalFilters.h"
+#import "FiltersViewController.h"
+#import "MBProgressHUD.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate>
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate>
 
 @property (nonatomic, strong) CLLocationManager *currentLocation;
 
