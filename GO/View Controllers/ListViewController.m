@@ -109,16 +109,20 @@
 }
 
 -(void)fetchFilteredLocations {
-    //hidden gem filter
+    //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
+    
     //min rating
-    NSNumber *value = [NSNumber numberWithInteger:[GlobalFilters sharedInstance].minRatingSlider];
-    NSPredicate *ratingPredicate = [NSPredicate predicateWithFormat:@"rating >= %@", value];
+    NSNumber *minValue = [NSNumber numberWithInteger:[GlobalFilters sharedInstance].minRatingSlider];
+    NSPredicate *ratingPredicate = [NSPredicate predicateWithFormat:@"rating >= %@", minValue];
     self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:ratingPredicate];
+    
+    //nearestloc - sort - need distance property before sorting
+    ////self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingSelector: @selector(compare:)];
+//    NSSortDescriptor *firstDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+//    NSArray *sortDescriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
+//    self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingDescriptors:sortDescriptors];
+
     [self.listTableView reloadData];
-    //NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"X == 2"];
-    //NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[predicate1, predicate2]];
-    //open location
-    //nearestloc - sort
 }
 
 #pragma mark - search bar protocol
