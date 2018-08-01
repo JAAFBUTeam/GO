@@ -117,16 +117,15 @@
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     NSString *searchText = self.searchController.searchBar.text;
     if (searchText) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@",searchText];
         if([GlobalFilters sharedInstance].appliedFilters) {
             if (searchText.length != 0) {
-                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@",searchText];
                 self.filteredLocationsArray = [self.searchfilteredLocationArray filteredArrayUsingPredicate:predicate];
             } else {
                 self.filteredLocationsArray = self.searchfilteredLocationArray;
             }
         } else {
             if (searchText.length != 0) {
-                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@",searchText];
                 self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:predicate];
             } else {
                 self.filteredLocationsArray = self.categoriesLocationsArray;
