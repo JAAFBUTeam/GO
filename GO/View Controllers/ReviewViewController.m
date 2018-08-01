@@ -46,9 +46,10 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
         if (reviews != nil) {
             // do something with the array of object returned by the call
-            for (Review *review in reviews){
+            /*for (Review *review in reviews){
                 [self.reviews addObject:review];
-            }
+            } */
+            self.reviews = (NSMutableArray *) reviews;
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
