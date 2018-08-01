@@ -87,37 +87,11 @@
     self.filteredLocationsArray = self.categoriesLocationsArray;
 }
 
--(void)fetchFilteredLocations {
-    //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
-    
-    [self filterOutByMinRating];
-    
-    if([GlobalFilters sharedInstance].nearestLocationSwitch) {
-        [self sortByNearestLocation];
-    }
-    
-    self.searchfilteredLocationArray = self.filteredLocationsArray;
-    [self.listTableView reloadData];
-}
-
--(void)filterOutByMinRating {
-    NSNumber *minValue = [NSNumber numberWithInteger:[GlobalFilters sharedInstance].minRatingSlider];
-    NSPredicate *ratingPredicate = [NSPredicate predicateWithFormat:@"rating >= %@", minValue];
-    self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:ratingPredicate];
-}
-
--(void)sortByNearestLocation {
-    NSSortDescriptor *firstDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distanceAway" ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
-    self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingDescriptors:sortDescriptors];
-}
-
 #pragma mark - Networking
 
 - (void)fetchCategoryLocations:(CategoryType)categoryType {
     [MBProgressHUD showHUDAddedTo:self.listTableView animated:YES];
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
-    // [query whereKey:@"rating" greaterThan:@2.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
         if (LocationsArray != nil) {
             for(Location *location in LocationsArray) {
@@ -166,6 +140,31 @@
 
 -(void)applyButtonTap {
     [self fetchFilteredLocations];
+}
+
+-(void)fetchFilteredLocations {
+    //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
+    
+    [self filterOutByMinRating];
+    
+    if([GlobalFilters sharedInstance].nearestLocationSwitch) {
+        [self sortByNearestLocation];
+    }
+    
+    self.searchfilteredLocationArray = self.filteredLocationsArray;
+    [self.listTableView reloadData];
+}
+
+-(void)filterOutByMinRating {
+    NSNumber *minValue = [NSNumber numberWithInteger:[GlobalFilters sharedInstance].minRatingSlider];
+    NSPredicate *ratingPredicate = [NSPredicate predicateWithFormat:@"rating >= %@", minValue];
+    self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:ratingPredicate];
+}
+
+-(void)sortByNearestLocation {
+    NSSortDescriptor *firstDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distanceAway" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
+    self.filteredLocationsArray = [self.filteredLocationsArray sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 #pragma mark - carousel image tap protocol
