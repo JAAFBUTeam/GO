@@ -88,6 +88,7 @@
 #pragma mark - Networking
 
 - (void)fetchCategoryLocations:(CategoryType)categoryType {
+    [MBProgressHUD showHUDAddedTo:self.listTableView animated:YES];
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     // [query whereKey:@"rating" greaterThan:@2.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
@@ -105,6 +106,7 @@
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        [MBProgressHUD hideHUDForView:self.listTableView animated:YES];
     }];
 }
 
