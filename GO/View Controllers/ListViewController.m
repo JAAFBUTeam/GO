@@ -12,9 +12,9 @@
 
 @interface ListViewController ()
 
-@property (strong, nonatomic) NSMutableArray *locationsArray;
-@property (strong, nonatomic) NSArray *categoriesLocationArray;
-@property (strong, nonatomic) NSArray *filteredLocationArray;
+@property (strong, nonatomic) NSMutableArray *categoriesLocationsArray;
+@property (strong, nonatomic) NSArray *filteredLocationsArray;
+@property (strong, nonatomic) NSArray *searchfilteredLocationArray;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
 @property (strong, nonatomic) UISearchController *searchController;
 @property (nonatomic, assign) NSInteger selectedRow;
@@ -33,11 +33,7 @@
     [self setTableProperties];
     [self registerNibs];
     [self disableAutoRotate];
-    if([GlobalFilters sharedInstance].appliedFilters) {
-        //do filters search
-    } else {
-        [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
-    }
+    [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
 }
 
 -(void)authorizeLocation{
@@ -54,9 +50,9 @@
 }
 
 -(void)initLocationsArrays {
-    self.locationsArray = [[NSMutableArray alloc]init];
-    self.categoriesLocationArray = [[NSArray alloc]init];
-    self.filteredLocationArray = [[NSArray alloc]init];
+    self.categoriesLocationsArray = [[NSMutableArray alloc]init];
+    self.filteredLocationsArray = [[NSArray alloc]init];
+    self.searchfilteredLocationArray = [[NSArray alloc]init];
 }
 
 - (void) setDataSourceAndDelegate {
@@ -86,7 +82,7 @@
 }
 
 -(void)copyDataToCategoriesArray {
-    self.categoriesLocationArray = self.locationsArray;
+    self.filteredLocationsArray = self.categoriesLocationsArray;
 }
 
 #pragma mark - Networking
@@ -99,11 +95,11 @@
             for(Location *location in LocationsArray) {
                 for(NSNumber *tagNumber in location.tags) {
                     if(tagNumber == [NSNumber numberWithInteger:[GlobalFilters sharedInstance].categoryType]) {
-                        [self.locationsArray addObject:location];
+                        [self.categoriesLocationsArray addObject:location];
+                        break;
                     }
                 }
             }
-
             [self copyDataToCategoriesArray];
             [self.listTableView reloadData];
         } else {
@@ -113,7 +109,16 @@
 }
 
 -(void)fetchFilteredLocations {
-    
+    //hidden gem filter
+    //min rating
+    NSNumber *value = [NSNumber numberWithInteger:[GlobalFilters sharedInstance].minRatingSlider];
+    NSPredicate *ratingPredicate = [NSPredicate predicateWithFormat:@"rating >= %@", value];
+    self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:ratingPredicate];
+    [self.listTableView reloadData];
+    //NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"X == 2"];
+    //NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[predicate1, predicate2]];
+    //open location
+    //nearestloc - sort
 }
 
 #pragma mark - search bar protocol
@@ -123,18 +128,24 @@
     if (searchText) {
         if (searchText.length != 0) {
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@",searchText];
-            self.categoriesLocationArray = [self.locationsArray filteredArrayUsingPredicate:predicate];
+            self.filteredLocationsArray = [self.categoriesLocationsArray filteredArrayUsingPredicate:predicate];
         } else {
-            self.categoriesLocationArray = self.locationsArray;
+            self.filteredLocationsArray = self.categoriesLocationsArray;
         }
         [self.listTableView reloadData];
     }
 }
 
+#pragma mark - filters delegate
+
+-(void)applyButtonTap {
+    [self fetchFilteredLocations];
+}
+
 #pragma mark - carousel image tap protocol
 
 -(void)ImageTapped:(NSUInteger)section {
-    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:self.locationsArray[section]];
+    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:self.categoriesLocationsArray[section]];
 }
 
 #pragma mark - tableview protocol
@@ -144,17 +155,17 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.categoriesLocationArray.count;
+    return self.filteredLocationsArray.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        [infoTableViewCell setTableProperties:self.categoriesLocationArray[indexPath.section]];
+        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setLocationProperty:self.categoriesLocationArray[indexPath.section]];
+        [carouselTableViewCell setLocationProperty:self.filteredLocationsArray[indexPath.section]];
         [carouselTableViewCell setSectionIDProperty:indexPath.section];
         [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
@@ -179,13 +190,15 @@
     
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([sender isKindOfClass:[Location class]]) { //image tapped
-        NSLog(@"location type recognized");
         DetailsViewController *detailsController = [segue destinationViewController];
         detailsController.location = sender;
     } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
-        NSLog(@"location type passed");
         DetailsViewController *detailsController = [segue destinationViewController];
-        detailsController.location = self.locationsArray[self.selectedRow];
+        detailsController.location = self.categoriesLocationsArray[self.selectedRow];
+    } else if ([segue.identifier isEqualToString:@"listToFiltersSegue"]) {
+        UINavigationController *navController = [segue destinationViewController];
+        FiltersViewController *filtersViewController = (FiltersViewController*)[navController topViewController];
+        filtersViewController.applyButtonDelegate = self;
     }
 }
     

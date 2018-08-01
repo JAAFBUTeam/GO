@@ -163,7 +163,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-filter-27" id="AET-nG-y8o">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="EmL-9T-UvF" kind="showDetail" id="V7O-h9-VeF"/>
+                                <segue destination="EmL-9T-UvF" kind="showDetail" identifier="listToFiltersSegue" id="V7O-h9-VeF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

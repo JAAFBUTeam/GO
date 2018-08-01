@@ -60,7 +60,7 @@
     newLocation2.rating = 4.0;
     newLocation2.tags = [[NSMutableArray alloc] init];
     [newLocation2.tags addObject:[NSNumber numberWithInt: MUSEUM]];
-    [newLocation.tags addObject:[NSNumber numberWithInt: ALL]];
+    [newLocation2.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation2.imageURLs = [[NSMutableArray alloc] init];
     [newLocation2.imageURLs addObject:@"https://static1.squarespace.com/static/5115ccdae4b04c436ed83ed4/572810e737013ba5d459b4f3/572810efe32140b8013928a0/1462243575441/Sunnyside+Conservatory+Wedding-15.jpg"];
     [newLocation2.imageURLs addObject:@"https://twoirises.com/wp-content/uploads/2017/02/nae-web155.jpg"];
@@ -82,7 +82,7 @@
     newLocation3.rating = 4.3;
     newLocation3.tags = [[NSMutableArray alloc] init];
     [newLocation3.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
-    [newLocation.tags addObject:[NSNumber numberWithInt: ALL]];
+    [newLocation3.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation3.imageURLs = [[NSMutableArray alloc] init];
     [newLocation3.imageURLs addObject:@"https://3.bp.blogspot.com/-UgBRK5ITezU/V1ZFDxTs9GI/AAAAAAAAB1I/y_W-RAJnibAbckLz5y2xjcG2hSWLnuOoACLcB/s1600/san%2Bfrancisco%2B16th%2Bave%2Btiled%2Bsteps%2B330x396x53kb.jpg"];
     [newLocation3.imageURLs addObject:@"https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2E2MGY2Y2MyNDVjNmEwM2U5MGEwMTJjYzYwMmQ1ODg4Yzc0ZWM4YmYuanBnIl0sWyJwIiwidGh1bWIiLCJ4MzkwPiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA4MSAtYXV0by1vcmllbnQiXV0/a60f6cc245c6a03e90a012cc602d5888c74ec8bf.jpg"];
