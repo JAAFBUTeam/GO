@@ -175,9 +175,8 @@
 }
 
 -(void)imageDoubleTapped:(NSUInteger)section {
-    //add object in wishlist for profile view
-    //TODO: 
-    NSLog(@"double tap");
+    //TODO:
+    //check if object is in wishlist - if not, then add it to wishlist; if it is in wishlist then dont add
 }
 
 #pragma mark - label tap protocol
