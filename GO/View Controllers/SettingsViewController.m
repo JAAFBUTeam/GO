@@ -117,6 +117,8 @@
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:^{
         User.currentUser.image = [self getPFFileFromImage:originalImage];
+        self.image.file = [self getPFFileFromImage:originalImage];
+        [self.image loadInBackground];
         [self setProfile];
     }];
 }
