@@ -21,13 +21,6 @@
     // Configure the view for the selected state
 }
 
--(void)setupReviewsTableViewCell:(UIImage *)image setupUsername:(NSString *)username setupRating:(NSString *)rating setupReviewText:(NSString *)reviewText {
-    // self.userImage = image;
-    self.username.text = username;
-    self.rating.text = rating;
-    self.reviewText.text = reviewText;
-}
-
 -(void)setupReviewsTableViewCell:(Review *) review {
     
     User *user = [review.user fetchIfNeeded];
@@ -43,10 +36,55 @@
 
 }
 
+-(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {
+    
+    review.location.images = [review.location fillArray:review.location.imageURLs];
+    PFFile *file = [self getPFFileFromImage: review.location.images[0]];
+    self.userImage.file = file;
+    self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
+    self.userImage.clipsToBounds = YES;
+    self.username.text = review.user.username;
+    
+    self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
+    self.reviewText.text = review.reviewText;
+    
+    [self.userImage loadInBackground];
+    
+}
+
 - (IBAction)tappedMore:(id)sender {
     [self.delegate didTapMore:self.review.user];
     NSLog(@"Thanks for the tap!");
 }
+
+#pragma mark - Conversion
+
+- (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
+    
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFile fileWithName:@"image.png" data:imageData];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    if (selected) {
+        self.contentView.backgroundColor = UIColor.whiteColor;
+        self.image.backgroundColor = UIColor.lightGrayColor;
+    }
+}
+
 
 
 @end
