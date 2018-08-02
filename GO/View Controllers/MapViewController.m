@@ -36,7 +36,7 @@
     
     self.locations = [[NSMutableArray alloc]init];
 
-    // [Location postLocation:nil];
+    //[Location postLocation:nil];
     [self fetchLocations];
 
     //[Review postReviews:nil];

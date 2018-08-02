@@ -38,7 +38,7 @@
 - (void) fetchReviews {
     PFQuery *query = [PFQuery queryWithClassName:@"Review"];
     //if (self.user == nil) {
-        [query whereKey:@"location" equalTo:self.location.title];
+        [query whereKey:@"location" equalTo:self.location];
     //} else {
        // [query whereKey:@"user" equalTo:self.user];
     //}

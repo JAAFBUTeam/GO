@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Location.h"
 #import "InstagramKit.h"
+#import "MoreTableViewCell.h"
 
-@interface DetailsViewController : UIViewController
+@interface DetailsViewController : UIViewController <LabelDelegate>
 
 @property (strong, nonatomic) Location *location;
 @property (weak, nonatomic) IBOutlet UIImageView *location_image;
