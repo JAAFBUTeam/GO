@@ -29,6 +29,8 @@
 }
 
 -(void)setupReviewsTableViewCell:(Review *) review {
+    
+    NSLog(@"wow@");
     self.userImage.file = review.user.image;
     self.username.text = review.user.username;
     

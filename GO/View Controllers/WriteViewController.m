@@ -77,6 +77,7 @@
     newReview.rating = self.rating;
     
     [Review postReview:newReview withCompletion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapCancel:(id)sender {
