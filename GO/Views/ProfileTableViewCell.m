@@ -33,24 +33,7 @@
     }];
 }
 
-#pragma mark - Conversion
-
-- (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
-    
-    // check if image is not nil
-    if (!image) {
-        return nil;
-    }
-    
-    NSData *imageData = UIImagePNGRepresentation(image);
-    
-    // get image data and check if that is not nil
-    if (!imageData) {
-        return nil;
-    }
-    
-    return [PFFile fileWithName:@"image.png" data:imageData];
-}
+#pragma mark - Visuals
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

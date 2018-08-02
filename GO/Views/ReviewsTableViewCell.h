@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rating;
 @property (weak, nonatomic) IBOutlet UILabel *reviewText;
 
-// -(void)setupReviewsTableViewCell:(UIImage *)image setupUsername:(NSString *)username setupRating:(NSString *)rating setupReviewText:(NSString *)reviewText;
--(void)setupReviewsTableViewCell: (Review *)review;
+-(void)setupReviewsTableViewCell:(User *) user;
+-(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review;
 
 @end
