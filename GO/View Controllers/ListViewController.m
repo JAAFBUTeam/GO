@@ -63,6 +63,7 @@
 }
 
 -(void) setTableProperties {
+    self.listTableView.allowsSelection = NO;
     self.listTableView.rowHeight = UITableViewAutomaticDimension;
     self.listTableView.estimatedRowHeight = 300;
     self.listTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
@@ -143,6 +144,7 @@
 
 -(void)fetchFilteredLocations {
     //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
+    //TODO:
     
     [self filterOutByMinRating];
     
@@ -168,8 +170,20 @@
 
 #pragma mark - carousel image tap protocol
 
--(void)ImageTapped:(NSUInteger)section {
+-(void)imageTapped:(NSUInteger)section {
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:self.categoriesLocationsArray[section]];
+}
+
+-(void)imageDoubleTapped:(NSUInteger)section {
+    //TODO:
+    //check if object is in wishlist - if not, then add it to wishlist; if it is in wishlist then dont add
+}
+
+#pragma mark - label tap protocol
+
+-(void)labelTapped:(NSUInteger)section {
+    self.selectedRow = section;
+    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
 }
 
 #pragma mark - tableview protocol
@@ -186,6 +200,8 @@
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
         [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
+        [infoTableViewCell setSectionIDProperty:indexPath.section];
+        infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
@@ -218,7 +234,8 @@
         detailsController.location = sender;
     } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
         DetailsViewController *detailsController = [segue destinationViewController];
-        detailsController.location = self.categoriesLocationsArray[self.selectedRow];
+        detailsController.location = self.filteredLocationsArray[self.selectedRow];
+        NSLog(@"label tap segue");
     } else if ([segue.identifier isEqualToString:@"listToFiltersSegue"]) {
         UINavigationController *navController = [segue destinationViewController];
         FiltersViewController *filtersViewController = (FiltersViewController*)[navController topViewController];

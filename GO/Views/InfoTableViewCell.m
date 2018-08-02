@@ -16,8 +16,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self setupViewTapGesture];
 }
-
 
 #pragma mark - Setup cell
 
@@ -32,6 +32,22 @@
     double ratingDouble = location.rating;
     self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
     self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
+}
+
+-(void)setSectionIDProperty:(NSInteger)sectionID {
+    self.sectionID = sectionID;
+}
+
+#pragma mark - actions
+
+-(void)didTap{
+    [self.labelDelegate labelTapped:self.sectionID];
+}
+-(void)setupViewTapGesture {
+    self.contentView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+    tapGesture.numberOfTapsRequired = 1;
+    [self.contentView addGestureRecognizer:tapGesture];
 }
 
 @end

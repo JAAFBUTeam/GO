@@ -12,7 +12,8 @@
 
 @protocol CarouselImageTapDelegate
 
--(void) ImageTapped:(NSUInteger)section;
+-(void)imageTapped:(NSUInteger)section;
+-(void)imageDoubleTapped:(NSUInteger)section;
 
 @end
 
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) NSMutableArray *locationImagesArray;
 @property (nonatomic, assign) NSInteger sectionID;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (weak, nonatomic) IBOutlet UIImageView *heartImageView;
 @property (nonatomic, weak) id<CarouselImageTapDelegate> imageDelegate;
 
 -(void)setLocationProperty:(Location *)location;
