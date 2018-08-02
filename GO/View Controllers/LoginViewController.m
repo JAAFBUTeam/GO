@@ -43,6 +43,8 @@
     newUser.password = self.password.text;
     newUser.name = nil;
     
+    newUser.favorites = [[NSMutableArray alloc] init];
+    newUser.reviews = [[NSMutableArray alloc] init];;
     
     // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {

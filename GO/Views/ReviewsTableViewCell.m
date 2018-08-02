@@ -76,15 +76,4 @@
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    if (selected) {
-        self.contentView.backgroundColor = UIColor.whiteColor;
-        self.image.backgroundColor = UIColor.lightGrayColor;
-    }
-}
-
-
-
 @end
