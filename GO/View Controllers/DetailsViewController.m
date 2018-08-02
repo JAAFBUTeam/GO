@@ -111,6 +111,8 @@ typedef enum {
         }
         case MORE_REVIEWS: {
             MoreTableViewCell *moreTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"MoreTableViewCell"];
+            moreTableViewCell.segueIdentifier = @"reviewsSegue";
+            moreTableViewCell.labelDelegate = self;
             return moreTableViewCell;
         }
         case TITLE_PHOTOS: {
@@ -125,6 +127,8 @@ typedef enum {
         }
         case MORE_IMAGES: {
             MoreTableViewCell *moreTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"MoreTableViewCell"];
+            moreTableViewCell.segueIdentifier = @"photoGalleryViewSegue";
+            moreTableViewCell.labelDelegate = self;
             return moreTableViewCell;
         }
         default:{
@@ -133,6 +137,12 @@ typedef enum {
             return titleTableViewCell;
         }
     }
+}
+
+#pragma mark - label delegate
+
+-(void)didTapLabel:(NSString *)segueIdentifier {
+    [self performSegueWithIdentifier:segueIdentifier sender:nil];
 }
 
 # pragma mark - Tableview Delegate
