@@ -7,6 +7,8 @@
 //
 
 #import "FeatureTableViewCell.h"
+#import <Parse/Parse.h>
+#import "Location.h"
 
 @implementation FeatureTableViewCell
 
@@ -20,5 +22,10 @@
 
     // Configure the view for the selected state
 }
+
+- (IBAction)onSwipePageControl:(id)sender {
+    self.testLabel.text = [NSString stringWithFormat:@"%li", ([self.pageControl currentPage]+1)];
+}
+
 
 @end
