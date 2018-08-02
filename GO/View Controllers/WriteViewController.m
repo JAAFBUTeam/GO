@@ -77,6 +77,7 @@
     newReview.rating = self.rating;
     
     [Review postReview:newReview withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        [User.currentUser.reviews addObject:newReview];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
