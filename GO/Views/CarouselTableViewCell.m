@@ -37,6 +37,7 @@
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.pagingEnabled = YES;
     self.carousel.bounceDistance = 0.3;
+    self.heartImageView.alpha = 0;
 }
 
 -(void)setCarouselTypeProperties:(iCarouselType) carouselType {
@@ -107,12 +108,18 @@
 }
 
 -(void)didDoubleTap:(UITapGestureRecognizer *)tap {
-    //TODO: animation of image
-    UIImageView *favorite = [[UIImageView alloc] init];
-    favorite.image = [UIImage imageNamed:@"heart.png"];
-    [self.carousel addSubview:favorite];
-    
+    [self heartImageAnimation];
     [self.imageDelegate imageDoubleTapped:self.sectionID];
+}
+
+-(void)heartImageAnimation {
+    [UIView animateWithDuration:1.0 animations:^{
+        self.heartImageView.alpha = 1;
+    }];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        self.heartImageView.alpha = 0;
+    }];
 }
 
 @end
