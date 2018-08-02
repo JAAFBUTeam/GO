@@ -71,13 +71,14 @@
 
 - (IBAction)didTapSubmit:(id)sender {
     Review *newReview = [Review new];
-    newReview.location = self.location.title;
+    newReview.location = self.location;
     newReview.user = User.currentUser;
     newReview.reviewText = self.reviewText.text;
     newReview.rating = self.rating;
     
-    [Review postReview:newReview withCompletion:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [Review postReview:newReview withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 - (IBAction)didTapCancel:(id)sender {
@@ -87,13 +88,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
