@@ -15,7 +15,7 @@
 
 @interface Review : PFObject <PFSubclassing>
 
-@property (nonatomic, strong) Location *location;
+@property (nonatomic, strong) Location * _Nonnull location;
 @property (nonatomic, strong) User *user;
 
 @property (strong, nonatomic) NSString *reviewText;

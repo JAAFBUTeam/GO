@@ -33,6 +33,10 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self fetchReviews];
+}
+
 #pragma mark - Networking
 
 - (void) fetchReviews {
