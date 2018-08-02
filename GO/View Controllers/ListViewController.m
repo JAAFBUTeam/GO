@@ -181,11 +181,11 @@
 
 -(void)imageDoubleTapped:(NSUInteger)section {
     //TODO:
-    
-    //User *user = 
-    if(![User.currentUser.favorites containsObject:self.filteredLocationsArray[section]]) {
-        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
-    }
+    //int value = ((AnObject*)[anArray objectAtIndex:0]).aVariable;
+//    if(!((NSMutableArray *) [User.currentUser.favorites containsObject:self.filteredLocationsArray[section]]) {
+//        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
+//        [User.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
+//    }
 }
 
 #pragma mark - label tap protocol
