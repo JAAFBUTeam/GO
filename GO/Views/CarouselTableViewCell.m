@@ -107,6 +107,11 @@
 }
 
 -(void)didDoubleTap:(UITapGestureRecognizer *)tap {
+    //TODO: animation of image
+    UIImageView *favorite = [[UIImageView alloc] init];
+    favorite.image = [UIImage imageNamed:@"heart.png"];
+    [self.carousel addSubview:favorite];
+    
     [self.imageDelegate imageDoubleTapped:self.sectionID];
 }
 

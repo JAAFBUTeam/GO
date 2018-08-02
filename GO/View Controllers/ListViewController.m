@@ -144,6 +144,7 @@
 
 -(void)fetchFilteredLocations {
     //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
+    //TODO:
     
     [self filterOutByMinRating];
     
@@ -175,6 +176,7 @@
 
 -(void)imageDoubleTapped:(NSUInteger)section {
     //add object in wishlist for profile view
+    //TODO: 
     NSLog(@"double tap");
 }
 
