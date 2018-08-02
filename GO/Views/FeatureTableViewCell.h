@@ -10,4 +10,9 @@
 
 @interface FeatureTableViewCell : UITableViewCell
 
+@property(nonatomic, strong) NSMutableArray<UIImage *> *images;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+
 @end
