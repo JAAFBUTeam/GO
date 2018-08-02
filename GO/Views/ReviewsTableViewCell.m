@@ -30,8 +30,10 @@
 
 -(void)setupReviewsTableViewCell:(Review *) review {
     
-    User *user = review.user;
-    self.userImage.file = review.user.image;
+    User *user = [review.user fetchIfNeeded];
+    self.userImage.file = user.image;
+    self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
+    self.userImage.clipsToBounds = YES;
     self.username.text = review.user.username;
     
     self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
