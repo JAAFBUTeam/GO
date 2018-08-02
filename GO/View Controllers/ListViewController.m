@@ -88,6 +88,10 @@
     self.filteredLocationsArray = self.categoriesLocationsArray;
 }
 
+-(BOOL)isCurrUserFavoritesArrayEmpty {
+    return (User.currentUser.favorites == nil);
+}
+
 #pragma mark - Networking
 
 - (void)fetchCategoryLocations:(CategoryType)categoryType {
@@ -171,18 +175,32 @@
 #pragma mark - carousel image tap protocol
 
 -(void)imageTapped:(NSUInteger)section {
+    self.searchController.active = NO;
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:self.categoriesLocationsArray[section]];
 }
 
 -(void)imageDoubleTapped:(NSUInteger)section {
     //TODO:
-    //check if object is in wishlist - if not, then add it to wishlist; if it is in wishlist then dont add
+    //NSMutableArray *tempFavoritesArray = User.currentUser.favorites;
+    if([self isCurrUserFavoritesArrayEmpty]) {
+        //[tempFavoritesArray addObject:self.filteredLocationsArray[section]];
+        //User.currentUser.favorites = tempFavoritesArray;
+        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
+    } else {
+        for(Location *location in User.currentUser.favorites) {
+            if(location == self.filteredLocationsArray[section]) {
+                break;
+            }
+        }
+        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
+    }
 }
 
 #pragma mark - label tap protocol
 
 -(void)labelTapped:(NSUInteger)section {
     self.selectedRow = section;
+    self.searchController.active = NO;
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
 }
 
@@ -213,10 +231,11 @@
     }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.selectedRow = indexPath.section;
-    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:indexPath];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    self.selectedRow = indexPath.section;
+//    self.searchController.active = NO;
+//    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:indexPath];
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;
