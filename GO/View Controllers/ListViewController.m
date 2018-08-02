@@ -181,17 +181,9 @@
 
 -(void)imageDoubleTapped:(NSUInteger)section {
     //TODO:
-    //NSMutableArray *tempFavoritesArray = User.currentUser.favorites;
-    if([self isCurrUserFavoritesArrayEmpty]) {
-        //[tempFavoritesArray addObject:self.filteredLocationsArray[section]];
-        //User.currentUser.favorites = tempFavoritesArray;
-        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
-    } else {
-        for(Location *location in User.currentUser.favorites) {
-            if(location == self.filteredLocationsArray[section]) {
-                break;
-            }
-        }
+    
+    //User *user = 
+    if(![User.currentUser.favorites containsObject:self.filteredLocationsArray[section]]) {
         [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
     }
 }
