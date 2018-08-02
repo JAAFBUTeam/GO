@@ -37,8 +37,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self setupTableView];
-    [self registerNibs];
+    [self.tableView reloadData];
 }
 
 # pragma mark - Register nibs

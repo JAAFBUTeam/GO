@@ -39,7 +39,6 @@
     // [Location postLocation:nil];
     [self fetchLocations];
 
-    //[self addLocations];
     //[Review postReviews:nil];
     
 }
@@ -94,7 +93,7 @@
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
-        // annotationView.image = annotation.location.images[0];
+        annotationView.image = annotation.location.images[0];
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
