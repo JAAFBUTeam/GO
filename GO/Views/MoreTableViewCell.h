@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LabelDelegate
+
+-(void)didTapLabel:(NSString *)identifier;
+
+@end
+
 @interface MoreTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<LabelDelegate> labelDelegate;
+@property (nonatomic, strong) NSString *segueIdentifier;
 
 @end

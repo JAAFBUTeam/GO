@@ -20,7 +20,7 @@
 }
 
 - (IBAction)onTapMore:(id)sender {
-    //[self performSegueWithIdentifier:@"photoGalleryViewSegue" sender:nil];
+    [self.labelDelegate didTapLabel:_segueIdentifier];
 }
 
 @end
