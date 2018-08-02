@@ -16,7 +16,7 @@
 #import "FiltersViewController.h"
 #import "MBProgressHUD.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate>
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate, LabelTapDelegate>
 
 @property (nonatomic, strong) CLLocationManager *currentLocation;
 

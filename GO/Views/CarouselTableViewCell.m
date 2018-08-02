@@ -48,7 +48,6 @@
 -(void)setupCarouselCell {
     [self setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
     [self.carousel scrollByNumberOfItems:1 duration:1.5];
-    //[self setLocationProperty:_location];
 }
 
 #pragma mark - carousel protocol methods
@@ -59,7 +58,6 @@
 }
 
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
-    [self.imageDelegate ImageTapped:self.sectionID];
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
@@ -69,6 +67,7 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
     view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
     [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+    [self registerGestures:view];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = true;
     return view;
@@ -85,6 +84,30 @@
             break;
     }
     return result;
+}
+
+#pragma mark - actions
+
+-(void)registerGestures:(UIView *)view {
+    view.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+    tapGesture.numberOfTapsRequired = 1;
+    [view addGestureRecognizer:tapGesture];
+    
+    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTap:)];
+    doubleTapGesture.numberOfTapsRequired = 2;
+    [view addGestureRecognizer:doubleTapGesture];
+    
+    [tapGesture requireGestureRecognizerToFail:doubleTapGesture];
+}
+
+-(void)didTap {
+    [self.imageDelegate imageTapped:self.sectionID];
+}
+
+-(void)didDoubleTap:(UITapGestureRecognizer *)tap {
+    [self.imageDelegate imageDoubleTapped:self.sectionID];
 }
 
 @end

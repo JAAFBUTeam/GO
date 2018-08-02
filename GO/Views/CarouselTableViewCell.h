@@ -12,7 +12,8 @@
 
 @protocol CarouselImageTapDelegate
 
--(void) ImageTapped:(NSUInteger)section;
+-(void)imageTapped:(NSUInteger)section;
+-(void)imageDoubleTapped:(NSUInteger)section;
 
 @end
 
