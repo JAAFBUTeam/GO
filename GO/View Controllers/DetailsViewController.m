@@ -20,8 +20,11 @@
 #import "DetailInfoTableViewCell.h"
 
 @interface DetailsViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) InstagramEngine *engine;
+@property (nonatomic, strong) NSMutableArray *reviews;
+
 
 typedef enum {
     CAROUSEL = 0,
@@ -105,12 +108,13 @@ typedef enum {
         }
         case REVIEW_1: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            //[reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"cat.jpg"] setupUsername:@"Cat" setupRating:@"1 star" setupReviewText:@"review text for Cat"];
+            [reviewTableViewCell setupReviewsTableViewCell: self.reviews[0]];
             return reviewTableViewCell;
         }
         case REVIEW_2: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-           // [reviewTableViewCell setupReviewsTableViewCell:[UIImage imageNamed:@"dog.jpg"] setupUsername:@"Dog1" setupRating:@"3 stars" setupReviewText:@"review text for Dog1"];
+            [reviewTableViewCell setupReviewsTableViewCell: self.reviews[1]];
+
             return reviewTableViewCell;
         }
         case MORE_REVIEWS: {
@@ -238,6 +242,30 @@ typedef enum {
         [view addAction:cancel];
         [self presentViewController:view animated:YES completion:nil];
     }
+}
+
+#pragma mark - Networking
+
+- (void) fetchReviews {
+    PFQuery *query = [PFQuery queryWithClassName:@"Review"];
+    //if (self.user == nil) {
+    [query whereKey:@"location" equalTo:self.location];
+    //} else {
+    // [query whereKey:@"user" equalTo:self.user];
+    //}
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
+        if (reviews != nil) {
+            // do something with the array of object returned by the call
+            /*for (Review *review in reviews){
+             [self.reviews addObject:review];
+             } */
+            self.reviews = (NSMutableArray *) reviews;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 # pragma mark - Navigation
