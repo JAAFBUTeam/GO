@@ -8,6 +8,7 @@
 
 #import "PFUser.h"
 #import "Parse/Parse.h"
+#import "Location.h"
 
 @interface User : PFUser <PFSubclassing>
 
@@ -18,7 +19,7 @@
 
 @property (nonatomic, strong) PFFile *image;
 
-@property (nonatomic, strong) NSMutableArray *favorites;
+@property (nonatomic, strong) NSMutableArray<Location *> *favorites;
 @property (nonatomic, strong) NSMutableArray *reviews;
 
 @end

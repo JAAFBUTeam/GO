@@ -15,6 +15,7 @@
 #import "GlobalFilters.h"
 #import "FiltersViewController.h"
 #import "MBProgressHUD.h"
+#import "User.h"
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate, LabelTapDelegate>
 

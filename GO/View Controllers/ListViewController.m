@@ -180,11 +180,22 @@
 }
 
 -(void)imageDoubleTapped:(NSUInteger)section {
-    //TODO:
+    User *currentUser = User.currentUser;
+    Location *currentLocation = self.filteredLocationsArray[section];
     
-    //User *user = 
-    if(![User.currentUser.favorites containsObject:self.filteredLocationsArray[section]]) {
-        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
+    BOOL hasAlreadyFavorited = NO;
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([currentLocation.objectId isEqualToString:favoritedLocation.objectId]) {
+            hasAlreadyFavorited = YES;
+            break;
+        }
+    }
+    
+    if (!hasAlreadyFavorited) {
+        [currentUser.favorites addObject:currentLocation];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            NSLog(@"wow");
+        }];
     }
 }
 
