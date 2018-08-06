@@ -63,11 +63,19 @@
                                     <action selector="didTapLogIn:" destination="8X3-KB-ilU" eventType="touchUpInside" id="IOc-QS-7G4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTV-sz-0Bu">
+                                <rect key="frame" x="139" y="431" width="96" height="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.49906357020547948" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FI3-fe-82E" firstAttribute="bottom" secondItem="nTV-sz-0Bu" secondAttribute="bottom" constant="176" id="OGS-1A-OVo"/>
                             <constraint firstItem="2jh-6q-a87" firstAttribute="leading" secondItem="FI3-fe-82E" secondAttribute="leading" constant="32" id="R3G-yV-axl"/>
                             <constraint firstItem="jYW-QL-4vo" firstAttribute="leading" secondItem="FI3-fe-82E" secondAttribute="leading" constant="32" id="SWS-yI-VyZ"/>
+                            <constraint firstItem="nTV-sz-0Bu" firstAttribute="centerX" secondItem="F1A-hE-peE" secondAttribute="centerX" id="WxT-kP-d9c"/>
                             <constraint firstItem="jYW-QL-4vo" firstAttribute="top" secondItem="2jh-6q-a87" secondAttribute="bottom" constant="16" id="ofS-eD-9Jr"/>
                             <constraint firstItem="2jh-6q-a87" firstAttribute="top" secondItem="FI3-fe-82E" secondAttribute="top" constant="217" id="x4t-gu-ILu"/>
                         </constraints>
@@ -84,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5B8-R7-5Ja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="885"/>
+            <point key="canvasLocation" x="1460" y="884.70764617691157"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tM4-2R-qF5">

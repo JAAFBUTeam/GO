@@ -197,6 +197,12 @@
     }
 }
 
+#pragma mark - Actions
+
+- (IBAction)didTapBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - label tap protocol
 
 -(void)labelTapped:(NSUInteger)section {

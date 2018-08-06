@@ -28,7 +28,7 @@
         <!--Categories View Controller-->
         <scene sceneID="AcC-gV-A0a">
             <objects>
-                <viewController id="5MY-hT-Geg" customClass="CategoriesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5MY-hT-Geg" customClass="CategoriesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ei0-6X-jjl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" id="Iwq-5e-ZmD"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="IPn-tU-xGz" id="F0t-V3-rdI"/>
-                        <segue destination="zBM-Gp-bv1" kind="show" identifier="categoriesToListSegue" id="aA2-Un-nQt"/>
+                        <segue destination="zBM-Gp-bv1" kind="show" identifier="categoriesToListSegue" id="Jh0-KT-6Sd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrh-TE-zNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,7 +157,7 @@
                         <barButtonItem key="leftBarButtonItem" image="back-24" id="aQR-l6-5el">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="5MY-hT-Geg" kind="showDetail" id="PkU-b8-cwJ"/>
+                                <action selector="didTapBack:" destination="pQW-ct-aXZ" id="nSb-ln-doL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-filter-27" id="AET-nG-y8o">

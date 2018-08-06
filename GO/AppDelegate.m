@@ -28,8 +28,8 @@
     
     [Parse initializeWithConfiguration:config];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"AgreeToTerms" bundle:nil];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"AgreeToTermsViewController"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"Main"];
     self.window.rootViewController = viewController;
     
     return YES;
