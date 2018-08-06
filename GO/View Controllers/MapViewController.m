@@ -33,14 +33,11 @@
     self.mapView.delegate = self;
     
     [self setRegion];
-    
     self.locations = [[NSMutableArray alloc]init];
 
     // [Location postLocation:nil];
     [self fetchLocations];
 
-    //[Review postReviews:nil];
-    
 }
 
 #pragma mark - Networking
