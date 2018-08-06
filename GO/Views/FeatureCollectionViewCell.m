@@ -69,10 +69,10 @@
 
 -(void)swipePageControl:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
     if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionLeft){
-        self.pageControl.currentPage -=1;
+        self.pageControl.currentPage +=1;
         NSLog(@"swipe left!");
     } else if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionRight) {
-        self.pageControl.currentPage +=1;
+        self.pageControl.currentPage -=1;
         NSLog(@"swipe right!");
     }
     
