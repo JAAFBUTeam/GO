@@ -18,7 +18,6 @@
 #import "PhotoCollectionViewController.h"
 #import "MoreTableViewCell.h"
 #import "DetailInfoTableViewCell.h"
-#import "FeatureTableViewCell.h"
 
 @interface DetailsViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,7 +54,6 @@ typedef enum {
 }
 
 
-
 # pragma mark - Register nibs
 
 -(void)registerNibs {
@@ -89,13 +87,11 @@ typedef enum {
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         switch(indexPath.section){
         case CAROUSEL: {
-            FeatureTableViewCell *featureTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"FeatureTableViewCell"];
-            return featureTableViewCell;
-//            CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-//            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
-//            [carouselTableViewCell setLocationProperty:_location];
-//            [carouselTableViewCell setDatasourceAndDelegate];
-//            return carouselTableViewCell;
+            CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
+            [carouselTableViewCell setLocationProperty:_location];
+            [carouselTableViewCell setDatasourceAndDelegate];
+            return carouselTableViewCell;
         }
         case INFO: {
             DetailInfoTableViewCell *detailInfoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"DetailInfoTableViewCell"];

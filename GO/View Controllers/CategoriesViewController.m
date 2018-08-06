@@ -8,6 +8,7 @@
 
 #import "CategoriesViewController.h"
 #import "CurrentLocationPosition.h"
+#import "FeatureCollectionViewCell.h"
 
 @interface CategoriesViewController ()
 
@@ -33,6 +34,7 @@
     [self setTableDimensions];
     [self initCategoriesArray];
     [CurrentLocationPosition sharedInstance];
+    [self setGestureRecognizers];
     
 }
 
@@ -47,6 +49,9 @@
     
     UINib *collectionNib = [UINib nibWithNibName:@"CategoryCollectionViewCell" bundle:nil];
     [self.categoriesCollectionView registerNib:collectionNib forCellWithReuseIdentifier:@"CategoryCollectionViewCell"];
+    
+    UINib *featureCollectionViewCell = [UINib nibWithNibName:@"FeatureCollectionViewCell" bundle:nil];
+    [self.categoriesCollectionView registerNib:featureCollectionViewCell forCellWithReuseIdentifier:@"FeatureCollectionViewCell"];
 }
 
 -(void)setTableDimensions {
@@ -104,9 +109,11 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 0) {
-        LargeImageCollectionViewCell *largeImageCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"LargeImageCollectionViewCell" forIndexPath:indexPath];
-        [largeImageCell setBigImage];
-        return largeImageCell;
+        self.featureCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
+        return self.featureCollectionViewCell;
+//        LargeImageCollectionViewCell *largeImageCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"LargeImageCollectionViewCell" forIndexPath:indexPath];
+//        [largeImageCell setBigImage];
+//        return largeImageCell;
     } else { //indexPath.section == 1
         CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
         [self setCategoryCell:categoryCell item:indexPath.item];
@@ -166,6 +173,21 @@
     CGFloat categoryHeight = categoryWidth;
     layout.itemSize = CGSizeMake(categoryWidth, categoryHeight);
     return layout.itemSize;
+}
+
+# pragma mark - Gesture recognizer
+-(void)setGestureRecognizers{
+    _swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    _swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:_swipeLeft];
+    
+    _swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    _swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:_swipeRight];
+}
+
+- (void)onSwipe:(UISwipeGestureRecognizer *)swipeRecognizer {
+    [self.featureCollectionViewCell swipePageControl:swipeRecognizer];
 }
 
 #pragma mark - Navigation
