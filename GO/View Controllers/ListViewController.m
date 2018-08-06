@@ -147,9 +147,6 @@
 }
 
 -(void)fetchFilteredLocations {
-    //hidden gem filter -- need ratings array before filter is applied - above 3 rating and under 80% of total reviews for max
-    //TODO:
-    
     [self filterOutByMinRating];
     
     if([GlobalFilters sharedInstance].nearestLocationSwitch) {
@@ -221,7 +218,8 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
+        //[infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
+        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section] hideAddressAndDescriptionLabels:YES];
         [infoTableViewCell setSectionIDProperty:indexPath.section];
         infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;
@@ -234,12 +232,6 @@
         return carouselTableViewCell;
     }
 }
-
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    self.selectedRow = indexPath.section;
-//    self.searchController.active = NO;
-//    [self performSegueWithIdentifier:@"listToDetailsSegue" sender:indexPath];
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;

@@ -15,6 +15,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    //self.address
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     [self setupViewTapGesture];
 }
@@ -29,6 +30,15 @@
     self.title.text = location.title;
     self.address.text = location.address;
     self.synopsis.text = location.synopsis;
+    double ratingDouble = location.rating;
+    self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
+    self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
+}
+
+-(void)setTableProperties:(Location *)location hideAddressAndDescriptionLabels:(BOOL)hide {
+    self.title.text = location.title;
+    self.address.hidden = YES;
+    self.synopsis.hidden = YES;
     double ratingDouble = location.rating;
     self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
     self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
