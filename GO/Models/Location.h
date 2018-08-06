@@ -22,15 +22,12 @@
 @property (nonatomic) double rating;
 @property(nonatomic) double distanceAway;
 
-+ (Location *)createLocation;
 + (void) postLocation: (PFBooleanResultBlock  _Nullable)completion;
 
-@property(nonatomic, strong) NSMutableArray<UIImage *> *images;
 @property(nonatomic, strong) NSMutableArray<NSString *> *imageURLs;
 @property(nonatomic, strong) NSMutableArray *tags;
 
-
-+ (NSMutableArray *) createLocations;
 - (NSMutableArray *) fillArray: (NSMutableArray *) pictures;
+- (UIImage *) getPicture;
 
 @end

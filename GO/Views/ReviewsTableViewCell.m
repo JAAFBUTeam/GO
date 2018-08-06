@@ -37,9 +37,8 @@
 }
 
 -(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {
-    
-    review.location.images = [review.location fillArray:review.location.imageURLs];
-    PFFile *file = [self getPFFileFromImage: review.location.images[0]];
+
+    PFFile *file = [self getPFFileFromImage: [self.review.location getPicture]];
     self.userImage.file = file;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
     self.userImage.clipsToBounds = YES;
