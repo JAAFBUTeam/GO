@@ -20,6 +20,7 @@
 @interface ProfileViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *reviews;
 
 @end
 
@@ -101,6 +102,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
+}
+
+#pragma mark - Networking
+
+- (void) fetchReviews {
+    PFQuery *query = [PFQuery queryWithClassName:@"Review"];
+    //if (self.user == nil) {
+    [query whereKey:@"user" equalTo:User.currentUser];
+    //} else {
+    // [query whereKey:@"user" equalTo:self.user];
+    //}
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
+        if (reviews != nil) {
+            // do something with the array of object returned by the call
+            /*for (Review *review in reviews){
+             [self.reviews addObject:review];
+             } */
+            self.reviews = (NSMutableArray *) reviews;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 #pragma mark - Actions
