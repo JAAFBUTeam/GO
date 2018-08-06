@@ -13,12 +13,17 @@
 
 @implementation FeatureCollectionViewCell
 
+#pragma mark - Lifecycle
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setLocations];
     self.currentLocation = [self.locations objectAtIndex:0];
     [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
+    self.titleLabel.text = [@"Featured: " stringByAppendingString:self.currentLocation.title];
 }
+
+#pragma mark - Setup
 
 - (void) setLocations {
     self.locations = [[NSMutableArray alloc] init];
@@ -60,6 +65,8 @@
     [self.locations addObject:newLocation3];
 }
 
+#pragma mark - Page control
+
 -(void)swipePageControl:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
     if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionLeft){
         self.pageControl.currentPage -=1;
@@ -72,6 +79,7 @@
     NSInteger index = [self.pageControl currentPage];
     self.currentLocation = [self.locations objectAtIndex:index];
     [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
+    self.titleLabel.text = [@"Featured: " stringByAppendingString:self.currentLocation.title];
     //NSLog(@"%@", self.locations[[self.pageControl currentPage]].imageURLs[0]);
 }
 

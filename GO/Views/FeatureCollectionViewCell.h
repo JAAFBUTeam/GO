@@ -15,6 +15,7 @@
 @property(nonatomic, strong) NSMutableArray<Location *> *locations;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 -(void)swipePageControl:(UISwipeGestureRecognizer *)direction;
 

@@ -19,11 +19,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="53i-v9-dM8">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="209"/>
+                        <rect key="frame" x="0.0" y="0.0" width="301" height="209"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="209" id="Ko0-S6-Epm"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Qst-HX-XJS">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="209"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="209" id="L6X-ou-Od6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-UR-MNF">
+                        <rect key="frame" x="20" y="159" width="260" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gIY-IB-RDm">
                         <rect key="frame" x="131" y="172" width="39" height="37"/>
                     </pageControl>
@@ -31,19 +43,29 @@
             </view>
             <constraints>
                 <constraint firstItem="53i-v9-dM8" firstAttribute="centerX" secondItem="gIY-IB-RDm" secondAttribute="centerX" id="2C1-Bu-HU8"/>
+                <constraint firstAttribute="bottom" secondItem="hxj-UR-MNF" secondAttribute="bottom" constant="29" id="2DT-7F-JLJ"/>
+                <constraint firstItem="Qst-HX-XJS" firstAttribute="leading" secondItem="53i-v9-dM8" secondAttribute="leading" id="4LP-7R-bCZ"/>
                 <constraint firstItem="53i-v9-dM8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9f0-Zh-cYF"/>
+                <constraint firstItem="Qst-HX-XJS" firstAttribute="centerX" secondItem="hxj-UR-MNF" secondAttribute="centerX" id="GDG-Ja-RMj"/>
                 <constraint firstAttribute="bottom" secondItem="gIY-IB-RDm" secondAttribute="bottom" id="Ky8-eu-fiS"/>
                 <constraint firstItem="53i-v9-dM8" firstAttribute="bottom" secondItem="gIY-IB-RDm" secondAttribute="bottom" id="LCg-eh-FFf"/>
                 <constraint firstItem="gIY-IB-RDm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="131" id="Rra-dv-8R1"/>
                 <constraint firstAttribute="trailing" secondItem="gIY-IB-RDm" secondAttribute="trailing" constant="130" id="gL9-L7-Azj"/>
+                <constraint firstItem="hxj-UR-MNF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="nWz-XM-gAU"/>
+                <constraint firstItem="Qst-HX-XJS" firstAttribute="top" secondItem="53i-v9-dM8" secondAttribute="top" id="qM9-EJ-uvE"/>
+                <constraint firstItem="Qst-HX-XJS" firstAttribute="centerX" secondItem="53i-v9-dM8" secondAttribute="centerX" id="uct-Jy-0c1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="300" height="209"/>
             <connections>
                 <outlet property="imageView" destination="53i-v9-dM8" id="Vd5-a7-BWo"/>
                 <outlet property="pageControl" destination="gIY-IB-RDm" id="EvP-ga-YgP"/>
+                <outlet property="titleLabel" destination="hxj-UR-MNF" id="HAa-Er-KSa"/>
             </connections>
             <point key="canvasLocation" x="155" y="244.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="gradient" width="1915" height="539"/>
+    </resources>
 </document>
