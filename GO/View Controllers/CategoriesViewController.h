@@ -11,7 +11,12 @@
 #import "CategoryCollectionViewCell.h"
 #import "ListViewController.h"
 #import "GlobalFilters.h"
+#import "FeatureCollectionViewCell.h"
 
 @interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (nonatomic, strong) FeatureCollectionViewCell *featureCollectionViewCell;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeft;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRight;
 
 @end
