@@ -77,7 +77,7 @@
         annotation.coordinate = coordinate;
         annotation.title = place.title;
         annotation.location = place;
-        annotation.location.images = [annotation.location fillArray:annotation.location.imageURLs];
+        // annotation.location.images = [annotation.location fillArray:annotation.location.imageURLs];
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
         
@@ -93,7 +93,8 @@
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
-        annotationView.image = annotation.location.images[0];
+        NSMutableArray *images = [annotation.location fillArray:annotation.location.imageURLs];
+        annotationView.image = images[0];
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;

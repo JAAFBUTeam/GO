@@ -182,10 +182,10 @@
 -(void)imageDoubleTapped:(NSUInteger)section {
     //TODO:
     //int value = ((AnObject*)[anArray objectAtIndex:0]).aVariable;
-//    if(!((NSMutableArray *) [User.currentUser.favorites containsObject:self.filteredLocationsArray[section]]) {
-//        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
-//        [User.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
-//    }
+    if(![User.currentUser.favorites containsObject:self.filteredLocationsArray[section]]) {
+        [User.currentUser.favorites addObject:self.filteredLocationsArray[section]];
+        [User.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
+    }
 }
 
 #pragma mark - label tap protocol
@@ -236,9 +236,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 5;
 }
-    
+
 #pragma mark - Navigation
-    
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([sender isKindOfClass:[Location class]]) { //image tapped
         DetailsViewController *detailsController = [segue destinationViewController];
@@ -253,5 +253,5 @@
         filtersViewController.applyButtonDelegate = self;
     }
 }
-    
+
 @end
