@@ -31,11 +31,20 @@
                         <outlet property="tableView" destination="i1P-Ie-qLJ" id="6MF-lj-QHW"/>
                         <segue destination="uQT-td-ogf" kind="presentation" identifier="reviewsSegue" id="VPy-ug-w8e"/>
                         <segue destination="bEl-IX-hA0" kind="show" identifier="photoGalleryViewSegue" id="SJD-xq-UMZ"/>
+                        <segue destination="aPY-WW-kaS" kind="show" identifier="detailsToListSegue" id="S48-SG-bcE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aF-nd-qhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1068" y="167.76611694152925"/>
+        </scene>
+        <!--list-->
+        <scene sceneID="Ma2-AF-sEc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="list" id="aPY-WW-kaS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFh-4t-Q1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720" y="-205"/>
         </scene>
         <!--ReviewViewController-->
         <scene sceneID="ytP-e2-YQF">

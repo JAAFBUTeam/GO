@@ -110,7 +110,7 @@
         <!--List-->
         <scene sceneID="U6Q-Xu-rj6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dAA-Hh-9wA" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="list" automaticallyAdjustsScrollViewInsets="NO" id="dAA-Hh-9wA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="icons8-menu-26" id="VyK-PY-ssi">
                         <color key="badgeColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
