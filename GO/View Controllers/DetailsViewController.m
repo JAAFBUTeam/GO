@@ -62,7 +62,7 @@ typedef enum {
 }
 
 -(void)backTap {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"detailsToListSegue" sender:nil];
 }
 
 # pragma mark - Register nibs
