@@ -9,6 +9,7 @@
 #import "CategoriesViewController.h"
 #import "CurrentLocationPosition.h"
 #import "FeatureCollectionViewCell.h"
+#import "UIView+RoundedCorners.h"
 
 @interface CategoriesViewController ()
 
@@ -35,7 +36,6 @@
     [self initCategoriesArray];
     [CurrentLocationPosition sharedInstance];
     [self setGestureRecognizers];
-    
 }
 
 -(void)setDelegateAndDataSource {
@@ -94,7 +94,8 @@
 
 -(void)setCategoryCell:(CategoryCollectionViewCell*)cell item:(NSInteger)item {
     cell.image.image = [UIImage imageNamed:self.categoriesImagesArray[item]];
-    cell.label.text = self.categoriesLabelsArray[item];
+    [cell.image setRoundedCorners:UIRectCornerAllCorners radius:10];
+    //cell.label.text = self.categoriesLabelsArray[item];
 }
 
 #pragma mark - collection view protocol
