@@ -43,8 +43,8 @@
 
 -(void)setCarouselTypeProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
-    if(self.carousel.type == iCarouselTypeInvertedTimeMachine) {
-        [self.carousel scrollByNumberOfItems:1 duration:1.5];
+    if(self.carousel.type == iCarouselTypeLinear) {
+        //[self.carousel scrollByNumberOfItems:3 duration:1.5];
         self.wrapEnabled = YES;
     }
 }
