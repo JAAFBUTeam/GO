@@ -23,10 +23,11 @@
 @property(nonatomic) double distanceAway;
 
 + (void) postLocation: (PFBooleanResultBlock  _Nullable)completion;
+- (UIImage *) getPicture;
++ (NSMutableArray *) fetchLocations: (NSMutableArray *) locations; // grabs locations from heroku
++ (NSMutableArray *) sharedLocations;
 
 @property(nonatomic, strong) NSMutableArray<NSString *> *imageURLs;
 @property(nonatomic, strong) NSMutableArray *tags;
-
-- (UIImage *) getPicture;
 
 @end
