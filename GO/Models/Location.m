@@ -26,7 +26,9 @@
     return @"Location";
 }
 
-+ (void) postLocation: (PFBooleanResultBlock  _Nullable)completion {
+#pragma mark - Networking
+
++ (void) postLocation: (PFBooleanResultBlock  _Nullable)completion { // posts all locations to heroku
     
     NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
     Location *newLocation = [Location new];
@@ -233,29 +235,16 @@
 
 }
 
-- (NSMutableArray *) fillArray: (NSMutableArray *) pictures {
-    NSMutableArray *images = [[NSMutableArray alloc] init];
-    for (NSString *picture in pictures) {
-        NSURL *url = [[NSURL alloc] initWithString:picture];
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        /* PFImageView *image = [[PFImageView alloc] init];
-        image.file = [self getPFFileFromImage:[UIImage imageWithData:imageData]]; */
-        UIImage *image = [UIImage imageWithData:imageData];
 
-        [images addObject:image];
-    }
-    return images;
-}
+#pragma mark - Conversion
 
-- (UIImage *) getPicture {
+- (UIImage *) getPicture { // converts imageurl to uiimage for mapview and reviews
     NSURL *url = [[NSURL alloc] initWithString:self.imageURLs[0]];
     NSData *imageData = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:imageData];
     
     return image;
 }
-
-#pragma mark - Conversion
 
 - (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
     
@@ -273,25 +262,5 @@
     
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
-
-/* #pragma mark - Networking
-
-- (NSMutableArray *) fetchLocations: (NSMutableArray *) locations {
-    PFQuery *query = [PFQuery queryWithClassName:@"Location"];
-    [query whereKey:@"rating" greaterThan:@2.0];
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
-        if (places != nil) {
-            // do something with the array of object returned by the call
-            for (Location *location in places){
-                [locations addObject:location];
-            }
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-        return locations;
-    }];
-}
-*/
 
 @end

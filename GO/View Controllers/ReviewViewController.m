@@ -41,18 +41,11 @@
 
 - (void) fetchReviews {
     PFQuery *query = [PFQuery queryWithClassName:@"Review"];
-    //if (self.user == nil) {
-        [query whereKey:@"location" equalTo:self.location];
-    //} else {
-       // [query whereKey:@"user" equalTo:self.user];
-    //}
+    [query whereKey:@"location" equalTo:self.location];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
         if (reviews != nil) {
             // do something with the array of object returned by the call
-            /*for (Review *review in reviews){
-                [self.reviews addObject:review];
-            } */
             self.reviews = (NSMutableArray *) reviews;
             [self.tableView reloadData];
         } else {
@@ -65,7 +58,7 @@
 
 - (IBAction)didTapAdd:(id)sender {
     [self performSegueWithIdentifier:@"writeSegue" sender:nil];
-
+    
 }
 
 - (IBAction)didTapDone:(id)sender {
@@ -91,6 +84,8 @@
     return cell;
     
 }
+
+#pragma mark - register nibs
 
 -(void) registerNibs {
     UINib *reviewTableViewCell = [UINib nibWithNibName:@"ReviewTableViewCell" bundle:nil];
@@ -159,16 +154,16 @@
     }
 }
 
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
-     if ([segue.identifier isEqualToString:@"writeSegue"]){
-         WriteViewController *writeController = [segue destinationViewController];
-         writeController.location = self.location;
-     }
- }
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"writeSegue"]){
+        WriteViewController *writeController = [segue destinationViewController];
+        writeController.location = self.location;
+    }
+}
 
 @end
