@@ -26,7 +26,6 @@
 @property (nonatomic, assign) NSInteger sectionID;
 
 -(void)setTableProperties:(Location *)location;
--(void)setTableProperties:(Location *)location hideAddressAndDescriptionLabels:(BOOL)hide;
 -(void)setSectionIDProperty:(NSInteger)sectionID;
 
 @end

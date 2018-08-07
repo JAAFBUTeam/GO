@@ -224,8 +224,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        //[infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
-        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section] hideAddressAndDescriptionLabels:YES];
+        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
         [infoTableViewCell setSectionIDProperty:indexPath.section];
         infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;
