@@ -43,8 +43,8 @@
 
 -(void)setCarouselTypeProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
-    if(self.carousel.type == iCarouselTypeInvertedTimeMachine) {
-        [self.carousel scrollByNumberOfItems:1 duration:1.5];
+    if(self.carousel.type == iCarouselTypeLinear) {
+        //[self.carousel scrollByNumberOfItems:3 duration:1.5];
         self.wrapEnabled = YES;
     }
 }
@@ -62,6 +62,7 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
     view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
+    
     [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
     [self registerGestures:view];
     view.layer.cornerRadius = 5;

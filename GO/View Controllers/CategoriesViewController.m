@@ -146,7 +146,6 @@
             }
         }
         [GlobalFilters sharedInstance].appliedFilters = NO;
-        // [self.navigationController popViewControllerAnimated:YES];
         [self performSegueWithIdentifier:@"categoriesToListSegue" sender:nil];
     }
 }
