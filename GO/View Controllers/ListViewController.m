@@ -44,7 +44,7 @@
 }
 
 -(void) setNavigationBarSettings {
-    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.navigationController.navigationBar.prefersLargeTitles = NO;
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     self.navigationItem.searchController = self.searchController;
