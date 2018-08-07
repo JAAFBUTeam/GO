@@ -36,19 +36,17 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.pagingEnabled = YES;
+    self.wrapEnabled = NO;
     self.carousel.bounceDistance = 0.3;
     self.heartImageView.alpha = 0;
 }
 
 -(void)setCarouselTypeProperties:(iCarouselType) carouselType {
     self.carousel.type = carouselType;
-    [self.carousel scrollByNumberOfItems:1 duration:1.5];
-    self.carousel.pagingEnabled = YES;
-}
-
--(void)setupCarouselCell {
-    [self setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
-    [self.carousel scrollByNumberOfItems:1 duration:1.5];
+    if(self.carousel.type == iCarouselTypeInvertedTimeMachine) {
+        [self.carousel scrollByNumberOfItems:1 duration:1.5];
+        self.wrapEnabled = YES;
+    }
 }
 
 #pragma mark - carousel protocol methods
@@ -56,9 +54,6 @@
 -(void)setDatasourceAndDelegate {
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
-}
-
--(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
@@ -79,6 +74,9 @@
     switch(option) {
         case iCarouselOptionSpacing:
             result = 1.025f;
+            break;
+        case iCarouselOptionWrap:
+            result = self.wrapEnabled;
             break;
         default:
             result = value;
