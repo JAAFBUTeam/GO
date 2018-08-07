@@ -10,11 +10,13 @@
 
 typedef enum {
     ALL = 0,
-    FOOD,
     SELFIESPOTS,
-    MUSEUM,
-    EVENTS,
-    GAS
+    FOOD,
+    CAFES,
+    NATURE,
+    ART,
+    CULTUREANDHISTORY,
+    ARCHITECTURE
 } CategoryType;
 
 @interface GlobalFilters : NSObject

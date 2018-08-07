@@ -38,41 +38,41 @@ static NSString * const tailRedirectURLString = @"&redirect_uri=REDIRECT-URI&res
 //        NSLog(@"fail");
 //    }];
     
-    [engine getMediaAtLocation:coordinates withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-        completionHandler(media);
-    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-        completionHandler(@[]);
-        NSLog(@"%@", error);
-    }];
-    
-    [engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-        NSLog(@"wow");
-    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-        NSLog(@"wow");
-    }];
-    
-//    [engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-//        NSMutableArray<InstagramMedia *> *filteredMedia = [NSMutableArray new];
-//        for (int i = 0; i < [media count]; i++){
-//            NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-//            [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-//            [formatter setMaximumFractionDigits:2];
-//
-//            //set up location values
-//            NSString *instagram_latitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.latitude)];
-//            NSString *current_latitude = [formatter stringFromNumber:@(coordinates.latitude)];
-//            NSString *instagram_longitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.longitude)];
-//            NSString *current_longitude = [formatter stringFromNumber:@(coordinates.longitude)];
-//
-//            //use location values to compare
-//            if (instagram_latitude == current_latitude && instagram_longitude == current_longitude){
-//                [filteredMedia addObject:[media objectAtIndex:i]];
-//            }
-//        }
-//        completionHandler(filteredMedia);
+//    [engine getMediaAtLocation:coordinates withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+//        completionHandler(media);
 //    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
 //        completionHandler(@[]);
+//        NSLog(@"%@", error);
 //    }];
+//
+//    [engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+//        NSLog(@"wow");
+//    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
+//        NSLog(@"wow");
+//    }];
+    
+    [engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        NSMutableArray<InstagramMedia *> *filteredMedia = [NSMutableArray new];
+        for (int i = 0; i < [media count]; i++){
+            NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+            [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            [formatter setMaximumFractionDigits:2];
+
+            //set up location values
+            NSString *instagram_latitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.latitude)];
+            NSString *current_latitude = [formatter stringFromNumber:@(coordinates.latitude)];
+            NSString *instagram_longitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.longitude)];
+            NSString *current_longitude = [formatter stringFromNumber:@(coordinates.longitude)];
+
+            //use location values to compare
+            if (instagram_latitude == current_latitude && instagram_longitude == current_longitude){
+                [filteredMedia addObject:[media objectAtIndex:i]];
+            }
+        }
+        completionHandler(filteredMedia);
+    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
+        completionHandler(@[]);
+    }];
 }
 
 @end

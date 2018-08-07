@@ -34,10 +34,10 @@
     [self setDelegate];
     [self setRegion];
     self.locations = [[NSMutableArray alloc] init];
-    self.locations = [Location sharedLocations];
-    [self addLocations];
+    // self.locations = [Location sharedLocations];
+    //[self addLocations];
     // [Location postLocation:nil];
-    //[self fetchLocations];
+    [self fetchLocations];
 
 }
 
