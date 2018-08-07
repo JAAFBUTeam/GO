@@ -9,7 +9,6 @@
 #import "CategoriesViewController.h"
 #import "CurrentLocationPosition.h"
 #import "FeatureCollectionViewCell.h"
-#import "UIView+RoundedCorners.h"
 
 @interface CategoriesViewController ()
 
@@ -61,8 +60,8 @@
     self.phoneWidth = [UIScreen mainScreen].bounds.size.width;
     
     self.imageHeight = 250;
-    self.categorySectionInset = 15;
-    self.minInteritemSpacing = 15;
+    self.categorySectionInset = 10;
+    self.minInteritemSpacing = 10;
 }
 
 -(void)initCategoriesArray {
@@ -70,22 +69,16 @@
     self.categoriesLabelsArray = [[NSMutableArray alloc]init];
     
     [self.categoriesImagesArray addObject:@"ALL.png"]; //0
-    //[self.categoriesLabelsArray addObject:@"All"];
     
     [self.categoriesImagesArray addObject:@"SELFIE.png"]; //1
-    //[self.categoriesLabelsArray addObject:@"Food"];
     
     [self.categoriesImagesArray addObject:@"FOOD.png"]; //2
-    //[self.categoriesLabelsArray addObject:@"Selfie Spots"];
     
     [self.categoriesImagesArray addObject:@"CAFES.png"]; //3
-    //[self.categoriesLabelsArray addObject:@"Museum"];
     
     [self.categoriesImagesArray addObject:@"ART.png"]; //4
-    //[self.categoriesLabelsArray addObject:@"Events"];
     
     [self.categoriesImagesArray addObject:@"ARCHITECTURE.png"]; //5
-    //[self.categoriesLabelsArray addObject:@"Gas"];
     
     [self.categoriesImagesArray addObject:@"CULTURE.png"]; //6
     
@@ -94,8 +87,8 @@
 
 -(void)setCategoryCell:(CategoryCollectionViewCell*)cell item:(NSInteger)item {
     cell.image.image = [UIImage imageNamed:self.categoriesImagesArray[item]];
-    [cell.image setRoundedCorners:UIRectCornerAllCorners radius:10];
-    //cell.label.text = self.categoriesLabelsArray[item];
+    cell.image.layer.cornerRadius = 10;
+    cell.image.layer.masksToBounds = true;
 }
 
 #pragma mark - collection view protocol
@@ -116,9 +109,6 @@
     if(indexPath.section == 0) {
         self.featureCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
         return self.featureCollectionViewCell;
-//        LargeImageCollectionViewCell *largeImageCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"LargeImageCollectionViewCell" forIndexPath:indexPath];
-//        [largeImageCell setBigImage];
-//        return largeImageCell;
     } else { //indexPath.section == 1
         CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
         [self setCategoryCell:categoryCell item:indexPath.item];
