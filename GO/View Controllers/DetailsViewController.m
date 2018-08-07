@@ -52,12 +52,18 @@ typedef enum {
     self.tableView.dataSource = self;
 
     self.navigationController.navigationBar.prefersLargeTitles = NO;
-
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backTap)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self registerNibs];
 }
 
+-(void)backTap {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 # pragma mark - Register nibs
 
