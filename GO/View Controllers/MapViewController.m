@@ -14,7 +14,7 @@
 #import "MKPointAnnotation+Extended_Annotation.h"
 #import "MKPinAnnotationView+Extended_Pin.h"
 #import "Review.h"
-#import "UIImage+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MapViewController () 
 
@@ -99,7 +99,8 @@
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    [imageView.image setImageWithURL:annotation.location.imageURLs[0]];
+    NSURL *url =  [[NSURL alloc] initWithString: annotation.location.imageURLs[0]];
+    [imageView setImageWithURL:url];
     
     return annotationView;
 }
