@@ -108,12 +108,12 @@ typedef enum {
         }
         case REVIEW_1: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            [reviewTableViewCell setupReviewsTableViewCell: self.reviews[0]];
+            [reviewTableViewCell setupReviewsTableViewCell: reviewTableViewCell.review];
             return reviewTableViewCell;
         }
         case REVIEW_2: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            [reviewTableViewCell setupReviewsTableViewCell: self.reviews[1]];
+            [reviewTableViewCell setupReviewsTableViewCell: reviewTableViewCell.review];
 
             return reviewTableViewCell;
         }
