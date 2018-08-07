@@ -24,6 +24,7 @@
 		19A252B4210AA09400860637 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A252B3210AA09400860637 /* Filters.storyboard */; };
 		19A66D862118AC32001A9601 /* FeatureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */; };
 		19A66D872118AC32001A9601 /* FeatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */; };
+		19A66D8D211A2548001A9601 /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D8C211A2548001A9601 /* UIView+RoundedCorners.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
@@ -119,6 +120,8 @@
 		19A66D832118AC32001A9601 /* FeatureCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureCollectionViewCell.h; sourceTree = "<group>"; };
 		19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeatureCollectionViewCell.m; sourceTree = "<group>"; };
 		19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCollectionViewCell.xib; sourceTree = "<group>"; };
+		19A66D8B211A2548001A9601 /* UIView+RoundedCorners.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorners.h"; sourceTree = "<group>"; };
+		19A66D8C211A2548001A9601 /* UIView+RoundedCorners.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorners.m"; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				19A66D832118AC32001A9601 /* FeatureCollectionViewCell.h */,
 				19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */,
 				19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */,
+				19A66D8B211A2548001A9601 /* UIView+RoundedCorners.h */,
+				19A66D8C211A2548001A9601 /* UIView+RoundedCorners.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -682,6 +687,7 @@
 				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */,
+				19A66D8D211A2548001A9601 /* UIView+RoundedCorners.m in Sources */,
 				19AD70B8210B86A1008A72EF /* MoreTableViewCell.m in Sources */,
 				19A252AF210A6EC700860637 /* GlobalFilters.m in Sources */,
 				CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "CategoriesViewController.h"
 #import "CurrentLocationPosition.h"
 #import "FeatureCollectionViewCell.h"
+#import "UIView+RoundedCorners.h"
 
 @interface CategoriesViewController ()
 
@@ -35,7 +36,6 @@
     [self initCategoriesArray];
     [CurrentLocationPosition sharedInstance];
     [self setGestureRecognizers];
-    
 }
 
 -(void)setDelegateAndDataSource {
@@ -56,7 +56,7 @@
 
 -(void)setTableDimensions {
     self.sections = 2;
-    self.numberOfCategories = 6;
+    self.numberOfCategories = 8;
     self.categoriesPerLine = 2;
     self.phoneWidth = [UIScreen mainScreen].bounds.size.width;
     
@@ -69,28 +69,33 @@
     self.categoriesImagesArray = [[NSMutableArray alloc]init];
     self.categoriesLabelsArray = [[NSMutableArray alloc]init];
     
-    [self.categoriesImagesArray addObject:@"icons8-checked-48.png"]; //0
-    [self.categoriesLabelsArray addObject:@"All"];
+    [self.categoriesImagesArray addObject:@"ALL.png"]; //0
+    //[self.categoriesLabelsArray addObject:@"All"];
     
-    [self.categoriesImagesArray addObject:@"icons8-food-40.png"]; //1
-    [self.categoriesLabelsArray addObject:@"Food"];
+    [self.categoriesImagesArray addObject:@"SELFIE.png"]; //1
+    //[self.categoriesLabelsArray addObject:@"Food"];
     
-    [self.categoriesImagesArray addObject:@"icons8-selfie-48.png"]; //2
-    [self.categoriesLabelsArray addObject:@"Selfie Spots"];
+    [self.categoriesImagesArray addObject:@"FOOD.png"]; //2
+    //[self.categoriesLabelsArray addObject:@"Selfie Spots"];
     
-    [self.categoriesImagesArray addObject:@"icons8-bed-48.png"]; //3
-    [self.categoriesLabelsArray addObject:@"Museum"];
+    [self.categoriesImagesArray addObject:@"CAFES.png"]; //3
+    //[self.categoriesLabelsArray addObject:@"Museum"];
     
-    [self.categoriesImagesArray addObject:@"icons8-two-tickets-40"]; //4
-    [self.categoriesLabelsArray addObject:@"Events"];
+    [self.categoriesImagesArray addObject:@"ART.png"]; //4
+    //[self.categoriesLabelsArray addObject:@"Events"];
     
-    [self.categoriesImagesArray addObject:@"icons8-gas-station-40.png"]; //5
-    [self.categoriesLabelsArray addObject:@"Gas"];
+    [self.categoriesImagesArray addObject:@"ARCHITECTURE.png"]; //5
+    //[self.categoriesLabelsArray addObject:@"Gas"];
+    
+    [self.categoriesImagesArray addObject:@"CULTURE.png"]; //6
+    
+    [self.categoriesImagesArray addObject:@"NATURE.png"]; //7
 }
 
 -(void)setCategoryCell:(CategoryCollectionViewCell*)cell item:(NSInteger)item {
     cell.image.image = [UIImage imageNamed:self.categoriesImagesArray[item]];
-    cell.label.text = self.categoriesLabelsArray[item];
+    [cell.image setRoundedCorners:UIRectCornerAllCorners radius:10];
+    //cell.label.text = self.categoriesLabelsArray[item];
 }
 
 #pragma mark - collection view protocol
@@ -127,20 +132,26 @@
             case ALL: {
                 [GlobalFilters sharedInstance].categoryType = ALL;
                 break;
-            } case FOOD: {
-                [GlobalFilters sharedInstance].categoryType = FOOD;
-                break;
             } case SELFIESPOTS: {
                 [GlobalFilters sharedInstance].categoryType = SELFIESPOTS;
                 break;
-            } case MUSEUM: {
-                [GlobalFilters sharedInstance].categoryType = MUSEUM;
+            } case FOOD: {
+                [GlobalFilters sharedInstance].categoryType = FOOD;
                 break;
-            } case EVENTS: {
-                [GlobalFilters sharedInstance].categoryType = EVENTS;
+            } case CAFES: {
+                [GlobalFilters sharedInstance].categoryType = CAFES;
                 break;
-            } case GAS: {
-                [GlobalFilters sharedInstance].categoryType = GAS;
+            } case ART: {
+                [GlobalFilters sharedInstance].categoryType = ART;
+                break;
+            } case ARCHITECTURE: {
+                [GlobalFilters sharedInstance].categoryType = ARCHITECTURE;
+                break;
+            } case CULTURE: {
+                [GlobalFilters sharedInstance].categoryType = CULTURE;
+                break;
+            } case NATURE: {
+                [GlobalFilters sharedInstance].categoryType = NATURE;
                 break;
             }
         }
