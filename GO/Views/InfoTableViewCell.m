@@ -39,6 +39,13 @@
     self.sectionID = sectionID;
 }
 
+-(void)hideAddressAndSynopsisLabel{
+    self.synopsis.text = nil;
+    self.address.text = nil;
+    [self.address removeFromSuperview];
+    [self.synopsis removeFromSuperview];
+}
+
 #pragma mark - actions
 
 -(void)didTap{

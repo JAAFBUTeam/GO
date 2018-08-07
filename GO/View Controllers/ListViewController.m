@@ -34,6 +34,7 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     [self disableAutoRotate];
+    
 }
 
 -(void)calculateLocation{
@@ -140,7 +141,7 @@
     }
 }
 
-#pragma mark - filters delegate
+#pragma mark - filters protocol
 
 -(void)applyButtonTap {
     [self fetchFilteredLocations];
@@ -197,12 +198,6 @@
     }
 }
 
-#pragma mark - Actions
-
-- (IBAction)didTapBack:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - label tap protocol
 
 -(void)labelTapped:(NSUInteger)section {
@@ -226,6 +221,7 @@
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
         [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
         [infoTableViewCell setSectionIDProperty:indexPath.section];
+        [infoTableViewCell hideAddressAndSynopsisLabel];
         infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;
     } else { //indexPath.row == 1
@@ -238,12 +234,26 @@
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == 0) { //info height
+        return 75;
+    } else { //picture height
+        return 250;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 5;
+}
+
+#pragma mark - Actions
+
+- (IBAction)didTapBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Navigation

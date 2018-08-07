@@ -27,5 +27,6 @@
 
 -(void)setTableProperties:(Location *)location;
 -(void)setSectionIDProperty:(NSInteger)sectionID;
+-(void)hideAddressAndSynopsisLabel;
 
 @end
