@@ -17,7 +17,6 @@
 #import "APIManager.h"
 #import "PhotoCollectionViewController.h"
 #import "MoreTableViewCell.h"
-#import "DetailInfoTableViewCell.h"
 
 @interface DetailsViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -87,9 +86,6 @@ typedef enum {
     UINib *moreTableViewCell = [UINib nibWithNibName:@"MoreTableViewCell" bundle:nil];
     [self.tableView registerNib:moreTableViewCell forCellReuseIdentifier:@"MoreTableViewCell"];
     
-    UINib *detailInfoTableViewCell = [UINib nibWithNibName:@"DetailInfoTableViewCell" bundle:nil];
-    [self.tableView registerNib:detailInfoTableViewCell forCellReuseIdentifier:@"DetailInfoTableViewCell"];
-    
     UINib *featureTableViewCell = [UINib nibWithNibName:@"FeatureTableViewCell" bundle:nil];
     [self.tableView registerNib:featureTableViewCell forCellReuseIdentifier:@"FeatureTableViewCell"];
 }
@@ -100,15 +96,15 @@ typedef enum {
         switch(indexPath.section){
         case CAROUSEL: {
             CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
+            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
             [carouselTableViewCell setLocationProperty:_location];
             [carouselTableViewCell setDatasourceAndDelegate];
             return carouselTableViewCell;
         }
         case INFO: {
-            DetailInfoTableViewCell *detailInfoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"DetailInfoTableViewCell"];
-            [detailInfoTableViewCell setTableProperties:_location];
-            return detailInfoTableViewCell;
+            InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
+            [infoTableViewCell setTableProperties:_location];
+            return infoTableViewCell;
         }
         case TITLE_REVIEW: {
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
