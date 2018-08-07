@@ -25,15 +25,12 @@
 		19A252B4210AA09400860637 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A252B3210AA09400860637 /* Filters.storyboard */; };
 		19A66D862118AC32001A9601 /* FeatureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */; };
 		19A66D872118AC32001A9601 /* FeatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */; };
-		19A66D8D211A2548001A9601 /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D8C211A2548001A9601 /* UIView+RoundedCorners.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
 		19AD70B22108EAF8008A72EF /* PhotoGallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */; };
 		19AD70B8210B86A1008A72EF /* MoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */; };
 		19AD70C2210E64FE008A72EF /* CurrentLocationPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70C1210E64FE008A72EF /* CurrentLocationPosition.m */; };
-		19AD70C6210EE9AB008A72EF /* DetailInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70C4210EE9AB008A72EF /* DetailInfoTableViewCell.m */; };
-		19AD70C7210EE9AB008A72EF /* DetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70C5210EE9AB008A72EF /* DetailInfoTableViewCell.xib */; };
 		19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */; };
 		2EA98D548B16A51D0BA85469 /* libPods-GO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F322BADF9509795616368A0 /* libPods-GO.a */; };
 		4AADD200ACDA9F8AB01EA7DA /* libPods-GOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6087ED01F82B102665791625 /* libPods-GOUITests.a */; };
@@ -122,8 +119,6 @@
 		19A66D832118AC32001A9601 /* FeatureCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureCollectionViewCell.h; sourceTree = "<group>"; };
 		19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeatureCollectionViewCell.m; sourceTree = "<group>"; };
 		19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCollectionViewCell.xib; sourceTree = "<group>"; };
-		19A66D8B211A2548001A9601 /* UIView+RoundedCorners.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorners.h"; sourceTree = "<group>"; };
-		19A66D8C211A2548001A9601 /* UIView+RoundedCorners.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorners.m"; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -134,9 +129,6 @@
 		19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewCell.m; sourceTree = "<group>"; };
 		19AD70C0210E64FE008A72EF /* CurrentLocationPosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationPosition.h; sourceTree = "<group>"; };
 		19AD70C1210E64FE008A72EF /* CurrentLocationPosition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationPosition.m; sourceTree = "<group>"; };
-		19AD70C3210EE9AB008A72EF /* DetailInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailInfoTableViewCell.h; sourceTree = "<group>"; };
-		19AD70C4210EE9AB008A72EF /* DetailInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailInfoTableViewCell.m; sourceTree = "<group>"; };
-		19AD70C5210EE9AB008A72EF /* DetailInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoTableViewCell.xib; sourceTree = "<group>"; };
 		19ADC2D120FD3C4A00A85BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3663E313425168D8856C3BF9 /* Pods-GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOUITests/Pods-GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56A1E71F29C066467408C2F3 /* Pods-GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-GO/Pods-GO.release.xcconfig"; sourceTree = "<group>"; };
@@ -282,14 +274,9 @@
 				19A252A32108E9EC00860637 /* LargeImageCollectionViewCell.xib */,
 				19AD70B6210B86A1008A72EF /* MoreTableViewCell.h */,
 				19AD70B7210B86A1008A72EF /* MoreTableViewCell.m */,
-				19AD70C3210EE9AB008A72EF /* DetailInfoTableViewCell.h */,
-				19AD70C4210EE9AB008A72EF /* DetailInfoTableViewCell.m */,
-				19AD70C5210EE9AB008A72EF /* DetailInfoTableViewCell.xib */,
 				19A66D832118AC32001A9601 /* FeatureCollectionViewCell.h */,
 				19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */,
 				19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */,
-				19A66D8B211A2548001A9601 /* UIView+RoundedCorners.h */,
-				19A66D8C211A2548001A9601 /* UIView+RoundedCorners.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -569,7 +556,6 @@
 				CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */,
 				CCB3C9F020FFDADF0095CD59 /* TitleTableViewCell.xib in Resources */,
 				CC1307D120EFDEF0007E8DD5 /* LaunchScreen.storyboard in Resources */,
-				19AD70C7210EE9AB008A72EF /* DetailInfoTableViewCell.xib in Resources */,
 				19A252B4210AA09400860637 /* Filters.storyboard in Resources */,
 				19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */,
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableViewCell.xib in Resources */,
@@ -691,7 +677,6 @@
 				CCFE2C4B20FEC0ED0037ABF2 /* MKPinAnnotationView+Extended_Pin.m in Sources */,
 				CCFE2C4220FD527A0037ABF2 /* MKPointAnnotation+Extended_Annotation.m in Sources */,
 				192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */,
-				19A66D8D211A2548001A9601 /* UIView+RoundedCorners.m in Sources */,
 				19AD70B8210B86A1008A72EF /* MoreTableViewCell.m in Sources */,
 				19A252AF210A6EC700860637 /* GlobalFilters.m in Sources */,
 				CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */,
@@ -714,7 +699,6 @@
 				CC1307C920EFDEEE007E8DD5 /* ViewController.m in Sources */,
 				CCFE2C4820FE96A90037ABF2 /* MKAnnotationView+Extended_View.m in Sources */,
 				CCB3C9EA20FFB0690095CD59 /* ReviewsTableViewCell.m in Sources */,
-				19AD70C6210EE9AB008A72EF /* DetailInfoTableViewCell.m in Sources */,
 				CC1307D420EFDEF0007E8DD5 /* main.m in Sources */,
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,

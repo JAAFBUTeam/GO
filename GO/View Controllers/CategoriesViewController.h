@@ -12,7 +12,6 @@
 #import "ListViewController.h"
 #import "GlobalFilters.h"
 #import "FeatureCollectionViewCell.h"
-#import "UIView+RoundedCorners.h"
 
 @interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 
