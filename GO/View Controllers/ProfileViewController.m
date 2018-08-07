@@ -83,7 +83,7 @@
         return profileTableViewCell;
     } else if (indexPath.section == 1) { // Carousel
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setupCarouselCell];
+        [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
         return carouselTableViewCell;
     } else if (indexPath.section == 2) { // Title
         TitleTableViewCell *titleTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
