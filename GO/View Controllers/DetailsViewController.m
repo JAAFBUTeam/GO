@@ -51,6 +51,8 @@ typedef enum {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
+    self.navigationController.navigationBar.prefersLargeTitles = NO;
+
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self registerNibs];

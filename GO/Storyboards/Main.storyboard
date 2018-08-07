@@ -160,7 +160,7 @@
                                 <action selector="didTapBack:" destination="pQW-ct-aXZ" id="nSb-ln-doL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-filter-27" id="AET-nG-y8o">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter_custom20" id="AET-nG-y8o">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="EmL-9T-UvF" kind="showDetail" identifier="listToFiltersSegue" id="V7O-h9-VeF"/>
@@ -179,7 +179,7 @@
     </scenes>
     <resources>
         <image name="back-24" width="24" height="24"/>
-        <image name="icons8-filter-27" width="26" height="26"/>
+        <image name="filter_custom20" width="20" height="20"/>
         <image name="icons8-map-32" width="32" height="32"/>
         <image name="icons8-menu-26" width="26" height="26"/>
     </resources>
