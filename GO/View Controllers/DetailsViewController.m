@@ -62,7 +62,8 @@ typedef enum {
 }
 
 -(void)backTap {
-    [self performSegueWithIdentifier:@"detailsToListSegue" sender:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 # pragma mark - Register nibs
