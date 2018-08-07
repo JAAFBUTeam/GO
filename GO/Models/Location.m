@@ -53,7 +53,9 @@
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
     newLocation.tags = [[NSMutableArray alloc] init];
-    //[newLocation.tags addObject:[NSNumber numberWithInt: MUSEUM]];
+    [newLocation.tags addObject:[NSNumber numberWithInt: ART]];
+    [newLocation.tags addObject:[NSNumber numberWithInt: CULTUREANDHISTORY]];
+    [newLocation.tags addObject:[NSNumber numberWithInt: ARCHITECTURE]];
     [newLocation.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation.imageURLs = [[NSMutableArray alloc] init];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/O1na7VIebCKV.jpg"];
@@ -73,7 +75,8 @@
     newLocation2.lon = -122.440789;
     newLocation2.rating = 4.0;
     newLocation2.tags = [[NSMutableArray alloc] init];
-    //[newLocation2.tags addObject:[NSNumber numberWithInt: MUSEUM]];
+    [newLocation2.tags addObject:[NSNumber numberWithInt: ARCHITECTURE]];
+    [newLocation2.tags addObject:[NSNumber numberWithInt: NATURE]];
     [newLocation2.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation2.imageURLs = [[NSMutableArray alloc] init];
     [newLocation2.imageURLs addObject:@"https://static1.squarespace.com/static/5115ccdae4b04c436ed83ed4/572810e737013ba5d459b4f3/572810efe32140b8013928a0/1462243575441/Sunnyside+Conservatory+Wedding-15.jpg"];
@@ -95,6 +98,8 @@
     newLocation3.rating = 4.3;
     newLocation3.tags = [[NSMutableArray alloc] init];
     [newLocation3.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation3.tags addObject:[NSNumber numberWithInt: ART]];
+    [newLocation3.tags addObject:[NSNumber numberWithInt: NATURE]];
     [newLocation3.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation3.imageURLs = [[NSMutableArray alloc] init];
     [newLocation3.imageURLs addObject:@"https://3.bp.blogspot.com/-UgBRK5ITezU/V1ZFDxTs9GI/AAAAAAAAB1I/y_W-RAJnibAbckLz5y2xjcG2hSWLnuOoACLcB/s1600/san%2Bfrancisco%2B16th%2Bave%2Btiled%2Bsteps%2B330x396x53kb.jpg"];
@@ -112,7 +117,7 @@
     newLocation4.synopsis = @"The golden fire hydrant that saved the Mission district in the aftermath of the 1906 earthquake!";
     newLocation4.rating = 3.9;
     newLocation4.tags = [[NSMutableArray alloc] init];
-    [newLocation4.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation4.tags addObject:[NSNumber numberWithInt: CULTUREANDHISTORY]];
     [newLocation4.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation4.imageURLs = [[NSMutableArray alloc] init];
     [newLocation4.imageURLs addObject:@"https://assets.rbl.ms/17570231/980x.jpg"];
@@ -168,7 +173,7 @@
     newLocation7.synopsis = @"A pair of slides and a tree-lined stair corridor!";
     newLocation7.rating = 4.7;
     newLocation7.tags = [[NSMutableArray alloc] init];
-    [newLocation7.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation7.tags addObject:[NSNumber numberWithInt: ARCHITECTURE]];
     [newLocation7.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation7.imageURLs = [[NSMutableArray alloc] init];
     [newLocation7.imageURLs addObject:@"https://cdn2.gbot.me/photos/2W/gc/1472498041/Stair_slide-Esmerelda_Slide_Park-20000000009562117-500x375.jpg"];
@@ -187,6 +192,7 @@
     newLocation8.rating = 4.3;
     newLocation8.tags = [[NSMutableArray alloc] init];
     [newLocation8.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation8.tags addObject:[NSNumber numberWithInt: NATURE]];
     [newLocation8.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation8.imageURLs = [[NSMutableArray alloc] init];
     [newLocation8.imageURLs addObject:@"https://hoodwork-production.s3.amazonaws.com/uploads/story/image/23315/Billy-Goat-Hill-Park_3.jpg"];
@@ -226,6 +232,7 @@
     newLocation10.rating = 4.3;
     newLocation10.tags = [[NSMutableArray alloc] init];
     [newLocation10.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation10.tags addObject:[NSNumber numberWithInt: NATURE]];
     [newLocation10.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation10.imageURLs = [[NSMutableArray alloc] init];
     [newLocation10.imageURLs addObject:@"https://s3-media3.fl.yelpcdn.com/bphoto/C14rGoFS0IDo9I7kaVilMQ/o.jpg"];

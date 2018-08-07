@@ -147,8 +147,8 @@
             } case ARCHITECTURE: {
                 [GlobalFilters sharedInstance].categoryType = ARCHITECTURE;
                 break;
-            } case CULTURE: {
-                [GlobalFilters sharedInstance].categoryType = CULTURE;
+            } case CULTUREANDHISTORY: {
+                [GlobalFilters sharedInstance].categoryType = CULTUREANDHISTORY;
                 break;
             } case NATURE: {
                 [GlobalFilters sharedInstance].categoryType = NATURE;
