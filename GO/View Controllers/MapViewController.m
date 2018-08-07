@@ -14,6 +14,7 @@
 #import "MKPointAnnotation+Extended_Annotation.h"
 #import "MKPinAnnotationView+Extended_Pin.h"
 #import "Review.h"
+#import "UIImage+AFNetworking.h"
 
 @interface MapViewController () 
 
@@ -32,9 +33,11 @@
     
     [self setDelegate];
     [self setRegion];
-    self.locations = [[NSMutableArray alloc]init];
+    self.locations = [[NSMutableArray alloc] init];
+    self.locations = [Location sharedLocations];
+    [self addLocations];
     // [Location postLocation:nil];
-    [self fetchLocations];
+    //[self fetchLocations];
 
 }
 
@@ -74,7 +77,6 @@
         annotation.location = place;
 
         [self.mapView addAnnotation:annotation]; // addAnnotations can be used for multiple annotations at once
-        
     }
 }
 
@@ -91,14 +93,13 @@
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
-        annotationView.image = [annotation.location getPicture];
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = annotationView.image;
+    [imageView.image setImageWithURL:annotation.location.imageURLs[0]];
     
     return annotationView;
 }

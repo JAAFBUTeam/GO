@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
 #import "GlobalFilters.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation Location
 
@@ -24,6 +25,19 @@
 
 + (nonnull NSString *)parseClassName {
     return @"Location";
+}
+
+#pragma mark - Singleton
+
++ (NSMutableArray *)sharedLocations {
+    static NSMutableArray *sharedLocation = nil;
+    @synchronized(self) {
+        if (sharedLocation == nil) {
+            sharedLocation = [[NSMutableArray alloc] init];
+            sharedLocation = [Location fetchLocations:sharedLocation];
+        }
+    }
+    return sharedLocation;
 }
 
 #pragma mark - Networking
@@ -48,7 +62,7 @@
     [newLocation.imageURLs addObject:@"https://www.arup.com/-/media/Arup/Images/Projects/S/SF-MOMA/SF_MOMA_image_3.jpg"];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/xVPY71fEXa-J.jpg"];
     [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA88tJq1TCQcdvbOgrHW2FYPCgCUVa4E8w8f0N1-xveT2AqXGz"];
-
+    
     [locations addObject:newLocation];
     
     Location *newLocation2 = [Location new];
@@ -69,7 +83,7 @@
     [newLocation2.imageURLs addObject:@"https://untappedcities-wpengine.netdna-ssl.com/wp-content/uploads/2011/11/DSC_1326.jpg"];
     [newLocation2.imageURLs addObject:@"https://sunnysideassociation.files.wordpress.com/2012/03/sunnyside-conservatory-org.jpg?w=500"];
     [newLocation2.imageURLs addObject:@"https://junebugweddings.com/wedding-blog/wp-content/uploads/2015/04/California-Hipster-Wedding-Sunnyside-Conservatory-Helena-Laurent-8-of-38-600x400.jpg"];
-
+    
     [locations addObject:newLocation2];
     
     Location *newLocation3 = [Location new];
@@ -232,19 +246,30 @@
     [newLocation8 saveInBackgroundWithBlock: completion];
     [newLocation9 saveInBackgroundWithBlock: completion];
     [newLocation10 saveInBackgroundWithBlock: completion];
-
+    
 }
 
+#pragma mark - Networking
+
++ (NSMutableArray *) fetchLocations: (NSMutableArray *) locations { // grabs locations from heroku
+    PFQuery *query = [PFQuery queryWithClassName:@"Location"];
+    //[query whereKey:@"rating" greaterThan:@2.0];
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *places, NSError *error) {
+        if (places != nil) {
+            // do something with the array of object returned by the call
+            for (Location *location in places){
+                NSLog(@"oine");
+                [locations addObject:location];
+            }
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    return locations;
+}
 
 #pragma mark - Conversion
-
-- (UIImage *) getPicture { // converts imageurl to uiimage for mapview and reviews
-    NSURL *url = [[NSURL alloc] initWithString:self.imageURLs[0]];
-    NSData *imageData = [NSData dataWithContentsOfURL:url];
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    return image;
-}
 
 - (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
     

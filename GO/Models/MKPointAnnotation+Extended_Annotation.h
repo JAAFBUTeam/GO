@@ -13,6 +13,5 @@
 @interface MKPointAnnotation (Extended_Annotation)
 
 @property (nonatomic, strong) Location *location;
-@property (nonatomic, strong) NSMutableArray *picture;
 
 @end
