@@ -13,6 +13,5 @@
 @interface MKPinAnnotationView (Extended_Pin)
 
 @property (nonatomic, strong) Location *location;
-@property (nonatomic, strong) UIImage *image;
 
 @end

@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
 #import "GlobalFilters.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation Location
 
@@ -269,14 +270,6 @@
 }
 
 #pragma mark - Conversion
-
-- (UIImage *) getPicture { // converts imageurl to uiimage for mapview and reviews
-    NSURL *url = [[NSURL alloc] initWithString:self.imageURLs[0]];
-    NSData *imageData = [NSData dataWithContentsOfURL:url];
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    return image;
-}
 
 - (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
     

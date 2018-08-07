@@ -13,6 +13,5 @@
 @interface MKAnnotationView (Extended_View)
 
 @property (nonatomic, strong) Location *location;
-@property (nonatomic, strong) UIImage *image;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ReviewsTableViewCell.h"
+#import "UIImage+AFNetworking.h"
 
 @implementation ReviewsTableViewCell
 
@@ -38,7 +39,9 @@
 
 -(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {
 
-    PFFile *file = [self getPFFileFromImage: [self.review.location getPicture]];
+    UIImageView *imageView = [[UIImageView alloc] init];
+    [imageView.image setImageWithURL:self.review.location.imageURLs[0]];
+    PFFile *file = [self getPFFileFromImage: imageView.image];
     self.userImage.file = file;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
     self.userImage.clipsToBounds = YES;
