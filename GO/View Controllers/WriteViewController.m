@@ -61,7 +61,7 @@
 }
 
 - (IBAction)didChangeValue:(HCSStarRatingView *)sender {
-    self.rating = sender.value;
+    self.rating = (double) sender.value;
 }
 
 #pragma mark - Actions

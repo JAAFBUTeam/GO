@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view.
     
     [self setupTableView];
+    [self fetchReviews];
     [self registerNibs];
     
 }
@@ -91,7 +92,8 @@
         return titleTableViewCell;
     } else { // Review
         ReviewsTableViewCell *reviewTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-        [reviewTableViewCell setupReviewsTableViewCell: reviewTableViewCell.review];
+        [reviewTableViewCell setupReviewsTableViewCell:User.currentUser withReview:self.reviews[indexPath.row]];
+        
         return reviewTableViewCell;
     }
 }

@@ -40,13 +40,15 @@
 -(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {
 
     UIImageView *imageView = [[UIImageView alloc] init];
-    NSURL *url =  [[NSURL alloc] initWithString: self.review.location.imageURLs[0]];
+    Location *location = [review.location fetchIfNeeded];
+    user = [user fetchIfNeeded];
+    NSURL *url =  [[NSURL alloc] initWithString: location.imageURLs[0]];
     [imageView setImageWithURL:url];
     PFFile *file = [self getPFFileFromImage: imageView.image];
     self.userImage.file = file;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
     self.userImage.clipsToBounds = YES;
-    self.username.text = review.user.username;
+    self.username.text = user.username;
     
     self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;
