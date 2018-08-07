@@ -30,11 +30,9 @@
     // Do any additional setup after loading the view.
     //one degree of latitude is approximately 111 kilometers (69 miles) at all times.
     
-    self.mapView.delegate = self;
-    
+    [self setDelegate];
     [self setRegion];
     self.locations = [[NSMutableArray alloc]init];
-
     // [Location postLocation:nil];
     [self fetchLocations];
 
@@ -81,6 +79,10 @@
 }
 
 #pragma mark - MapView delegate
+
+- (void) setDelegate {
+    self.mapView.delegate = self;
+}
 
 - (MKPinAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(MKPointAnnotation *)annotation {
     NSLog(@"View for annotation entered");

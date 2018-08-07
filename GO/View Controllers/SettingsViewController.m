@@ -18,6 +18,8 @@
 
 @implementation SettingsViewController
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -28,6 +30,8 @@
 - (void) viewWillAppear:(BOOL)animated {
     [self setProfile];
 }
+
+#pragma mark - set profile
 
 - (void)setProfile {
     

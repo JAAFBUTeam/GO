@@ -27,7 +27,6 @@
 @property(nonatomic, strong) NSMutableArray<NSString *> *imageURLs;
 @property(nonatomic, strong) NSMutableArray *tags;
 
-- (NSMutableArray *) fillArray: (NSMutableArray *) pictures;
 - (UIImage *) getPicture;
 
 @end
