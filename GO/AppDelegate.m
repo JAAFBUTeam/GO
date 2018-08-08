@@ -32,6 +32,8 @@
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"Main"];
     self.window.rootViewController = viewController;
     
+    UITabBar.appearance.unselectedItemTintColor = [UIColor blackColor];
+    
     return YES;
 }
 
