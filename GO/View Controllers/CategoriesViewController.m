@@ -10,6 +10,7 @@
 #import "CurrentLocationPosition.h"
 #import "FeatureCollectionViewCell.h"
 #import "CategoryHeaderCollectionViewCell.h"
+#import "LoadView.h"
 
 @interface CategoriesViewController ()
 
@@ -36,6 +37,20 @@
     [self initCategoriesArray];
     [CurrentLocationPosition sharedInstance];
     [self setGestureRecognizers];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    LoadView *view = [[LoadView alloc] init];
+    
+    [self.view addSubview:view];
+    //[self bringSubviewToFront:view];
+    
+    [UIView animateWithDuration:2 animations:^{view.alpha = 0.0;}
+                     completion:(void (^)(BOOL)) ^{
+                         [view removeFromSuperview];
+                     }
+     ];
 }
 
 -(void)setDelegateAndDataSource {

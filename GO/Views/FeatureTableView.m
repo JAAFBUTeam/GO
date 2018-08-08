@@ -12,7 +12,6 @@
 #import "UIImageView+AFNetworking.h"
 #import "FeatureTableView.h"
 #import "CarouselTableViewCell.h"
-#import "LoadView.h"
 
 @implementation FeatureTableView
 
@@ -27,19 +26,7 @@
     self.tableView.dataSource = self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-    LoadView *view = [[LoadView alloc] init];
-    
-    [self.view addSubview:view];
-    //[self bringSubviewToFront:view];
-    
-    [UIView animateWithDuration:2 animations:^{view.alpha = 0.0;}
-                     completion:(void (^)(BOOL)) ^{
-                         [view removeFromSuperview];
-                     }
-     ];
-}
+
 
 #pragma mark - Register nibs
 -(void)registerNibs{
