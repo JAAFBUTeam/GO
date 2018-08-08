@@ -1,8 +1,8 @@
 //
-//  FeatureTableViewCell.m
+//  FeatureTableView.m
 //  GO
 //
-//  Created by Ajaita Saini on 8/2/18.
+//  Created by Ajaita Saini on 8/8/18.
 //  Copyright © 2018 Amy Liu. All rights reserved.
 //
 
@@ -10,8 +10,11 @@
 #import <Parse/Parse.h>
 #import "Location.h"
 #import "UIImageView+AFNetworking.h"
+#import "FeatureTableView.h"
+#import "CarouselTableViewCell.h"
+#import "LoadView.h"
 
-@implementation FeatureCollectionViewCell
+@implementation FeatureTableView
 
 #pragma mark - Lifecycle
 
@@ -19,14 +22,29 @@
     [super awakeFromNib];
     [self setLocations];
     self.currentLocation = [self.locations objectAtIndex:0];
-    [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
-    self.titleLabel.text = self.currentLocation.title;
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    LoadView *view = [[LoadView alloc] init];
+    
+    [self.view addSubview:view];
+    //[self bringSubviewToFront:view];
+    
+    [UIView animateWithDuration:2 animations:^{view.alpha = 0.0;}
+                     completion:(void (^)(BOOL)) ^{
+                         [view removeFromSuperview];
+                     }
+     ];
 }
 
 #pragma mark - Register nibs
 -(void)registerNibs{
-//    UINib *carouselFeatureCell = [UINib nibWithNibName:@"CarouselTableViewCell" bundle:nil];
-//    [self.tableView registerNib:carouselTableViewCell forCellReuseIdentifier:@"CarouselTableViewCell"];
+    UINib *carouselFeatureCell = [UINib nibWithNibName:@"CarouselTableViewCell" bundle:nil];
+    [self.tableView registerNib:carouselFeatureCell forCellReuseIdentifier:@"CarouselTableViewCell"];
 }
 
 #pragma mark - Setup
@@ -68,7 +86,7 @@
     [newLocation8.imageURLs addObject:@"https://i2.wp.com/farm7.staticflickr.com/6237/6849796588_060e3e3e68_z.jpg"];
     [newLocation8.imageURLs addObject:@"https://theshannonigansoflife.files.wordpress.com/2015/05/img_1897.jpg"];
     [self.locations addObject:newLocation8];
-
+    
     
     Location *newLocation6 = [Location new];
     newLocation6.title = @"Home Cafe";
@@ -93,32 +111,47 @@
 }
 
 -(void)setFeaturedCarousel {
+    CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+    [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
+    
     NSMutableArray *locationImages = [[NSMutableArray alloc] init];
     for (Location *location in self.locations){
         [locationImages addObject:location.imageURLs[0]];
     }
     
-    
+    [carouselTableViewCell setImages:locationImages];
 }
 
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+    [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
+    
+    NSMutableArray *locationImages = [[NSMutableArray alloc] init];
+    for (Location *location in self.locations){
+        [locationImages addObject:location.imageURLs[0]];
+    }
+    
+    [carouselTableViewCell setImages:locationImages];
+    
+    return carouselTableViewCell;
+}
 
 #pragma mark - Page control
 
--(void)swipePageControl:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
-    if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionLeft){
-        self.pageControl.currentPage +=1;
-        NSLog(@"swipe left!");
-    } else if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionRight) {
-        self.pageControl.currentPage -=1;
-        NSLog(@"swipe right!");
-    }
-    
-    NSInteger index = [self.pageControl currentPage];
-    self.currentLocation = [self.locations objectAtIndex:index];
-    [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
-    self.titleLabel.text = self.currentLocation.title;
-    //NSLog(@"%@", self.locations[[self.pageControl currentPage]].imageURLs[0]);
-}
+//-(void)swipePageControl:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
+//    if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionLeft){
+//        self.pageControl.currentPage +=1;
+//        NSLog(@"swipe left!");
+//    } else if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionRight) {
+//        self.pageControl.currentPage -=1;
+//        NSLog(@"swipe right!");
+//    }
+//
+//    NSInteger index = [self.pageControl currentPage];
+//    self.currentLocation = [self.locations objectAtIndex:index];
+//    [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
+//    self.titleLabel.text = self.currentLocation.title;
+//    //NSLog(@"%@", self.locations[[self.pageControl currentPage]].imageURLs[0]);
+//}
 
 @end

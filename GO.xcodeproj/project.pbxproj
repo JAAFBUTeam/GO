@@ -27,6 +27,8 @@
 		19A66D872118AC32001A9601 /* FeatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */; };
 		19A66D91211A8495001A9601 /* CategoryHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D8F211A8495001A9601 /* CategoryHeaderCollectionViewCell.m */; };
 		19A66D92211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D90211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib */; };
+		19A66D99211B7591001A9601 /* FeatureTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D97211B7591001A9601 /* FeatureTableView.m */; };
+		19A66D9A211B7591001A9601 /* FeatureTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D98211B7591001A9601 /* FeatureTableView.xib */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
@@ -124,6 +126,9 @@
 		19A66D8E211A8495001A9601 /* CategoryHeaderCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryHeaderCollectionViewCell.h; sourceTree = "<group>"; };
 		19A66D8F211A8495001A9601 /* CategoryHeaderCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryHeaderCollectionViewCell.m; sourceTree = "<group>"; };
 		19A66D90211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		19A66D96211B7591001A9601 /* FeatureTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureTableView.h; sourceTree = "<group>"; };
+		19A66D97211B7591001A9601 /* FeatureTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeatureTableView.m; sourceTree = "<group>"; };
+		19A66D98211B7591001A9601 /* FeatureTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureTableView.xib; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -285,6 +290,9 @@
 				19A66D8E211A8495001A9601 /* CategoryHeaderCollectionViewCell.h */,
 				19A66D8F211A8495001A9601 /* CategoryHeaderCollectionViewCell.m */,
 				19A66D90211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib */,
+				19A66D96211B7591001A9601 /* FeatureTableView.h */,
+				19A66D97211B7591001A9601 /* FeatureTableView.m */,
+				19A66D98211B7591001A9601 /* FeatureTableView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -570,6 +578,7 @@
 				CCB3C9F420FFDD2D0095CD59 /* MoreTableViewCell.xib in Resources */,
 				CC73AE05210235A7001DA31A /* ReviewsView.storyboard in Resources */,
 				19A66D872118AC32001A9601 /* FeatureCollectionViewCell.xib in Resources */,
+				19A66D9A211B7591001A9601 /* FeatureTableView.xib in Resources */,
 				192A139921014CC80005481A /* PhotoCollectionViewCell.xib in Resources */,
 				CCEF41A4210687A700A13DA2 /* Profile.storyboard in Resources */,
 				CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */,
@@ -688,6 +697,7 @@
 				192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */,
 				19AD70B8210B86A1008A72EF /* MoreTableViewCell.m in Sources */,
 				19A252AF210A6EC700860637 /* GlobalFilters.m in Sources */,
+				19A66D99211B7591001A9601 /* FeatureTableView.m in Sources */,
 				CC73AE0B2102366D001DA31A /* PhotoCollectionViewController.m in Sources */,
 				CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */,
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
