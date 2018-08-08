@@ -20,7 +20,7 @@
     [self setLocations];
     self.currentLocation = [self.locations objectAtIndex:0];
     [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
-    self.titleLabel.text = [self.currentLocation.title uppercaseString];
+    self.titleLabel.text = self.currentLocation.title;
 }
 
 #pragma mark - Setup
@@ -100,7 +100,7 @@
     NSInteger index = [self.pageControl currentPage];
     self.currentLocation = [self.locations objectAtIndex:index];
     [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
-    self.titleLabel.text = [self.currentLocation.title uppercaseString];
+    self.titleLabel.text = self.currentLocation.title;
     //NSLog(@"%@", self.locations[[self.pageControl currentPage]].imageURLs[0]);
 }
 

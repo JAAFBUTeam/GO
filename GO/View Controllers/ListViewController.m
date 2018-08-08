@@ -178,7 +178,6 @@
 }
 
 -(void)imageDoubleTapped:(NSUInteger)section {
-    
     User *currentUser = User.currentUser;
     Location *currentLocation = self.filteredLocationsArray[section];
     
@@ -206,6 +205,24 @@
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
 }
 
+-(void)bookmarkTapped:(NSUInteger)section {
+    User *currentUser = User.currentUser;
+    Location *currentLocation = self.filteredLocationsArray[section];
+    
+    BOOL hasAlreadyFavorited = NO;
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([currentLocation.objectId isEqualToString:favoritedLocation.objectId]) {
+            hasAlreadyFavorited = YES;
+            break;
+        }
+    }
+    
+    if (!hasAlreadyFavorited) {
+        [currentUser.favorites addObject:currentLocation];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
+    }
+}
+
 #pragma mark - tableview protocol
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -221,7 +238,7 @@
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
         [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
         [infoTableViewCell setSectionIDProperty:indexPath.section];
-        [infoTableViewCell hideAddressAndSynopsisLabel];
+        [infoTableViewCell hideAddressLabel];
         infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;
     } else { //indexPath.row == 1
@@ -236,7 +253,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == 0) { //info height
-        return 75;
+        return 79;
     } else { //picture height
         return 250;
     }

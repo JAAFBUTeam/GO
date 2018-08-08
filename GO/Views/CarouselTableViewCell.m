@@ -6,6 +6,7 @@
 //
 
 #import "CarouselTableViewCell.h"
+#import "Location.h"
 
 @implementation CarouselTableViewCell
 
@@ -25,6 +26,12 @@
     self.location = location;
     for (NSString* imageString in location.imageURLs){
         [self.locationImagesArray addObject:imageString];
+    }
+}
+
+-(void)setImages: (NSMutableArray *) favorites {
+    for (Location* location in favorites) {
+        [self.locationImagesArray addObject:location.imageURLs[0]];
     }
 }
 
@@ -91,7 +98,7 @@
 -(void)registerGestures:(UIView *)view {
     view.userInteractionEnabled = YES;
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapRow)];
     tapGesture.numberOfTapsRequired = 1;
     [view addGestureRecognizer:tapGesture];
     

@@ -8,6 +8,7 @@
 
 #import "ReviewsTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "HCSStarRatingView.h"
 
 @implementation ReviewsTableViewCell
 
@@ -40,15 +41,26 @@
 -(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {
 
     UIImageView *imageView = [[UIImageView alloc] init];
-    NSURL *url =  [[NSURL alloc] initWithString: self.review.location.imageURLs[0]];
+    Location *location = [review.location fetchIfNeeded];
+    user = [user fetchIfNeeded];
+    NSURL *url =  [[NSURL alloc] initWithString: location.imageURLs[0]];
     [imageView setImageWithURL:url];
     PFFile *file = [self getPFFileFromImage: imageView.image];
     self.userImage.file = file;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
     self.userImage.clipsToBounds = YES;
-    self.username.text = review.user.username;
+    self.username.text = location.title;
     
-    self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
+    HCSStarRatingView *starRatingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(73, 24, 96, 48)];
+    starRatingView.maximumValue = 5;
+    starRatingView.minimumValue = 0;
+    starRatingView.allowsHalfStars = YES;
+    starRatingView.value = (double) review.rating;
+    starRatingView.tintColor = [UIColor redColor];
+    [self addSubview:starRatingView];
+    [self sendSubviewToBack: starRatingView];
+    
+    // self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;
     
     [self.userImage loadInBackground];
