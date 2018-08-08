@@ -30,5 +30,6 @@
 -(void)setTableProperties:(Location *)location;
 -(void)setSectionIDProperty:(NSInteger)sectionID;
 -(void)hideAddressLabel;
+-(void)highlightBookmark:(BOOL)shouldHighlight;
 
 @end
