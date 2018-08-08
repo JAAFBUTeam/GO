@@ -36,6 +36,21 @@
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"Main"];
     self.window.rootViewController = viewController;
     
+    UITabBar.appearance.unselectedItemTintColor = [UIColor blackColor];
+    //.....(do whatever else you need to do)...
+    
+    // show the main window, overlay with splash screen + alpha dissolve...
+    
+    UIImageView *splashScreen = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"go.png"]];
+    [self.window addSubview:splashScreen];
+    [self.window makeKeyAndVisible];
+    
+    [UIView animateWithDuration:1 animations:^{splashScreen.alpha = 0.0;}
+                     completion:(void (^)(BOOL)) ^{
+                         [splashScreen removeFromSuperview];
+                     }
+     ];
+    
     return YES;
 }
 

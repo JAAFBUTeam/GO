@@ -158,7 +158,7 @@
         <scene sceneID="FJt-xz-fFa">
             <objects>
                 <navigationController storyboardIdentifier="Profile.storyboard" automaticallyAdjustsScrollViewInsets="NO" id="Ydo-ZT-rC4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-32" id="PZa-32-xsB">
+                    <tabBarItem key="tabBarItem" title="Profile" image="p24" selectedImage="p24fill" id="PZa-32-xsB">
                         <color key="badgeColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -196,6 +196,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-user-32" width="32" height="32"/>
+        <image name="p24" width="24" height="23"/>
+        <image name="p24fill" width="24" height="21"/>
     </resources>
 </document>
