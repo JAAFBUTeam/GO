@@ -129,7 +129,7 @@
         <scene sceneID="TcT-ll-cen">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hf8-e4-0Jq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-32" id="g4a-Ku-jEt">
+                    <tabBarItem key="tabBarItem" title="Profile" image="p24" selectedImage="p24fill2" id="g4a-Ku-jEt">
                         <color key="badgeColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -149,7 +149,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="38689618_2196980543855262_3997417240247926784_n" width="345" height="350"/>
+        <image name="p24" width="24" height="23"/>
+        <image name="p24fill2" width="24" height="23"/>
         <image name="Artboard 4" width="345" height="350"/>
-        <image name="icons8-user-32" width="32" height="32"/>
     </resources>
 </document>

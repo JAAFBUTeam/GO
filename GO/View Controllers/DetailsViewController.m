@@ -58,7 +58,7 @@ typedef enum {
     self.navigationController.navigationBar.prefersLargeTitles = NO;
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backTap)];
     self.navigationItem.leftBarButtonItem = backButton;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     

@@ -9,6 +9,8 @@
 #import "CategoriesViewController.h"
 #import "CurrentLocationPosition.h"
 #import "FeatureCollectionViewCell.h"
+#import "CategoryHeaderCollectionViewCell.h"
+#import "LoadView.h"
 
 @interface CategoriesViewController ()
 
@@ -37,6 +39,20 @@
     [self setGestureRecognizers];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    LoadView *view = [[LoadView alloc] init];
+    
+    [self.view addSubview:view];
+    //[self bringSubviewToFront:view];
+    
+    [UIView animateWithDuration:2 animations:^{view.alpha = 0.0;}
+                     completion:(void (^)(BOOL)) ^{
+                         [view removeFromSuperview];
+                     }
+     ];
+}
+
 -(void)setDelegateAndDataSource {
     self.categoriesCollectionView.delegate = self;
     self.categoriesCollectionView.dataSource = self;
@@ -51,6 +67,9 @@
     
     UINib *featureCollectionViewCell = [UINib nibWithNibName:@"FeatureCollectionViewCell" bundle:nil];
     [self.categoriesCollectionView registerNib:featureCollectionViewCell forCellWithReuseIdentifier:@"FeatureCollectionViewCell"];
+    
+    UINib *headerCollectionViewCell = [UINib nibWithNibName:@"CategoryHeaderCollectionViewCell" bundle:nil];
+    [self.categoriesCollectionView registerNib:headerCollectionViewCell forCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell"];
 }
 
 -(void)setTableDimensions {
@@ -100,16 +119,22 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if(section == 0) { //big image section
         return 1;
-    } else { //section == 1;
+//    } else if (section == 1){
+//
+    } else{ //section == 1;
         return self.numberOfCategories;
     }
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 0) {
-        self.featureCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
-        return self.featureCollectionViewCell;
-    } else { //indexPath.section == 1
+    if (indexPath.section == 0) {
+        CategoryHeaderCollectionViewCell *headerCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell" forIndexPath:indexPath];
+        return headerCell;
+    }
+//    } else if(indexPath.section == 1) {
+//        self.featureCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
+//        return self.featureCollectionViewCell;
+    else { //indexPath.section == 2
         CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
         [self setCategoryCell:categoryCell item:indexPath.item];
         return categoryCell;
@@ -177,6 +202,7 @@
 }
 
 # pragma mark - Gesture recognizer
+
 -(void)setGestureRecognizers{
     _swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
     _swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
