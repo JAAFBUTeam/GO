@@ -25,6 +25,8 @@
 		19A252B4210AA09400860637 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A252B3210AA09400860637 /* Filters.storyboard */; };
 		19A66D862118AC32001A9601 /* FeatureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */; };
 		19A66D872118AC32001A9601 /* FeatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */; };
+		19A66D91211A8495001A9601 /* CategoryHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D8F211A8495001A9601 /* CategoryHeaderCollectionViewCell.m */; };
+		19A66D92211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D90211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
@@ -119,6 +121,9 @@
 		19A66D832118AC32001A9601 /* FeatureCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureCollectionViewCell.h; sourceTree = "<group>"; };
 		19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeatureCollectionViewCell.m; sourceTree = "<group>"; };
 		19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCollectionViewCell.xib; sourceTree = "<group>"; };
+		19A66D8E211A8495001A9601 /* CategoryHeaderCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryHeaderCollectionViewCell.h; sourceTree = "<group>"; };
+		19A66D8F211A8495001A9601 /* CategoryHeaderCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryHeaderCollectionViewCell.m; sourceTree = "<group>"; };
+		19A66D90211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -277,6 +282,9 @@
 				19A66D832118AC32001A9601 /* FeatureCollectionViewCell.h */,
 				19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */,
 				19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */,
+				19A66D8E211A8495001A9601 /* CategoryHeaderCollectionViewCell.h */,
+				19A66D8F211A8495001A9601 /* CategoryHeaderCollectionViewCell.m */,
+				19A66D90211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 				CC83A36B20F92D6800117065 /* MapView.storyboard in Resources */,
 				192A13972101499A0005481A /* PhotoCollectionView.xib in Resources */,
 				CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */,
+				19A66D92211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib in Resources */,
 				CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */,
 				199AA207211A2CF000D91C96 /* ListTabBar.storyboard in Resources */,
 				19A2529F2107DEFA00860637 /* CategoryCollectionViewCell.xib in Resources */,
@@ -684,6 +693,7 @@
 				CC83A36520F9291800117065 /* ListViewController.m in Sources */,
 				19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */,
 				19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */,
+				19A66D91211A8495001A9601 /* CategoryHeaderCollectionViewCell.m in Sources */,
 				19A66D862118AC32001A9601 /* FeatureCollectionViewCell.m in Sources */,
 				19A252B2210A9FE700860637 /* FiltersViewController.m in Sources */,
 				19A2529021078A3300860637 /* CategoriesViewController.m in Sources */,

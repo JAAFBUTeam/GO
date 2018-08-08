@@ -12,6 +12,7 @@
 #import "ListViewController.h"
 #import "GlobalFilters.h"
 #import "FeatureCollectionViewCell.h"
+#import "CategoryHeaderCollectionViewCell.h"
 
 @interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 
