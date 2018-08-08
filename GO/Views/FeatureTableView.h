@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Location.h"
+#import "LoadView.h"
 
 @interface FeatureTableView : UICollectionViewCell <UITableViewDelegate, UITableViewDataSource>
 
