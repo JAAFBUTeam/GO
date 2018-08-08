@@ -113,7 +113,7 @@
                         <viewLayoutGuide key="safeArea" id="7TV-cV-7CP"/>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="4f0-rC-WjA">
-                        <barButtonItem key="leftBarButtonItem" image="back-24" id="lKU-Sm-olV">
+                        <barButtonItem key="leftBarButtonItem" image="back-r24" id="lKU-Sm-olV">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapBack:" destination="0jG-Yh-eBR" id="c9D-zj-PQH"/>
@@ -137,7 +137,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back-24" width="24" height="24"/>
+        <image name="back-r24" width="24" height="24"/>
         <image name="filter_custom20" width="20" height="20"/>
         <image name="icons8-map-32" width="32" height="32"/>
         <image name="icons8-menu-26" width="26" height="26"/>
