@@ -84,7 +84,9 @@
         return profileTableViewCell;
     } else if (indexPath.section == 1) { // Carousel
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeInvertedTimeMachine];
+        [carouselTableViewCell setImages:User.currentUser.favorites];
+        [carouselTableViewCell setDatasourceAndDelegate];
+        carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;
     } else if (indexPath.section == 2) { // Title
         TitleTableViewCell *titleTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
@@ -93,7 +95,6 @@
     } else { // Review
         ReviewsTableViewCell *reviewTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
         [reviewTableViewCell setupReviewsTableViewCell:User.currentUser withReview:self.reviews[indexPath.row]];
-        
         return reviewTableViewCell;
     }
 }
