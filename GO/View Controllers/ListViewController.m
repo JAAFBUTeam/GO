@@ -34,7 +34,6 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     [self disableAutoRotate];
-
 }
 
 -(void)calculateLocation{
@@ -250,6 +249,8 @@
         return carouselTableViewCell;
     }
 }
+
+-(void)preparefor
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == 0) { //info height
