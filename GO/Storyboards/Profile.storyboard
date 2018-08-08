@@ -28,11 +28,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="3mf-CF-ygR">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Aea-Vh-1B2">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapLogout:" destination="K5r-b2-Pla" id="GGc-WT-MU0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="bop-y3-0jc">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="4Wi-bx-tm4" kind="presentation" id="JY8-PD-Ba2"/>
                             </connections>
@@ -133,11 +135,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Edit" id="zhA-yI-oqO">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ico-sF-uea">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapCancel:" destination="BL8-0d-vlM" id="Nbx-DB-qWg"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="PeP-Il-75R">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapSave:" destination="BL8-0d-vlM" id="f9h-6w-hl3"/>
                             </connections>
