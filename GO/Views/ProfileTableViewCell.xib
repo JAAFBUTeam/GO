@@ -11,33 +11,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="192" id="CkK-L2-aQP" customClass="ProfileTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="229" id="CkK-L2-aQP" customClass="ProfileTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CkK-L2-aQP" id="bi4-yU-nzM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="191.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="228.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-em-nhl" customClass="PFImageView">
-                        <rect key="frame" x="142" y="25" width="90" height="90"/>
+                        <rect key="frame" x="127" y="25" width="120" height="120"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="90" id="EwJ-ve-e1K"/>
-                            <constraint firstAttribute="width" constant="90" id="hPc-zp-efg"/>
+                            <constraint firstAttribute="height" constant="120" id="EwJ-ve-e1K"/>
+                            <constraint firstAttribute="width" constant="120" id="hPc-zp-efg"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ab-qu-dAA">
-                        <rect key="frame" x="157" y="123" width="60" height="29"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="29" id="NCQ-Qt-cN5"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnt-jC-nmf">
-                        <rect key="frame" x="158" y="150" width="58" height="15"/>
+                        <rect key="frame" x="158.5" y="186" width="58" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="Rpz-BN-bIr"/>
                         </constraints>
@@ -45,15 +36,28 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ab-qu-dAA">
+                        <rect key="frame" x="158" y="157" width="59" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="NCQ-Qt-cN5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gjX-em-nhl" firstAttribute="centerX" secondItem="bi4-yU-nzM" secondAttribute="centerX" id="8U5-LX-1KH"/>
-                    <constraint firstItem="qnt-jC-nmf" firstAttribute="top" secondItem="gjX-em-nhl" secondAttribute="bottom" constant="35" id="H2l-Hg-SCG"/>
-                    <constraint firstItem="gjX-em-nhl" firstAttribute="top" secondItem="bi4-yU-nzM" secondAttribute="topMargin" constant="14" id="H4J-ao-abG"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="qnt-jC-nmf" secondAttribute="bottom" constant="16" id="ntB-oQ-JEu"/>
-                    <constraint firstItem="1ab-qu-dAA" firstAttribute="centerX" secondItem="bi4-yU-nzM" secondAttribute="centerX" id="t6Q-iY-g2h"/>
-                    <constraint firstItem="qnt-jC-nmf" firstAttribute="centerX" secondItem="bi4-yU-nzM" secondAttribute="centerX" id="xwr-3k-qOt"/>
-                    <constraint firstItem="1ab-qu-dAA" firstAttribute="top" secondItem="gjX-em-nhl" secondAttribute="bottom" constant="8" id="y5c-aa-jqb"/>
+                    <constraint firstItem="gjX-em-nhl" firstAttribute="leading" secondItem="bi4-yU-nzM" secondAttribute="leadingMargin" constant="111" id="0kf-FT-6vH"/>
+                    <constraint firstItem="qnt-jC-nmf" firstAttribute="centerX" secondItem="bi4-yU-nzM" secondAttribute="centerX" id="5vE-9h-zfN"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="1ab-qu-dAA" secondAttribute="trailing" constant="16" id="8J7-9k-HOM"/>
+                    <constraint firstItem="qnt-jC-nmf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bi4-yU-nzM" secondAttribute="leadingMargin" constant="16" id="Apj-BY-QKt"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qnt-jC-nmf" secondAttribute="bottom" constant="17" id="BhC-2E-07q"/>
+                    <constraint firstItem="qnt-jC-nmf" firstAttribute="top" secondItem="1ab-qu-dAA" secondAttribute="bottom" id="C06-HN-Jho"/>
+                    <constraint firstItem="gjX-em-nhl" firstAttribute="top" secondItem="bi4-yU-nzM" secondAttribute="topMargin" constant="14" id="Dni-Yc-w3y"/>
+                    <constraint firstItem="1ab-qu-dAA" firstAttribute="centerX" secondItem="bi4-yU-nzM" secondAttribute="centerX" id="SEh-yv-yHO"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qnt-jC-nmf" secondAttribute="trailing" constant="16" id="Uod-rs-m7k"/>
+                    <constraint firstItem="1ab-qu-dAA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bi4-yU-nzM" secondAttribute="leadingMargin" constant="16" id="Xjd-wT-NuP"/>
+                    <constraint firstItem="1ab-qu-dAA" firstAttribute="top" secondItem="gjX-em-nhl" secondAttribute="bottom" constant="12" id="aB4-vM-Ucd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -61,7 +65,7 @@
                 <outlet property="name" destination="1ab-qu-dAA" id="XRB-Lj-4yX"/>
                 <outlet property="username" destination="qnt-jC-nmf" id="4yV-WU-SuN"/>
             </connections>
-            <point key="canvasLocation" x="188.5" y="457"/>
+            <point key="canvasLocation" x="188.5" y="475.5"/>
         </tableViewCell>
     </objects>
 </document>

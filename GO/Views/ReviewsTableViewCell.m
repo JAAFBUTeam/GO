@@ -48,7 +48,7 @@
     self.userImage.file = file;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
     self.userImage.clipsToBounds = YES;
-    self.username.text = user.username;
+    self.username.text = location.title;
     
     self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;

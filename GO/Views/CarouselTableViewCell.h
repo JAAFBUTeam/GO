@@ -32,5 +32,6 @@
 -(void)setSectionIDProperty:(NSInteger)sectionID;
 -(void)setDatasourceAndDelegate;
 -(void)setupCarouselCell;
+-(void)setImages: (NSMutableArray *) favorites;
 
 @end
