@@ -59,6 +59,7 @@
 		CCB3C9F220FFDB690095CD59 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */; };
 		CCB3C9F420FFDD2D0095CD59 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB3C9F320FFDD2D0095CD59 /* MoreTableViewCell.xib */; };
 		CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */; };
+		CCD91637211B676F00E7B284 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD91636211B676F00E7B284 /* View.xib */; };
 		CCEF419D2106650200A13DA2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF419C2106650200A13DA2 /* User.m */; };
 		CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEF419E2106831800A13DA2 /* Login.storyboard */; };
 		CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A12106859B00A13DA2 /* LoginViewController.m */; };
@@ -180,6 +181,7 @@
 		CCB3C9F320FFDD2D0095CD59 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
 		CCB3C9F520FFE6070095CD59 /* InfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
 		CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
+		CCD91636211B676F00E7B284 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		CCEF419B2106650200A13DA2 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CCEF419C2106650200A13DA2 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		CCEF419E2106831800A13DA2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				19A66D832118AC32001A9601 /* FeatureCollectionViewCell.h */,
 				19A66D842118AC32001A9601 /* FeatureCollectionViewCell.m */,
 				19A66D852118AC32001A9601 /* FeatureCollectionViewCell.xib */,
+				CCD91636211B676F00E7B284 /* View.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				192A13972101499A0005481A /* PhotoCollectionView.xib in Resources */,
 				CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */,
 				CCB3C9EC20FFCB8E0095CD59 /* InfoTableViewCell.xib in Resources */,
+				CCD91637211B676F00E7B284 /* View.xib in Resources */,
 				199AA207211A2CF000D91C96 /* ListTabBar.storyboard in Resources */,
 				19A2529F2107DEFA00860637 /* CategoryCollectionViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,

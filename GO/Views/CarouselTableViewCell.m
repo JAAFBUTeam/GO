@@ -30,8 +30,9 @@
 }
 
 -(void)setImages: (NSMutableArray *) favorites {
+    [self allocImagesArray];
     for (Location* location in favorites) {
-        [self.locationImagesArray addObject:location.imageURLs[0]];
+        [self.locationImagesArray addObject:location.imageURLs.firstObject];
     }
 }
 
@@ -98,24 +99,14 @@
 -(void)registerGestures:(UIView *)view {
     view.userInteractionEnabled = YES;
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapRow)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     tapGesture.numberOfTapsRequired = 1;
     [view addGestureRecognizer:tapGesture];
-    
-    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTap:)];
-    doubleTapGesture.numberOfTapsRequired = 2;
-    [view addGestureRecognizer:doubleTapGesture];
-    
-    [tapGesture requireGestureRecognizerToFail:doubleTapGesture];
+
 }
 
 -(void)didTap {
     [self.imageDelegate imageTapped:self.sectionID];
-}
-
--(void)didDoubleTap:(UITapGestureRecognizer *)tap {
-    [self heartImageAnimation];
-    [self.imageDelegate imageDoubleTapped:self.sectionID];
 }
 
 -(void)heartImageAnimation {

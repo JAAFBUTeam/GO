@@ -20,6 +20,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jeF-UV-f1i" customClass="PFImageView">
                         <rect key="frame" x="15" y="15" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="LxF-04-NrJ"/>
                             <constraint firstAttribute="width" constant="50" id="ryE-Iv-WwO"/>
@@ -51,6 +52,11 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.49842144691780821" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kv6-oe-Ddh">
+                        <rect key="frame" x="16" y="15" width="50" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="3xU-vA-wk4" secondAttribute="trailing" constant="16" id="244-jS-A9d"/>
@@ -65,6 +71,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="locationImage" destination="Kv6-oe-Ddh" id="sgV-5A-UUs"/>
                 <outlet property="reviewText" destination="3xU-vA-wk4" id="7xn-Ma-Dc0"/>
                 <outlet property="userImage" destination="jeF-UV-f1i" id="mmF-04-Qu3"/>
                 <outlet property="username" destination="ZoF-MZ-fo6" id="kp6-eS-NOZ"/>

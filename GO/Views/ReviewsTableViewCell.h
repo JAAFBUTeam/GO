@@ -24,6 +24,7 @@
 @property (nonatomic, strong) Review *review;
 
 @property (weak, nonatomic) IBOutlet PFImageView *userImage;
+@property (weak, nonatomic) IBOutlet UIImageView *locationImage;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *rating;
 @property (weak, nonatomic) IBOutlet UILabel *reviewText;

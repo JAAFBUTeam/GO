@@ -27,6 +27,20 @@
 
 @implementation CategoriesViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    UINib *view = [UINib nibWithNibName:@"View" bundle:nil];
+
+   // [self.view addSubview:view];
+    // [self bringSubviewToFront:splashScreen];
+    
+  //  [UIView animateWithDuration:2 animations:^{view.alpha = 0.0;}
+                    // completion:(void (^)(BOOL)) ^{
+                        // [splashScreen removeFromSuperview];
+                   //  }
+  //   ];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setDelegateAndDataSource];
