@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewTableViewCell" rowHeight="113" id="z9j-Vr-ITr" customClass="ReviewsTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewTableViewCell" rowHeight="149" id="z9j-Vr-ITr" customClass="ReviewsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z9j-Vr-ITr" id="tIL-jC-LX2">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jeF-UV-f1i" customClass="PFImageView">
@@ -31,12 +31,6 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbl-oM-Cnp">
-                        <rect key="frame" x="73" y="44" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-MZ-fo6">
                         <rect key="frame" x="73" y="15" width="44.5" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -52,46 +46,33 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xU-vA-wk4">
-                        <rect key="frame" x="73" y="73" width="42" height="20.5"/>
+                        <rect key="frame" x="32" y="73" width="42" height="49"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.49842144691780821" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-star-48" translatesAutoresizingMaskIntoConstraints="NO" id="0EH-d8-Bg2">
-                        <rect key="frame" x="117" y="49" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="gWU-8B-0sI"/>
-                            <constraint firstAttribute="width" constant="15" id="q0N-6V-uXq"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="3xU-vA-wk4" secondAttribute="trailing" constant="16" id="1oH-1S-s8Q"/>
-                    <constraint firstItem="3xU-vA-wk4" firstAttribute="leading" secondItem="tIL-jC-LX2" secondAttribute="leadingMargin" constant="57" id="2cc-xH-RtT"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="3xU-vA-wk4" secondAttribute="trailing" constant="16" id="244-jS-A9d"/>
                     <constraint firstItem="ZoF-MZ-fo6" firstAttribute="leading" secondItem="jeF-UV-f1i" secondAttribute="trailing" constant="8" id="5ee-84-h5Y"/>
-                    <constraint firstItem="3xU-vA-wk4" firstAttribute="top" secondItem="Kbl-oM-Cnp" secondAttribute="bottom" constant="8" id="AKY-B4-C0I"/>
-                    <constraint firstItem="0EH-d8-Bg2" firstAttribute="top" secondItem="tIL-jC-LX2" secondAttribute="topMargin" constant="38" id="GVZ-gH-wZ3"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="3xU-vA-wk4" secondAttribute="bottom" constant="8" id="Kqe-uK-LRB"/>
+                    <constraint firstItem="3xU-vA-wk4" firstAttribute="top" secondItem="jeF-UV-f1i" secondAttribute="bottom" constant="8" id="JZU-bA-rgH"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZoF-MZ-fo6" secondAttribute="trailing" constant="15" id="NkO-0t-28F"/>
-                    <constraint firstItem="Kbl-oM-Cnp" firstAttribute="top" secondItem="ZoF-MZ-fo6" secondAttribute="bottom" constant="8" id="P8C-GV-VyH"/>
                     <constraint firstItem="jeF-UV-f1i" firstAttribute="leading" secondItem="tIL-jC-LX2" secondAttribute="leading" constant="15" id="Pv7-5h-ZHA"/>
-                    <constraint firstItem="0EH-d8-Bg2" firstAttribute="leading" secondItem="Kbl-oM-Cnp" secondAttribute="trailing" constant="2" id="UYr-U3-Ipz"/>
                     <constraint firstItem="ZoF-MZ-fo6" firstAttribute="top" secondItem="jeF-UV-f1i" secondAttribute="top" id="gDk-f0-XtK"/>
                     <constraint firstItem="jeF-UV-f1i" firstAttribute="top" secondItem="tIL-jC-LX2" secondAttribute="top" constant="15" id="gul-3M-aCQ"/>
-                    <constraint firstItem="Kbl-oM-Cnp" firstAttribute="leading" secondItem="jeF-UV-f1i" secondAttribute="trailing" constant="8" id="kgo-EY-bjr"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3xU-vA-wk4" secondAttribute="bottom" constant="16" id="itK-Dy-bBp"/>
+                    <constraint firstItem="3xU-vA-wk4" firstAttribute="leading" secondItem="tIL-jC-LX2" secondAttribute="leadingMargin" constant="16" id="sLS-vy-pn1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="rating" destination="Kbl-oM-Cnp" id="N9q-KX-xd4"/>
                 <outlet property="reviewText" destination="3xU-vA-wk4" id="7xn-Ma-Dc0"/>
                 <outlet property="userImage" destination="jeF-UV-f1i" id="mmF-04-Qu3"/>
                 <outlet property="username" destination="ZoF-MZ-fo6" id="kp6-eS-NOZ"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="53.5"/>
+            <point key="canvasLocation" x="33.5" y="71.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="icons8-more-26" width="26" height="26"/>
-        <image name="icons8-star-48" width="48" height="48"/>
     </resources>
 </document>

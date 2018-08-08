@@ -8,6 +8,7 @@
 
 #import "ReviewsTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "HCSStarRatingView.h"
 
 @implementation ReviewsTableViewCell
 
@@ -50,7 +51,16 @@
     self.userImage.clipsToBounds = YES;
     self.username.text = location.title;
     
-    self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
+    HCSStarRatingView *starRatingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(73, 24, 96, 48)];
+    starRatingView.maximumValue = 5;
+    starRatingView.minimumValue = 0;
+    starRatingView.allowsHalfStars = YES;
+    starRatingView.value = (double) review.rating;
+    starRatingView.tintColor = [UIColor redColor];
+    [self addSubview:starRatingView];
+    [self sendSubviewToBack: starRatingView];
+    
+    // self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;
     
     [self.userImage loadInBackground];

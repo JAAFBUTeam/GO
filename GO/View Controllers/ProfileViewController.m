@@ -82,13 +82,17 @@
         ProfileTableViewCell *profileTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ProfileTableViewCell"];
         [profileTableViewCell setProfile:User.currentUser];
         return profileTableViewCell;
-    } else if (indexPath.section == 1) { // Carousel
+    } else if (indexPath.section == 2) { // Carousel
         CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
         [carouselTableViewCell setImages:User.currentUser.favorites];
         [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;
-    } else if (indexPath.section == 2) { // Title
+    } else if (indexPath.section == 1) { // Title
+        TitleTableViewCell *titleTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
+        [titleTableViewCell setupTitleCell:@"Favorites"];
+        return titleTableViewCell;
+    } else if (indexPath.section == 3) { // Title
         TitleTableViewCell *titleTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
         [titleTableViewCell setupTitleCell:@"Reviews"];
         return titleTableViewCell;
@@ -100,7 +104,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 3) {
+    if (section == 4) {
         return self.reviews.count;
     } else {
         return 1;
@@ -108,7 +112,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 #pragma mark - Networking
