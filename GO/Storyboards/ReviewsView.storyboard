@@ -23,11 +23,13 @@
                                 <items>
                                     <navigationItem title="Reviews" id="Kve-pX-Q4l">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="GJj-FF-cZ2">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="didTapDone:" destination="EwE-HD-WQK" id="u8V-IV-eeo"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xfy-fM-VTr">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="didTapAdd:" destination="EwE-HD-WQK" id="fS7-wa-kRd"/>
                                             </connections>
@@ -85,11 +87,13 @@
                                 <items>
                                     <navigationItem title="Write a Review" id="n7w-op-d0I">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="EOK-Lu-Ezd">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="didTapCancel:" destination="uUc-dH-bVB" id="MDV-cu-H3n"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Submit" id="Efi-67-Dib">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="didTapSubmit:" destination="uUc-dH-bVB" id="k4V-Om-IX1"/>
                                             </connections>

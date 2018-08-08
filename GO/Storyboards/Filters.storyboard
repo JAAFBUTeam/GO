@@ -150,13 +150,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Filters" id="ii2-ZB-e2P">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="9m8-oJ-Uz3">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancelButtonTap:" destination="UxB-tO-twy" id="w8k-Oh-dHM"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="Jrh-BT-DiX">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="resetButtonTap:" destination="UxB-tO-twy" id="XGI-Px-Hgb"/>
                             </connections>
