@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="NgA-AN-af2" kind="relationship" relationship="viewControllers" id="3Ri-my-Kgv"/>
@@ -70,8 +70,8 @@
         <scene sceneID="Pq3-qV-ucS">
             <objects>
                 <navigationController storyboardIdentifier="list" automaticallyAdjustsScrollViewInsets="NO" id="NgA-AN-af2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="icons8-menu-26" id="vOU-Bm-aE5">
-                        <color key="badgeColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                    <tabBarItem key="tabBarItem" title="List" image="menu26" selectedImage="menufill26" id="vOU-Bm-aE5">
+                        <color key="badgeColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w6D-vp-APT">
@@ -114,13 +114,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="List" id="4f0-rC-WjA">
                         <barButtonItem key="leftBarButtonItem" image="back-r24" id="lKU-Sm-olV">
-                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapBack:" destination="0jG-Yh-eBR" id="c9D-zj-PQH"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="filter_custom20" id="wHP-eL-MOR">
-                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="KLP-sF-vlU" kind="showDetail" identifier="listToFiltersSegue" id="SRG-5E-Y3j"/>
                             </connections>
@@ -140,6 +140,7 @@
         <image name="back-r24" width="24" height="24"/>
         <image name="filter_custom20" width="20" height="20"/>
         <image name="icons8-map-32" width="32" height="32"/>
-        <image name="icons8-menu-26" width="26" height="26"/>
+        <image name="menu26" width="26" height="26"/>
+        <image name="menufill26" width="26" height="26"/>
     </resources>
 </document>

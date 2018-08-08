@@ -34,7 +34,7 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     [self disableAutoRotate];
-    
+
 }
 
 -(void)calculateLocation{

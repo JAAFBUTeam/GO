@@ -41,7 +41,11 @@
 
 - (void) fetchReviews {
     PFQuery *query = [PFQuery queryWithClassName:@"Review"];
-    [query whereKey:@"location" equalTo:self.location];
+    if (self.location != nil) {
+        [query whereKey:@"location" equalTo:self.location];
+    } else {
+        [query whereKey:@"user" equalTo:User.currentUser];
+    }
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
         if (reviews != nil) {

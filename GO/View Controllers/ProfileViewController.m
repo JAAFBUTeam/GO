@@ -35,6 +35,7 @@
     [self setupTableView];
     [self fetchReviews];
     [self registerNibs];
+    [self.tableView reloadData];
     
 }
 
@@ -207,29 +208,6 @@
         [view addAction:flag];
         [view addAction:cancel];
         [self presentViewController:view animated:YES completion:nil];
-    }
-}
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    if ([segue.identifier isEqualToString:@"detailsSegue"]) {
-        
-        Location *location = sender;
-        
-        DetailsViewController *detailsViewController = [segue destinationViewController];
-        detailsViewController.location = location;
-    } else if ([segue.identifier isEqualToString:@"reviewsSegue"]) {
-        
-        Location *location = sender;
-        
-        ReviewViewController *reviewsViewController = [segue destinationViewController];
-        reviewsViewController.location = location;
-        reviewsViewController.user = User.currentUser;
     }
 }
 
