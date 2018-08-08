@@ -57,6 +57,7 @@ typedef enum {
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    [self fetchReviews];
     [self registerNibs];
 }
 
@@ -113,13 +114,16 @@ typedef enum {
         }
         case REVIEW_1: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            [reviewTableViewCell setupReviewsTableViewCell: reviewTableViewCell.review];
+            if (self.reviews != nil) {
+            [reviewTableViewCell setupReviewsTableViewCell: self.reviews[0]];
+            }
             return reviewTableViewCell;
         }
         case REVIEW_2: {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
-            [reviewTableViewCell setupReviewsTableViewCell: reviewTableViewCell.review];
-
+            if (self.reviews.count > 1) {
+            [reviewTableViewCell setupReviewsTableViewCell: self.reviews[1]];
+            }
             return reviewTableViewCell;
         }
         case MORE_REVIEWS: {
