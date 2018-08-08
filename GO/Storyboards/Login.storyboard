@@ -149,13 +149,9 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="38689618_2196980543855262_3997417240247926784_n" width="345" height="350"/>
         <image name="p24" width="24" height="23"/>
         <image name="p24fill2" width="24" height="23"/>
-=======
         <image name="Artboard 4" width="345" height="350"/>
-        <image name="icons8-user-32" width="32" height="32"/>
->>>>>>> ec7028020e8e429b3fe92bb25ef840851732f8e8
     </resources>
 </document>
