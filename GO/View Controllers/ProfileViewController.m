@@ -126,13 +126,14 @@
     // [query whereKey:@"user" equalTo:self.user];
     //}
     // fetch data asynchronously
+    self.reviews = [[NSMutableArray alloc] init];
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
         if (reviews != nil) {
             // do something with the array of object returned by the call
-            /*for (Review *review in reviews){
-             [self.reviews addObject:review];
-             } */
-            self.reviews = (NSMutableArray *) reviews;
+            for (int i = reviews.count - 1; i >= 0; i--){
+             [self.reviews addObject:reviews[i]];
+            }
+            //self.reviews = (NSMutableArray *) reviews;
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
