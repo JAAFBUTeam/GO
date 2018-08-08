@@ -55,6 +55,7 @@
     } else {
         self.bookmarkImageView.highlighted = YES;
     }
+    [self.labelDelegate bookmarkTapped:self.sectionID];
 }
 
 -(void)setupTapGestures {

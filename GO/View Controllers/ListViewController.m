@@ -178,7 +178,6 @@
 }
 
 -(void)imageDoubleTapped:(NSUInteger)section {
-    
     User *currentUser = User.currentUser;
     Location *currentLocation = self.filteredLocationsArray[section];
     
@@ -204,6 +203,24 @@
     self.selectedRow = section;
     self.searchController.active = NO;
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
+}
+
+-(void)bookmarkTapped:(NSUInteger)section {
+    User *currentUser = User.currentUser;
+    Location *currentLocation = self.filteredLocationsArray[section];
+    
+    BOOL hasAlreadyFavorited = NO;
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([currentLocation.objectId isEqualToString:favoritedLocation.objectId]) {
+            hasAlreadyFavorited = YES;
+            break;
+        }
+    }
+    
+    if (!hasAlreadyFavorited) {
+        [currentUser.favorites addObject:currentLocation];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
+    }
 }
 
 #pragma mark - tableview protocol

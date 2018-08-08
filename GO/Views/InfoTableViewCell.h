@@ -12,6 +12,7 @@
 @protocol LabelTapDelegate
 
 -(void)labelTapped:(NSUInteger)section;
+-(void)bookmarkTapped:(NSUInteger)section;
 
 @end
 
