@@ -11,6 +11,7 @@
 #import "FeatureCollectionViewCell.h"
 #import "CategoryHeaderCollectionViewCell.h"
 #import "LoadView.h"
+#import "FeatureTableView.h"
 
 @interface CategoriesViewController ()
 
@@ -65,11 +66,12 @@
     UINib *collectionNib = [UINib nibWithNibName:@"CategoryCollectionViewCell" bundle:nil];
     [self.categoriesCollectionView registerNib:collectionNib forCellWithReuseIdentifier:@"CategoryCollectionViewCell"];
     
-    UINib *featureCollectionViewCell = [UINib nibWithNibName:@"FeatureCollectionViewCell" bundle:nil];
-    [self.categoriesCollectionView registerNib:featureCollectionViewCell forCellWithReuseIdentifier:@"FeatureCollectionViewCell"];
+    UINib *featureViewCell = [UINib nibWithNibName:@"FeatureTableViewCell" bundle:nil];
+    [self.categoriesCollectionView registerNib:featureViewCell forCellWithReuseIdentifier:@"FeatureTableViewCell"];
     
     UINib *headerCollectionViewCell = [UINib nibWithNibName:@"CategoryHeaderCollectionViewCell" bundle:nil];
     [self.categoriesCollectionView registerNib:headerCollectionViewCell forCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell"];
+    
 }
 
 -(void)setTableDimensions {
@@ -117,10 +119,8 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if(section == 0) { //big image section
+    if(section == 0 || section == 1) { //big image section
         return 1;
-//    } else if (section == 1){
-//
     } else{ //section == 1;
         return self.numberOfCategories;
     }
@@ -130,10 +130,10 @@
     if (indexPath.section == 0) {
         CategoryHeaderCollectionViewCell *headerCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell" forIndexPath:indexPath];
         return headerCell;
+    } else if(indexPath.section == 1) {
+        FeatureTableView *featureViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureTableViewCell" forIndexPath:indexPath];
+        return featureViewCell;
     }
-//    } else if(indexPath.section == 1) {
-//        self.featureCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
-//        return self.featureCollectionViewCell;
     else { //indexPath.section == 2
         CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
         [self setCategoryCell:categoryCell item:indexPath.item];

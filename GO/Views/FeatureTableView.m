@@ -97,32 +97,6 @@
     [self.locations addObject:newLocation6];
 }
 
--(void)setFeaturedCarousel {
-    CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-    [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
-    
-    NSMutableArray *locationImages = [[NSMutableArray alloc] init];
-    for (Location *location in self.locations){
-        [locationImages addObject:location.imageURLs[0]];
-    }
-    
-    [carouselTableViewCell setImages:locationImages];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-    [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
-    
-    NSMutableArray *locationImages = [[NSMutableArray alloc] init];
-    for (Location *location in self.locations){
-        [locationImages addObject:location.imageURLs[0]];
-    }
-    
-    [carouselTableViewCell setImages:locationImages];
-    
-    return carouselTableViewCell;
-}
-
 #pragma mark - Page control
 
 //-(void)swipePageControl:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
@@ -140,5 +114,23 @@
 //    self.titleLabel.text = self.currentLocation.title;
 //    //NSLog(@"%@", self.locations[[self.pageControl currentPage]].imageURLs[0]);
 //}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+    [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
+    
+    NSMutableArray *locationImages = [[NSMutableArray alloc] init];
+    for (Location *location in self.locations){
+        [locationImages addObject:location.imageURLs[0]];
+    }
+    
+    [carouselTableViewCell setImages:locationImages];
+    
+    return carouselTableViewCell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
 
 @end
