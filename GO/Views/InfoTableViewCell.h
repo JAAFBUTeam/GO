@@ -24,9 +24,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceAway;
 @property (nonatomic, weak) id<LabelTapDelegate> labelDelegate;
 @property (nonatomic, assign) NSInteger sectionID;
+@property (weak, nonatomic) IBOutlet UIImageView *bookmarkImageView;
 
 -(void)setTableProperties:(Location *)location;
 -(void)setSectionIDProperty:(NSInteger)sectionID;
--(void)hideAddressAndSynopsisLabel;
+-(void)hideAddressLabel;
 
 @end

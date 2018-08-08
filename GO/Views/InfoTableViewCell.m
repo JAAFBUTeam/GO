@@ -15,9 +15,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    //self.address
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self setupViewTapGesture];
+    [self setupTapGestures];
 }
 
 #pragma mark - Setup cell
@@ -39,23 +38,35 @@
     self.sectionID = sectionID;
 }
 
--(void)hideAddressAndSynopsisLabel{
-    self.synopsis.text = nil;
+-(void)hideAddressLabel{
     self.address.text = nil;
     [self.address removeFromSuperview];
-    [self.synopsis removeFromSuperview];
 }
 
 #pragma mark - actions
 
--(void)didTap{
+-(void)didTapRow {
     [self.labelDelegate labelTapped:self.sectionID];
 }
--(void)setupViewTapGesture {
+
+-(void)didTapBookmark {
+    if(self.bookmarkImageView.highlighted){
+        self.bookmarkImageView.highlighted = NO;
+    } else {
+        self.bookmarkImageView.highlighted = YES;
+    }
+}
+
+-(void)setupTapGestures {
     self.contentView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
-    tapGesture.numberOfTapsRequired = 1;
-    [self.contentView addGestureRecognizer:tapGesture];
+    UITapGestureRecognizer *rowTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapRow)];
+    rowTapGesture.numberOfTapsRequired = 1;
+    [self.contentView addGestureRecognizer:rowTapGesture];
+    
+    self.bookmarkImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *bookmarkTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapBookmark)];
+    bookmarkTapGesture.numberOfTapsRequired = 1;
+    [self.bookmarkImageView addGestureRecognizer:bookmarkTapGesture];
 }
 
 @end
