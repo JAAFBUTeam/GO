@@ -14,6 +14,14 @@
 
 #pragma mark - Visuals
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    
+    if (highlighted) {
+        self.contentView.backgroundColor = UIColor.whiteColor;
+    }
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
@@ -41,8 +49,10 @@
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
     starRatingView.tintColor = [UIColor redColor];
-    [self addSubview:starRatingView];
-    [self sendSubviewToBack: starRatingView];
+    [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
+
+    //[self addSubview:starRatingView];
+    //[self sendSubviewToBack: starRatingView];
     
     self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;
@@ -76,13 +86,10 @@
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
     starRatingView.tintColor = [UIColor redColor];
-    [self addSubview:starRatingView];
-    [self sendSubviewToBack: starRatingView];
+    [self insertSubview:starRatingView aboveSubview:self.contentView];
     
-    // self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;
     
-   // [self.userImage loadInBackground];
 }
 
 - (IBAction)tappedMore:(id)sender {
