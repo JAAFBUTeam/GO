@@ -32,12 +32,6 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-MZ-fo6">
-                        <rect key="frame" x="73" y="15" width="44.5" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkh-iY-f4C">
                         <rect key="frame" x="343" y="11" width="17" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -57,6 +51,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-MZ-fo6">
+                        <rect key="frame" x="73" y="15" width="44.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="3xU-vA-wk4" secondAttribute="trailing" id="244-jS-A9d"/>
@@ -71,6 +71,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="button" destination="qkh-iY-f4C" id="eg6-Qy-mLk"/>
                 <outlet property="locationImage" destination="Kv6-oe-Ddh" id="sgV-5A-UUs"/>
                 <outlet property="reviewText" destination="3xU-vA-wk4" id="7xn-Ma-Dc0"/>
                 <outlet property="userImage" destination="jeF-UV-f1i" id="mmF-04-Qu3"/>

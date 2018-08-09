@@ -14,6 +14,14 @@
 
 #pragma mark - Visuals
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    
+    if (highlighted) {
+        self.contentView.backgroundColor = UIColor.whiteColor;
+    }
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
@@ -26,6 +34,7 @@
 
 -(void)setupReviewsTableViewCell:(Review *) review {
     
+    if (review != nil) {
     User *user = [review.user fetchIfNeeded];
     self.userImage.file = user.image;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
@@ -41,14 +50,18 @@
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
     starRatingView.tintColor = [UIColor redColor];
-    [self addSubview:starRatingView];
-    [self sendSubviewToBack: starRatingView];
-    
-    self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
+    [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
+
     self.reviewText.text = review.reviewText;
     
     [self.userImage loadInBackground];
-
+    } else {
+        self.userImage.file = nil;
+        self.username.text = nil;
+        self.rating.text = nil;
+        self.reviewText.text = nil;
+        self.button.alpha = 0.0;
+    }
 }
 
 -(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {
@@ -76,13 +89,10 @@
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
     starRatingView.tintColor = [UIColor redColor];
-    [self addSubview:starRatingView];
-    [self sendSubviewToBack: starRatingView];
+    [self insertSubview:starRatingView aboveSubview:self.contentView];
     
-    // self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;
     
-   // [self.userImage loadInBackground];
 }
 
 - (IBAction)tappedMore:(id)sender {
