@@ -45,28 +45,6 @@
     self.currentLocation = [locations lastObject];
 }
 
--(void)setUserCurrentLocation {
-//    _currentLocation = [[CLLocationManager alloc] init];
-//    self.currentLocation.delegate = self;
-//    self.currentLocation.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-//    self.currentLocation.distanceFilter = kCLHeadingFilterNone;
-//    self.currentLocation.pausesLocationUpdatesAutomatically = NO;
-//    self.currentLocation.activityType = CLActivityTypeFitness;
-//
-//    [_currentLocation startUpdatingLocation];
-//
-//    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
-//        [_currentLocation startUpdatingLocation];
-//    } else {
-//        [_currentLocation requestAlwaysAuthorization];
-//        if ([_currentLocation respondsToSelector:@selector(requestWhenInUseAuthorization)])
-//        {
-//            //[_currentLocation requestWhenInUseAuthorization];
-//            [_currentLocation startUpdatingLocation];
-//        }
-//    }
-}
-
 -(double)setDistance:(Location *)location {
     CLLocation *location2 = [[CLLocation alloc] initWithLatitude:location.lat longitude:location.lon];
     double distance = [self.locationManager.location distanceFromLocation:location2] * 0.00062137;
