@@ -24,7 +24,17 @@
 @property (nonatomic, assign) NSInteger imageHeight;
 @property (nonatomic, assign) NSInteger categorySectionInset;
 @property (nonatomic, assign) CGFloat phoneWidth;
+@property (nonatomic, assign) CGFloat phoneHeight;
 @property (nonatomic, assign) CGFloat minInteritemSpacing;
+
+typedef enum {
+    HEADER = 0,
+    TITLE_FEATURED = 1,
+    CAROUSEL = 2,
+    TITLE_CATEGORIES = 3,
+    CATEGORIES = 4,
+    MORE_REVIEWS = 5,
+} cell_state;
 
 @end
 
@@ -75,12 +85,12 @@
 }
 
 -(void)setTableDimensions {
-    self.sections = 4;
+    self.sections = 5;
     self.numberOfCategories = 8;
     self.categoriesPerLine = 2;
     self.phoneWidth = [UIScreen mainScreen].bounds.size.width;
     
-    self.imageHeight = 250;
+    self.imageHeight = 100;
     self.categorySectionInset = 10;
     self.minInteritemSpacing = 10;
 }
@@ -119,33 +129,49 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if(section != 3) { //big image section
+    if(section != 4) {
         return 1;
-    } else { //section == 1;
+    } else {
         return self.numberOfCategories;
     }
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        CategoryHeaderCollectionViewCell *headerCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell" forIndexPath:indexPath];
-        return headerCell;
-    } else if (indexPath.section == 1) {
-        TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
-        [titleCollectionViewCell setLabelText:@"Featured"];
-        return titleCollectionViewCell;
-    } else if (indexPath.section == 2) {
-        FeatureCollectionViewCell *featureViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
-        return featureViewCell;
-    } else { //indexPath.section == 2
-        CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
-        [self setCategoryCell:categoryCell item:indexPath.item];
-        return categoryCell;
+    
+    switch(indexPath.section){
+        case HEADER: { //index 0
+            CategoryHeaderCollectionViewCell *headerCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell" forIndexPath:indexPath];
+            return headerCell;
+        }
+        case TITLE_FEATURED: { //index 1
+            TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
+            [titleCollectionViewCell setLabelText:@"Featured"];
+            return titleCollectionViewCell;
+        }
+        case CAROUSEL: { //index 2
+            FeatureCollectionViewCell *featureViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
+            return featureViewCell;
+        }
+        case TITLE_CATEGORIES: { //index 3
+            TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
+            [titleCollectionViewCell setLabelText:@"Categories"];
+            return titleCollectionViewCell;
+        }
+        case CATEGORIES: { //index 4
+            CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
+            [self setCategoryCell:categoryCell item:indexPath.item];
+            return categoryCell;
+        }
+        default:{
+            TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
+            [titleCollectionViewCell setLabelText:@"Placeholder"];
+            return titleCollectionViewCell;
+        }
     }
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 3) {
+    if(indexPath.section == 4) {
         switch(indexPath.item) {
             case ALL: {
                 [GlobalFilters sharedInstance].categoryType = ALL;
@@ -181,15 +207,17 @@
 # pragma mark - collection view layout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section != 3) { //big image
-        return CGSizeMake(self.phoneWidth, self.imageHeight);
-    } else {
+    if (indexPath.section == 2) {
+        return CGSizeMake(self.phoneWidth, self.imageHeight + 150);
+    } else if (indexPath.section == 4) {
         return [self getCategoryItemSize];
+    } else {
+        return CGSizeMake(self.phoneWidth, self.imageHeight);
     }
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    if(section != 3) {
+    if(section != 4) {
         return UIEdgeInsetsMake(0, 0, 0, 0);
     } else {
         return UIEdgeInsetsMake(self.categorySectionInset, self.categorySectionInset, self.categorySectionInset, self.categorySectionInset);

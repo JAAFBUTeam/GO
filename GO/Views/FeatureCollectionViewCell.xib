@@ -12,25 +12,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeatureCollectionViewCell" id="gTV-IL-0wX" customClass="FeatureCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="211"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="254"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="211"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="254"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-BZ-hEL" customClass="iCarousel">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="244"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-BZ-hEL" customClass="iCarousel">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="254"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="254" id="saU-Jb-kR6"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="3bv-BZ-hEL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4r1-Cr-yRf"/>
+                <constraint firstItem="3bv-BZ-hEL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ExK-6y-QXh"/>
+                <constraint firstAttribute="bottom" secondItem="3bv-BZ-hEL" secondAttribute="bottom" id="iNA-sG-Y9o"/>
+                <constraint firstAttribute="trailing" secondItem="3bv-BZ-hEL" secondAttribute="trailing" id="jXQ-so-mVi"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
-            <size key="customSize" width="300" height="211"/>
+            <size key="customSize" width="300" height="254"/>
             <connections>
                 <outlet property="carousel" destination="3bv-BZ-hEL" id="2tt-fY-hao"/>
             </connections>
-            <point key="canvasLocation" x="155" y="210.5"/>
+            <point key="canvasLocation" x="155" y="232"/>
         </collectionViewCell>
     </objects>
 </document>
