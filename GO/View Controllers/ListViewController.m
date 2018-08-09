@@ -109,11 +109,11 @@
             }
             [self copyDataToFilteredArray];
             [self calculateLocation];
+            [MBProgressHUD hideHUDForView:self.listTableView animated:YES];
             [self.listTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
-        [MBProgressHUD hideHUDForView:self.listTableView animated:YES];
     }];
 }
 
@@ -263,14 +263,6 @@
     }
     return shouldHighlightBookMark;
 }
-
-/* -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 0) { //info height
-        return 96;
-    } else { //picture height
-        return 250;
-    }
-} */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;
