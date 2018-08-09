@@ -59,6 +59,7 @@ typedef enum {
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backTap)];
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
+    self.title = self.location.title;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -111,6 +112,7 @@ typedef enum {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
             [infoTableViewCell setTableProperties:_location];
             [infoTableViewCell highlightBookmark:[self currLocationInCurrUserFavorites:self.location]];
+            infoTableViewCell.title.text = @"Details";
             return infoTableViewCell;
         }
         case TITLE_REVIEW: {
