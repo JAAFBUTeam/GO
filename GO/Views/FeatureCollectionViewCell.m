@@ -18,15 +18,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setLocations];
-    self.currentLocation = [self.locations objectAtIndex:0];
-    [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
-    self.titleLabel.text = self.currentLocation.title;
-}
-
-#pragma mark - Register nibs
--(void)registerNibs{
-//    UINib *carouselFeatureCell = [UINib nibWithNibName:@"CarouselTableViewCell" bundle:nil];
-//    [self.tableView registerNib:carouselTableViewCell forCellReuseIdentifier:@"CarouselTableViewCell"];
+    [self setFeaturedCarousel];
+    [self setDefaultCarouselStyle];
+    [self setDatasourceAndDelegate];
 }
 
 #pragma mark - Setup
@@ -92,33 +86,56 @@
     [self.locations addObject:newLocation6];
 }
 
+# pragma mark - Setup
+
 -(void)setFeaturedCarousel {
-    NSMutableArray *locationImages = [[NSMutableArray alloc] init];
+    self.locationImages = [[NSMutableArray alloc] init];
     for (Location *location in self.locations){
-        [locationImages addObject:location.imageURLs[0]];
+        [_locationImages addObject:location.imageURLs[0]];
     }
-    
-    
 }
 
+-(void)setDefaultCarouselStyle {
+    self.carousel.type = iCarouselTypeLinear;
+    self.carousel.pagingEnabled = YES;
+    self.wrapEnabled = NO;
+    self.carousel.bounceDistance = 0.3;
+}
 
+#pragma mark - carousel protocol methods
 
-#pragma mark - Page control
+-(void)setDatasourceAndDelegate {
+    self.carousel.delegate = self;
+    self.carousel.dataSource = self;
+}
 
--(void)swipePageControl:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
-    if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionLeft){
-        self.pageControl.currentPage +=1;
-        NSLog(@"swipe left!");
-    } else if ([swipeGestureRecognizer direction] == UISwipeGestureRecognizerDirectionRight) {
-        self.pageControl.currentPage -=1;
-        NSLog(@"swipe right!");
-    }
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
+    return self.locationImages.count;
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
+    view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
     
-    NSInteger index = [self.pageControl currentPage];
-    self.currentLocation = [self.locations objectAtIndex:index];
-    [self.imageView setImageWithURL:[NSURL URLWithString:self.currentLocation.imageURLs[0]]];
-    self.titleLabel.text = self.currentLocation.title;
-    //NSLog(@"%@", self.locations[[self.pageControl currentPage]].imageURLs[0]);
+    [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImages[index]]];
+    view.layer.cornerRadius = 5;
+    view.layer.masksToBounds = true;
+    return view;
+}
+
+-(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
+    CGFloat result;
+    switch(option) {
+        case iCarouselOptionSpacing:
+            result = 1.025f;
+            break;
+        case iCarouselOptionWrap:
+            result = self.wrapEnabled;
+            break;
+        default:
+            result = value;
+            break;
+    }
+    return result;
 }
 
 @end

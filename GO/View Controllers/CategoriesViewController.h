@@ -14,6 +14,7 @@
 #import "FeatureCollectionViewCell.h"
 #import "CategoryHeaderCollectionViewCell.h"
 #import "LoadView.h"
+#import "TitleCollectionViewCell.h"
 
 @interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 

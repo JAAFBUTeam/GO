@@ -11,7 +11,7 @@
 #import "FeatureCollectionViewCell.h"
 #import "CategoryHeaderCollectionViewCell.h"
 #import "LoadView.h"
-#import "FeatureTableView.h"
+#import "TitleCollectionViewCell.h"
 
 @interface CategoriesViewController ()
 
@@ -37,7 +37,6 @@
     [self setTableDimensions];
     [self initCategoriesArray];
     [CurrentLocationPosition sharedInstance];
-    [self setGestureRecognizers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,7 +44,6 @@
     LoadView *view = [[LoadView alloc] init];
     
     [self.view addSubview:view];
-    //[self bringSubviewToFront:view];
     
     [UIView animateWithDuration:2 animations:^{view.alpha = 0.0;}
                      completion:(void (^)(BOOL)) ^{
@@ -66,16 +64,18 @@
     UINib *collectionNib = [UINib nibWithNibName:@"CategoryCollectionViewCell" bundle:nil];
     [self.categoriesCollectionView registerNib:collectionNib forCellWithReuseIdentifier:@"CategoryCollectionViewCell"];
     
-    UINib *featureViewCell = [UINib nibWithNibName:@"FeatureTableViewCell" bundle:nil];
-    [self.categoriesCollectionView registerNib:featureViewCell forCellWithReuseIdentifier:@"FeatureTableViewCell"];
+    UINib *featureTableView = [UINib nibWithNibName:@"FeatureCollectionViewCell" bundle:nil];
+    [self.categoriesCollectionView registerNib:featureTableView forCellWithReuseIdentifier:@"FeatureCollectionViewCell"];
     
     UINib *headerCollectionViewCell = [UINib nibWithNibName:@"CategoryHeaderCollectionViewCell" bundle:nil];
     [self.categoriesCollectionView registerNib:headerCollectionViewCell forCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell"];
     
+    UINib *titleCollectionViewCell = [UINib nibWithNibName:@"TitleCollectionViewCell" bundle:nil];
+    [self.categoriesCollectionView registerNib:titleCollectionViewCell forCellWithReuseIdentifier:@"TitleCollectionViewCell"];
 }
 
 -(void)setTableDimensions {
-    self.sections = 2;
+    self.sections = 4;
     self.numberOfCategories = 8;
     self.categoriesPerLine = 2;
     self.phoneWidth = [UIScreen mainScreen].bounds.size.width;
@@ -119,9 +119,9 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if(section == 0 || section == 1) { //big image section
+    if(section != 3) { //big image section
         return 1;
-    } else{ //section == 1;
+    } else { //section == 1;
         return self.numberOfCategories;
     }
 }
@@ -130,11 +130,14 @@
     if (indexPath.section == 0) {
         CategoryHeaderCollectionViewCell *headerCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell" forIndexPath:indexPath];
         return headerCell;
-    } else if(indexPath.section == 1) {
-        FeatureTableView *featureViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureTableViewCell" forIndexPath:indexPath];
+    } else if (indexPath.section == 1) {
+        TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
+        [titleCollectionViewCell setLabelText:@"Featured"];
+        return titleCollectionViewCell;
+    } else if (indexPath.section == 2) {
+        FeatureCollectionViewCell *featureViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
         return featureViewCell;
-    }
-    else { //indexPath.section == 2
+    } else { //indexPath.section == 2
         CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
         [self setCategoryCell:categoryCell item:indexPath.item];
         return categoryCell;
@@ -142,7 +145,7 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 1) {
+    if(indexPath.section == 3) {
         switch(indexPath.item) {
             case ALL: {
                 [GlobalFilters sharedInstance].categoryType = ALL;
@@ -178,7 +181,7 @@
 # pragma mark - collection view layout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 0) { //big image
+    if(indexPath.section != 3) { //big image
         return CGSizeMake(self.phoneWidth, self.imageHeight);
     } else {
         return [self getCategoryItemSize];
@@ -186,7 +189,7 @@
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    if(section == 0) {
+    if(section != 3) {
         return UIEdgeInsetsMake(0, 0, 0, 0);
     } else {
         return UIEdgeInsetsMake(self.categorySectionInset, self.categorySectionInset, self.categorySectionInset, self.categorySectionInset);
@@ -199,22 +202,6 @@
     CGFloat categoryHeight = categoryWidth;
     layout.itemSize = CGSizeMake(categoryWidth, categoryHeight);
     return layout.itemSize;
-}
-
-# pragma mark - Gesture recognizer
-
--(void)setGestureRecognizers{
-    _swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
-    _swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:_swipeLeft];
-    
-    _swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
-    _swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:_swipeRight];
-}
-
-- (void)onSwipe:(UISwipeGestureRecognizer *)swipeRecognizer {
-    [self.featureCollectionViewCell swipePageControl:swipeRecognizer];
 }
 
 #pragma mark - Navigation

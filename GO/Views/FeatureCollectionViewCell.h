@@ -8,15 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "Location.h"
+#import "iCarousel.h"
 
-@interface FeatureCollectionViewCell : UICollectionViewCell
+@interface FeatureCollectionViewCell : UICollectionViewCell <iCarouselDelegate, iCarouselDataSource>
 
 @property(nonatomic, strong) Location* currentLocation;
 @property(nonatomic, strong) NSMutableArray<Location *> *locations;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) NSMutableArray *locationImages;
+@property (nonatomic, assign) NSInteger sectionID;
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (nonatomic, assign) BOOL wrapEnabled;
 
--(void)swipePageControl:(UISwipeGestureRecognizer *)direction;
+-(void)setLocationProperty:(Location *)location;
+-(void)setCarouselTypeProperties:(iCarouselType)carouselType;
+-(void)setSectionIDProperty:(NSInteger)sectionID;
+-(void)setDatasourceAndDelegate;
+-(void)setupCarouselCell;
+-(void)setImages: (NSMutableArray *) favorites;
 
 @end
