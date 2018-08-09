@@ -8,6 +8,7 @@
 
 #import "InfoTableViewCell.h"
 #import "CurrentLocationPosition.h"
+#import "APIManager.h"
 
 @implementation InfoTableViewCell
 
@@ -26,8 +27,9 @@
 }
 
 -(void)setTableProperties:(Location *)location{
+    self.map_location = location;
+    [self.address setTitle:location.address forState:UIControlStateNormal];
     self.title.text = location.title;
-    self.address.text = location.address;
     self.synopsis.text = location.synopsis;
     double ratingDouble = location.rating;
     self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
@@ -39,7 +41,7 @@
 }
 
 -(void)hideAddressLabel{
-    self.address.text = nil;
+    [self.address setTitle:nil forState:UIControlStateNormal];
     [self.address removeFromSuperview];
 }
 
@@ -52,6 +54,14 @@
 }
 
 #pragma mark - actions
+
+- (IBAction)onTapAddress:(id)sender {
+    CLLocationCoordinate2D mapCoordinate = CLLocationCoordinate2DMake(_map_location.lat, _map_location.lon);
+    MKPlacemark *mapPlacemark = [[MKPlacemark alloc] initWithCoordinate:mapCoordinate addressDictionary:nil];
+    MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:mapPlacemark];
+    [item setName:_map_location.title];
+    [item openInMapsWithLaunchOptions:nil];
+}
 
 -(void)didTapRow {
     [self.labelDelegate labelTapped:self.sectionID];

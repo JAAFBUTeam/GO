@@ -7,8 +7,6 @@
 //
 
 #import "ListViewController.h"
-#import "ReviewsTableViewCell.h"
-#import "CurrentLocationPosition.h"
 
 @interface ListViewController ()
 
@@ -27,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fadeIn];
     [self setNavigationBarSettings];
     [self initLocationsArrays];
     [self setDataSourceAndDelegate];
@@ -34,6 +33,14 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     [self disableAutoRotate];
+}
+
+-(void) fadeIn {
+    self.listTableView.alpha = 0.0;
+    [UIView animateWithDuration:.5 animations:^{self.listTableView.alpha = 1.0;}
+                     completion:(void (^)(BOOL)) ^{
+                     }
+     ];
 }
 
 -(void)calculateLocation{
@@ -114,6 +121,12 @@
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        
+        [UIView animateWithDuration:.5 animations:^{[MBProgressHUD hideHUDForView:self.listTableView animated:YES];}
+                         completion:(void (^)(BOOL)) ^{
+                             
+                         }
+        ];
     }];
 }
 

@@ -19,10 +19,11 @@
 @interface InfoTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UILabel *address;
+@property (weak, nonatomic) IBOutlet UIButton *address;
 @property (weak, nonatomic) IBOutlet UILabel *synopsis;
 @property (weak, nonatomic) IBOutlet UILabel *rating;
 @property (weak, nonatomic) IBOutlet UILabel *distanceAway;
+@property (strong, nonatomic) Location *map_location;
 @property (nonatomic, weak) id<LabelTapDelegate> labelDelegate;
 @property (nonatomic, assign) NSInteger sectionID;
 @property (weak, nonatomic) IBOutlet UIImageView *bookmarkImageView;
