@@ -41,6 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
+    NSLog(@"hello");
 }
 
 # pragma mark - Register nibs

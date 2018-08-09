@@ -16,6 +16,10 @@
     [self setDefaultCarouselStyle];
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+}
+
 # pragma mark - Setup
 
 -(void)allocImagesArray {
@@ -34,6 +38,7 @@
     for (Location* location in favorites) {
         [self.locationImagesArray addObject:location.imageURLs.firstObject];
     }
+    [_carousel reloadData];
 }
 
 -(void)setSectionIDProperty:(NSInteger)sectionID {
