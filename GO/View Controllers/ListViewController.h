@@ -16,6 +16,8 @@
 #import "FiltersViewController.h"
 #import "MBProgressHUD.h"
 #import "User.h"
+#import "ReviewsTableViewCell.h"
+#import "CurrentLocationPosition.h"
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate, LabelTapDelegate>
 

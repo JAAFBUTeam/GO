@@ -7,8 +7,6 @@
 //
 
 #import "ListViewController.h"
-#import "ReviewsTableViewCell.h"
-#import "CurrentLocationPosition.h"
 
 @interface ListViewController ()
 
@@ -118,14 +116,17 @@
             }
             [self copyDataToFilteredArray];
             [self calculateLocation];
+            [MBProgressHUD hideHUDForView:self.listTableView animated:YES];
             [self.listTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        
         [UIView animateWithDuration:.5 animations:^{[MBProgressHUD hideHUDForView:self.listTableView animated:YES];}
                          completion:(void (^)(BOOL)) ^{
+                             
                          }
-         ];
+        ];
     }];
 }
 
@@ -275,14 +276,6 @@
     }
     return shouldHighlightBookMark;
 }
-
-/* -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 0) { //info height
-        return 96;
-    } else { //picture height
-        return 250;
-    }
-} */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;
