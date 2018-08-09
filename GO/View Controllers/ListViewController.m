@@ -7,8 +7,6 @@
 //
 
 #import "ListViewController.h"
-#import "ReviewsTableViewCell.h"
-#import "CurrentLocationPosition.h"
 
 @interface ListViewController ()
 
@@ -118,14 +116,17 @@
             }
             [self copyDataToFilteredArray];
             [self calculateLocation];
+            [MBProgressHUD hideHUDForView:self.listTableView animated:YES];
             [self.listTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        
         [UIView animateWithDuration:.5 animations:^{[MBProgressHUD hideHUDForView:self.listTableView animated:YES];}
                          completion:(void (^)(BOOL)) ^{
+                             
                          }
-         ];
+        ];
     }];
 }
 
@@ -217,6 +218,10 @@
 }
 
 -(void)bookmarkTapped:(NSUInteger)section {
+    if(User.currentUser == nil) {
+        return;
+    }
+    
     User *currentUser = User.currentUser;
     Location *currentLocation = self.filteredLocationsArray[section];
     
@@ -228,7 +233,9 @@
         }
     }
     
-    if (!hasAlreadyFavorited) {
+    if (hasAlreadyFavorited) {
+        [currentUser.favorites removeObject:currentLocation];
+    } else {
         [currentUser.favorites addObject:currentLocation];
         [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
     }
@@ -275,14 +282,6 @@
     }
     return shouldHighlightBookMark;
 }
-
-/* -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 0) { //info height
-        return 96;
-    } else { //picture height
-        return 250;
-    }
-} */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;

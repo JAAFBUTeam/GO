@@ -59,6 +59,7 @@ typedef enum {
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backTap)];
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
+    self.title = self.location.title;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -110,6 +111,8 @@ typedef enum {
         case INFO: {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
             [infoTableViewCell setTableProperties:_location];
+            [infoTableViewCell highlightBookmark:[self currLocationInCurrUserFavorites:self.location]];
+            infoTableViewCell.title.text = @"Details";
             return infoTableViewCell;
         }
         case TITLE_REVIEW: {
@@ -128,6 +131,8 @@ typedef enum {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
             if (self.reviews.count > 1) {
                 [reviewTableViewCell setupReviewsTableViewCell: self.reviews[self.reviews.count - 2]];
+            } else {
+                [reviewTableViewCell setupReviewsTableViewCell:nil];
             }
             return reviewTableViewCell;
         }
@@ -193,6 +198,18 @@ typedef enum {
         return 250;
     }
     return UITableViewAutomaticDimension;
+}
+
+-(BOOL)currLocationInCurrUserFavorites:(Location *)location {
+    User *currentUser = User.currentUser;
+    BOOL shouldHighlightBookMark = NO;
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([location.objectId isEqualToString:favoritedLocation.objectId]) {
+            shouldHighlightBookMark = YES;
+            break;
+        }
+    }
+    return shouldHighlightBookMark;
 }
 
 #pragma mark - Review Delegate
