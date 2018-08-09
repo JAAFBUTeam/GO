@@ -218,6 +218,10 @@
 }
 
 -(void)bookmarkTapped:(NSUInteger)section {
+    if(User.currentUser == nil) {
+        return;
+    }
+    
     User *currentUser = User.currentUser;
     Location *currentLocation = self.filteredLocationsArray[section];
     
@@ -229,7 +233,9 @@
         }
     }
     
-    if (!hasAlreadyFavorited) {
+    if (hasAlreadyFavorited) {
+        [currentUser.favorites removeObject:currentLocation];
+    } else {
         [currentUser.favorites addObject:currentLocation];
         [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
     }
