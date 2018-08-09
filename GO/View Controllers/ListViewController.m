@@ -34,7 +34,7 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     [self disableAutoRotate];
-
+    
 }
 
 -(void)calculateLocation{
@@ -253,7 +253,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == 0) { //info height
-        return 79;
+        return 76;
     } else { //picture height
         return 250;
     }
