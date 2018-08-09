@@ -214,7 +214,7 @@ typedef enum {
     } else if (indexPath.section == 4) {
         return [self getCategoryItemSize]; //categories
     } else if (indexPath.section == 1 || indexPath.section == 3) {
-        return CGSizeMake(self.phoneWidth, self.imageHeight - 25);
+        return CGSizeMake(self.phoneWidth, self.imageHeight - 50);
     } else {
         return CGSizeMake(self.phoneWidth, self.imageHeight);
     }

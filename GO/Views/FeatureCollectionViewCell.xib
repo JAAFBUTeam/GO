@@ -19,19 +19,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-BZ-hEL" customClass="iCarousel">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="254"/>
+                        <rect key="frame" x="10" y="10" width="280" height="234"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="254" id="saU-Jb-kR6"/>
-                        </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="3bv-BZ-hEL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4r1-Cr-yRf"/>
-                <constraint firstItem="3bv-BZ-hEL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ExK-6y-QXh"/>
-                <constraint firstAttribute="bottom" secondItem="3bv-BZ-hEL" secondAttribute="bottom" id="iNA-sG-Y9o"/>
-                <constraint firstAttribute="trailing" secondItem="3bv-BZ-hEL" secondAttribute="trailing" id="jXQ-so-mVi"/>
+                <constraint firstAttribute="trailing" secondItem="3bv-BZ-hEL" secondAttribute="trailing" constant="10" id="Apx-N3-j13"/>
+                <constraint firstItem="3bv-BZ-hEL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Lcf-W7-bpQ"/>
+                <constraint firstItem="3bv-BZ-hEL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="YBq-j7-ji5"/>
+                <constraint firstAttribute="bottom" secondItem="3bv-BZ-hEL" secondAttribute="bottom" constant="10" id="mwn-6X-T2Q"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="300" height="254"/>
