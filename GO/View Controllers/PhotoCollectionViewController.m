@@ -45,6 +45,10 @@
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
     
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backTap)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
+    
     [APIManager fetchMediaFromInstagram:self.location completionHandler:^(NSArray<InstagramMedia *> *media) {
         self.mediaGallery = [[NSMutableArray alloc] initWithArray:media];
         [self.collectionView reloadData];
@@ -67,6 +71,12 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
+}
+
+#pragma mark - actions
+
+-(void)backTap {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

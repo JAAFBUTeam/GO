@@ -82,12 +82,7 @@
 }
 
 -(void)didTapBookmark {
-    if(self.bookmarkImageView.highlighted){
-        self.bookmarkImageView.highlighted = NO;
-    } else {
-        self.bookmarkImageView.highlighted = YES;
-    }
-    [self.labelDelegate bookmarkTapped:self.sectionID];
+    [self highlightBookmark:[self.labelDelegate bookmarkTapped:self.sectionID]];
 }
 
 -(void)setupTapGestures {
