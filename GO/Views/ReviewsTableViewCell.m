@@ -34,6 +34,7 @@
 
 -(void)setupReviewsTableViewCell:(Review *) review {
     
+    if (review != nil) {
     User *user = [review.user fetchIfNeeded];
     self.userImage.file = user.image;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
@@ -51,14 +52,16 @@
     starRatingView.tintColor = [UIColor redColor];
     [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
 
-    //[self addSubview:starRatingView];
-    //[self sendSubviewToBack: starRatingView];
-    
-    self.rating.text = [[NSNumber numberWithDouble:review.rating] stringValue];
     self.reviewText.text = review.reviewText;
     
     [self.userImage loadInBackground];
-
+    } else {
+        self.userImage.file = nil;
+        self.username.text = nil;
+        self.rating.text = nil;
+        self.reviewText.text = nil;
+        self.button.alpha = 0.0;
+    }
 }
 
 -(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {

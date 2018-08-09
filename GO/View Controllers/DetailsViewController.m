@@ -128,6 +128,8 @@ typedef enum {
             ReviewsTableViewCell *reviewTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
             if (self.reviews.count > 1) {
                 [reviewTableViewCell setupReviewsTableViewCell: self.reviews[self.reviews.count - 2]];
+            } else {
+                [reviewTableViewCell setupReviewsTableViewCell:nil];
             }
             return reviewTableViewCell;
         }

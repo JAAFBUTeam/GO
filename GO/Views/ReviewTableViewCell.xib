@@ -71,6 +71,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="button" destination="qkh-iY-f4C" id="eg6-Qy-mLk"/>
                 <outlet property="locationImage" destination="Kv6-oe-Ddh" id="sgV-5A-UUs"/>
                 <outlet property="reviewText" destination="3xU-vA-wk4" id="7xn-Ma-Dc0"/>
                 <outlet property="userImage" destination="jeF-UV-f1i" id="mmF-04-Qu3"/>
