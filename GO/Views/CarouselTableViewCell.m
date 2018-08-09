@@ -98,11 +98,9 @@
 
 -(void)registerGestures:(UIView *)view {
     view.userInteractionEnabled = YES;
-    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     tapGesture.numberOfTapsRequired = 1;
     [view addGestureRecognizer:tapGesture];
-
 }
 
 -(void)didTap {

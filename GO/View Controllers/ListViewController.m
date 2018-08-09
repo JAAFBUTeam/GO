@@ -34,7 +34,6 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
     [self disableAutoRotate];
-    
 }
 
 -(void)calculateLocation{
@@ -235,10 +234,12 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
+        Location *locationForCell = self.filteredLocationsArray[indexPath.section];
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        [infoTableViewCell setTableProperties:self.filteredLocationsArray[indexPath.section]];
+        [infoTableViewCell setTableProperties:locationForCell];
         [infoTableViewCell setSectionIDProperty:indexPath.section];
         [infoTableViewCell hideAddressLabel];
+        [infoTableViewCell highlightBookmark:[self currLocationInCurrUserFavorites:locationForCell]];
         infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;
     } else { //indexPath.row == 1
@@ -249,6 +250,18 @@
         carouselTableViewCell.imageDelegate = self;
         return carouselTableViewCell;
     }
+}
+
+-(BOOL)currLocationInCurrUserFavorites:(Location *)location {
+    User *currentUser = User.currentUser;
+    BOOL shouldHighlightBookMark = NO;
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([location.objectId isEqualToString:favoritedLocation.objectId]) {
+            shouldHighlightBookMark = YES;
+            break;
+        }
+    }
+    return shouldHighlightBookMark;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

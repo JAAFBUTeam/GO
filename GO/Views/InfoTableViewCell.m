@@ -43,6 +43,14 @@
     [self.address removeFromSuperview];
 }
 
+-(void)highlightBookmark:(BOOL)shouldHighlight {
+    if(shouldHighlight) {
+        self.bookmarkImageView.highlighted = YES;
+    } else {
+        self.bookmarkImageView.highlighted = NO;
+    }
+}
+
 #pragma mark - actions
 
 -(void)didTapRow {
