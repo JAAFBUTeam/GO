@@ -28,10 +28,6 @@
                             <constraint firstAttribute="width" secondItem="c1N-xM-Of7" secondAttribute="height" multiplier="25:18" id="vmq-sy-EiA"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-vb-xp1">
-                        <rect key="frame" x="67" y="15" width="225" height="225"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="c1N-xM-Of7" firstAttribute="leading" secondItem="zS1-9y-JXY" secondAttribute="leadingMargin" id="Blz-hP-ZR3"/>
@@ -43,12 +39,8 @@
             <gestureRecognizers/>
             <connections>
                 <outlet property="carousel" destination="c1N-xM-Of7" id="3ES-d1-3jQ"/>
-                <outlet property="heartImageView" destination="O9y-vb-xp1" id="ms9-dh-Tl7"/>
             </connections>
             <point key="canvasLocation" x="158" y="-72.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="heart" width="2000" height="2000"/>
-    </resources>
 </document>

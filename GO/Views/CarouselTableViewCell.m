@@ -35,10 +35,33 @@
 
 -(void)setImages: (NSMutableArray *) favorites {
     [self allocImagesArray];
+    UIImage *gradient = [[UIImage alloc] initWithContentsOfFile:@"gradient.png"];
     for (Location* location in favorites) {
         [self.locationImagesArray addObject:location.imageURLs.firstObject];
+        UIImageView *image = [[UIImageView alloc] init];
+        [image setImageWithURL:[NSURL URLWithString:location.imageURLs.firstObject]];
+        [self addImageToImage:image.image withImage2:gradient];
     }
+    
     [_carousel reloadData];
+}
+
+-(UIImage *) addImageToImage:(UIImage *)img withImage2:(UIImage *)img2
+{
+    CGRect rect = CGRectMake(32, 22, 246, 177);
+    
+    CGSize size = CGSizeMake(246,40);
+    UIGraphicsBeginImageContext(size);
+    
+    CGPoint pointImg1 = CGPointMake(0,0);
+    [img drawAtPoint:pointImg1];
+    
+    CGPoint pointImg2 = rect.origin;
+    [img2 drawAtPoint: pointImg2];
+    
+    UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return result;
 }
 
 -(void)setSectionIDProperty:(NSInteger)sectionID {
@@ -76,7 +99,14 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
     view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
     
-    [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+    if (_locationImagesArray.count != 0 && [_locationImagesArray[0] isKindOfClass:[NSString class]]) {
+        [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+    } else {
+        
+        UIImageView *image = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
+        image.image = self.locationImagesArray[index];
+        [view addSubview:image];
+    }
     [self registerGestures:view];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = true;
