@@ -12,16 +12,17 @@
 
 @implementation ReviewsTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
+#pragma mark - Visuals
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    
+    if (selected) {
+        self.contentView.backgroundColor = UIColor.whiteColor;
+    }
 }
+
+#pragma mark - View Life Cycle
 
 -(void)setupReviewsTableViewCell:(Review *) review {
     
