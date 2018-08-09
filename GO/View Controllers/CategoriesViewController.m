@@ -99,21 +99,23 @@ typedef enum {
     self.categoriesImagesArray = [[NSMutableArray alloc]init];
     self.categoriesLabelsArray = [[NSMutableArray alloc]init];
     
-    [self.categoriesImagesArray addObject:@"ALL.png"]; //0
     
-    [self.categoriesImagesArray addObject:@"SELFIE.png"]; //1
     
-    [self.categoriesImagesArray addObject:@"FOOD.png"]; //2
+    [self.categoriesImagesArray addObject:@"selfie.png"]; //1
     
-    [self.categoriesImagesArray addObject:@"CAFES.png"]; //3
+    [self.categoriesImagesArray addObject:@"food.png"]; //2
     
-    [self.categoriesImagesArray addObject:@"ART.png"]; //4
+    [self.categoriesImagesArray addObject:@"cafes.png"]; //3
     
-    [self.categoriesImagesArray addObject:@"ARCHITECTURE.png"]; //5
+    [self.categoriesImagesArray addObject:@"art.png"]; //4
     
-    [self.categoriesImagesArray addObject:@"CULTURE.png"]; //6
+    [self.categoriesImagesArray addObject:@"architecture.png"]; //5
     
-    [self.categoriesImagesArray addObject:@"NATURE.png"]; //7
+    [self.categoriesImagesArray addObject:@"culture.png"];//6
+    
+    [self.categoriesImagesArray addObject:@"nature.png"]; //7
+    
+    [self.categoriesImagesArray addObject:@"all.png"]; //0
 }
 
 -(void)setCategoryCell:(CategoryCollectionViewCell*)cell item:(NSInteger)item {
@@ -207,10 +209,12 @@ typedef enum {
 # pragma mark - collection view layout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2) {
+    if (indexPath.section == 2) { // carousel
         return CGSizeMake(self.phoneWidth, self.imageHeight + 150);
     } else if (indexPath.section == 4) {
-        return [self getCategoryItemSize];
+        return [self getCategoryItemSize]; //categories
+    } else if (indexPath.section == 1 || indexPath.section == 3) {
+        return CGSizeMake(self.phoneWidth, self.imageHeight - 25);
     } else {
         return CGSizeMake(self.phoneWidth, self.imageHeight);
     }
