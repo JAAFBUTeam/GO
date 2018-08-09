@@ -110,6 +110,7 @@ typedef enum {
         case INFO: {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
             [infoTableViewCell setTableProperties:_location];
+            [infoTableViewCell highlightBookmark:[self currLocationInCurrUserFavorites:self.location]];
             return infoTableViewCell;
         }
         case TITLE_REVIEW: {
@@ -195,6 +196,18 @@ typedef enum {
         return 250;
     }
     return UITableViewAutomaticDimension;
+}
+
+-(BOOL)currLocationInCurrUserFavorites:(Location *)location {
+    User *currentUser = User.currentUser;
+    BOOL shouldHighlightBookMark = NO;
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([location.objectId isEqualToString:favoritedLocation.objectId]) {
+            shouldHighlightBookMark = YES;
+            break;
+        }
+    }
+    return shouldHighlightBookMark;
 }
 
 #pragma mark - Review Delegate
