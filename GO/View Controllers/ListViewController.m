@@ -37,10 +37,7 @@
 
 -(void) fadeIn {
     self.listTableView.alpha = 0.0;
-    [UIView animateWithDuration:.5 animations:^{self.listTableView.alpha = 1.0;}
-                     completion:(void (^)(BOOL)) ^{
-                     }
-     ];
+    [UIView animateWithDuration:.5 animations:^{self.listTableView.alpha = 1.0;} completion:(void (^)(BOOL)) ^{}];
 }
 
 -(void)calculateLocation{
@@ -122,12 +119,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
         
-        [UIView animateWithDuration:.5 animations:^{[MBProgressHUD hideHUDForView:self.listTableView animated:YES];}
-                         completion:(void (^)(BOOL)) ^{
-                             
-                         }
-        ];
-    }];
+        [UIView animateWithDuration:.5 animations:^{[MBProgressHUD hideHUDForView:self.listTableView animated:YES];} completion:(void (^)(BOOL)) ^{}];}];
 }
 
 #pragma mark - search bar protocol
@@ -217,9 +209,10 @@
     [self performSegueWithIdentifier:@"listToDetailsSegue" sender:nil];
 }
 
--(void)bookmarkTapped:(NSUInteger)section {
+-(BOOL)bookmarkTapped:(NSUInteger)section {
     if(User.currentUser == nil) {
-        return;
+        [self showNotLoggedInWarning];
+        return NO;
     }
     
     User *currentUser = User.currentUser;
@@ -239,6 +232,19 @@
         [currentUser.favorites addObject:currentLocation];
         [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
     }
+    return !hasAlreadyFavorited;
+}
+
+-(BOOL)currLocationInCurrUserFavorites:(Location *)location {
+    User *currentUser = User.currentUser;
+    BOOL shouldHighlightBookMark = NO;
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([location.objectId isEqualToString:favoritedLocation.objectId]) {
+            shouldHighlightBookMark = YES;
+            break;
+        }
+    }
+    return shouldHighlightBookMark;
 }
 
 #pragma mark - tableview protocol
@@ -271,18 +277,6 @@
     }
 }
 
--(BOOL)currLocationInCurrUserFavorites:(Location *)location {
-    User *currentUser = User.currentUser;
-    BOOL shouldHighlightBookMark = NO;
-    for (Location *favoritedLocation in currentUser.favorites) {
-        if ([location.objectId isEqualToString:favoritedLocation.objectId]) {
-            shouldHighlightBookMark = YES;
-            break;
-        }
-    }
-    return shouldHighlightBookMark;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;
 }
@@ -295,6 +289,20 @@
 
 - (IBAction)didTapBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)showNotLoggedInWarning {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Must be logged in to perform action" preferredStyle:(UIAlertControllerStyleAlert)];
+    [self createOkAction:alert];
+    [self presentViewController:alert animated:YES completion:^{}];
+}
+
+-(void) createOkAction:(UIAlertController *)alert {
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"ok button clicked");
+    }];
+    
+    [alert addAction:okAction];
 }
 
 #pragma mark - Navigation
