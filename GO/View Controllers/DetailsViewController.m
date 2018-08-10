@@ -186,7 +186,11 @@ typedef enum {
 #pragma mark - label delegate
 
 -(void)didTapLabel:(NSString *)segueIdentifier {
-    [self performSegueWithIdentifier:segueIdentifier sender:nil];
+    if(User.currentUser == nil) {
+        [self showNotLoggedInWarning];
+    } else {
+        [self performSegueWithIdentifier:segueIdentifier sender:nil];
+    }
 }
 
 #pragma mark - info tap delegate
