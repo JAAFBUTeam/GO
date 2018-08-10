@@ -10,26 +10,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="112" id="v9O-hE-X4P" customClass="TitleTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="631" height="112"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" rowHeight="57" id="v9O-hE-X4P" customClass="TitleTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="631" height="57"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v9O-hE-X4P" id="JQO-HR-LcG">
-                <rect key="frame" x="0.0" y="0.0" width="631" height="111.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="631" height="56.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-Xk-P2T">
-                        <rect key="frame" x="20" y="11" width="591" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-Xk-P2T">
+                        <rect key="frame" x="20" y="8" width="56.5" height="26.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26.5" id="1db-fU-jSL"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-plus-24" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-W0-JWB">
+                        <rect key="frame" x="603" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="1zU-38-1CK"/>
+                            <constraint firstAttribute="height" constant="20" id="R09-B6-SZq"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="JoE-W0-JWB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UL1-Xk-P2T" secondAttribute="trailing" constant="8" id="2DO-4q-8c7"/>
+                    <constraint firstItem="JoE-W0-JWB" firstAttribute="centerY" secondItem="UL1-Xk-P2T" secondAttribute="centerY" id="ffz-Uu-OTF"/>
+                    <constraint firstAttribute="trailing" secondItem="JoE-W0-JWB" secondAttribute="trailing" constant="8" id="soq-ML-Xe3"/>
+                    <constraint firstItem="UL1-Xk-P2T" firstAttribute="top" secondItem="JQO-HR-LcG" secondAttribute="top" constant="8" id="tw6-17-6gs"/>
+                    <constraint firstItem="UL1-Xk-P2T" firstAttribute="leading" secondItem="JQO-HR-LcG" secondAttribute="leading" constant="20" id="u2g-Mx-WFe"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="plus" destination="JoE-W0-JWB" id="Vc5-Tt-GZV"/>
                 <outlet property="title" destination="UL1-Xk-P2T" id="tD9-Kv-LCD"/>
             </connections>
-            <point key="canvasLocation" x="-43.5" y="37"/>
+            <point key="canvasLocation" x="-43.5" y="9.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icons8-plus-24" width="24" height="24"/>
+    </resources>
 </document>

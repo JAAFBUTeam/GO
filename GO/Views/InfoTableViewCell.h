@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceAway;
 @property (strong, nonatomic) Location *map_location;
 @property (nonatomic, weak) id<InfoTapDelegate> labelDelegate;
+@property (weak, nonatomic) IBOutlet UIImageView *label;
 @property (nonatomic, assign) NSInteger sectionID;
 @property (weak, nonatomic) IBOutlet UIImageView *bookmarkImageView;
 

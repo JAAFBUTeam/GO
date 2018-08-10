@@ -46,8 +46,19 @@
     self.title.text = location.title;
     self.synopsis.text = location.synopsis;
     double ratingDouble = location.rating;
+    // [self setLabel];
     self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
     self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
+}
+
+-(void) setLabel {
+    if (self.map_location.popularity == 0) {
+        self.label.image = [UIImage imageNamed:@"HIDDENGEM"];
+    } else if (self.map_location.popularity == 2) {
+        self.label.image = [UIImage imageNamed:@"TOURISTY"];
+    } else {
+        self.label.image = nil;
+    }
 }
 
 -(void)setSectionIDProperty:(NSInteger)sectionID {

@@ -16,6 +16,9 @@
 }
 
 -(void)setupTitleCell:(NSString *)stringTextValue {
+    if (![stringTextValue isEqualToString:@"Photos"]) {
+        [self.plus setHidden:TRUE];
+    }
     self.title.text = stringTextValue;
 }
 
