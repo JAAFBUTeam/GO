@@ -80,6 +80,16 @@
                             <action selector="onTapAddress:" destination="t2G-5M-e7E" eventType="touchUpInside" id="ai7-HK-1vJ"/>
                         </connections>
                     </button>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-plus-24" translatesAutoresizingMaskIntoConstraints="NO" id="BxR-hS-tCZ">
+                        <rect key="frame" x="315" y="23" width="20" height="20"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="3UB-gH-2OU"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="85S-wj-3Rj"/>
+                            <constraint firstAttribute="height" constant="20" id="FWc-WV-thM"/>
+                            <constraint firstAttribute="width" constant="20" id="ddV-Qa-G3g"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Wjm-oI-OXs" firstAttribute="top" secondItem="6vz-7h-yFp" secondAttribute="bottom" constant="12" id="2UO-6C-IPH"/>
@@ -87,11 +97,13 @@
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="baseline" secondItem="tmD-YA-Kzf" secondAttribute="baseline" id="6XJ-Vf-E2m"/>
                     <constraint firstAttribute="trailing" secondItem="wxg-Yz-RZZ" secondAttribute="trailing" constant="16" id="CUl-6x-KzA"/>
                     <constraint firstItem="HTI-fc-zl1" firstAttribute="leading" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="4" id="D2Q-1q-9zJ"/>
+                    <constraint firstItem="HTI-fc-zl1" firstAttribute="centerY" secondItem="BxR-hS-tCZ" secondAttribute="centerY" id="GaS-AO-L7A"/>
                     <constraint firstItem="Wjm-oI-OXs" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="Gec-F6-962"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="top" secondItem="Wjm-oI-OXs" secondAttribute="bottom" constant="4" id="KjP-dO-Euv"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tmD-YA-Kzf" secondAttribute="bottom" constant="4" id="RgD-z4-sa8"/>
                     <constraint firstAttribute="trailing" secondItem="HTI-fc-zl1" secondAttribute="trailing" constant="16" id="agB-TC-Skb"/>
                     <constraint firstItem="tmD-YA-Kzf" firstAttribute="top" secondItem="6vz-7h-yFp" secondAttribute="bottom" id="fkU-tv-Obw"/>
+                    <constraint firstItem="HTI-fc-zl1" firstAttribute="leading" secondItem="BxR-hS-tCZ" secondAttribute="trailing" constant="4" id="fxa-4R-3Ay"/>
                     <constraint firstItem="6vz-7h-yFp" firstAttribute="top" secondItem="g4E-Gh-Ha9" secondAttribute="topMargin" constant="8" id="gsS-8k-Qwd"/>
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="leading" secondItem="wRC-4K-G1E" secondAttribute="trailing" constant="4" id="i5l-3o-FUZ"/>
                     <constraint firstItem="wRC-4K-G1E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tmD-YA-Kzf" secondAttribute="trailing" constant="100.5" id="jdF-1o-YIR"/>
@@ -117,6 +129,7 @@
     <resources>
         <image name="icons8-bookmark-50" width="50" height="50"/>
         <image name="icons8-bookmark-filled-50" width="50" height="50"/>
+        <image name="icons8-plus-24" width="24" height="24"/>
         <image name="icons8-star-48" width="48" height="48"/>
     </resources>
 </document>
