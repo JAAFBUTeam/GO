@@ -8,6 +8,7 @@
 #import "CarouselTableViewCell.h"
 #import "Location.h"
 #import "User.h"
+#import "APIManager.h"
 
 @implementation CarouselTableViewCell
 
@@ -28,10 +29,9 @@
 }
 
 -(void)setLocationProperty:(Location *)location {
-    self.location = location;
-    for (NSString* imageString in location.imageURLs){
-        [self.locationImagesArray addObject:imageString];
-    }
+    [APIManager fetchMediaFromInstagram:location completionHandler:^(NSArray<InstagramMedia *> *media) {
+        self.locationImagesArray = [[NSMutableArray alloc] initWithArray:media];
+    }];
 }
 
 -(void)setImages: (NSMutableArray *) favorites {
