@@ -176,7 +176,9 @@ typedef enum {
         }
         case CATEGORIES: { //index 4
             CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
+            if ([[User.currentUser favorites] count] != 0) {
             [self setCategoryCell:categoryCell item:indexPath.item];
+            }
             return categoryCell;
         }
         default:{

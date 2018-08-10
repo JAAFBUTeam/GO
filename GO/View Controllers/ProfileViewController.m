@@ -100,7 +100,9 @@
         return titleTableViewCell;
     } else { // Review
         ReviewsTableViewCell *reviewTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
+        if ([self.reviews count] != 0) {
         [reviewTableViewCell setupReviewsTableViewCell:User.currentUser withReview:self.reviews[indexPath.row]];
+        }
         return reviewTableViewCell;
     }
 }
