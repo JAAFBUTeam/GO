@@ -32,14 +32,6 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkh-iY-f4C">
-                        <rect key="frame" x="343" y="11" width="17" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="icons8-more-26"/>
-                        <connections>
-                            <action selector="tappedMore:" destination="z9j-Vr-ITr" eventType="touchUpInside" id="9yv-TN-WfZ"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xU-vA-wk4">
                         <rect key="frame" x="18" y="73" width="42" height="49"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -57,6 +49,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-more-26" translatesAutoresizingMaskIntoConstraints="NO" id="UG6-S2-uZg">
+                        <rect key="frame" x="331" y="11" width="28" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="3xU-vA-wk4" secondAttribute="trailing" id="244-jS-A9d"/>
@@ -71,8 +67,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="button" destination="qkh-iY-f4C" id="eg6-Qy-mLk"/>
                 <outlet property="locationImage" destination="Kv6-oe-Ddh" id="sgV-5A-UUs"/>
+                <outlet property="moreButton" destination="UG6-S2-uZg" id="Xe9-qG-oJY"/>
                 <outlet property="reviewText" destination="3xU-vA-wk4" id="7xn-Ma-Dc0"/>
                 <outlet property="userImage" destination="jeF-UV-f1i" id="mmF-04-Qu3"/>
                 <outlet property="username" destination="ZoF-MZ-fo6" id="kp6-eS-NOZ"/>

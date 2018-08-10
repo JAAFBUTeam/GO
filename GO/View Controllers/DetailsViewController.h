@@ -11,6 +11,7 @@
 #import "InstagramKit.h"
 #import "MoreTableViewCell.h"
 #import "InfoTableViewCell.h"
+#import "ReviewsTableViewCell.h"
 
 @protocol DetailsBookmarkDelegate
 
@@ -18,7 +19,7 @@
 
 @end
 
-@interface DetailsViewController : UIViewController <LabelDelegate, InfoTapDelegate>
+@interface DetailsViewController : UIViewController <LabelDelegate, InfoTapDelegate, ReviewsTableViewCellDelegate>
 
 @property (strong, nonatomic) Location *location;
 @property (weak, nonatomic) IBOutlet UIImageView *location_image;

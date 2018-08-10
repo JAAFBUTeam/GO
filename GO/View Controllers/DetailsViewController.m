@@ -125,6 +125,7 @@ typedef enum {
             if (self.reviews.count != 0) {
                 [reviewTableViewCell setupReviewsTableViewCell: self.reviews[self.reviews.count - 1]];
             }
+            reviewTableViewCell.delegate = self;
             return reviewTableViewCell;
         }
         case REVIEW_2: {
@@ -134,6 +135,7 @@ typedef enum {
             } else {
                 [reviewTableViewCell setupReviewsTableViewCell:nil];
             }
+            reviewTableViewCell.delegate = self;
             return reviewTableViewCell;
         }
         case MORE_REVIEWS: {
