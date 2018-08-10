@@ -31,7 +31,7 @@
     starRatingView.maximumValue = 5;
     starRatingView.minimumValue = 0;
     starRatingView.value = 0;
-    starRatingView.tintColor = [UIColor redColor];
+    starRatingView.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
     starRatingView.allowsHalfStars = YES;
     [starRatingView addTarget:self action:@selector(didChangeValue:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:starRatingView];

@@ -35,6 +35,7 @@
 -(void)setupReviewsTableViewCell:(Review *) review {
     
     if (review != nil) {
+    self.review = review;
     User *user = [review.user fetchIfNeeded];
     self.userImage.file = user.image;
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
@@ -50,6 +51,8 @@
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
     starRatingView.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
+    starRatingView.userInteractionEnabled = NO;
+
     [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
 
     self.reviewText.text = review.reviewText;
@@ -68,6 +71,7 @@
 
 //    user = [user fetchIfNeeded];
     
+    self.review = review;
     Location *location = [review.location fetchIfNeeded];
     NSString *firstImageURL = location.imageURLs.firstObject;
     NSURL *url = [[NSURL alloc] initWithString:firstImageURL];
@@ -88,7 +92,8 @@
     starRatingView.minimumValue = 0;
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
-    starRatingView.tintColor = [UIColor redColor];
+    starRatingView.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
+    starRatingView.userInteractionEnabled = NO;
     [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
     
     self.reviewText.text = review.reviewText;

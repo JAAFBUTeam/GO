@@ -107,7 +107,7 @@
         [title setText: User.currentUser.favorites[index].title];
         [title setTextColor:[UIColor whiteColor]];
         [title setBackgroundColor:[UIColor clearColor]];
-        [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 24.0f]];
+        [title setFont:[UIFont fontWithName: @"American Typewriter" size: 22.0f]];
         
         [view addSubview:image];
         [view addSubview:gradient];

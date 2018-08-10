@@ -12,7 +12,7 @@
         <!--Reviews-->
         <scene sceneID="inw-FL-VJ0">
             <objects>
-                <viewController storyboardIdentifier="ReviewViewController" id="EwE-HD-WQK" customClass="ReviewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EwE-HD-WQK" customClass="ReviewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nah-NT-4hY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
