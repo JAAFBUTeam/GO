@@ -13,9 +13,9 @@
 @property (strong, nonatomic) NSMutableArray *categoriesLocationsArray;
 @property (strong, nonatomic) NSArray *filteredLocationsArray;
 @property (strong, nonatomic) NSArray *searchfilteredLocationArray;
-@property (weak, nonatomic) IBOutlet UITableView *listTableView;
 @property (strong, nonatomic) UISearchController *searchController;
-@property (nonatomic, assign) NSInteger selectedRow;
+@property (assign, nonatomic) NSInteger selectedRow;
+@property (weak, nonatomic) IBOutlet UITableView *listTableView;
 
 @end
 
@@ -103,14 +103,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Location"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *LocationsArray, NSError *error) {
         if (LocationsArray != nil) {
-            for(Location *location in LocationsArray) {
-                for(NSNumber *tagNumber in location.tags) {
-                    if(tagNumber == [NSNumber numberWithInteger:[GlobalFilters sharedInstance].categoryType]) {
-                        [self.categoriesLocationsArray addObject:location];
-                        break;
-                    }
-                }
-            }
+            [self addSelectedCategoryLocationsToArray:LocationsArray];
             [self copyDataToFilteredArray];
             [self calculateLocation];
             [MBProgressHUD hideHUDForView:self.listTableView animated:YES];
@@ -120,6 +113,17 @@
         }
         
         [UIView animateWithDuration:.5 animations:^{[MBProgressHUD hideHUDForView:self.listTableView animated:YES];} completion:(void (^)(BOOL)) ^{}];}];
+}
+
+-(void)addSelectedCategoryLocationsToArray:(NSArray *)LocationsArray {
+    for(Location *location in LocationsArray) {
+        for(NSNumber *tagNumber in location.tags) {
+            if(tagNumber == [NSNumber numberWithInteger:[GlobalFilters sharedInstance].categoryType]) {
+                [self.categoriesLocationsArray addObject:location];
+                break;
+            }
+        }
+    }
 }
 
 #pragma mark - search bar protocol
@@ -195,13 +199,11 @@
     
     if (!hasAlreadyFavorited) {
         [currentUser.favorites addObject:currentLocation];
-        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            NSLog(@"wow");
-        }];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
     }
 }
 
-#pragma mark - label tap protocol
+#pragma mark - info table view tap protocol
 
 -(void)labelTapped:(NSUInteger)section {
     self.selectedRow = section;
@@ -210,41 +212,45 @@
 }
 
 -(BOOL)bookmarkTapped:(NSUInteger)section {
-    if(User.currentUser == nil) {
+    User *currentUser = User.currentUser;
+    Location *currentLocation = self.filteredLocationsArray[section];
+    
+    if(currentUser == nil) {
         [self showNotLoggedInWarning];
         return NO;
     }
     
-    User *currentUser = User.currentUser;
-    Location *currentLocation = self.filteredLocationsArray[section];
+    BOOL shouldAddToFavorites = [self shouldAddToLocationToCurrentUserFavorites:currentLocation currentUser:currentUser];
+    [self updateCurrUserFavorites:currentUser currentLocation:currentLocation shouldAddToFavorites:shouldAddToFavorites];
     
-    BOOL hasAlreadyFavorited = NO;
-    for (Location *favoritedLocation in currentUser.favorites) {
-        if ([currentLocation.objectId isEqualToString:favoritedLocation.objectId]) {
-            hasAlreadyFavorited = YES;
-            break;
-        }
-    }
-    
-    if (hasAlreadyFavorited) {
-        [currentUser.favorites removeObject:currentLocation];
-    } else {
-        [currentUser.favorites addObject:currentLocation];
-        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
-    }
-    return !hasAlreadyFavorited;
+    return shouldAddToFavorites;
 }
 
--(BOOL)currLocationInCurrUserFavorites:(Location *)location {
-    User *currentUser = User.currentUser;
-    BOOL shouldHighlightBookMark = NO;
+-(BOOL)isCurrLocationInCurrUserFavorites:(Location *)location currentUser:(User *)currentUser {
     for (Location *favoritedLocation in currentUser.favorites) {
         if ([location.objectId isEqualToString:favoritedLocation.objectId]) {
-            shouldHighlightBookMark = YES;
-            break;
+            return YES;
         }
     }
-    return shouldHighlightBookMark;
+    return NO;
+}
+
+-(BOOL)shouldAddToLocationToCurrentUserFavorites:(Location *)currentLocation currentUser:(User *)currentUser {
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([currentLocation.objectId isEqualToString:favoritedLocation.objectId]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+-(void)updateCurrUserFavorites:(User *)currentUser currentLocation:(Location *)currentLocation shouldAddToFavorites:(BOOL)shouldAddToFavorites {
+    if(shouldAddToFavorites) {
+        [currentUser.favorites addObject:currentLocation];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
+    } else {
+        [currentUser.favorites removeObject:currentLocation];
+    }
 }
 
 #pragma mark - tableview protocol
@@ -259,12 +265,12 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
-        Location *locationForCell = self.filteredLocationsArray[indexPath.section];
+        Location *location = self.filteredLocationsArray[indexPath.section];
         InfoTableViewCell *infoTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
-        [infoTableViewCell setTableProperties:locationForCell];
+        [infoTableViewCell setTableProperties:location];
         [infoTableViewCell setSectionIDProperty:indexPath.section];
         [infoTableViewCell hideAddressLabel];
-        [infoTableViewCell highlightBookmark:[self currLocationInCurrUserFavorites:locationForCell]];
+        [infoTableViewCell highlightBookmark:[self isCurrLocationInCurrUserFavorites:location currentUser:User.currentUser]];
         infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;
     } else { //indexPath.row == 1
@@ -292,7 +298,7 @@
 }
 
 -(void)showNotLoggedInWarning {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Must be logged in to perform action" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention" message:@"Must be logged in to perform action" preferredStyle:(UIAlertControllerStyleAlert)];
     [self createOkAction:alert];
     [self presentViewController:alert animated:YES completion:^{}];
 }

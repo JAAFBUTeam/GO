@@ -41,6 +41,22 @@
     [_carousel reloadData];
 }
 
+-(UIImage *) addImageToImage:(UIImage *)img withImage2:(UIImage *)img2
+{
+    CGSize size = CGSizeMake(250, 177);
+    UIGraphicsBeginImageContext(size);
+    
+    CGPoint pointImg1 = CGPointMake(0,0);
+    [img drawAtPoint:pointImg1];
+    
+    CGPoint pointImg2 = CGPointMake(0,0);
+    [img2 drawAtPoint: pointImg2];
+    
+    UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return result;
+}
+
 -(void)setSectionIDProperty:(NSInteger)sectionID {
     self.sectionID = sectionID;
 }
@@ -74,9 +90,20 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
-    view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
     
-    [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+    if (_location != nil) {
+        view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
+        [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+    } else {
+        view = [[UIView alloc] initWithFrame:self.carousel.bounds];
+        UIImageView *gradient = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
+        gradient.image = [UIImage imageNamed:@"gradient.png"];
+        UIImageView *image = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
+        [image setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+        [view addSubview:image];
+        [view addSubview:gradient];
+        [view bringSubviewToFront:gradient];
+    }
     [self registerGestures:view];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = true;

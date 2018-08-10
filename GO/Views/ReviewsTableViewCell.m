@@ -49,7 +49,7 @@
     starRatingView.minimumValue = 0;
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
-    starRatingView.tintColor = [UIColor redColor];
+    starRatingView.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
     [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
 
     self.reviewText.text = review.reviewText;
@@ -89,7 +89,7 @@
     starRatingView.allowsHalfStars = YES;
     starRatingView.value = (double) review.rating;
     starRatingView.tintColor = [UIColor redColor];
-    [self insertSubview:starRatingView aboveSubview:self.contentView];
+    [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
     
     self.reviewText.text = review.reviewText;
     

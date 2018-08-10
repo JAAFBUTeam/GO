@@ -19,7 +19,7 @@
 #import "ReviewsTableViewCell.h"
 #import "CurrentLocationPosition.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate, LabelTapDelegate>
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate, InfoTapDelegate>
 
 @property (nonatomic, strong) CLLocationManager *currentLocation;
 
