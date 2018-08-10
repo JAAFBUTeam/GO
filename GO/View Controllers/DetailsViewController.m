@@ -112,6 +112,7 @@ typedef enum {
             [infoTableViewCell setTableProperties:_location];
             [infoTableViewCell highlightBookmark:[self currLocationInCurrUserFavorites:self.location]];
             infoTableViewCell.title.text = @"Details";
+            infoTableViewCell.labelDelegate = self;
             return infoTableViewCell;
         }
         case TITLE_REVIEW: {
@@ -169,6 +170,45 @@ typedef enum {
 
 -(void)didTapLabel:(NSString *)segueIdentifier {
     [self performSegueWithIdentifier:segueIdentifier sender:nil];
+}
+
+#pragma mark - info tap delegate
+
+-(void)labelTapped:(NSUInteger)section {}
+
+-(BOOL)bookmarkTapped:(NSUInteger)section {
+    User *currentUser = User.currentUser;
+    Location *currentLocation = self.location;
+    
+    if(currentUser == nil) {
+        [self showNotLoggedInWarning];
+        return NO;
+    }
+    
+    BOOL shouldAddToFavorites = [self shouldAddToLocationToCurrentUserFavorites:currentLocation currentUser:currentUser];
+    [self updateCurrUserFavorites:currentUser currentLocation:currentLocation shouldAddToFavorites:shouldAddToFavorites];
+    
+    [self.detailsBookmarkDelegate detailsBookmarkTapped];
+    
+    return shouldAddToFavorites;
+}
+
+-(BOOL)shouldAddToLocationToCurrentUserFavorites:(Location *)currentLocation currentUser:(User *)currentUser {
+    for (Location *favoritedLocation in currentUser.favorites) {
+        if ([currentLocation.objectId isEqualToString:favoritedLocation.objectId]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+-(void)updateCurrUserFavorites:(User *)currentUser currentLocation:(Location *)currentLocation shouldAddToFavorites:(BOOL)shouldAddToFavorites {
+    if(shouldAddToFavorites) {
+        [currentUser.favorites addObject:currentLocation];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
+    } else {
+        [currentUser.favorites removeObject:currentLocation];
+    }
 }
 
 # pragma mark - Tableview Delegate
@@ -296,6 +336,22 @@ typedef enum {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+#pragma mark - alerts
+
+-(void)showNotLoggedInWarning {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention" message:@"Must be logged in to perform action" preferredStyle:(UIAlertControllerStyleAlert)];
+    [self createOkAction:alert];
+    [self presentViewController:alert animated:YES completion:^{}];
+}
+
+-(void) createOkAction:(UIAlertController *)alert {
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"ok button clicked");
+    }];
+    
+    [alert addAction:okAction];
 }
 
 # pragma mark - Navigation

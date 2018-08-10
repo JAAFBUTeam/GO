@@ -253,6 +253,12 @@
     }
 }
 
+#pragma mark - details bookmark tap protocol
+
+-(void)detailsBookmarkTapped {
+    [self.listTableView reloadData];
+}
+
 #pragma mark - tableview protocol
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -317,10 +323,11 @@
     if([sender isKindOfClass:[Location class]]) { //image tapped
         DetailsViewController *detailsController = [segue destinationViewController];
         detailsController.location = sender;
+        detailsController.detailsBookmarkDelegate = self;
     } else if ([segue.identifier isEqualToString:@"listToDetailsSegue"]) { //info section tapped
         DetailsViewController *detailsController = [segue destinationViewController];
         detailsController.location = self.filteredLocationsArray[self.selectedRow];
-        NSLog(@"label tap segue");
+        detailsController.detailsBookmarkDelegate = self;
     } else if ([segue.identifier isEqualToString:@"listToFiltersSegue"]) {
         UINavigationController *navController = [segue destinationViewController];
         FiltersViewController *filtersViewController = (FiltersViewController*)[navController topViewController];
