@@ -17,7 +17,7 @@
 #import "ReviewViewController.h"
 #import "User.h"
 
-@interface ProfileViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
+@interface ProfileViewController () <CarouselImageTapDelegate, ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *reviews;
