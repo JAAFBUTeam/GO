@@ -7,6 +7,7 @@
 
 #import "CarouselTableViewCell.h"
 #import "Location.h"
+#import "User.h"
 
 @implementation CarouselTableViewCell
 
@@ -100,9 +101,17 @@
         gradient.image = [UIImage imageNamed:@"gradient.png"];
         UIImageView *image = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
         [image setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+        
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
+        
+        [title setText: User.currentUser.favorites[index].title];
+        [title setTextColor:[UIColor blackColor]];
+        [title setBackgroundColor:[UIColor clearColor]];
+        [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 14.0f]];
+        
         [view addSubview:image];
         [view addSubview:gradient];
-        [view bringSubviewToFront:gradient];
+        [view addSubview:title];
     }
     [self registerGestures:view];
     view.layer.cornerRadius = 5;
