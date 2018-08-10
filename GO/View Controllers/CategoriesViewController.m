@@ -216,7 +216,7 @@ typedef enum {
     } else if (indexPath.section == 1 || indexPath.section == 3) {
         return CGSizeMake(self.phoneWidth, self.imageHeight - 50);
     } else {
-        return CGSizeMake(self.phoneWidth, self.imageHeight);
+        return CGSizeMake(self.phoneWidth, self.imageHeight + 120);
     }
 }
 
