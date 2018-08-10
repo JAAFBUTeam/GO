@@ -52,6 +52,7 @@
     newLocation.lat = 37.7857;
     newLocation.lon = -122.4011;
     newLocation.rating = 4.9;
+    newLocation.popularity = 2;
     newLocation.tags = [[NSMutableArray alloc] init];
     [newLocation.tags addObject:[NSNumber numberWithInt: ART]];
     [newLocation.tags addObject:[NSNumber numberWithInt: CULTUREANDHISTORY]];
@@ -74,6 +75,7 @@
     newLocation2.lat = 37.731928;
     newLocation2.lon = -122.440789;
     newLocation2.rating = 4.0;
+    newLocation2.popularity = 1;
     newLocation2.tags = [[NSMutableArray alloc] init];
     [newLocation2.tags addObject:[NSNumber numberWithInt: ARCHITECTURE]];
     [newLocation2.tags addObject:[NSNumber numberWithInt: NATURE]];
@@ -96,6 +98,7 @@
     newLocation3.lon = -122.47356414794922;
     newLocation3.synopsis = @"Gorgeous tiled staircase!";
     newLocation3.rating = 4.3;
+    newLocation3.popularity = 0;
     newLocation3.tags = [[NSMutableArray alloc] init];
     [newLocation3.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
     [newLocation3.tags addObject:[NSNumber numberWithInt: ART]];
@@ -116,6 +119,7 @@
     newLocation4.lon = -122.4279487;
     newLocation4.synopsis = @"The golden fire hydrant that saved the Mission district in the aftermath of the 1906 earthquake!";
     newLocation4.rating = 3.9;
+    newLocation4.popularity = 1;
     newLocation4.tags = [[NSMutableArray alloc] init];
     [newLocation4.tags addObject:[NSNumber numberWithInt: CULTUREANDHISTORY]];
     [newLocation4.tags addObject:[NSNumber numberWithInt: ALL]];
@@ -132,6 +136,7 @@
     newLocation5.lon = -122.4061633;
     newLocation5.synopsis = @"The French Quarter of San Francisco!";
     newLocation5.rating = 4.0;
+    newLocation5.popularity = 1;
     newLocation5.tags = [[NSMutableArray alloc] init];
     [newLocation5.tags addObject:[NSNumber numberWithInt: FOOD]];
     [newLocation5.tags addObject:[NSNumber numberWithInt: ALL]];
@@ -149,6 +154,7 @@
     newLocation6.lon = -122.4770135;
     newLocation6.synopsis = @"Classic & unique latte drinks, plus creative toast options, served in a contemporary coffee shop!";
     newLocation6.rating = 4.2;
+    newLocation6.popularity = 1;
     newLocation6.tags = [[NSMutableArray alloc] init];
     [newLocation6.tags addObject:[NSNumber numberWithInt: FOOD]];
     [newLocation6.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
@@ -172,6 +178,7 @@
     newLocation7.lon = -122.4180013;
     newLocation7.synopsis = @"A pair of slides and a tree-lined stair corridor!";
     newLocation7.rating = 4.7;
+    newLocation7.popularity = 1;
     newLocation7.tags = [[NSMutableArray alloc] init];
     [newLocation7.tags addObject:[NSNumber numberWithInt: ARCHITECTURE]];
     [newLocation7.tags addObject:[NSNumber numberWithInt: ALL]];
@@ -190,6 +197,7 @@
     newLocation8.lon = -122.4329806;
     newLocation8.synopsis = @"A cute hilltop park complete with a swing that offers a view of San Francisco!";
     newLocation8.rating = 4.3;
+    newLocation8.popularity = 0;
     newLocation8.tags = [[NSMutableArray alloc] init];
     [newLocation8.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
     [newLocation8.tags addObject:[NSNumber numberWithInt: NATURE]];
@@ -210,6 +218,7 @@
     newLocation9.lon = -122.4734028;
     newLocation9.synopsis = @"A pint-sized coffee shop with a handful of seats for snacking on espresso drinks, tea & baked goods!";
     newLocation9.rating = 4.1;
+    newLocation9.popularity = 0;
     newLocation9.tags = [[NSMutableArray alloc] init];
     [newLocation9.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
     [newLocation9.tags addObject:[NSNumber numberWithInt: FOOD]];
@@ -230,6 +239,7 @@
     newLocation10.lon = -122.4985916;
     newLocation10.synopsis = @"A beach with a beautiful view of the Golden Gate Bridge!";
     newLocation10.rating = 4.3;
+    newLocation3.popularity = 1;
     newLocation10.tags = [[NSMutableArray alloc] init];
     [newLocation10.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
     [newLocation10.tags addObject:[NSNumber numberWithInt: NATURE]];

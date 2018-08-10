@@ -50,6 +50,16 @@
     self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
 }
 
+-(void) setLabel: (Location *) location {
+    if (location.popularity == 0) {
+        self.label.image = [UIImage imageNamed:@"HIDDENGEM"];
+    } else if (location.popularity == 2) {
+        self.label.image = [UIImage imageNamed:@"TOURISTY"];
+    } else {
+        self.label.image = nil;
+    }
+}
+
 -(void)setSectionIDProperty:(NSInteger)sectionID {
     self.sectionID = sectionID;
 }

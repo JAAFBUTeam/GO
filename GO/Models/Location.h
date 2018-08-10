@@ -21,6 +21,7 @@
 @property (nonatomic) float lon;
 @property (nonatomic) double rating;
 @property(nonatomic) double distanceAway;
+@property (nonatomic) NSInteger popularity; // 0 for hidden, 1 for average, 2 for tourist
 
 + (void) postLocation: (PFBooleanResultBlock  _Nullable)completion;
 + (NSMutableArray *) fetchLocations: (NSMutableArray *) locations; // grabs locations from heroku
