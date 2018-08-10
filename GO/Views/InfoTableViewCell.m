@@ -46,14 +46,15 @@
     self.title.text = location.title;
     self.synopsis.text = location.synopsis;
     double ratingDouble = location.rating;
+    // [self setLabel];
     self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
     self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
 }
 
--(void) setLabel: (Location *) location {
-    if (location.popularity == 0) {
+-(void) setLabel {
+    if (self.map_location.popularity == 0) {
         self.label.image = [UIImage imageNamed:@"HIDDENGEM"];
-    } else if (location.popularity == 2) {
+    } else if (self.map_location.popularity == 2) {
         self.label.image = [UIImage imageNamed:@"TOURISTY"];
     } else {
         self.label.image = nil;
