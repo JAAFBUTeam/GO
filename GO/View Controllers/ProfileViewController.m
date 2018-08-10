@@ -74,8 +74,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1){
         [self performSegueWithIdentifier:@"detailsSegue" sender:nil];
-    } else if (indexPath.section == 3){
-        [self performSegueWithIdentifier:@"reviewsSegue" sender:nil];
+    } else if (indexPath.section >= 4){
+        [self performSegueWithIdentifier:@"reviewsSegue" sender: [self tableView:self.tableView cellForRowAtIndexPath:indexPath]];
     }
 }
 
@@ -210,6 +210,17 @@
         [view addAction:flag];
         [view addAction:cancel];
         [self presentViewController:view animated:YES completion:nil];
+    }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"reviewsSegue"]) {
+        Review *review = [sender review];
+        ReviewViewController *reviewsViewController = [segue destinationViewController];
+        
+        reviewsViewController.location = review.location;
     }
 }
 
