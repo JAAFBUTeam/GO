@@ -209,14 +209,16 @@ typedef enum {
 # pragma mark - collection view layout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2) { // carousel
+    if (indexPath.section == 0) {
+        return CGSizeMake(self.phoneWidth, 220);
+    } else if (indexPath.section == 1 || indexPath.section == 3) {
+        return CGSizeMake(self.phoneWidth, 40);
+    } else if (indexPath.section == 2) { // carousel
         return CGSizeMake(self.phoneWidth, self.imageHeight + 150);
     } else if (indexPath.section == 4) {
         return [self getCategoryItemSize]; //categories
-    } else if (indexPath.section == 1 || indexPath.section == 3) {
-        return CGSizeMake(self.phoneWidth, self.imageHeight - 50);
     } else {
-        return CGSizeMake(self.phoneWidth, self.imageHeight + 120);
+        return CGSizeMake(self.phoneWidth, self.imageHeight);
     }
 }
 
