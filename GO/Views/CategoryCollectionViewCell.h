@@ -11,6 +11,7 @@
 @interface CategoryCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *gradientView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
