@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Location.h"
 
-@protocol LabelTapDelegate
+@protocol InfoTapDelegate
 
 -(void)labelTapped:(NSUInteger)section;
 -(BOOL)bookmarkTapped:(NSUInteger)section;
@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rating;
 @property (weak, nonatomic) IBOutlet UILabel *distanceAway;
 @property (strong, nonatomic) Location *map_location;
-@property (nonatomic, weak) id<LabelTapDelegate> labelDelegate;
+@property (nonatomic, weak) id<InfoTapDelegate> labelDelegate;
 @property (nonatomic, assign) NSInteger sectionID;
 @property (weak, nonatomic) IBOutlet UIImageView *bookmarkImageView;
 
