@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) InstagramEngine *engine;
 @property (nonatomic, strong) NSMutableArray *reviews;
-
+@property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 
 typedef enum {
     INFO = 0,
@@ -62,13 +62,21 @@ typedef enum {
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    [self initImagePicker];
+    
     [self fetchReviews];
     [self registerNibs];
 }
 
 -(void)backTap {
     [self.navigationController popViewControllerAnimated:YES];
+}
 
+-(void)initImagePicker {
+    self.imagePickerVC = [UIImagePickerController new];
+    self.imagePickerVC.delegate = self;
+    self.imagePickerVC.allowsEditing = YES;
+    self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
 
 # pragma mark - Register nibs
@@ -147,6 +155,7 @@ typedef enum {
         case TITLE_PHOTOS: {
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
             [titleTableViewCell setupTitleCell:@"Photos"];
+            titleTableViewCell.addDelegate = self;
             return titleTableViewCell;
         }
         case IMAGE_COLLECTION: {
@@ -251,6 +260,12 @@ typedef enum {
         }
     }
     return shouldHighlightBookMark;
+}
+
+#pragma mark - title table view protocol
+
+-(void)didTapAdd {
+    [self presentViewController:self.imagePickerVC animated:YES completion:nil];
 }
 
 #pragma mark - Review Delegate
