@@ -76,7 +76,11 @@ typedef enum {
     self.imagePickerVC = [UIImagePickerController new];
     self.imagePickerVC.delegate = self;
     self.imagePickerVC.allowsEditing = YES;
-    self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
 }
 
 # pragma mark - Register nibs
