@@ -114,11 +114,33 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
-    view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
     
-    [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImages[index]]];
+    view = [[UIView alloc] initWithFrame:self.carousel.bounds];
+    
+    // set view corner radius
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = true;
+    
+    // set image view
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [imageView setImageWithURL:[NSURL URLWithString:self.locationImages[index]]];
+    [imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [view addSubview:imageView];
+    [NSLayoutConstraint activateConstraints:@[[imageView.leadingAnchor constraintEqualToAnchor:view.leadingAnchor],
+                                              [imageView.trailingAnchor constraintEqualToAnchor:view.trailingAnchor],
+                                              [imageView.topAnchor constraintEqualToAnchor:view.topAnchor],
+                                              [imageView.bottomAnchor constraintEqualToAnchor:view.bottomAnchor]]];
+    
+    // create label
+    UILabel *label = [[UILabel alloc] initWithFrame:self.carousel.bounds];
+    [label setText:[self.locations objectAtIndex:index].title];
+    [label setTextColor:[UIColor whiteColor]];
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [view addSubview:label];
+    [NSLayoutConstraint activateConstraints:@[[label.leadingAnchor constraintEqualToAnchor:view.leadingAnchor constant:8],
+                                              [label.trailingAnchor constraintEqualToAnchor:view.trailingAnchor constant:-8],
+                                              [label.bottomAnchor constraintEqualToAnchor:view.bottomAnchor constant:-8]]];
+    
     return view;
 }
 
