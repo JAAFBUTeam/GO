@@ -21,6 +21,7 @@
     [self setFeaturedCarousel];
     [self setDefaultCarouselStyle];
     [self setDatasourceAndDelegate];
+    self.carousel.userInteractionEnabled = NO;
 }
 
 #pragma mark - Setup
