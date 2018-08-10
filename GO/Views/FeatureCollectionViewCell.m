@@ -131,6 +131,17 @@
                                               [imageView.topAnchor constraintEqualToAnchor:view.topAnchor],
                                               [imageView.bottomAnchor constraintEqualToAnchor:view.bottomAnchor]]];
     
+    //set gradient
+    UIImageView *gradientView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    gradientView.image = [UIImage imageNamed:@"gradient_true.png"];
+    [gradientView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [view addSubview:gradientView];
+    [NSLayoutConstraint activateConstraints:@[[gradientView.leadingAnchor constraintEqualToAnchor:view.leadingAnchor],
+                                              [gradientView.trailingAnchor constraintEqualToAnchor:view.trailingAnchor],
+                                              [gradientView.topAnchor constraintEqualToAnchor:view.topAnchor constant:100],
+                                              [gradientView.bottomAnchor constraintEqualToAnchor:view.bottomAnchor]]];
+    
+    
     // create label
     UILabel *label = [[UILabel alloc] initWithFrame:self.carousel.bounds];
     [label setText:[self.locations objectAtIndex:index].title];

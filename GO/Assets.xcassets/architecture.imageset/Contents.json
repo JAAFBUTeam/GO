@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "architecture.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "architecture_2.jpg",
       "scale" : "2x"
     },
     {

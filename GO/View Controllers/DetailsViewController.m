@@ -27,15 +27,14 @@
 
 
 typedef enum {
-    CAROUSEL = 0,
-    INFO = 1,
-    TITLE_REVIEW = 2,
-    REVIEW_1 = 3,
-    REVIEW_2 = 4,
-    MORE_REVIEWS = 5,
-    TITLE_PHOTOS = 6,
-    IMAGE_COLLECTION = 7,
-    MORE_IMAGES = 8
+    INFO = 0,
+    TITLE_PHOTOS = 1,
+    IMAGE_COLLECTION = 2,
+    MORE_IMAGES = 3,
+    TITLE_REVIEW = 4,
+    REVIEW_1 = 5,
+    REVIEW_2 = 6,
+    MORE_REVIEWS = 7
 } cell_state;
 
 @end
@@ -101,13 +100,13 @@ typedef enum {
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         switch(indexPath.section){
-        case CAROUSEL: {
-            CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
-            [carouselTableViewCell setLocationProperty:_location];
-            [carouselTableViewCell setDatasourceAndDelegate];
-            return carouselTableViewCell;
-        }
+//        case CAROUSEL: {
+//            CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+//            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
+//            [carouselTableViewCell setLocationProperty:_location];
+//            [carouselTableViewCell setDatasourceAndDelegate];
+//            return carouselTableViewCell;
+//        }
         case INFO: {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
             [infoTableViewCell setTableProperties:_location];
@@ -190,11 +189,11 @@ typedef enum {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 9;
+    return 8;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 7){
+    if (indexPath.section == 2){
         return 250;
     }
     return UITableViewAutomaticDimension;
