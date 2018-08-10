@@ -22,7 +22,7 @@
 @property (nonatomic, weak) id<ReviewsTableViewCellDelegate> delegate;
 
 @property (nonatomic, strong) Review *review;
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIImageView *moreButton;
 @property (weak, nonatomic) IBOutlet PFImageView *userImage;
 @property (weak, nonatomic) IBOutlet UIImageView *locationImage;
 @property (weak, nonatomic) IBOutlet UILabel *username;
