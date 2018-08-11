@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TitleTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *title;
+@protocol TitleTableViewDelegate
 
+- (void) didTapAdd;
+
+@end
+
+@interface TitleTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIImageView *plus;
+
+@property (nonatomic, weak) id<TitleTableViewDelegate> addDelegate;
+
 -(void)setupTitleCell:(NSString *)stringTextValue;
 
 @end

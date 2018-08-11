@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) InstagramEngine *engine;
 @property (nonatomic, strong) NSMutableArray *reviews;
-
+@property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 
 typedef enum {
     BANNER = 0,
@@ -61,8 +61,11 @@ typedef enum {
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     self.title = self.location.title;
-    
+    self.tableView.allowsSelection = NO;
+
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self initImagePicker];
     
     [self fetchReviews];
     [self registerNibs];
@@ -70,7 +73,17 @@ typedef enum {
 
 -(void)backTap {
     [self.navigationController popViewControllerAnimated:YES];
-    
+}
+
+-(void)initImagePicker {
+    self.imagePickerVC = [UIImagePickerController new];
+    self.imagePickerVC.delegate = self;
+    self.imagePickerVC.allowsEditing = YES;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
 }
 
 # pragma mark - Register nibs
@@ -163,6 +176,7 @@ typedef enum {
         case TITLE_PHOTOS: {
             TitleTableViewCell *titleTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCell"];
             [titleTableViewCell setupTitleCell:@"Photos"];
+            titleTableViewCell.addDelegate = self;
             return titleTableViewCell;
         }
         case IMAGE_COLLECTION: {
@@ -187,7 +201,11 @@ typedef enum {
 #pragma mark - label delegate
 
 -(void)didTapLabel:(NSString *)segueIdentifier {
-    [self performSegueWithIdentifier:segueIdentifier sender:nil];
+    if(User.currentUser == nil) {
+        [self showNotLoggedInWarning];
+    } else {
+        [self performSegueWithIdentifier:segueIdentifier sender:nil];
+    }
 }
 
 #pragma mark - info tap delegate
@@ -267,6 +285,17 @@ typedef enum {
         }
     }
     return shouldHighlightBookMark;
+}
+
+#pragma mark - title table view protocol
+
+-(void)didTapAdd {
+    if(User.currentUser == nil) {
+        [self showNotLoggedInWarning];
+        return;
+    } else {
+        [self presentViewController:self.imagePickerVC animated:YES completion:nil];
+    }
 }
 
 #pragma mark - Review Delegate

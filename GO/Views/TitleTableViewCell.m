@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    [self registerGestures];
 }
 
 -(void)setupTitleCell:(NSString *)stringTextValue {
@@ -20,6 +20,19 @@
         [self.plus setHidden:TRUE];
     }
     self.title.text = stringTextValue;
+}
+
+-(void)registerGestures {
+    self.plus.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedAdd)];
+    tapGesture.numberOfTapsRequired = 1;
+    [self.plus addGestureRecognizer:tapGesture];
+}
+
+#pragma mark - actions
+
+-(void)tappedAdd {
+    [self.addDelegate didTapAdd];
 }
 
 #pragma mark - visuals
