@@ -59,7 +59,8 @@ typedef enum {
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     self.title = self.location.title;
-    
+    self.tableView.allowsSelection = NO;
+
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self initImagePicker];
