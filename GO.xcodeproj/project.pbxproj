@@ -65,6 +65,8 @@
 		CCB3C9F720FFE6070095CD59 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB3C9F620FFE6070095CD59 /* InfoTableViewCell.m */; };
 		CCD91637211B676F00E7B284 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD91636211B676F00E7B284 /* View.xib */; };
 		CCD9163A211B8EAD00E7B284 /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD91639211B8EAD00E7B284 /* LoadView.m */; };
+		CCD9163E211E721900E7B284 /* BannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD9163D211E721900E7B284 /* BannerTableViewCell.xib */; };
+		CCD91641211E727200E7B284 /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD91640211E727200E7B284 /* BannerTableViewCell.m */; };
 		CCEF419D2106650200A13DA2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF419C2106650200A13DA2 /* User.m */; };
 		CCEF419F2106831800A13DA2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEF419E2106831800A13DA2 /* Login.storyboard */; };
 		CCEF41A22106859B00A13DA2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEF41A12106859B00A13DA2 /* LoginViewController.m */; };
@@ -225,6 +227,9 @@
 		CCD91636211B676F00E7B284 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		CCD91638211B8EAD00E7B284 /* LoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
 		CCD91639211B8EAD00E7B284 /* LoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
+		CCD9163D211E721900E7B284 /* BannerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableViewCell.xib; sourceTree = "<group>"; };
+		CCD9163F211E727200E7B284 /* BannerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerTableViewCell.h; sourceTree = "<group>"; };
+		CCD91640211E727200E7B284 /* BannerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
 		CCEF419B2106650200A13DA2 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CCEF419C2106650200A13DA2 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		CCEF419E2106831800A13DA2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -326,6 +331,9 @@
 		19E7AF6020FD1C8B004B98CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CCD9163F211E727200E7B284 /* BannerTableViewCell.h */,
+				CCD91640211E727200E7B284 /* BannerTableViewCell.m */,
+				CCD9163D211E721900E7B284 /* BannerTableViewCell.xib */,
 				CCB3C9E820FFB0690095CD59 /* ReviewsTableViewCell.h */,
 				CCB3C9E920FFB0690095CD59 /* ReviewsTableViewCell.m */,
 				CCB3C9F120FFDB690095CD59 /* ReviewTableViewCell.xib */,
@@ -646,6 +654,7 @@
 				19A2529F2107DEFA00860637 /* CategoryCollectionViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
+				CCD9163E211E721900E7B284 /* BannerTableViewCell.xib in Resources */,
 				19AD70B22108EAF8008A72EF /* PhotoGallery.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
 				CCEF41AC21079F1600A13DA2 /* ProfileTableViewCell.xib in Resources */,
@@ -801,6 +810,7 @@
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CCEF41AF2107D80200A13DA2 /* SettingsViewController.m in Sources */,
+				CCD91641211E727200E7B284 /* BannerTableViewCell.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
 				19AD70C2210E64FE008A72EF /* CurrentLocationPosition.m in Sources */,
 				19AD70B021079368008A72EF /* APIManager.m in Sources */,

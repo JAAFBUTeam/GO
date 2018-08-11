@@ -18,6 +18,7 @@
 #import "APIManager.h"
 #import "PhotoCollectionViewController.h"
 #import "MoreTableViewCell.h"
+#import "BannerTableViewCell.h"
 
 @interface DetailsViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -27,14 +28,15 @@
 
 
 typedef enum {
-    INFO = 0,
-    TITLE_PHOTOS = 1,
-    IMAGE_COLLECTION = 2,
-    MORE_IMAGES = 3,
-    TITLE_REVIEW = 4,
-    REVIEW_1 = 5,
-    REVIEW_2 = 6,
-    MORE_REVIEWS = 7
+    BANNER = 0,
+    INFO = 1,
+    TITLE_PHOTOS = 2,
+    IMAGE_COLLECTION = 3,
+    MORE_IMAGES = 4,
+    TITLE_REVIEW = 5,
+    REVIEW_1 = 6,
+    REVIEW_2 = 7,
+    MORE_REVIEWS = 8
 } cell_state;
 
 @end
@@ -53,7 +55,7 @@ typedef enum {
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
+    
     self.navigationController.navigationBar.prefersLargeTitles = NO;
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backTap)];
     self.navigationItem.leftBarButtonItem = backButton;
@@ -68,7 +70,7 @@ typedef enum {
 
 -(void)backTap {
     [self.navigationController popViewControllerAnimated:YES];
-
+    
 }
 
 # pragma mark - Register nibs
@@ -94,19 +96,31 @@ typedef enum {
     
     UINib *featureTableViewCell = [UINib nibWithNibName:@"FeatureTableViewCell" bundle:nil];
     [self.tableView registerNib:featureTableViewCell forCellReuseIdentifier:@"FeatureTableViewCell"];
+    
+    UINib *bannerTableViewCell = [UINib nibWithNibName:@"BannerTableViewCell" bundle:nil];
+    [self.tableView registerNib:bannerTableViewCell forCellReuseIdentifier:@"BannerTableViewCell"];
+    
 }
 
 # pragma mark - Tableview Datasource
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-        switch(indexPath.section){
-//        case CAROUSEL: {
-//            CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-//            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
-//            [carouselTableViewCell setLocationProperty:_location];
-//            [carouselTableViewCell setDatasourceAndDelegate];
-//            return carouselTableViewCell;
-//        }
+    switch(indexPath.section){
+            //        case CAROUSEL: {
+            //            CarouselTableViewCell *carouselTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+            //            [carouselTableViewCell setCarouselTypeProperties:iCarouselTypeLinear];
+            //            [carouselTableViewCell setLocationProperty:_location];
+            //            [carouselTableViewCell setDatasourceAndDelegate];
+            //            return carouselTableViewCell;
+            //        }
+        case BANNER: {
+            BannerTableViewCell *bannerTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"BannerTableViewCell"];
+            UIImageView *imageView = [[UIImageView alloc] init];
+            NSURL *url =  [[NSURL alloc] initWithString: self.location.imageURLs[0]];
+            [imageView setImageWithURL:url];
+            [bannerTableViewCell setBanner: imageView];
+            return bannerTableViewCell;
+        }
         case INFO: {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
             [infoTableViewCell setTableProperties:_location];
@@ -233,7 +247,7 @@ typedef enum {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 8;
+    return 9;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -259,7 +273,7 @@ typedef enum {
 
 - (void) didTapMore:(User *) sender {
     NSLog(@"We made it!");
-
+    
     if (sender != nil && sender == User.currentUser) {
         
         UIAlertController * view=   [UIAlertController
@@ -268,14 +282,14 @@ typedef enum {
                                      preferredStyle:UIAlertControllerStyleActionSheet];
         
         UIAlertAction* edit = [UIAlertAction
-                             actionWithTitle:@"Edit Review"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 //Do some thing here
-                                 [view dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
+                               actionWithTitle:@"Edit Review"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                                   //Do some thing here
+                                   [view dismissViewControllerAnimated:YES completion:nil];
+                                   
+                               }];
         UIAlertAction* cancel = [UIAlertAction
                                  actionWithTitle:@"Cancel"
                                  style:UIAlertActionStyleDefault
