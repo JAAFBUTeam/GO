@@ -275,7 +275,12 @@ typedef enum {
 #pragma mark - title table view protocol
 
 -(void)didTapAdd {
-    [self presentViewController:self.imagePickerVC animated:YES completion:nil];
+    if(User.currentUser == nil) {
+        [self showNotLoggedInWarning];
+        return;
+    } else {
+        [self presentViewController:self.imagePickerVC animated:YES completion:nil];
+    }
 }
 
 #pragma mark - Review Delegate
