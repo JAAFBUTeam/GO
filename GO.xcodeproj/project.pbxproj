@@ -12,6 +12,7 @@
 		192A13972101499A0005481A /* PhotoCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192A13952101499A0005481A /* PhotoCollectionView.xib */; };
 		192A139921014CC80005481A /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192A139821014CC80005481A /* PhotoCollectionViewCell.xib */; };
 		192A139C21014CE70005481A /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A139B21014CE70005481A /* PhotoCollectionViewCell.m */; };
+		1933ED1A2120B32C00A0850E /* PulleyContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1933ED192120B32C00A0850E /* PulleyContainer.storyboard */; };
 		199AA207211A2CF000D91C96 /* ListTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199AA206211A2CF000D91C96 /* ListTabBar.storyboard */; };
 		19A251E021011C2A00860637 /* CarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */; };
 		19A251E121011C2A00860637 /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A251DF21011C2A00860637 /* CarouselTableViewCell.m */; };
@@ -29,6 +30,7 @@
 		19A66D92211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D90211A8495001A9601 /* CategoryHeaderCollectionViewCell.xib */; };
 		19A66D9E211C1D85001A9601 /* TitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66D9C211C1D85001A9601 /* TitleCollectionViewCell.m */; };
 		19A66D9F211C1D85001A9601 /* TitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A66D9D211C1D85001A9601 /* TitleCollectionViewCell.xib */; };
+		19A66DC3211E4047001A9601 /* PulleyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A66DC2211E4047001A9601 /* PulleyViewController.m */; };
 		19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */; };
 		19AD70AC21069127008A72EF /* TermsAndConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */; };
 		19AD70B021079368008A72EF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AD70AF21079368008A72EF /* APIManager.m */; };
@@ -107,6 +109,7 @@
 		192A139821014CC80005481A /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		192A139A21014CE70005481A /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		192A139B21014CE70005481A /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		1933ED192120B32C00A0850E /* PulleyContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PulleyContainer.storyboard; sourceTree = "<group>"; };
 		199AA206211A2CF000D91C96 /* ListTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListTabBar.storyboard; sourceTree = "<group>"; };
 		19A251DD21011C2A00860637 /* CarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselTableViewCell.xib; sourceTree = "<group>"; };
 		19A251DE21011C2A00860637 /* CarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 		19A66DBE211DF79B001A9601 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		19A66DBF211DF79B001A9601 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
 		19A66DC0211DF79B001A9601 /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		19A66DC1211E4047001A9601 /* PulleyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulleyViewController.h; sourceTree = "<group>"; };
+		19A66DC2211E4047001A9601 /* PulleyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PulleyViewController.m; sourceTree = "<group>"; };
 		19AD70A821068A17008A72EF /* AgreeToTerms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreeToTerms.storyboard; sourceTree = "<group>"; };
 		19AD70AA21069127008A72EF /* TermsAndConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsViewController.h; sourceTree = "<group>"; };
 		19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsViewController.m; sourceTree = "<group>"; };
@@ -514,6 +519,8 @@
 				19AD70AB21069127008A72EF /* TermsAndConditionsViewController.m */,
 				CCA5D1FA210FD282000D4F0C /* WriteViewController.h */,
 				CCA5D1FB210FD282000D4F0C /* WriteViewController.m */,
+				19A66DC1211E4047001A9601 /* PulleyViewController.h */,
+				19A66DC2211E4047001A9601 /* PulleyViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -532,6 +539,7 @@
 				CC1307CF20EFDEF0007E8DD5 /* LaunchScreen.storyboard */,
 				CC73AE04210235A7001DA31A /* ReviewsView.storyboard */,
 				19AD70B12108EAF8008A72EF /* PhotoGallery.storyboard */,
+				1933ED192120B32C00A0850E /* PulleyContainer.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -654,6 +662,7 @@
 				19A2529F2107DEFA00860637 /* CategoryCollectionViewCell.xib in Resources */,
 				19ADC2D220FD3C4A00A85BF6 /* Main.storyboard in Resources */,
 				19AD70A921068A17008A72EF /* AgreeToTerms.storyboard in Resources */,
+				1933ED1A2120B32C00A0850E /* PulleyContainer.storyboard in Resources */,
 				CCD9163E211E721900E7B284 /* BannerTableViewCell.xib in Resources */,
 				19AD70B22108EAF8008A72EF /* PhotoGallery.storyboard in Resources */,
 				CC83A36D20F92E4F00117065 /* DetailView.storyboard in Resources */,
@@ -810,6 +819,7 @@
 				CC1307C620EFDEEE007E8DD5 /* AppDelegate.m in Sources */,
 				CC83A36820F9292200117065 /* DetailsViewController.m in Sources */,
 				CCEF41AF2107D80200A13DA2 /* SettingsViewController.m in Sources */,
+				19A66DC3211E4047001A9601 /* PulleyViewController.m in Sources */,
 				CCD91641211E727200E7B284 /* BannerTableViewCell.m in Sources */,
 				CC83A36220F9290600117065 /* MapViewController.m in Sources */,
 				19AD70C2210E64FE008A72EF /* CurrentLocationPosition.m in Sources */,
@@ -978,14 +988,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UG759YXVN;
+				DEVELOPMENT_TEAM = AHZV25Q2LU;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Amy.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajaita.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -997,14 +1007,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UG759YXVN;
+				DEVELOPMENT_TEAM = AHZV25Q2LU;
 				INFOPLIST_FILE = GO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Amy.GO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ajaita.GO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

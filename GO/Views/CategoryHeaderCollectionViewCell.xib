@@ -18,23 +18,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="667" height="374"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="go_header" translatesAutoresizingMaskIntoConstraints="NO" id="ZI4-pm-s66">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVb-QE-Nlv">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="374"/>
-                    </imageView>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GI9-dn-3oR">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgD-ED-uOP" customClass="ISHPullUpHandleView">
+                                        <rect key="frame" x="213" y="51" width="240" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="ZI4-pm-s66" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gbu-Nc-v9G"/>
-                <constraint firstItem="ZI4-pm-s66" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JdJ-FK-ezT"/>
-                <constraint firstAttribute="trailing" secondItem="ZI4-pm-s66" secondAttribute="trailing" id="YfL-GX-aki"/>
-                <constraint firstAttribute="bottom" secondItem="ZI4-pm-s66" secondAttribute="bottom" id="gpV-mL-1gY"/>
+                <constraint firstAttribute="bottom" secondItem="xVb-QE-Nlv" secondAttribute="bottom" id="AUk-Vu-PIL"/>
+                <constraint firstItem="xVb-QE-Nlv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FQC-pJ-rLc"/>
+                <constraint firstAttribute="trailing" secondItem="xVb-QE-Nlv" secondAttribute="trailing" id="RZ4-3t-FKH"/>
+                <constraint firstItem="xVb-QE-Nlv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="SkP-GZ-Uqm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="667" height="374"/>
+            <connections>
+                <outlet property="handleView" destination="PgD-ED-uOP" id="BNf-ZH-XpC"/>
+                <outlet property="topView" destination="PgD-ED-uOP" id="RPK-T8-vuF"/>
+            </connections>
             <point key="canvasLocation" x="238.5" y="221"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="go_header" width="333" height="187"/>
-    </resources>
 </document>

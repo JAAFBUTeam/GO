@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Nearby-->
+        <!--MapViewController-->
         <scene sceneID="nfk-gQ-GIF">
             <objects>
-                <viewController storyboardIdentifier="mapView" id="vrG-32-0ix" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" title="MapViewController" id="vrG-32-0ix" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CUa-fe-ADp" customClass="MBBackgroundView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,15 +42,15 @@
         <!--DetailView-->
         <scene sceneID="a4W-yA-hK1">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailView" id="3yL-ei-iml" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="MapView" storyboardName="DetailView" id="3yL-ei-iml" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rps-j1-GSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1662" y="131"/>
         </scene>
-        <!--Map-->
+        <!--MapViewController-->
         <scene sceneID="tQC-Bb-yoj">
             <objects>
-                <navigationController storyboardIdentifier="navBarSB2" automaticallyAdjustsScrollViewInsets="NO" id="nHQ-xe-dVq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navBarSB2" title="MapViewController" automaticallyAdjustsScrollViewInsets="NO" id="nHQ-xe-dVq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="mapfill24" selectedImage="map24" id="FiW-Nz-oz1">
                         <color key="badgeColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>

@@ -18,6 +18,7 @@ target 'GO' do
 	pod 'iCarousel'	
 	pod 'SPSlideTabBarController'
 	pod 'HCSStarRatingView', '~> 1.5'
+    pod 'ISHPullUp'
 
 
 	

@@ -28,12 +28,10 @@
 @property (nonatomic, assign) CGFloat minInteritemSpacing;
 
 typedef enum {
-    HEADER = 0,
-    TITLE_FEATURED = 1,
-    CAROUSEL = 2,
-    TITLE_CATEGORIES = 3,
-    CATEGORIES = 4,
-    MORE_REVIEWS = 5,
+    TITLE_FEATURED = 0,
+    CAROUSEL = 1,
+    TITLE_CATEGORIES = 2,
+    CATEGORIES = 3,
 } cell_state;
 
 @end
@@ -46,7 +44,16 @@ typedef enum {
     [self registerNibs];
     [self setTableDimensions];
     [self initCategoriesArray];
+    //[self setCategoryCell:<#(CategoryCollectionViewCell *)#> item:<#(NSInteger)#>]
     [CurrentLocationPosition sharedInstance];
+    
+    //set up handle view
+    self.pullUpController = [[ISHPullUpViewController alloc] init];
+    self.firstAppearanceCompleted = true;
+    self.pullUpController.stateDelegate = self;
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.topView addGestureRecognizer:gesture];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -146,7 +153,7 @@ typedef enum {
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if(section != 4) {
+    if(section != 3) {
         return 1;
     } else {
         return self.numberOfCategories;
@@ -156,29 +163,23 @@ typedef enum {
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     switch(indexPath.section){
-        case HEADER: { //index 0
-            CategoryHeaderCollectionViewCell *headerCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell" forIndexPath:indexPath];
-            return headerCell;
-        }
-        case TITLE_FEATURED: { //index 1
+        case TITLE_FEATURED: { //index 0
             TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
             [titleCollectionViewCell setLabelText:@"Featured"];
             return titleCollectionViewCell;
         }
-        case CAROUSEL: { //index 2
+        case CAROUSEL: { //index 1
             FeatureCollectionViewCell *featureViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"FeatureCollectionViewCell" forIndexPath:indexPath];
             return featureViewCell;
         }
-        case TITLE_CATEGORIES: { //index 3
+        case TITLE_CATEGORIES: { //index 2
             TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
             [titleCollectionViewCell setLabelText:@"Categories"];
             return titleCollectionViewCell;
         }
-        case CATEGORIES: { //index 4
+        case CATEGORIES: { //index 3
             CategoryCollectionViewCell *categoryCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
-            if ([[User.currentUser favorites] count] != 0) {
             [self setCategoryCell:categoryCell item:indexPath.item];
-            }
             return categoryCell;
         }
         default:{
@@ -190,7 +191,7 @@ typedef enum {
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 4) {
+    if(indexPath.section == 3) {
         switch(indexPath.item) {
             case ALL: {
                 [GlobalFilters sharedInstance].categoryType = ALL;
@@ -226,13 +227,11 @@ typedef enum {
 # pragma mark - collection view layout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return CGSizeMake(self.phoneWidth, 220);
-    } else if (indexPath.section == 1 || indexPath.section == 3) {
+    if (indexPath.section == 0 || indexPath.section == 2) {
         return CGSizeMake(self.phoneWidth, 40);
-    } else if (indexPath.section == 2) { // carousel
+    } else if (indexPath.section == 1) { // carousel
         return CGSizeMake(self.phoneWidth, self.imageHeight + 150);
-    } else if (indexPath.section == 4) {
+    } else if (indexPath.section == 3) {
         return [self getCategoryItemSize]; //categories
     } else {
         return CGSizeMake(self.phoneWidth, self.imageHeight);
@@ -240,7 +239,7 @@ typedef enum {
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    if(section != 4) {
+    if(section != 3) {
         return UIEdgeInsetsMake(0, 0, 0, 0);
     } else {
         return UIEdgeInsetsMake(self.categorySectionInset, self.categorySectionInset, self.categorySectionInset, self.categorySectionInset);
@@ -254,6 +253,50 @@ typedef enum {
     layout.itemSize = CGSizeMake(categoryWidth, categoryHeight);
     return layout.itemSize;
 }
+
+-(void)handleTap:(UITapGestureRecognizer *)gesture {
+    if ([self.pullUpController isLocked]){
+        return;
+    }
+    
+    [_pullUpController toggleStateAnimated:true];
+}
+
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController maximumHeightForBottomViewController:(nonnull UIViewController *)bottomVC maximumAvailableHeight:(CGFloat)maximumAvailableHeight {
+//}
+//
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
+//}
+//
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
+//}
+//
+//- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forBottomViewController:(nonnull UIViewController *)contentVC {
+//}
+//
+
+
+- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController didChangeToState:(ISHPullUpState)state {
+    [self.handleView setState:[ISHPullUpHandleView handleStateForPullUpState:state] animated:_firstAppearanceCompleted];
+    //    [UIView animateWithDuration:0.25 animations:^{
+    //        if (state == ISHPullUpStateCollapsed){
+    //            self.topView.alpha = 0;
+    //        } else {
+    //            self.topView.alpha = 1;
+    //        }
+    //    }];
+}
+
+//func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
+//    topLabel.text = textForState(state);
+//    handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
+//
+//    // Hide the scrollview in the collapsed state to avoid collision
+//    // with the soft home button on iPhone X
+//    UIView.animate(withDuration: 0.25) { [weak self] in
+//        self?.scrollView.alpha = (state == .collapsed) ? 0 : 1;
+//    }
+//}
 
 #pragma mark - Navigation
 

@@ -1,0 +1,6 @@
+module Pods_GO {
+  umbrella header "Pods-GO-umbrella.h"
+
+  export *
+  module * { export * }
+}

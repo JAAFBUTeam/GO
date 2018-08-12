@@ -32,8 +32,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"Main"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PulleyContainer" bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"PulleyContainer"];
     self.window.rootViewController = viewController;
     
     UITabBar.appearance.unselectedItemTintColor = [UIColor blackColor];
