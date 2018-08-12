@@ -1,24 +1,36 @@
 //
-//  CategoryHeaderCollectionViewCell.m
+//  testViewController.m
 //  GO
 //
-//  Created by Ajaita Saini on 8/7/18.
+//  Created by Ajaita Saini on 8/11/18.
 //  Copyright © 2018 Amy Liu. All rights reserved.
 //
 
-#import "CategoryHeaderCollectionViewCell.h"
+#import "testViewController.h"
+#import "ISHPullUp/ISHPullUpHandleView.h"
+#import "ISHPullUp/ISHPullUpRoundedView.h"
+#import "ISHPullUp/ISHPullUpViewController.h"
 
-@implementation CategoryHeaderCollectionViewCell
+@interface testViewController ()
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+@end
+
+@implementation testViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     self.pullUpController = [[ISHPullUpViewController alloc] init];
     self.firstAppearanceCompleted = true;
     self.pullUpController.stateDelegate = self;
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.topView addGestureRecognizer:gesture];
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void)handleTap:(UITapGestureRecognizer *)gesture {
@@ -46,13 +58,13 @@
 
 - (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController didChangeToState:(ISHPullUpState)state {
     [self.handleView setState:[ISHPullUpHandleView handleStateForPullUpState:state] animated:_firstAppearanceCompleted];
-//    [UIView animateWithDuration:0.25 animations:^{
-//        if (state == ISHPullUpStateCollapsed){
-//            self.topView.alpha = 0;
-//        } else {
-//            self.topView.alpha = 1;
-//        }
-//    }];
+    //    [UIView animateWithDuration:0.25 animations:^{
+    //        if (state == ISHPullUpStateCollapsed){
+    //            self.topView.alpha = 0;
+    //        } else {
+    //            self.topView.alpha = 1;
+    //        }
+    //    }];
 }
 
 //func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
@@ -65,5 +77,15 @@
 //        self?.scrollView.alpha = (state == .collapsed) ? 0 : 1;
 //    }
 //}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

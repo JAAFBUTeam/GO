@@ -1,8 +1,8 @@
 //
-//  CategoryHeaderCollectionViewCell.h
+//  testViewController.h
 //  GO
 //
-//  Created by Ajaita Saini on 8/7/18.
+//  Created by Ajaita Saini on 8/11/18.
 //  Copyright © 2018 Amy Liu. All rights reserved.
 //
 
@@ -11,11 +11,11 @@
 #import "ISHPullUp/ISHPullUpRoundedView.h"
 #import "ISHPullUp/ISHPullUpViewController.h"
 
-@interface CategoryHeaderCollectionViewCell : UICollectionViewCell <ISHPullUpSizingDelegate, ISHPullUpStateDelegate>
+@interface testViewController : UIViewController <ISHPullUpSizingDelegate, ISHPullUpStateDelegate>
 
-@property (weak, nonatomic) IBOutlet ISHPullUpHandleView *handleView;
-@property (weak, nonatomic) IBOutlet ISHPullUpHandleView *topView;
 @property (strong, nonatomic) ISHPullUpViewController *pullUpController;
 @property bool firstAppearanceCompleted;
+@property (strong, nonatomic) IBOutlet ISHPullUpHandleView *topView;
+@property (weak, nonatomic) IBOutlet ISHPullUpHandleView *handleView;
 
 @end

@@ -47,6 +47,14 @@ typedef enum {
     [self setTableDimensions];
     [self initCategoriesArray];
     [CurrentLocationPosition sharedInstance];
+    
+    //set up handle view
+    self.pullUpController = [[ISHPullUpViewController alloc] init];
+    self.firstAppearanceCompleted = true;
+    self.pullUpController.stateDelegate = self;
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.topView addGestureRecognizer:gesture];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -157,8 +165,9 @@ typedef enum {
     
     switch(indexPath.section){
         case HEADER: { //index 0
-            CategoryHeaderCollectionViewCell *headerCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"CategoryHeaderCollectionViewCell" forIndexPath:indexPath];
-            return headerCell;
+            TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
+            [titleCollectionViewCell setLabelText:@"TITLE"];
+            return titleCollectionViewCell;
         }
         case TITLE_FEATURED: { //index 1
             TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
@@ -252,6 +261,50 @@ typedef enum {
     layout.itemSize = CGSizeMake(categoryWidth, categoryHeight);
     return layout.itemSize;
 }
+
+-(void)handleTap:(UITapGestureRecognizer *)gesture {
+    if ([self.pullUpController isLocked]){
+        return;
+    }
+    
+    [_pullUpController toggleStateAnimated:true];
+}
+
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController maximumHeightForBottomViewController:(nonnull UIViewController *)bottomVC maximumAvailableHeight:(CGFloat)maximumAvailableHeight {
+//}
+//
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
+//}
+//
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
+//}
+//
+//- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forBottomViewController:(nonnull UIViewController *)contentVC {
+//}
+//
+
+
+- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController didChangeToState:(ISHPullUpState)state {
+    [self.handleView setState:[ISHPullUpHandleView handleStateForPullUpState:state] animated:_firstAppearanceCompleted];
+    //    [UIView animateWithDuration:0.25 animations:^{
+    //        if (state == ISHPullUpStateCollapsed){
+    //            self.topView.alpha = 0;
+    //        } else {
+    //            self.topView.alpha = 1;
+    //        }
+    //    }];
+}
+
+//func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
+//    topLabel.text = textForState(state);
+//    handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
+//
+//    // Hide the scrollview in the collapsed state to avoid collision
+//    // with the soft home button on iPhone X
+//    UIView.animate(withDuration: 0.25) { [weak self] in
+//        self?.scrollView.alpha = (state == .collapsed) ? 0 : 1;
+//    }
+//}
 
 #pragma mark - Navigation
 
