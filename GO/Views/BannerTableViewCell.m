@@ -16,7 +16,9 @@
 }
 
 - (void) setBanner: (UIImageView *)image {
-    self.image = image;
+    UIImageView *myImage = [[UIImageView alloc] initWithFrame: self.bounds];
+    myImage.image = image.image;
+    [self addSubview:myImage];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -10,8 +10,6 @@
 
 @interface BannerTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-
 - (void) setBanner: (UIImageView *)image;
 
 @end

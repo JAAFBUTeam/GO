@@ -130,7 +130,9 @@ typedef enum {
             BannerTableViewCell *bannerTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"BannerTableViewCell"];
             UIImageView *imageView = [[UIImageView alloc] init];
             NSURL *url =  [[NSURL alloc] initWithString: self.location.imageURLs[0]];
-            [imageView setImageWithURL:url];
+            //[imageView setImageWithURL:url];
+            NSData *imageData = [NSData dataWithContentsOfURL:url];
+            imageView.image = [UIImage imageWithData:imageData];
             [bannerTableViewCell setBanner: imageView];
             return bannerTableViewCell;
         }
@@ -138,7 +140,7 @@ typedef enum {
             InfoTableViewCell *infoTableViewCell = [_tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
             [infoTableViewCell setTableProperties:_location];
             [infoTableViewCell highlightBookmark:[self currLocationInCurrUserFavorites:self.location]];
-            infoTableViewCell.title.text = @"Details";
+            infoTableViewCell.title.text = self.location.title;
             infoTableViewCell.labelDelegate = self;
             return infoTableViewCell;
         }
@@ -269,8 +271,10 @@ typedef enum {
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2){
+    if (indexPath.section == 3){
         return 250;
+    } else if (indexPath.section == 0) {
+        return 225;
     }
     return UITableViewAutomaticDimension;
 }

@@ -79,9 +79,6 @@
     Location *location = [review.location fetchIfNeeded];
     NSString *firstImageURL = location.imageURLs.firstObject;
     NSURL *url = [[NSURL alloc] initWithString:firstImageURL];
-    //NSData *imageData = [NSData dataWithContentsOfURL:url];
-    //[UIImage imageWithData:imageData]];
-    //self.userImage.file
     [self.locationImage setImageWithURL:url];
     
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
