@@ -12,6 +12,12 @@
 
 @implementation ReviewsTableViewCell
 
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self registerGestures];
+}
+
 #pragma mark - Visuals
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
@@ -33,7 +39,6 @@
 #pragma mark - View Life Cycle
 
 -(void)setupReviewsTableViewCell:(Review *) review {
-    
     if (review != nil) {
     self.review = review;
     User *user = [review.user fetchIfNeeded];
@@ -63,12 +68,11 @@
         self.username.text = nil;
         self.rating.text = nil;
         self.reviewText.text = nil;
-        self.button.alpha = 0.0;
+        self.moreButton.alpha = 0.0;
     }
 }
 
 -(void)setupReviewsTableViewCell:(User *) user withReview: (Review *) review {
-
 //    user = [user fetchIfNeeded];
     
     self.review = review;
@@ -94,15 +98,21 @@
     starRatingView.value = (double) review.rating;
     starRatingView.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
     starRatingView.userInteractionEnabled = NO;
+    [self.contentView addSubview:starRatingView];
     [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
     
     self.reviewText.text = review.reviewText;
-    
 }
 
-- (IBAction)tappedMore:(id)sender {
+-(void)registerGestures {
+    self.moreButton.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedMore)];
+    tapGesture.numberOfTapsRequired = 1;
+    [self.moreButton addGestureRecognizer:tapGesture];
+}
+
+-(void)tappedMore {
     [self.delegate didTapMore:self.review.user];
-    NSLog(@"Thanks for the tap!");
 }
 
 #pragma mark - Conversion

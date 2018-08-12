@@ -17,7 +17,7 @@
 #import "ReviewViewController.h"
 #import "User.h"
 
-@interface ProfileViewController () <ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
+@interface ProfileViewController () <CarouselImageTapDelegate, ReviewsTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *reviews;
@@ -100,7 +100,9 @@
         return titleTableViewCell;
     } else { // Review
         ReviewsTableViewCell *reviewTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:@"ReviewTableViewCell"];
+        if ([self.reviews count] != 0) {
         [reviewTableViewCell setupReviewsTableViewCell:User.currentUser withReview:self.reviews[indexPath.row]];
+        }
         return reviewTableViewCell;
     }
 }

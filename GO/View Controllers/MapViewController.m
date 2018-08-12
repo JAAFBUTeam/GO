@@ -36,7 +36,7 @@
     self.locations = [[NSMutableArray alloc] init];
     // self.locations = [Location sharedLocations];
     //[self addLocations];
-    // [Location postLocation:nil];
+    //[Location postLocation:nil];
     [self fetchLocations];
 
 }
