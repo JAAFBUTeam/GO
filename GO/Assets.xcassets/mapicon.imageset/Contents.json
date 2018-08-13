@@ -6,6 +6,10 @@
     },
     {
       "idiom" : "universal",
+<<<<<<< HEAD
+=======
+      "filename" : "mapicon.png",
+>>>>>>> 361c2a4bbe00cb88748bb57b5fd1feab570401c4
       "scale" : "2x"
     },
     {
