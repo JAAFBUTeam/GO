@@ -128,6 +128,9 @@
         } else {
             NSLog(@"Data has loaded successfully.");
         }
+
+        [view addSubview:image];
+        //[imageView setImageWithURL:url];
         image.image = [UIImage imageWithData:imageData];
         
         // [image setImageWithURL:self.locationImagesArray[index]];
@@ -154,8 +157,6 @@
         [NSLayoutConstraint activateConstraints:@[[title.leadingAnchor constraintEqualToAnchor:view.leadingAnchor constant:8],
                                                   [title.trailingAnchor constraintEqualToAnchor:view.trailingAnchor constant:-8],
                                                   [title.bottomAnchor constraintEqualToAnchor:view.bottomAnchor constant:-8]]];
-        
-        
     }
     [self registerGestures:view];
     view.layer.cornerRadius = 5;

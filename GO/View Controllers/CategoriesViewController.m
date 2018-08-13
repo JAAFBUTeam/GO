@@ -50,6 +50,7 @@ typedef enum {
     self.pullUpController = [[ISHPullUpViewController alloc] init];
     self.firstAppearanceCompleted = true;
     self.pullUpController.stateDelegate = self;
+    self.pullUpController.sizingDelegate = self;
     self.topView.layer.cornerRadius = 10;
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
@@ -263,6 +264,8 @@ typedef enum {
     [_pullUpController toggleStateAnimated:true];
 }
 
+# pragma mark - handle view delegate
+
 //- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController maximumHeightForBottomViewController:(nonnull UIViewController *)bottomVC maximumAvailableHeight:(CGFloat)maximumAvailableHeight {
 //}
 //
@@ -274,10 +277,10 @@ typedef enum {
 - (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
     return 100;
 }
-//
+
 //- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forBottomViewController:(nonnull UIViewController *)contentVC {
 //}
-//
+
 
 
 - (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController didChangeToState:(ISHPullUpState)state {
