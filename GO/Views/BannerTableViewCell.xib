@@ -16,16 +16,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZVh-yp-edA" id="VC9-dh-6Xg">
                 <rect key="frame" x="0.0" y="0.0" width="863" height="409.5"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m77-wE-c2P">
-                        <rect key="frame" x="0.0" y="0.0" width="863" height="410"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                </subviews>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="image" destination="m77-wE-c2P" id="KP2-Bz-a8c"/>
-            </connections>
             <point key="canvasLocation" x="12.5" y="294"/>
         </tableViewCell>
     </objects>
