@@ -130,6 +130,14 @@
     [self registerGestures:view];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = true;
+    
+    /*
+    view.layer.shadowOffset = CGSizeMake(0, 3); //default is (0.0, -3.0)
+    view.layer.shadowColor = [UIColor blackColor].CGColor; //default is black
+    view.layer.shadowRadius = 1.0; //default is 3.0
+    view.layer.shadowOpacity = .5;
+    */
+    
     return view;
 }
 
