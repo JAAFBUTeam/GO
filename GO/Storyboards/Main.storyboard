@@ -47,7 +47,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.77089576198630128" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ruf-tU-NFT" firstAttribute="leading" secondItem="IPn-tU-xGz" secondAttribute="leading" id="6cE-0Z-z81"/>
                             <constraint firstItem="Ruf-tU-NFT" firstAttribute="centerY" secondItem="ei0-6X-jjl" secondAttribute="centerY" id="C1T-Wx-RKL"/>
