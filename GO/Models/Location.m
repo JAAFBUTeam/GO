@@ -44,7 +44,7 @@
 
 + (void) postLocation: (PFBooleanResultBlock  _Nullable)completion { // posts all locations to heroku
     
-    NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
+    /*NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
     Location *newLocation = [Location new];
     newLocation.title = @"X-ray of a Wolf";
     newLocation.synopsis = @"Skeletal wolf mural!";
@@ -61,12 +61,12 @@
     [newLocation.imageURLs addObject:@"https://c1.staticflickr.com/8/7361/13908542131_749f5c230e_b.jpg"];
     [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrlnDZ058MT3iQuKVvz9d0XZGWovDNBxYdX_tmycKYWykSBBnV"];
     [newLocation.imageURLs addObject:@"https://media.timeout.com/images/104994797/image.jpg"];
-    [newLocation.imageURLs addObject:@"https://s3-media4.fl.yelpcdn.com/bphoto/bN_CHLzqPq1MV64QR_giEA/o.jpg"];
+    [newLocation.imageURLs addObject:@"https://s3-media4.fl.yelpcdn.com/bphoto/bN_CHLzqPq1MV64QR_giEA/o.jpg"]; */
     
-    Location *newLocation2 = [Location new];
+   /* Location *newLocation2 = [Location new];
     newLocation2.title = @"Honey Bear Mural";
     newLocation2.synopsis = @"Just a few of the many honey bears that can be seen around the streets of San Francisco!";
-    newLocation2.address = @"236 Monterey Blvd, San Francisco, CA 94131";
+    newLocation2.address = @"Oak St & Divisadero St, San Francisco, CA 94117";
     newLocation2.lat = 37.7730849;
     newLocation2.lon = -122.4377109;
     newLocation2.rating = 4.2;
@@ -80,10 +80,10 @@
     [newLocation2.imageURLs addObject:@"http://static1.squarespace.com/static/5763385ebebafb91cc355c36/576342579de4bbcd8d865c49/592646e7725e25f7efe87474/1495745543384/IMG_5022.jpg?format=1000w"];
     [newLocation2.imageURLs addObject:@"https://media.timeout.com/images/104999307/630/472/image.jpg"];
     
-    [newLocation saveInBackgroundWithBlock: completion];
-    [newLocation2 saveInBackgroundWithBlock: completion];
+    //[newLocation saveInBackgroundWithBlock: completion];
+    [newLocation2 saveInBackgroundWithBlock: completion]; */
     
-    /*
+    
     NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
     Location *newLocation = [Location new];
     newLocation.title = @"MOMA";
@@ -105,7 +105,8 @@
     [newLocation.imageURLs addObject:@"https://www.arup.com/-/media/Arup/Images/Projects/S/SF-MOMA/SF_MOMA_image_3.jpg"];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/xVPY71fEXa-J.jpg"];
     [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA88tJq1TCQcdvbOgrHW2FYPCgCUVa4E8w8f0N1-xveT2AqXGz"];
-     
+    
+    /*
     Location *newLocation2 = [Location new];
     newLocation2.title = @"Sunnyside Conservatory";
     newLocation2.synopsis = @"A botanic jewel!";
@@ -289,7 +290,6 @@
     [newLocation10.imageURLs addObject:@"https://s3-media2.fl.yelpcdn.com/bphoto/AB9PMkXxZrG6EMpQhTeSSw/o.jpg"];
     [newLocation10.imageURLs addObject:@"https://s3-media4.fl.yelpcdn.com/bphoto/8Yza10QBzzvziZ6ly6njig/o.jpg"];
     
-    [newLocation saveInBackgroundWithBlock: completion];
     [newLocation2 saveInBackgroundWithBlock: completion];
     [newLocation3 saveInBackgroundWithBlock: completion];
     [newLocation4 saveInBackgroundWithBlock: completion];
@@ -300,6 +300,8 @@
     [newLocation9 saveInBackgroundWithBlock: completion];
     [newLocation10 saveInBackgroundWithBlock: completion]; */
     
+    [newLocation saveInBackgroundWithBlock: completion];
+
 }
 
 #pragma mark - Networking

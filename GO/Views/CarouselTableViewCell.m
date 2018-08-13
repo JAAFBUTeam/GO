@@ -53,7 +53,7 @@
 -(void)setImages: (NSMutableArray *) favorites {
     [self allocImagesArray];
     for (Location* location in favorites) {
-        NSURL *imageURL = [[NSURL alloc] initFileURLWithPath:location.imageURLs.firstObject];
+        NSURL *imageURL = [[NSURL alloc] initWithString:location.imageURLs.firstObject];
         [self.locationImagesArray addObject:imageURL];
     }
     [_carousel reloadData];

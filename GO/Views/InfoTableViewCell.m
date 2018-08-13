@@ -46,7 +46,7 @@
     self.title.text = location.title;
     self.synopsis.text = location.synopsis;
     double ratingDouble = location.rating;
-    // [self setLabel];
+    [self setLabel];
     self.rating.text = [NSString stringWithFormat:@"%.1f", ratingDouble];
     self.distanceAway.text = [[NSString stringWithFormat:@"%.1f",location.distanceAway] stringByAppendingString:@" miles away"];
 }

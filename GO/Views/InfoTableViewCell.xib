@@ -80,6 +80,10 @@
                             <action selector="onTapAddress:" destination="t2G-5M-e7E" eventType="touchUpInside" id="ai7-HK-1vJ"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDP-c5-whT">
+                        <rect key="frame" x="292" y="8" width="45" height="47"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Wjm-oI-OXs" firstAttribute="top" secondItem="6vz-7h-yFp" secondAttribute="bottom" constant="14" id="2UO-6C-IPH"/>
@@ -107,6 +111,7 @@
                 <outlet property="address" destination="Wjm-oI-OXs" id="mph-Xx-RmC"/>
                 <outlet property="bookmarkImageView" destination="HTI-fc-zl1" id="Vr7-yv-icb"/>
                 <outlet property="distanceAway" destination="tmD-YA-Kzf" id="JOH-mf-rhv"/>
+                <outlet property="label" destination="dDP-c5-whT" id="UE7-Ci-zVf"/>
                 <outlet property="rating" destination="wxg-Yz-RZZ" id="d6U-To-xop"/>
                 <outlet property="synopsis" destination="Muj-GS-K9r" id="hrR-4a-ZTt"/>
                 <outlet property="title" destination="6vz-7h-yFp" id="Pc8-KW-Hek"/>
