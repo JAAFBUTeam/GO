@@ -38,7 +38,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="NgA-AN-af2" kind="relationship" relationship="viewControllers" id="3Ri-my-Kgv"/>
-                        <segue destination="kUm-e2-wJY" kind="relationship" relationship="viewControllers" id="8oY-aN-5jN"/>
                         <segue destination="E9R-hu-5gz" kind="relationship" relationship="viewControllers" id="fNy-Lj-fet"/>
                     </connections>
                 </tabBarController>

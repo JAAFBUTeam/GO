@@ -50,15 +50,15 @@
     self.locationImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
     self.locationImage.clipsToBounds = YES;
     
-    HCSStarRatingView *starRatingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(73, 24, 96, 48)];
-    starRatingView.maximumValue = 5;
-    starRatingView.minimumValue = 0;
-    starRatingView.allowsHalfStars = YES;
-    starRatingView.value = (double) review.rating;
-    starRatingView.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
-    starRatingView.userInteractionEnabled = NO;
+    self.stars = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(73, 24, 96, 48)];
+    self.stars.maximumValue = 5;
+    self.stars.minimumValue = 0;
+    self.stars.allowsHalfStars = YES;
+    self.stars.value = (double) review.rating;
+    self.stars.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
+    self.stars.userInteractionEnabled = NO;
 
-    [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
+    [self.contentView insertSubview:self.stars belowSubview:self.username.viewForLastBaselineLayout];
 
     self.reviewText.text = review.reviewText;
     
@@ -88,15 +88,15 @@
     self.locationImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
     self.locationImage.clipsToBounds = YES;
     
-    HCSStarRatingView *starRatingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(73, 24, 96, 48)];
-    starRatingView.maximumValue = 5;
-    starRatingView.minimumValue = 0;
-    starRatingView.allowsHalfStars = YES;
-    starRatingView.value = (double) review.rating;
-    starRatingView.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
-    starRatingView.userInteractionEnabled = NO;
-    [self.contentView addSubview:starRatingView];
-    [self.contentView insertSubview:starRatingView belowSubview:self.username.viewForLastBaselineLayout];
+    self.stars = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(73, 24, 96, 48)];
+    self.stars.maximumValue = 5;
+    self.stars.minimumValue = 0;
+    self.stars.allowsHalfStars = YES;
+    self.stars.value = (double) review.rating;
+    self.stars.tintColor = [UIColor colorWithRed:0.97 green:0.80 blue:0.31 alpha:1.0];
+    self.stars.userInteractionEnabled = NO;
+    [self.contentView addSubview:self.stars];
+    [self.contentView insertSubview:self.stars belowSubview:self.username.viewForLastBaselineLayout];
     
     self.reviewText.text = review.reviewText;
 }

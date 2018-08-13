@@ -10,6 +10,7 @@
 #import "Review.h"
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
+#import "HCSStarRatingView.h"
 
 @protocol ReviewsTableViewCellDelegate
 
@@ -21,6 +22,7 @@
 
 @property (nonatomic, weak) id<ReviewsTableViewCellDelegate> delegate;
 
+@property (nonatomic, strong) HCSStarRatingView *stars;
 @property (nonatomic, strong) Review *review;
 @property (weak, nonatomic) IBOutlet UIImageView *moreButton;
 @property (weak, nonatomic) IBOutlet PFImageView *userImage;
