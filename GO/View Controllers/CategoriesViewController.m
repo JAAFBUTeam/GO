@@ -50,6 +50,7 @@ typedef enum {
     self.pullUpController = [[ISHPullUpViewController alloc] init];
     self.firstAppearanceCompleted = true;
     self.pullUpController.stateDelegate = self;
+    self.topView.layer.cornerRadius = 10;
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.topView addGestureRecognizer:gesture];
@@ -58,6 +59,7 @@ typedef enum {
 - (void)viewWillAppear:(BOOL)animated {
     
     LoadView *view = [[LoadView alloc] init];
+    view.layer.cornerRadius = 10;
     
     [self.view addSubview:view];
     
@@ -264,11 +266,14 @@ typedef enum {
 //- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController maximumHeightForBottomViewController:(nonnull UIViewController *)bottomVC maximumAvailableHeight:(CGFloat)maximumAvailableHeight {
 //}
 //
-//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
-//}
+- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
+//    return [_topView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    return 100;
+}
 //
-//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
-//}
+- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
+    return 100;
+}
 //
 //- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forBottomViewController:(nonnull UIViewController *)contentVC {
 //}
@@ -277,25 +282,14 @@ typedef enum {
 
 - (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController didChangeToState:(ISHPullUpState)state {
     [self.handleView setState:[ISHPullUpHandleView handleStateForPullUpState:state] animated:_firstAppearanceCompleted];
-    //    [UIView animateWithDuration:0.25 animations:^{
-    //        if (state == ISHPullUpStateCollapsed){
-    //            self.topView.alpha = 0;
-    //        } else {
-    //            self.topView.alpha = 1;
-    //        }
-    //    }];
+        [UIView animateWithDuration:0.25 animations:^{
+            if (state == ISHPullUpStateCollapsed){
+                self.topView.alpha = 0;
+            } else {
+                self.topView.alpha = 1;
+            }
+        }];
 }
-
-//func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
-//    topLabel.text = textForState(state);
-//    handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
-//
-//    // Hide the scrollview in the collapsed state to avoid collision
-//    // with the soft home button on iPhone X
-//    UIView.animate(withDuration: 0.25) { [weak self] in
-//        self?.scrollView.alpha = (state == .collapsed) ? 0 : 1;
-//    }
-//}
 
 #pragma mark - Navigation
 

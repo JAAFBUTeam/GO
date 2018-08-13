@@ -35,11 +35,11 @@
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
 
-//    [APIManager fetchMediaFromInstagram:^(NSArray<InstagramMedia *> *media) {
-//        for(InstagramMedia *mediaImage in media){
-//            [self.mediaArray addObject:mediaImage];
-//        }
-//    }];
+    [APIManager fetchMediaFromInstagram:^(NSArray<InstagramMedia *> *media) {
+        for(InstagramMedia *mediaImage in media){
+            [self.mediaArray addObject:mediaImage];
+        }
+    }];
     
     [self disableAutoRotate];
 }
@@ -279,6 +279,29 @@
     return self.filteredLocationsArray.count;
 }
 
+-(NSMutableArray<InstagramMedia *>*)getFilteredMedia:(Location *)currentLocation {
+    CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(currentLocation.lat, currentLocation.lon);
+
+    NSMutableArray<InstagramMedia *> *filteredMedia = [NSMutableArray new];
+    for (int i = 0; i < [self.mediaArray count]; i++){
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setMaximumFractionDigits:2];
+            
+        NSString *instagram_latitude = [formatter stringFromNumber:@([self.mediaArray objectAtIndex:i].location.latitude)];
+        NSString *current_latitude = [formatter stringFromNumber:@(coordinates.latitude)];
+        NSString *instagram_longitude = [formatter stringFromNumber:@([self.mediaArray objectAtIndex:i].location.longitude)];
+        NSString *current_longitude = [formatter stringFromNumber:@(coordinates.longitude)];
+            
+        //use location values to compare
+        if (instagram_latitude == current_latitude && instagram_longitude == current_longitude){
+            [filteredMedia addObject:[self.mediaArray objectAtIndex:i]];
+        }
+    }
+    
+    return filteredMedia;
+}
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
         Location *location = self.filteredLocationsArray[indexPath.section];
@@ -294,6 +317,7 @@
         [carouselTableViewCell setSectionIDProperty:indexPath.section];
         [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
+        //[carouselTableViewCell setLocationImages:[self getFilteredMedia:self.filteredLocationsArray[indexPath.section]]];
         [APIManager fetchMediaFromInstagram:self.filteredLocationsArray[indexPath.section] completionHandler:^(NSArray<InstagramMedia *> *media) {
             NSLog(@"%ld", (long)indexPath.section);
             [carouselTableViewCell setLocationImages:media];
@@ -301,7 +325,7 @@
             NSLog(@"%@", self.filteredLocationsArray[indexPath.section]);
             NSLog(@"%lu", (unsigned long)[media count]);
             NSLog(@"%@", media);
-            
+
         }];
         return carouselTableViewCell;
     }
