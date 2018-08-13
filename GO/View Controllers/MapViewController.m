@@ -90,6 +90,7 @@
     NSLog(@"View for annotation entered");
     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
     annotationView.location = annotation.location;
+    //annotationView.image = [UIImage imageNamed:@"mapicon.png"];
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
@@ -118,7 +119,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController]
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"segueToDetails"]) {\
+    if ([segue.identifier isEqualToString:@"segueToDetails"]) {
         
         Location *location = sender;
         

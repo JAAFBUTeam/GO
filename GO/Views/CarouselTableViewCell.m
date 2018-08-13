@@ -121,30 +121,7 @@
         UIImageView *image = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
         [image setImageWithURL:self.locationImagesArray[index]];
         
-//        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
-//
-//        [title setText: User.currentUser.favorites[index].title];
-//        [title setTextColor:[UIColor whiteColor]];
-//        [title setBackgroundColor:[UIColor clearColor]];
-//        [title setFont:[UIFont fontWithName: @"American Typewriter" size: 22.0f]];
-        
         [view addSubview:image];
-        [view addSubview:gradient];
-//        [view addSubview:title];
-        
-//        [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [gradient setTranslatesAutoresizingMaskIntoConstraints:NO];
-
-        [NSLayoutConstraint activateConstraints:@[[gradient.leadingAnchor constraintEqualToAnchor:view.leadingAnchor],
-                                                  [gradient.trailingAnchor constraintEqualToAnchor:view.trailingAnchor],
-                                                  [gradient.topAnchor constraintEqualToAnchor:view.topAnchor constant: 150],
-                                                  [gradient.bottomAnchor constraintEqualToAnchor:view.bottomAnchor]]];
-        
-//        [NSLayoutConstraint activateConstraints:@[[title.leadingAnchor constraintEqualToAnchor:view.leadingAnchor constant:8],
-//                                                  [title.trailingAnchor constraintEqualToAnchor:view.trailingAnchor constant:-8],
-//                                                  [title.bottomAnchor constraintEqualToAnchor:view.bottomAnchor constant:-8]]];
-        
-        
     }
     [self registerGestures:view];
     view.layer.cornerRadius = 5;
