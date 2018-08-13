@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 
+
 @interface ListViewController ()
 
 @property (strong, nonatomic) NSMutableArray *categoriesLocationsArray;
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) UISearchController *searchController;
 @property (assign, nonatomic) NSInteger selectedRow;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
+@property (strong, nonatomic) NSMutableArray<InstagramMedia *> *mediaArray;
 
 @end
 
@@ -32,6 +34,13 @@
     [self setTableProperties];
     [self registerNibs];
     [self fetchCategoryLocations:[GlobalFilters sharedInstance].categoryType];
+
+//    [APIManager fetchMediaFromInstagram:^(NSArray<InstagramMedia *> *media) {
+//        for(InstagramMedia *mediaImage in media){
+//            [self.mediaArray addObject:mediaImage];
+//        }
+//    }];
+    
     [self disableAutoRotate];
 }
 
@@ -59,6 +68,7 @@
     self.categoriesLocationsArray = [[NSMutableArray alloc]init];
     self.filteredLocationsArray = [[NSArray alloc]init];
     self.searchfilteredLocationArray = [[NSArray alloc]init];
+    self.mediaArray = [[NSMutableArray alloc]init];
 }
 
 - (void) setDataSourceAndDelegate {
@@ -281,10 +291,18 @@
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
-        [carouselTableViewCell setLocationProperty:self.filteredLocationsArray[indexPath.section]];
         [carouselTableViewCell setSectionIDProperty:indexPath.section];
         [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
+        [APIManager fetchMediaFromInstagram:self.filteredLocationsArray[indexPath.section] completionHandler:^(NSArray<InstagramMedia *> *media) {
+            NSLog(@"%ld", (long)indexPath.section);
+            [carouselTableViewCell setLocationImages:media];
+            [carouselTableViewCell.carousel reloadData];
+            NSLog(@"%@", self.filteredLocationsArray[indexPath.section]);
+            NSLog(@"%lu", (unsigned long)[media count]);
+            NSLog(@"%@", media);
+            
+        }];
         return carouselTableViewCell;
     }
 }

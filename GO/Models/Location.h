@@ -10,6 +10,7 @@
 #import "UIImage+AFNetworking.h"
 #import "Parse/Parse.h"
 #import "ParseUI.h"
+#import "InstagramKit.h"
 
 @interface Location : PFObject <PFSubclassing>
 
@@ -28,6 +29,7 @@
 + (NSMutableArray *) sharedLocations;
 
 @property(nonatomic, strong) NSMutableArray<NSString *> *imageURLs;
+@property(nonatomic, strong) NSURL *instagramImageURL;
 @property(nonatomic, strong) NSMutableArray *tags;
 
 @end

@@ -44,7 +44,6 @@ typedef enum {
     [self registerNibs];
     [self setTableDimensions];
     [self initCategoriesArray];
-    //[self setCategoryCell:<#(CategoryCollectionViewCell *)#> item:<#(NSInteger)#>]
     [CurrentLocationPosition sharedInstance];
     
     //set up handle view
@@ -92,7 +91,7 @@ typedef enum {
 }
 
 -(void)setTableDimensions {
-    self.sections = 5;
+    self.sections = 4;
     self.numberOfCategories = 8;
     self.categoriesPerLine = 2;
     self.phoneWidth = [UIScreen mainScreen].bounds.size.width;
@@ -165,7 +164,7 @@ typedef enum {
     switch(indexPath.section){
         case TITLE_FEATURED: { //index 0
             TitleCollectionViewCell *titleCollectionViewCell = [self.categoriesCollectionView dequeueReusableCellWithReuseIdentifier:@"TitleCollectionViewCell" forIndexPath:indexPath];
-            [titleCollectionViewCell setLabelText:@"Featured"];
+            [titleCollectionViewCell setLabelText:@"Explore Featured"];
             return titleCollectionViewCell;
         }
         case CAROUSEL: { //index 1

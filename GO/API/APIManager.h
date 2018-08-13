@@ -15,5 +15,6 @@
 +(void)redirectToInstagram:(InstagramEngine *)engine;
 
 +(void)fetchMediaFromInstagram:(Location *)currentLocation completionHandler:(void (^)(NSArray<InstagramMedia *> *media))completionHandler;
++(void)fetchMediaFromInstagram:(void (^)(NSArray<InstagramMedia *> *media))completionHandler;
 
 @end
