@@ -123,11 +123,7 @@
 
 - (void) fetchReviews {
     PFQuery *query = [PFQuery queryWithClassName:@"Review"];
-    //if (self.user == nil) {
     [query whereKey:@"user" equalTo:User.currentUser];
-    //} else {
-    // [query whereKey:@"user" equalTo:self.user];
-    //}
     // fetch data asynchronously
     self.reviews = [[NSMutableArray alloc] init];
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
@@ -136,7 +132,6 @@
             for (int i = reviews.count - 1; i >= 0; i--){
              [self.reviews addObject:reviews[i]];
             }
-            //self.reviews = (NSMutableArray *) reviews;
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);

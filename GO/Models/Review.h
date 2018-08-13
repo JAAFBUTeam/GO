@@ -21,7 +21,6 @@
 @property (strong, nonatomic) NSString *reviewText;
 @property (nonatomic) double rating;
 
-+ (void) postReviews: (PFBooleanResultBlock  _Nullable)completion; // hard coding for posting reviews
 + (void) postReview: (Review *)review withCompletion: (PFBooleanResultBlock  _Nullable)completion; // posts reviews to heroku from within the app
 
 

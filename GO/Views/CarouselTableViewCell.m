@@ -85,7 +85,6 @@
     self.carousel.pagingEnabled = YES;
     self.wrapEnabled = NO;
     self.carousel.bounceDistance = 0.3;
-    self.heartImageView.alpha = 0;
 }
 
 -(void)setCarouselTypeProperties:(iCarouselType) carouselType {
@@ -121,8 +120,14 @@
         gradient.image = [UIImage imageNamed:@"gradient.png"];
         UIImageView *image = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
         
-        //[imageView setImageWithURL:url];
-        NSData *imageData = [NSData dataWithContentsOfURL:self.locationImagesArray[index]];
+        NSData *imageData = [[NSData alloc] init];
+        NSError* error = nil;
+        imageData = [NSData dataWithContentsOfURL:self.locationImagesArray[index] options:NSDataReadingUncached error:&error];
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        } else {
+            NSLog(@"Data has loaded successfully.");
+        }
         image.image = [UIImage imageWithData:imageData];
         
         // [image setImageWithURL:self.locationImagesArray[index]];
@@ -193,16 +198,6 @@
 
 -(void)didTap {
     [self.imageDelegate imageTapped:self.sectionID];
-}
-
--(void)heartImageAnimation {
-    [UIView animateWithDuration:1.0 animations:^{
-        self.heartImageView.alpha = 1;
-    }];
-    
-    [UIView animateWithDuration:1.0 animations:^{
-        self.heartImageView.alpha = 0;
-    }];
 }
 
 @end

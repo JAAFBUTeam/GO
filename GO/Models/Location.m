@@ -46,6 +46,46 @@
     
     NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
     Location *newLocation = [Location new];
+    newLocation.title = @"X-ray of a Wolf";
+    newLocation.synopsis = @"Skeletal wolf mural!";
+    newLocation.address = @"Ashbury St & Haight St, San Francisco, CA 94117";
+    newLocation.lat = 37.7698312;
+    newLocation.lon = -122.4469016;
+    newLocation.rating = 3.8;
+    newLocation.popularity = 1;
+    newLocation.tags = [[NSMutableArray alloc] init];
+    [newLocation.tags addObject:[NSNumber numberWithInt: ART]];
+    [newLocation.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation.tags addObject:[NSNumber numberWithInt: ALL]];
+    newLocation.imageURLs = [[NSMutableArray alloc] init];
+    [newLocation.imageURLs addObject:@"https://c1.staticflickr.com/8/7361/13908542131_749f5c230e_b.jpg"];
+    [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrlnDZ058MT3iQuKVvz9d0XZGWovDNBxYdX_tmycKYWykSBBnV"];
+    [newLocation.imageURLs addObject:@"https://media.timeout.com/images/104994797/image.jpg"];
+    [newLocation.imageURLs addObject:@"https://s3-media4.fl.yelpcdn.com/bphoto/bN_CHLzqPq1MV64QR_giEA/o.jpg"];
+    
+    Location *newLocation2 = [Location new];
+    newLocation2.title = @"Honey Bear Mural";
+    newLocation2.synopsis = @"Just a few of the many honey bears that can be seen around the streets of San Francisco!";
+    newLocation2.address = @"236 Monterey Blvd, San Francisco, CA 94131";
+    newLocation2.lat = 37.7730849;
+    newLocation2.lon = -122.4377109;
+    newLocation2.rating = 4.2;
+    newLocation2.popularity = 1;
+    newLocation2.tags = [[NSMutableArray alloc] init];
+    [newLocation2.tags addObject:[NSNumber numberWithInt: ART]];
+    [newLocation2.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation2.tags addObject:[NSNumber numberWithInt: ALL]];
+    newLocation2.imageURLs = [[NSMutableArray alloc] init];
+    [newLocation2.imageURLs addObject:@"https://hoodwork-production.s3.amazonaws.com/uploads/story/image/34879/download.jpg"];
+    [newLocation2.imageURLs addObject:@"http://static1.squarespace.com/static/5763385ebebafb91cc355c36/576342579de4bbcd8d865c49/592646e7725e25f7efe87474/1495745543384/IMG_5022.jpg?format=1000w"];
+    [newLocation2.imageURLs addObject:@"https://media.timeout.com/images/104999307/630/472/image.jpg"];
+    
+    [newLocation saveInBackgroundWithBlock: completion];
+    [newLocation2 saveInBackgroundWithBlock: completion];
+    
+    /*
+    NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
+    Location *newLocation = [Location new];
     newLocation.title = @"MOMA";
     newLocation.synopsis = @"Some really cool art!";
     newLocation.address = @"151 3rd St, San Francisco, CA 94103";
@@ -65,9 +105,7 @@
     [newLocation.imageURLs addObject:@"https://www.arup.com/-/media/Arup/Images/Projects/S/SF-MOMA/SF_MOMA_image_3.jpg"];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/xVPY71fEXa-J.jpg"];
     [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA88tJq1TCQcdvbOgrHW2FYPCgCUVa4E8w8f0N1-xveT2AqXGz"];
-    
-    [locations addObject:newLocation];
-    
+     
     Location *newLocation2 = [Location new];
     newLocation2.title = @"Sunnyside Conservatory";
     newLocation2.synopsis = @"A botanic jewel!";
@@ -88,9 +126,7 @@
     [newLocation2.imageURLs addObject:@"https://untappedcities-wpengine.netdna-ssl.com/wp-content/uploads/2011/11/DSC_1326.jpg"];
     [newLocation2.imageURLs addObject:@"https://sunnysideassociation.files.wordpress.com/2012/03/sunnyside-conservatory-org.jpg?w=500"];
     [newLocation2.imageURLs addObject:@"https://junebugweddings.com/wedding-blog/wp-content/uploads/2015/04/California-Hipster-Wedding-Sunnyside-Conservatory-Helena-Laurent-8-of-38-600x400.jpg"];
-    
-    [locations addObject:newLocation2];
-    
+     
     Location *newLocation3 = [Location new];
     newLocation3.title = @"16th Avenue Tiled Steps";
     newLocation3.address = @"16th Ave, San Francisco, CA 94122";
@@ -262,7 +298,7 @@
     [newLocation7 saveInBackgroundWithBlock: completion];
     [newLocation8 saveInBackgroundWithBlock: completion];
     [newLocation9 saveInBackgroundWithBlock: completion];
-    [newLocation10 saveInBackgroundWithBlock: completion];
+    [newLocation10 saveInBackgroundWithBlock: completion]; */
     
 }
 
