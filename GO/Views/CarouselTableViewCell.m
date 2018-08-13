@@ -114,7 +114,7 @@
     
     if (_location != nil) {
         view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
-        [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+        [((UIImageView *)view) setImageWithURL:self.locationImagesArray[index]];
     } else {
         view = [[UIView alloc] initWithFrame:self.carousel.bounds];
         UIImageView *gradient = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
