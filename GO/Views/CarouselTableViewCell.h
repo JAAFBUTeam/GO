@@ -34,6 +34,6 @@
 -(void)setDatasourceAndDelegate;
 -(void)setupCarouselCell;
 -(void)setImages: (NSMutableArray *) favorites;
--(void)setLocationImages:(NSArray<InstagramMedia *>*)instagramImages;
+-(void)setLocationImages:(NSArray<InstagramMedia *>*)instagramImages withLocation: (Location *) location;
 
 @end

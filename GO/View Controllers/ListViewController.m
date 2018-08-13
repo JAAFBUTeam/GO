@@ -320,7 +320,7 @@
         //[carouselTableViewCell setLocationImages:[self getFilteredMedia:self.filteredLocationsArray[indexPath.section]]];
         [APIManager fetchMediaFromInstagram:self.filteredLocationsArray[indexPath.section] completionHandler:^(NSArray<InstagramMedia *> *media) {
             NSLog(@"%ld", (long)indexPath.section);
-            [carouselTableViewCell setLocationImages:media];
+            [carouselTableViewCell setLocationImages:media withLocation:self.filteredLocationsArray[indexPath.section]];
             [carouselTableViewCell.carousel reloadData];
             NSLog(@"%@", self.filteredLocationsArray[indexPath.section]);
             NSLog(@"%lu", (unsigned long)[media count]);
