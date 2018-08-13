@@ -18,6 +18,8 @@
 #import "User.h"
 #import "ReviewsTableViewCell.h"
 #import "CurrentLocationPosition.h"
+#import "APIManager.h"
+#import "InstagramKit.h"
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, CarouselImageTapDelegate, ApplyFilterDelegate, InfoTapDelegate, DetailsBookmarkDelegate>
 

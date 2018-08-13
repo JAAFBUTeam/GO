@@ -9,6 +9,7 @@
 #import "Location.h"
 #import "User.h"
 #import "APIManager.h"
+#import "InstagramKit.h"
 
 @implementation CarouselTableViewCell
 
@@ -19,6 +20,9 @@
 }
 
 - (void)prepareForReuse {
+//    for (UIView *view in self.subviews){
+//        [view removeFromSuperview];
+//    }
     [super prepareForReuse];
 }
 
@@ -26,18 +30,30 @@
 
 -(void)allocImagesArray {
     self.locationImagesArray = [[NSMutableArray alloc] init];
+    self.mediaGallery = [[NSMutableArray alloc] init];
 }
 
--(void)setLocationProperty:(Location *)location {
-    [APIManager fetchMediaFromInstagram:location completionHandler:^(NSArray<InstagramMedia *> *media) {
-        self.locationImagesArray = [[NSMutableArray alloc] initWithArray:media];
+-(void)setLocationProperty:(Location *)locationVal {
+    _location = locationVal;
+    [APIManager fetchMediaFromInstagram:locationVal completionHandler:^(NSArray<InstagramMedia *> *media) {
+        self.mediaGallery = [[NSMutableArray alloc] initWithArray:media];
     }];
+    [_carousel reloadData];
+}
+
+-(void)setLocationImages:(NSArray<InstagramMedia *>*)instagramImages {
+    [self allocImagesArray];
+    for (InstagramMedia *media in instagramImages){
+        [self.locationImagesArray addObject:media.standardResolutionImageURL];
+    }
+    //[_carousel reloadData];
 }
 
 -(void)setImages: (NSMutableArray *) favorites {
     [self allocImagesArray];
     for (Location* location in favorites) {
-        [self.locationImagesArray addObject:location.imageURLs.firstObject];
+        NSURL *imageURL = [[NSURL alloc] initFileURLWithPath:location.imageURLs.firstObject];
+        [self.locationImagesArray addObject:imageURL];
     }
     [_carousel reloadData];
 }
@@ -91,6 +107,9 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
+//    for (UIView *view in self.subviews){
+//        [view removeFromSuperview];
+//    }
     
     if (_location != nil) {
         view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
@@ -100,20 +119,20 @@
         UIImageView *gradient = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
         gradient.image = [UIImage imageNamed:@"gradient.png"];
         UIImageView *image = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
-        [image setImageWithURL:[NSURL URLWithString:self.locationImagesArray[index]]];
+        [image setImageWithURL:self.locationImagesArray[index]];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
-        
-        [title setText: User.currentUser.favorites[index].title];
-        [title setTextColor:[UIColor whiteColor]];
-        [title setBackgroundColor:[UIColor clearColor]];
-        [title setFont:[UIFont fontWithName: @"American Typewriter" size: 22.0f]];
+//        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
+//
+//        [title setText: User.currentUser.favorites[index].title];
+//        [title setTextColor:[UIColor whiteColor]];
+//        [title setBackgroundColor:[UIColor clearColor]];
+//        [title setFont:[UIFont fontWithName: @"American Typewriter" size: 22.0f]];
         
         [view addSubview:image];
         [view addSubview:gradient];
-        [view addSubview:title];
+//        [view addSubview:title];
         
-        [title setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [title setTranslatesAutoresizingMaskIntoConstraints:NO];
         [gradient setTranslatesAutoresizingMaskIntoConstraints:NO];
 
         [NSLayoutConstraint activateConstraints:@[[gradient.leadingAnchor constraintEqualToAnchor:view.leadingAnchor],
@@ -121,9 +140,9 @@
                                                   [gradient.topAnchor constraintEqualToAnchor:view.topAnchor constant: 150],
                                                   [gradient.bottomAnchor constraintEqualToAnchor:view.bottomAnchor]]];
         
-        [NSLayoutConstraint activateConstraints:@[[title.leadingAnchor constraintEqualToAnchor:view.leadingAnchor constant:8],
-                                                  [title.trailingAnchor constraintEqualToAnchor:view.trailingAnchor constant:-8],
-                                                  [title.bottomAnchor constraintEqualToAnchor:view.bottomAnchor constant:-8]]];
+//        [NSLayoutConstraint activateConstraints:@[[title.leadingAnchor constraintEqualToAnchor:view.leadingAnchor constant:8],
+//                                                  [title.trailingAnchor constraintEqualToAnchor:view.trailingAnchor constant:-8],
+//                                                  [title.bottomAnchor constraintEqualToAnchor:view.bottomAnchor constant:-8]]];
         
         
     }

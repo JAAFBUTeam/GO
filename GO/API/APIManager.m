@@ -19,46 +19,31 @@ static NSString * const tailRedirectURLString = @"&redirect_uri=REDIRECT-URI&res
     [[InstagramEngine sharedEngine] setAccessToken:@"8282989252.daa39e5.0cc169c362c84731b8f0c0ae397ad4b1"/*@"8282989252.1677ed0.7c78fb4fa96e45f2b7b8aa27d0aedfc5"*/];
 }
 
++(void)fetchMediaFromInstagram:(void (^)(NSArray<InstagramMedia *> *media))completionHandler {
+    InstagramEngine *engine = [InstagramEngine sharedEngine];
+    [APIManager redirectToInstagram:engine];
+    
+    [engine getMediaForUser:@"8282989252" count:36 maxId:nil withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+        completionHandler(media);
+    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
+        completionHandler(@[]);
+    }];
+    
+}
+
 +(void)fetchMediaFromInstagram:(Location *)currentLocation completionHandler:(void (^)(NSArray<InstagramMedia *> *media))completionHandler {
     InstagramEngine *engine = [InstagramEngine sharedEngine];
     [APIManager redirectToInstagram:engine];
     
     CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(currentLocation.lat, currentLocation.lon);
     
-//    [engine getUsersFollowedBySelfWithSuccess:^(NSArray<InstagramUser *> * _Nonnull users, InstagramPaginationInfo * _Nonnull paginationInfo) {
-//        NSLog(@"succ");
-//    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-//        NSLog(@"fail");
-//    }];
-//
-    
-//    [engine getMediaAtLocationWithId:@"788029" withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-//        NSLog(@"succ");
-//    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-//        NSLog(@"fail");
-//    }];
-    
-//    [engine getMediaAtLocation:coordinates withSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-//        completionHandler(media);
-//    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-//        completionHandler(@[]);
-//        NSLog(@"%@", error);
-//    }];
-//
-//    [engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
-//        NSLog(@"wow");
-//    } failure:^(NSError * _Nonnull error, NSInteger serverStatusCode, NSDictionary * _Nonnull response) {
-//        NSLog(@"wow");
-//    }];
-    
-    [engine getSelfRecentMediaWithSuccess:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
+    [engine getSelfRecentMediaWithCount:36 maxId:nil success:^(NSArray<InstagramMedia *> * _Nonnull media, InstagramPaginationInfo * _Nonnull paginationInfo) {
         NSMutableArray<InstagramMedia *> *filteredMedia = [NSMutableArray new];
         for (int i = 0; i < [media count]; i++){
             NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
             [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
             [formatter setMaximumFractionDigits:2];
 
-            //set up location values
             NSString *instagram_latitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.latitude)];
             NSString *current_latitude = [formatter stringFromNumber:@(coordinates.latitude)];
             NSString *instagram_longitude = [formatter stringFromNumber:@([media objectAtIndex:i].location.longitude)];

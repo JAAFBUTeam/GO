@@ -21,7 +21,6 @@
     [self setFeaturedCarousel];
     [self setDefaultCarouselStyle];
     [self setDatasourceAndDelegate];
-    self.carousel.userInteractionEnabled = NO;
 }
 
 #pragma mark - Setup
@@ -156,20 +155,20 @@
     return view;
 }
 
--(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
-    CGFloat result;
-    switch(option) {
-        case iCarouselOptionSpacing:
-            result = 1.025f;
-            break;
-        case iCarouselOptionWrap:
-            result = self.wrapEnabled;
-            break;
-        default:
-            result = value;
-            break;
-    }
-    return result;
-}
+//-(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
+//    CGFloat result;
+//    switch(option) {
+//        case iCarouselOptionSpacing:
+//            result = 1.025f;
+//            break;
+//        case iCarouselOptionWrap:
+//            result = self.wrapEnabled;
+//            break;
+//        default:
+//            result = value;
+//            break;
+//    }
+//    return result;
+//}
 
 @end
