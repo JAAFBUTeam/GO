@@ -106,7 +106,7 @@
     } else {
         view = [[UIView alloc] initWithFrame:self.carousel.bounds];
         UIImageView *gradient = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
-        gradient.image = [UIImage imageNamed:@"gradient.png"];
+        gradient.image = [UIImage imageNamed:@"gradient_true.png"];
         UIImageView *image = [[UIImageView alloc] initWithFrame:self.carousel.bounds];
         
         NSData *imageData = [[NSData alloc] init];
@@ -129,7 +129,7 @@
         [title setText: User.currentUser.favorites[index].title];
         [title setTextColor:[UIColor whiteColor]];
         [title setBackgroundColor:[UIColor clearColor]];
-        [title setFont:[UIFont fontWithName: @"American Typewriter" size: 22.0f]];
+        [title setFont:[UIFont systemFontOfSize:20]];
         
         [view addSubview:image];
         [view addSubview:gradient];

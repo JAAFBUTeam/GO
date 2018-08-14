@@ -28,7 +28,8 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    [self setProfile];
+    [self setProfile]; //possibly consider saving locally before saving online
+    self.image.file = User.currentUser.image;
 }
 
 #pragma mark - set profile
@@ -55,12 +56,12 @@
     User.currentUser.image = self.image.file;
     User.currentUser.username = self.username.text;
     User.currentUser.name = self.name.text;
-        
+    
     [User.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [self dismissViewControllerAnimated:YES completion:nil];
         
     }];
-     
+    
 }
 
 - (IBAction)didTapProfile:(id)sender { // connect to imageview
@@ -74,26 +75,30 @@
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIAlertController * view =   [UIAlertController
-                                     alertControllerWithTitle:@"Change Profile Photo"
-                                     message:nil
-                                     preferredStyle:UIAlertControllerStyleActionSheet];
+                                      alertControllerWithTitle:@"Change Profile Photo"
+                                      message:nil
+                                      preferredStyle:UIAlertControllerStyleActionSheet];
         
         UIAlertAction* camera = [UIAlertAction
-                             actionWithTitle:@"Take Photo"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-                                 [view dismissViewControllerAnimated:YES completion:nil];
-                             }];
-        UIAlertAction* gallery = [UIAlertAction
-                                 actionWithTitle:@"Choose from Library"
+                                 actionWithTitle:@"Take Photo"
                                  style:UIAlertActionStyleDefault
                                  handler:^(UIAlertAction * action)
                                  {
-                                     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                     imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
                                      [view dismissViewControllerAnimated:YES completion:nil];
+                                     [self presentViewController:imagePickerVC animated:YES completion:nil];
+                                     [self reloadInputViews];
                                  }];
+        UIAlertAction* gallery = [UIAlertAction
+                                  actionWithTitle:@"Choose from Library"
+                                  style:UIAlertActionStyleDefault
+                                  handler:^(UIAlertAction * action)
+                                  {
+                                      imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                      [view dismissViewControllerAnimated:YES completion:nil];
+                                      [self presentViewController:imagePickerVC animated:YES completion:nil];
+                                      [self reloadInputViews];
+                                  }];
         
         
         [view addAction:camera];
@@ -104,46 +109,46 @@
     else {
         NSLog(@"Camera 🚫 available so we will use photo library instead");
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        // }
+        
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
     }
-    
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
-    [self reloadInputViews];
 }
-
+    
 #pragma mark - Images
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
-    // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+        
+        // Get the image captured by the UIImagePickerController
+        UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+        
+        
+        // Dismiss UIImagePickerController to go back to your original view controller
+        [self dismissViewControllerAnimated:YES completion:^{
+            User.currentUser.image = [self getPFFileFromImage:originalImage];
+            self.image.file = [self getPFFileFromImage:originalImage];
+            [self.image loadInBackground];
+            [self setProfile];
+        }];
+    }
     
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:^{
-        User.currentUser.image = [self getPFFileFromImage:originalImage];
-        self.image.file = [self getPFFileFromImage:originalImage];
-        [self.image loadInBackground];
-        [self setProfile];
-    }];
-}
-
 #pragma mark - Conversion
-
-- (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
     
-    // check if image is not nil
-    if (!image) {
-        return nil;
+    - (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
+        
+        // check if image is not nil
+        if (!image) {
+            return nil;
+        }
+        
+        NSData *imageData = UIImagePNGRepresentation(image);
+        
+        // get image data and check if that is not nil
+        if (!imageData) {
+            return nil;
+        }
+        
+        return [PFFile fileWithName:@"image.png" data:imageData];
     }
     
-    NSData *imageData = UIImagePNGRepresentation(image);
-    
-    // get image data and check if that is not nil
-    if (!imageData) {
-        return nil;
-    }
-    
-    return [PFFile fileWithName:@"image.png" data:imageData];
-}
-
-@end
+    @end

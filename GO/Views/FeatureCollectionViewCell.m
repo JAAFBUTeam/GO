@@ -148,6 +148,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:self.carousel.bounds];
     [label setText:[self.locations objectAtIndex:index].title];
     [label setTextColor:[UIColor whiteColor]];
+    [label setFont:[UIFont systemFontOfSize:22]];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [view addSubview:label];
     [NSLayoutConstraint activateConstraints:@[[label.leadingAnchor constraintEqualToAnchor:view.leadingAnchor constant:8],
