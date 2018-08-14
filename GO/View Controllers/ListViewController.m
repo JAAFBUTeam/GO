@@ -309,6 +309,7 @@
         [infoTableViewCell setTableProperties:location];
         [infoTableViewCell setSectionIDProperty:indexPath.section];
         [infoTableViewCell hideAddressLabel];
+        [infoTableViewCell hideRating];
         [infoTableViewCell highlightBookmark:[self isCurrLocationInCurrUserFavorites:location currentUser:User.currentUser]];
         infoTableViewCell.labelDelegate = self;
         return infoTableViewCell;

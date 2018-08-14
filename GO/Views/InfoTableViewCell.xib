@@ -86,7 +86,7 @@
                         </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dDP-c5-whT">
-                        <rect key="frame" x="188" y="21" width="45" height="25"/>
+                        <rect key="frame" x="190" y="21" width="45" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="FHJ-ia-3p1"/>
                             <constraint firstAttribute="height" constant="25" id="yaZ-1p-wOv"/>
@@ -98,8 +98,8 @@
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="trailing" secondItem="g4E-Gh-Ha9" secondAttribute="trailingMargin" constant="8" id="4aQ-1x-cW1"/>
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="baseline" secondItem="tmD-YA-Kzf" secondAttribute="baseline" id="6XJ-Vf-E2m"/>
                     <constraint firstAttribute="trailing" secondItem="wxg-Yz-RZZ" secondAttribute="trailing" constant="16" id="CUl-6x-KzA"/>
-                    <constraint firstItem="HTI-fc-zl1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="4" id="D2Q-1q-9zJ"/>
-                    <constraint firstItem="dDP-c5-whT" firstAttribute="leading" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="4" id="EHa-UT-Ren"/>
+                    <constraint firstItem="HTI-fc-zl1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="6" id="D2Q-1q-9zJ"/>
+                    <constraint firstItem="dDP-c5-whT" firstAttribute="leading" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="6" id="EHa-UT-Ren"/>
                     <constraint firstItem="Wjm-oI-OXs" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="Gec-F6-962"/>
                     <constraint firstItem="dDP-c5-whT" firstAttribute="top" secondItem="g4E-Gh-Ha9" secondAttribute="topMargin" constant="10" id="JNd-rP-iNj"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="top" secondItem="Wjm-oI-OXs" secondAttribute="bottom" constant="2" id="KjP-dO-Euv"/>
@@ -124,6 +124,7 @@
                 <outlet property="distanceAway" destination="tmD-YA-Kzf" id="JOH-mf-rhv"/>
                 <outlet property="label" destination="dDP-c5-whT" id="UE7-Ci-zVf"/>
                 <outlet property="rating" destination="wxg-Yz-RZZ" id="d6U-To-xop"/>
+                <outlet property="star" destination="wRC-4K-G1E" id="Lb0-OR-zxV"/>
                 <outlet property="synopsis" destination="Muj-GS-K9r" id="hrR-4a-ZTt"/>
                 <outlet property="title" destination="6vz-7h-yFp" id="Pc8-KW-Hek"/>
             </connections>

@@ -28,10 +28,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *label;
 @property (nonatomic, assign) NSInteger sectionID;
 @property (weak, nonatomic) IBOutlet UIImageView *bookmarkImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *star;
 
 -(void)setTableProperties:(Location *)location;
 -(void)setSectionIDProperty:(NSInteger)sectionID;
 -(void)hideAddressLabel;
+-(void)hideRating;
 -(void)highlightBookmark:(BOOL)shouldHighlight;
 
 @end

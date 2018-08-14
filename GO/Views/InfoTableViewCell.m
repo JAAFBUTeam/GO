@@ -59,6 +59,7 @@
     } else {
         self.label.image = nil;
         [self.label setHidden:YES];
+        [self.label removeFromSuperview];
     }
 }
 
@@ -69,6 +70,11 @@
 -(void)hideAddressLabel{
     [self.address setTitle:nil forState:UIControlStateNormal];
     [self.address removeFromSuperview];
+}
+
+-(void)hideRating{
+    [self.rating removeFromSuperview];
+    [self.star removeFromSuperview];
 }
 
 -(void)highlightBookmark:(BOOL)shouldHighlight {

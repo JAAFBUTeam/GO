@@ -84,7 +84,7 @@
     [newLocation2 saveInBackgroundWithBlock: completion]; */
     
     
-    /* NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
+    NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
     Location *newLocation = [Location new];
     newLocation.title = @"MOMA";
     newLocation.synopsis = @"Some really cool art!";
@@ -104,9 +104,10 @@
     [newLocation.imageURLs addObject:@"https://s.hdnux.com/photos/24/65/77/5464024/7/920x920.jpg"];
     [newLocation.imageURLs addObject:@"https://www.arup.com/-/media/Arup/Images/Projects/S/SF-MOMA/SF_MOMA_image_3.jpg"];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/xVPY71fEXa-J.jpg"];
-    [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA88tJq1TCQcdvbOgrHW2FYPCgCUVa4E8w8f0N1-xveT2AqXGz"]; */
+    [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA88tJq1TCQcdvbOgrHW2FYPCgCUVa4E8w8f0N1-xveT2AqXGz"];
     
-    /*
+    [newLocation saveInBackgroundWithBlock: completion];
+    
     Location *newLocation2 = [Location new];
     newLocation2.title = @"Sunnyside Conservatory";
     newLocation2.synopsis = @"A botanic jewel!";
@@ -149,6 +150,7 @@
     [newLocation3.imageURLs addObject:@"https://i0.wp.com/inspiredimperfection.com/wp-content/uploads/2016/10/16th-ave-tiled-steps-ocean-san-francisco.jpg?ssl=1"];
     [newLocation3.imageURLs addObject:@"https://mymodernmet.com/wp/wp-content/uploads/archive/yYEoqhYiYYydURyAOzq-_1082098668.jpeg"];
     
+    /*
     Location *newLocation4 = [Location new];
     newLocation4.title = @"Golden Fire Hydrant";
     newLocation4.address = @"3899 20th St, San Francisco, CA 94114";
@@ -188,7 +190,7 @@
     [newLocation5 saveInBackgroundWithBlock: completion];
 
     
-    /*
+    
     Location *newLocation6 = [Location new];
     newLocation6.title = @"Home Cafe";
     newLocation6.address = @"1222 Noriega St, San Francisco, CA 94122";
@@ -200,6 +202,7 @@
     newLocation6.tags = [[NSMutableArray alloc] init];
     [newLocation6.tags addObject:[NSNumber numberWithInt: FOOD]];
     [newLocation6.tags addObject:[NSNumber numberWithInt: SELFIESPOTS]];
+    [newLocation6.tags addObject:[NSNumber numberWithInt: CAFES]];
     [newLocation6.tags addObject:[NSNumber numberWithInt: ALL]];
     newLocation6.imageURLs = [[NSMutableArray alloc] init];
     [newLocation6.imageURLs addObject:@"https://hoodwork-production.s3.amazonaws.com/uploads/story/image/9070/home3.jpg"];
@@ -213,6 +216,7 @@
     [newLocation6.imageURLs addObject:@"https://s3-media2.fl.yelpcdn.com/bphoto/yJBWIspooiqKOP5EAjcABA/o.jpg"];
     [newLocation6.imageURLs addObject:@"https://s3-media2.fl.yelpcdn.com/bphoto/XYWxe0r2K6tjSHWMgjeUew/o.jpg"];
     
+    /*
     Location *newLocation7 = [Location new];
     newLocation7.title = @"Winfield Street Slides";
     newLocation7.address = @"Winfield St & Esmeralda Ave, San Francisco, CA 94110";
@@ -231,6 +235,7 @@
     [newLocation7.imageURLs addObject:@"https://s3st3.openlistings.com/images/properties/v2/58c27807eed92819269ba382/768/475/58c30548b6f9f07ad67f9fc3.jpeg"];
     [newLocation7.imageURLs addObject:@"https://bloximages.newyork1.vip.townnews.com/thebaycitybeacon.com/content/tncms/assets/v3/editorial/3/22/322b9918-8965-11e7-977d-d3cfd381fb37/599fcf1a23ec8.image.jpg?resize=1200%2C800"];
     [newLocation7.imageURLs addObject:@"https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2M2YmNmNDZiMTQyNDZhNWY3OV9CZXJuYWwgMiAucG5nIl0sWyJwIiwidGh1bWIiLCJ4MzkwPiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA4MSAtYXV0by1vcmllbnQiXV0/Bernal%202%20.png"];
+    */
     
     Location *newLocation8 = [Location new];
     newLocation8.title = @"Billy Goat Hill";
@@ -253,6 +258,7 @@
     [newLocation8.imageURLs addObject:@"https://i2.wp.com/farm7.staticflickr.com/6237/6849796588_060e3e3e68_z.jpg"];
     [newLocation8.imageURLs addObject:@"https://theshannonigansoflife.files.wordpress.com/2015/05/img_1897.jpg"];
     
+    /*
     Location *newLocation9 = [Location new];
     newLocation9.title = @"Hollow Cafe";
     newLocation9.address = @"1435 Irving St, San Francisco, CA 94122";
@@ -294,16 +300,17 @@
     [newLocation10.imageURLs addObject:@"https://s3-media2.fl.yelpcdn.com/bphoto/Ps7JfcFoxGUXtPOTJq6bkg/o.jpg"];
     [newLocation10.imageURLs addObject:@"https://s3-media2.fl.yelpcdn.com/bphoto/AB9PMkXxZrG6EMpQhTeSSw/o.jpg"];
     [newLocation10.imageURLs addObject:@"https://s3-media4.fl.yelpcdn.com/bphoto/8Yza10QBzzvziZ6ly6njig/o.jpg"];
+     */
     
     [newLocation2 saveInBackgroundWithBlock: completion];
     [newLocation3 saveInBackgroundWithBlock: completion];
-    [newLocation4 saveInBackgroundWithBlock: completion];
+ //   [newLocation4 saveInBackgroundWithBlock: completion];
     [newLocation5 saveInBackgroundWithBlock: completion];
     [newLocation6 saveInBackgroundWithBlock: completion];
-    [newLocation7 saveInBackgroundWithBlock: completion];
+  //  [newLocation7 saveInBackgroundWithBlock: completion];
     [newLocation8 saveInBackgroundWithBlock: completion];
-    [newLocation9 saveInBackgroundWithBlock: completion];
-    [newLocation10 saveInBackgroundWithBlock: completion]; */
+ //   [newLocation9 saveInBackgroundWithBlock: completion];
+  //  [newLocation10 saveInBackgroundWithBlock: completion];
     
 
 }
