@@ -28,7 +28,7 @@
 @property (strong, nonatomic) NSMutableArray<InstagramMedia *> *mediaGallery;
 
 -(void)setLocationProperty:(Location *)location;
--(void)setCarouselTypeProperties:(iCarouselType)carouselType;
+-(void)setCarouselTypeProperties:(iCarouselType *)carouselType;
 -(void)setSectionIDProperty:(NSInteger)sectionID;
 -(void)setDatasourceAndDelegate;
 -(void)setupCarouselCell;
