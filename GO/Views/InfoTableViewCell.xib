@@ -86,10 +86,10 @@
                         </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dDP-c5-whT">
-                        <rect key="frame" x="190" y="21" width="45" height="25"/>
+                        <rect key="frame" x="190" y="22" width="42" height="23"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="45" id="FHJ-ia-3p1"/>
-                            <constraint firstAttribute="height" constant="25" id="yaZ-1p-wOv"/>
+                            <constraint firstAttribute="width" constant="42" id="FHJ-ia-3p1"/>
+                            <constraint firstAttribute="height" constant="23" id="yaZ-1p-wOv"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -101,7 +101,7 @@
                     <constraint firstItem="HTI-fc-zl1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="6" id="D2Q-1q-9zJ"/>
                     <constraint firstItem="dDP-c5-whT" firstAttribute="leading" secondItem="6vz-7h-yFp" secondAttribute="trailing" constant="6" id="EHa-UT-Ren"/>
                     <constraint firstItem="Wjm-oI-OXs" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="Gec-F6-962"/>
-                    <constraint firstItem="dDP-c5-whT" firstAttribute="top" secondItem="g4E-Gh-Ha9" secondAttribute="topMargin" constant="10" id="JNd-rP-iNj"/>
+                    <constraint firstItem="dDP-c5-whT" firstAttribute="top" secondItem="g4E-Gh-Ha9" secondAttribute="topMargin" constant="11" id="JNd-rP-iNj"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="top" secondItem="Wjm-oI-OXs" secondAttribute="bottom" constant="2" id="KjP-dO-Euv"/>
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tmD-YA-Kzf" secondAttribute="bottom" constant="4" id="RgD-z4-sa8"/>
                     <constraint firstAttribute="trailing" secondItem="HTI-fc-zl1" secondAttribute="trailing" constant="16" id="agB-TC-Skb"/>
