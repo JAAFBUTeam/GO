@@ -20,6 +20,7 @@
 }
 
 - (void)prepareForReuse {
+    self.carousel.clearsContextBeforeDrawing = YES;
     [super prepareForReuse];
 }
 
@@ -32,13 +33,12 @@
 
 -(void)setLocationProperty:(Location *)locationVal {
     _location = locationVal;
+    [self allocImagesArray];
     for (NSString* imageString in locationVal.imageURLs){
-        [self.locationImagesArray addObject:imageString];
+        NSURL *imageURL = [[NSURL alloc] initWithString:imageString];
+        [self.locationImagesArray addObject:imageURL];
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> 9582f506b0dbfd39a21f9ba9f350c9280f9e2070
     [_carousel reloadData];
 }
 

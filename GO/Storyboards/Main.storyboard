@@ -26,6 +26,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="Ts2-6g-k6E"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,6 +39,11 @@
                                     <constraint firstItem="eKP-aP-k8Z" firstAttribute="leading" secondItem="Ruf-tU-NFT" secondAttribute="leading" constant="67" id="MzD-r7-Mnl"/>
                                     <constraint firstItem="eKP-aP-k8Z" firstAttribute="top" secondItem="Ruf-tU-NFT" secondAttribute="top" id="dp6-6T-dO0"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IPn-tU-xGz">
                                 <rect key="frame" x="0.0" y="40" width="375" height="627"/>
@@ -59,6 +69,11 @@
                             <constraint firstItem="IPn-tU-xGz" firstAttribute="bottom" secondItem="cQN-Ke-RLt" secondAttribute="bottom" id="sYK-ZB-ZXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cQN-Ke-RLt"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="35"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="Iwq-5e-ZmD"/>
                     <connections>
