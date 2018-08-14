@@ -26,6 +26,7 @@
 @property (nonatomic, assign) CGFloat phoneWidth;
 @property (nonatomic, assign) CGFloat phoneHeight;
 @property (nonatomic, assign) CGFloat minInteritemSpacing;
+@property (nonatomic, assign) CGFloat halfwayPoint;
 
 typedef enum {
     TITLE_FEATURED = 0,
@@ -51,9 +52,9 @@ typedef enum {
     self.firstAppearanceCompleted = true;
     self.pullUpController.stateDelegate = self;
     self.pullUpController.sizingDelegate = self;
-//    self.pullUpController.contentDelegate = self;
-//    self.pullUpController.transitioningDelegate = self;
+    [self pullUpViewController:self.pullUpController minimumHeightForBottomViewController:self];
     self.topView.layer.cornerRadius = 10;
+    _halfwayPoint = 0;
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.topView addGestureRecognizer:gesture];
@@ -268,17 +269,26 @@ typedef enum {
 
 # pragma mark - handle view delegate
 
-//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController maximumHeightForBottomViewController:(nonnull UIViewController *)bottomVC maximumAvailableHeight:(CGFloat)maximumAvailableHeight {
-//}
-//
-//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
-////    return [_topView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-//    return 100;
-//}
-//
-//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
-//    return 100;
-//}
+- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController maximumHeightForBottomViewController:(nonnull UIViewController *)bottomVC maximumAvailableHeight:(CGFloat)maximumAvailableHeight {
+    
+    CGFloat totalHeight = [_topView systemLayoutSizeFittingSize:(UILayoutFittingCompressedSize)].height;
+    self.halfwayPoint = totalHeight /2.0;
+    return totalHeight;
+}
+
+
+- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
+//    return [_topView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    return 100;
+}
+
+- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
+    if (fabs(height - self.halfwayPoint) < 30){
+        return _halfwayPoint;
+    }
+    
+    return height;
+}
 
 //- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forBottomViewController:(nonnull UIViewController *)contentVC {
 //}
@@ -287,13 +297,13 @@ typedef enum {
 
 - (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController didChangeToState:(ISHPullUpState)state {
     [self.handleView setState:[ISHPullUpHandleView handleStateForPullUpState:state] animated:_firstAppearanceCompleted];
-        [UIView animateWithDuration:0.25 animations:^{
-            if (state == ISHPullUpStateCollapsed){
-                self.topView.alpha = 0;
-            } else {
-                self.topView.alpha = 1;
-            }
-        }];
+    [UIView animateWithDuration:0.25 animations:^{
+        if (state == ISHPullUpStateCollapsed){
+            self.topView.alpha = 0;
+        } else {
+            self.topView.alpha = 1;
+        }
+    }];
 }
 
 @end

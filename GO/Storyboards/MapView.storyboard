@@ -50,7 +50,6 @@
         <!--MapViewController-->
         <scene sceneID="tQC-Bb-yoj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PpL-Nf-jN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="navBarSB2" title="MapViewController" automaticallyAdjustsScrollViewInsets="NO" id="nHQ-xe-dVq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="tabBarItem:FiW-Nz-oz1:image" selectedImage="tabBarItem:FiW-Nz-oz1:selectedImage" id="FiW-Nz-oz1">
                         <color key="badgeColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -66,6 +65,7 @@
                         <segue destination="vrG-32-0ix" kind="relationship" relationship="rootViewController" id="tLf-WO-Jzt"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PpL-Nf-jN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="208.80000000000001" y="132.68365817091455"/>
         </scene>

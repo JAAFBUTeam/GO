@@ -20,6 +20,11 @@
     [self setupTapGestures];
 }
 
+-(void)prepareForReuse {
+    [super prepareForReuse];
+    self.label.image = nil;
+}
+
 #pragma mark - visuals
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -56,10 +61,6 @@
         self.label.image = [UIImage imageNamed:@"HIDDENGEM"];
     } else if (self.map_location.popularity == 2) {
         self.label.image = [UIImage imageNamed:@"TOURISTY"];
-    } else {
-        self.label.image = nil;
-        [self.label setHidden:YES];
-        [self.label removeFromSuperview];
     }
 }
 

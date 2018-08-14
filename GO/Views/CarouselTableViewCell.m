@@ -99,9 +99,6 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
-//    for (UIView *view in self.subviews){
-//        [view removeFromSuperview];
-//    }
     
     if (_location != nil) {
         view = [[UIImageView alloc] initWithFrame:self.carousel.bounds];

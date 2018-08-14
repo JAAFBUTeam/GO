@@ -78,6 +78,8 @@
                     <navigationItem key="navigationItem" id="Iwq-5e-ZmD"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="IPn-tU-xGz" id="F0t-V3-rdI"/>
+                        <outlet property="handleView" destination="eKP-aP-k8Z" id="pHj-Lh-9u6"/>
+                        <outlet property="topView" destination="Ruf-tU-NFT" id="3fy-7u-Xep"/>
                         <segue destination="MQF-OT-DwJ" kind="show" identifier="categoriesToListSegue" id="XHH-Gi-nWP"/>
                     </connections>
                 </viewController>

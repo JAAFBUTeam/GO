@@ -114,7 +114,7 @@
                     <constraint firstItem="Muj-GS-K9r" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="pEK-rX-DhX"/>
                     <constraint firstItem="tmD-YA-Kzf" firstAttribute="leading" secondItem="g4E-Gh-Ha9" secondAttribute="leadingMargin" constant="8" id="sDU-oB-PM6"/>
                     <constraint firstItem="wxg-Yz-RZZ" firstAttribute="bottom" secondItem="wRC-4K-G1E" secondAttribute="bottom" id="tBD-2V-9PD"/>
-                    <constraint firstItem="HTI-fc-zl1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dDP-c5-whT" secondAttribute="trailing" constant="4" id="uQp-7y-bdS"/>
+                    <constraint firstItem="HTI-fc-zl1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dDP-c5-whT" secondAttribute="trailing" constant="3" id="uQp-7y-bdS"/>
                     <constraint firstAttribute="bottom" secondItem="Muj-GS-K9r" secondAttribute="bottom" id="x10-YT-84f"/>
                 </constraints>
             </tableViewCellContentView>

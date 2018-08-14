@@ -46,6 +46,7 @@ typedef enum {
 # pragma mark - Lifecycle
 
 -(void)viewWillAppear:(BOOL)animated {
+    [self fetchReviews];
     [self.tableView reloadData];
 }
 
@@ -415,7 +416,6 @@ typedef enum {
     }
     
     if ([segue.identifier isEqualToString:@"photoGalleryViewSegue"]){
-        TitleTableViewCell *tappedCell = sender;
         PhotoCollectionViewController *photoCollectionController = [segue destinationViewController];
         photoCollectionController.location = self.location;
     }

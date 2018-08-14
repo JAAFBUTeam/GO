@@ -34,7 +34,7 @@
     [self setDelegate];
     [self setRegion];
     self.locations = [[NSMutableArray alloc] init];
-//    [Location postLocation:nil];
+    //[Location postLocation:nil];
     [self fetchLocations];
 
 }
@@ -125,6 +125,11 @@
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.location = location;
     }
+}
+
+#pragma mark - handle view delegate
+
+- (void)pullUpViewController:(ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forContentViewController:(UIViewController *)contentVC {
 }
 
 

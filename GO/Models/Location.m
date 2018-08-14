@@ -84,7 +84,6 @@
     [newLocation2 saveInBackgroundWithBlock: completion]; */
     
     
-    NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
     Location *newLocation = [Location new];
     newLocation.title = @"MOMA";
     newLocation.synopsis = @"Some really cool art!";
@@ -108,6 +107,7 @@
     
     [newLocation saveInBackgroundWithBlock: completion];
     
+    
     Location *newLocation2 = [Location new];
     newLocation2.title = @"Sunnyside Conservatory";
     newLocation2.synopsis = @"A botanic jewel!";
@@ -115,7 +115,7 @@
     newLocation2.lat = 37.731928;
     newLocation2.lon = -122.440789;
     newLocation2.rating = 4.0;
-    newLocation2.popularity = 1;
+    newLocation2.popularity = 2;
     newLocation2.tags = [[NSMutableArray alloc] init];
     [newLocation2.tags addObject:[NSNumber numberWithInt: ARCHITECTURE]];
     [newLocation2.tags addObject:[NSNumber numberWithInt: NATURE]];
@@ -128,7 +128,8 @@
     [newLocation2.imageURLs addObject:@"https://untappedcities-wpengine.netdna-ssl.com/wp-content/uploads/2011/11/DSC_1326.jpg"];
     [newLocation2.imageURLs addObject:@"https://sunnysideassociation.files.wordpress.com/2012/03/sunnyside-conservatory-org.jpg?w=500"];
     [newLocation2.imageURLs addObject:@"https://junebugweddings.com/wedding-blog/wp-content/uploads/2015/04/California-Hipster-Wedding-Sunnyside-Conservatory-Helena-Laurent-8-of-38-600x400.jpg"];
-     
+    
+    
     Location *newLocation3 = [Location new];
     newLocation3.title = @"16th Avenue Tiled Steps";
     newLocation3.address = @"16th Ave, San Francisco, CA 94122";
@@ -150,7 +151,6 @@
     [newLocation3.imageURLs addObject:@"https://i0.wp.com/inspiredimperfection.com/wp-content/uploads/2016/10/16th-ave-tiled-steps-ocean-san-francisco.jpg?ssl=1"];
     [newLocation3.imageURLs addObject:@"https://mymodernmet.com/wp/wp-content/uploads/archive/yYEoqhYiYYydURyAOzq-_1082098668.jpeg"];
     
-    /*
     Location *newLocation4 = [Location new];
     newLocation4.title = @"Golden Fire Hydrant";
     newLocation4.address = @"3899 20th St, San Francisco, CA 94114";
@@ -167,7 +167,7 @@
     [newLocation4.imageURLs addObject:@"https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2Q4MTM2YjhjMjEwMjRmY2M5OF9wbGFxdWUuanBnIl0sWyJwIiwidGh1bWIiLCIxMjAweD4iXSxbInAiLCJjb252ZXJ0IiwiLXF1YWxpdHkgODEgLWF1dG8tb3JpZW50Il1d"];
     [newLocation4.imageURLs addObject:@"https://c1.staticflickr.com/5/4126/5186214251_1de97ea26e_b.jpg"];
     [newLocation4.imageURLs addObject:@"https://s3-media4.fl.yelpcdn.com/bphoto/2HeauOiFem9l7YvEsnoZ4A/o.jpg"];
-     */
+    
     
     Location *newLocation5 = [Location new];
     newLocation5.title = @"Belden Place";
@@ -216,7 +216,7 @@
     [newLocation6.imageURLs addObject:@"https://s3-media2.fl.yelpcdn.com/bphoto/yJBWIspooiqKOP5EAjcABA/o.jpg"];
     [newLocation6.imageURLs addObject:@"https://s3-media2.fl.yelpcdn.com/bphoto/XYWxe0r2K6tjSHWMgjeUew/o.jpg"];
     
-    /*
+    
     Location *newLocation7 = [Location new];
     newLocation7.title = @"Winfield Street Slides";
     newLocation7.address = @"Winfield St & Esmeralda Ave, San Francisco, CA 94110";
@@ -235,7 +235,7 @@
     [newLocation7.imageURLs addObject:@"https://s3st3.openlistings.com/images/properties/v2/58c27807eed92819269ba382/768/475/58c30548b6f9f07ad67f9fc3.jpeg"];
     [newLocation7.imageURLs addObject:@"https://bloximages.newyork1.vip.townnews.com/thebaycitybeacon.com/content/tncms/assets/v3/editorial/3/22/322b9918-8965-11e7-977d-d3cfd381fb37/599fcf1a23ec8.image.jpg?resize=1200%2C800"];
     [newLocation7.imageURLs addObject:@"https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2M2YmNmNDZiMTQyNDZhNWY3OV9CZXJuYWwgMiAucG5nIl0sWyJwIiwidGh1bWIiLCJ4MzkwPiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA4MSAtYXV0by1vcmllbnQiXV0/Bernal%202%20.png"];
-    */
+    
     
     Location *newLocation8 = [Location new];
     newLocation8.title = @"Billy Goat Hill";
@@ -303,12 +303,12 @@
      */
     
     [newLocation2 saveInBackgroundWithBlock: completion];
-    [newLocation3 saveInBackgroundWithBlock: completion];
+   // [newLocation3 saveInBackgroundWithBlock: completion];
  //   [newLocation4 saveInBackgroundWithBlock: completion];
-    [newLocation5 saveInBackgroundWithBlock: completion];
-    [newLocation6 saveInBackgroundWithBlock: completion];
+  //  [newLocation5 saveInBackgroundWithBlock: completion];
+   // [newLocation6 saveInBackgroundWithBlock: completion];
   //  [newLocation7 saveInBackgroundWithBlock: completion];
-    [newLocation8 saveInBackgroundWithBlock: completion];
+   // [newLocation8 saveInBackgroundWithBlock: completion];
  //   [newLocation9 saveInBackgroundWithBlock: completion];
   //  [newLocation10 saveInBackgroundWithBlock: completion];
     
