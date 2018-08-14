@@ -58,6 +58,7 @@
         self.label.image = [UIImage imageNamed:@"TOURISTY"];
     } else {
         self.label.image = nil;
+        [self.label setHidden:YES];
     }
 }
 
