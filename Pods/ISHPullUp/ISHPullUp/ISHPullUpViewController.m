@@ -9,7 +9,7 @@
 #import "ISHPullUpViewController.h"
 #import "ISHPullUpRoundedView.h"
 
-const CGFloat ISHPullUpViewControllerDefaultMinimumHeight = 250.0;
+const CGFloat ISHPullUpViewControllerDefaultMinimumHeight = 315.0;
 const CGFloat ISHPullUpViewControllerDefaultSnapThreshold = 0.25;
 const CGFloat ISHPullUpViewControllerDefaultTopMargin = 40.0;
 

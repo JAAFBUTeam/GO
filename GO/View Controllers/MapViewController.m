@@ -61,7 +61,7 @@
 #pragma mark - Map Creation
 
 - (void) setRegion {
-    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.752, -122.434), MKCoordinateSpanMake(0.12, 0.12));
+    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.748, -122.427), MKCoordinateSpanMake(0.12, 0.12));
     [self.mapView setRegion:sfRegion animated:false];
 }
 
