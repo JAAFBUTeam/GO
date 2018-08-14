@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqP-fD-5FM">
-                                <rect key="frame" x="113" y="59" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Connect to Instagram"/>
-                                <connections>
-                                    <action selector="connectToInstagramButton:" destination="b3u-Fx-IhP" eventType="touchUpInside" id="JC1-IJ-sg5"/>
-                                    <action selector="onTapConnectInstagramButton:" destination="lVx-2Z-n7O" eventType="touchUpInside" id="ck8-2X-1Dc"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VfG-Yw-mRF">
                                 <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,8 +38,29 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqP-fD-5FM">
+                                <rect key="frame" x="96" y="30" width="182" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Connect to Instagram">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="connectToInstagramButton:" destination="b3u-Fx-IhP" eventType="touchUpInside" id="JC1-IJ-sg5"/>
+                                    <action selector="onTapConnectInstagramButton:" destination="lVx-2Z-n7O" eventType="touchUpInside" id="ck8-2X-1Dc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZqP-fD-5FM" firstAttribute="top" secondItem="v2o-BD-p0F" secondAttribute="top" constant="10" id="CBc-OT-ago"/>
+                            <constraint firstItem="v2o-BD-p0F" firstAttribute="trailing" secondItem="ZqP-fD-5FM" secondAttribute="trailing" constant="97" id="hQ4-Va-Brj"/>
+                            <constraint firstItem="ZqP-fD-5FM" firstAttribute="leading" secondItem="v2o-BD-p0F" secondAttribute="leading" constant="96" id="nQY-CH-gDg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="v2o-BD-p0F"/>
                     </view>
                     <connections>
