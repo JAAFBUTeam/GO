@@ -9,9 +9,9 @@
 #import "ISHPullUpViewController.h"
 #import "ISHPullUpRoundedView.h"
 
-const CGFloat ISHPullUpViewControllerDefaultMinimumHeight = 55.0;
+const CGFloat ISHPullUpViewControllerDefaultMinimumHeight = 250.0;
 const CGFloat ISHPullUpViewControllerDefaultSnapThreshold = 0.25;
-const CGFloat ISHPullUpViewControllerDefaultTopMargin = 20.0;
+const CGFloat ISHPullUpViewControllerDefaultTopMargin = 40.0;
 
 @interface ISHPullUpViewController ()<UIGestureRecognizerDelegate>
 @property (nonatomic, weak) UIPanGestureRecognizer *panGesture;

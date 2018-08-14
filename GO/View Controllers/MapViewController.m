@@ -127,5 +127,10 @@
     }
 }
 
+#pragma mark - handle view delegate
+
+- (void)pullUpViewController:(ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forContentViewController:(UIViewController *)contentVC {
+}
+
 
 @end

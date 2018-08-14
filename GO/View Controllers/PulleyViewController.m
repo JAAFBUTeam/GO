@@ -42,7 +42,13 @@
     
     self.bottomViewController = testViewController;
     self.contentViewController = mapViewController;
-    testViewController.pullUpController = self;
+    
+//    [testViewController.pullUpController setBottomHeight:20 animated:true];
+//    [testViewController.pullUpController setBottomHiddenMargin:100];
+//    [testViewController.pullUpController setTopMargin:100];
+    [testViewController pullUpViewController:self minimumHeightForBottomViewController:self.bottomViewController];
+//    testViewController.pullUpController.sizingDelegate = self;
+//    testViewController.pullUpController.stateDelegate = self;
 }
 
 @end
