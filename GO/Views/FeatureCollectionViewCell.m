@@ -21,6 +21,8 @@
     [self setFeaturedCarousel];
     [self setDefaultCarouselStyle];
     [self setDatasourceAndDelegate];
+    self.carousel.multipleTouchEnabled = NO;
+    self.carousel.scrollEnabled = YES;
 }
 
 #pragma mark - Setup
