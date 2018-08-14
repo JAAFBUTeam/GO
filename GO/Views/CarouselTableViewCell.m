@@ -30,24 +30,16 @@
 
 -(void)allocImagesArray {
     self.locationImagesArray = [[NSMutableArray alloc] init];
-    self.mediaGallery = [[NSMutableArray alloc] init];
+    
 }
 
 -(void)setLocationProperty:(Location *)locationVal {
     _location = locationVal;
-    [APIManager fetchMediaFromInstagram:locationVal completionHandler:^(NSArray<InstagramMedia *> *media) {
-        self.mediaGallery = [[NSMutableArray alloc] initWithArray:media];
-    }];
-    [_carousel reloadData];
-}
-
--(void)setLocationImages:(NSArray<InstagramMedia *>*)instagramImages withLocation: (Location *) location{
-    [self allocImagesArray];
-    _location = location;
-    for (InstagramMedia *media in instagramImages){
-        [self.locationImagesArray addObject:media.standardResolutionImageURL];
+    for (NSString* imageString in locationVal.imageURLs){
+        [self.locationImagesArray addObject:imageString];
     }
-    //[_carousel reloadData];
+    
+    [_carousel reloadData];
 }
 
 -(void)setImages: (NSMutableArray *) favorites {

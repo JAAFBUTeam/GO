@@ -314,19 +314,10 @@
         return infoTableViewCell;
     } else { //indexPath.row == 1
         CarouselTableViewCell *carouselTableViewCell = [self.listTableView dequeueReusableCellWithIdentifier:@"CarouselTableViewCell"];
+        [carouselTableViewCell setLocationProperty:self.filteredLocationsArray[indexPath.section]];
         [carouselTableViewCell setSectionIDProperty:indexPath.section];
         [carouselTableViewCell setDatasourceAndDelegate];
         carouselTableViewCell.imageDelegate = self;
-        //[carouselTableViewCell setLocationImages:[self getFilteredMedia:self.filteredLocationsArray[indexPath.section]]];
-        [APIManager fetchMediaFromInstagram:self.filteredLocationsArray[indexPath.section] completionHandler:^(NSArray<InstagramMedia *> *media) {
-            NSLog(@"%ld", (long)indexPath.section);
-            [carouselTableViewCell setLocationImages:media withLocation:self.filteredLocationsArray[indexPath.section]];
-            [carouselTableViewCell.carousel reloadData];
-            NSLog(@"%@", self.filteredLocationsArray[indexPath.section]);
-            NSLog(@"%lu", (unsigned long)[media count]);
-            NSLog(@"%@", media);
-
-        }];
         return carouselTableViewCell;
     }
 }

@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (nonatomic, weak) id<CarouselImageTapDelegate> imageDelegate;
 @property (nonatomic, assign) BOOL wrapEnabled;
-@property (strong, nonatomic) NSMutableArray<InstagramMedia *> *mediaGallery;
 
 -(void)setLocationProperty:(Location *)location;
 -(void)setCarouselTypeProperties:(iCarouselType)carouselType;
@@ -33,6 +32,5 @@
 -(void)setDatasourceAndDelegate;
 -(void)setupCarouselCell;
 -(void)setImages: (NSMutableArray *) favorites;
--(void)setLocationImages:(NSArray<InstagramMedia *>*)instagramImages withLocation: (Location *) location;
 
 @end

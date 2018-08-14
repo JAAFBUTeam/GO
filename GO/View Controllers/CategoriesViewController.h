@@ -19,7 +19,7 @@
 #import "ISHPullUp/ISHPullUpRoundedView.h"
 #import "ISHPullUp/ISHPullUpViewController.h"
 
-@interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, ISHPullUpSizingDelegate, ISHPullUpStateDelegate>
+@interface CategoriesViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, ISHPullUpStateDelegate>
 
 @property (nonatomic, strong) FeatureCollectionViewCell *featureCollectionViewCell;
 @property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeft;

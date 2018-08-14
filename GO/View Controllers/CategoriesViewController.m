@@ -51,6 +51,8 @@ typedef enum {
     self.firstAppearanceCompleted = true;
     self.pullUpController.stateDelegate = self;
     self.pullUpController.sizingDelegate = self;
+//    self.pullUpController.contentDelegate = self;
+//    self.pullUpController.transitioningDelegate = self;
     self.topView.layer.cornerRadius = 10;
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
@@ -195,10 +197,7 @@ typedef enum {
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 3) {
         switch(indexPath.item) {
-            case ALL: {
-                [GlobalFilters sharedInstance].categoryType = ALL;
-                break;
-            } case SELFIESPOTS: {
+            case SELFIESPOTS: {
                 [GlobalFilters sharedInstance].categoryType = SELFIESPOTS;
                 break;
             } case FOOD: {
@@ -218,6 +217,9 @@ typedef enum {
                 break;
             } case NATURE: {
                 [GlobalFilters sharedInstance].categoryType = NATURE;
+                break;
+            } case ALL: {
+                [GlobalFilters sharedInstance].categoryType = ALL;
                 break;
             }
         }
@@ -269,14 +271,14 @@ typedef enum {
 //- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController maximumHeightForBottomViewController:(nonnull UIViewController *)bottomVC maximumAvailableHeight:(CGFloat)maximumAvailableHeight {
 //}
 //
-- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
-//    return [_topView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-    return 100;
-}
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController minimumHeightForBottomViewController:(nonnull UIViewController *)bottomVC {
+////    return [_topView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+//    return 100;
+//}
 //
-- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
-    return 100;
-}
+//- (CGFloat)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController targetHeightForBottomViewController:(nonnull UIViewController *)bottomVC fromCurrentHeight:(CGFloat)height {
+//    return 100;
+//}
 
 //- (void)pullUpViewController:(nonnull ISHPullUpViewController *)pullUpViewController updateEdgeInsets:(UIEdgeInsets)edgeInsets forBottomViewController:(nonnull UIViewController *)contentVC {
 //}
