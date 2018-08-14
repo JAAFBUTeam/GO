@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    ALL = 0,
-    SELFIESPOTS,
+    SELFIESPOTS = 0,
     FOOD,
     CAFES,
-    NATURE,
     ART,
+    ARCHITECTURE,
     CULTUREANDHISTORY,
-    ARCHITECTURE
+    NATURE,
+    ALL
 } CategoryType;
 
 @interface GlobalFilters : NSObject

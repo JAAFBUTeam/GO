@@ -34,7 +34,7 @@
     [self setDelegate];
     [self setRegion];
     self.locations = [[NSMutableArray alloc] init];
-    // [Location postLocation:nil];
+//    [Location postLocation:nil];
     [self fetchLocations];
 
 }
@@ -61,7 +61,7 @@
 #pragma mark - Map Creation
 
 - (void) setRegion {
-    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.752, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
+    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.752, -122.434), MKCoordinateSpanMake(0.12, 0.12));
     [self.mapView setRegion:sfRegion animated:false];
 }
 
@@ -94,7 +94,7 @@
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
-        annotationView.pinTintColor = MKPinAnnotationView.greenPinColor;
+        // annotationView.pinTintColor = MKPinAnnotationView.greenPinColor;
         // annotationView.tintColor = [UIColor colorWithRed:0.51 green:0.86 blue:0.60 alpha:1.0];
     }
     

@@ -49,6 +49,7 @@
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *reviews, NSError *error) {
         if (reviews != nil) {
+            self.reviews = [[NSMutableArray alloc] init];
             // do something with the array of object returned by the call
             for (int i = reviews.count - 1; i >= 0; i--){
                 [self.reviews addObject:reviews[i]];

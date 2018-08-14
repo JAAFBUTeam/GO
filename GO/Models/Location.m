@@ -84,7 +84,7 @@
     [newLocation2 saveInBackgroundWithBlock: completion]; */
     
     
-    NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
+    /* NSMutableArray <Location *> *locations = [[NSMutableArray alloc] init];
     Location *newLocation = [Location new];
     newLocation.title = @"MOMA";
     newLocation.synopsis = @"Some really cool art!";
@@ -104,7 +104,7 @@
     [newLocation.imageURLs addObject:@"https://s.hdnux.com/photos/24/65/77/5464024/7/920x920.jpg"];
     [newLocation.imageURLs addObject:@"https://www.arup.com/-/media/Arup/Images/Projects/S/SF-MOMA/SF_MOMA_image_3.jpg"];
     [newLocation.imageURLs addObject:@"https://s3-us-west-2.amazonaws.com/sfmomamedia/media/t/uploads/images/xVPY71fEXa-J.jpg"];
-    [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA88tJq1TCQcdvbOgrHW2FYPCgCUVa4E8w8f0N1-xveT2AqXGz"];
+    [newLocation.imageURLs addObject:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA88tJq1TCQcdvbOgrHW2FYPCgCUVa4E8w8f0N1-xveT2AqXGz"]; */
     
     /*
     Location *newLocation2 = [Location new];
@@ -165,6 +165,7 @@
     [newLocation4.imageURLs addObject:@"https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2Q4MTM2YjhjMjEwMjRmY2M5OF9wbGFxdWUuanBnIl0sWyJwIiwidGh1bWIiLCIxMjAweD4iXSxbInAiLCJjb252ZXJ0IiwiLXF1YWxpdHkgODEgLWF1dG8tb3JpZW50Il1d"];
     [newLocation4.imageURLs addObject:@"https://c1.staticflickr.com/5/4126/5186214251_1de97ea26e_b.jpg"];
     [newLocation4.imageURLs addObject:@"https://s3-media4.fl.yelpcdn.com/bphoto/2HeauOiFem9l7YvEsnoZ4A/o.jpg"];
+     */
     
     Location *newLocation5 = [Location new];
     newLocation5.title = @"Belden Place";
@@ -184,6 +185,10 @@
     [newLocation5.imageURLs addObject:@"https://cdn1.gbot.me/photos/Ps/0E/1408123404/-_Belden_Place_in_My_Guide-20000000008282380-500x375.jpg"];
     [newLocation5.imageURLs addObject:@"https://cdn.vox-cdn.com/uploads/chorus_image/image/38910282/travelzoo-cafe-bastille-cbbp-1000061-regular.0.jpg"];
     
+    [newLocation5 saveInBackgroundWithBlock: completion];
+
+    
+    /*
     Location *newLocation6 = [Location new];
     newLocation6.title = @"Home Cafe";
     newLocation6.address = @"1222 Noriega St, San Francisco, CA 94122";
@@ -300,7 +305,6 @@
     [newLocation9 saveInBackgroundWithBlock: completion];
     [newLocation10 saveInBackgroundWithBlock: completion]; */
     
-    [newLocation saveInBackgroundWithBlock: completion];
 
 }
 

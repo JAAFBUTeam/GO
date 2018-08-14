@@ -20,9 +20,6 @@
 }
 
 - (void)prepareForReuse {
-//    for (UIView *view in self.subviews){
-//        [view removeFromSuperview];
-//    }
     [super prepareForReuse];
 }
 
@@ -38,7 +35,10 @@
     for (NSString* imageString in locationVal.imageURLs){
         [self.locationImagesArray addObject:imageString];
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 9582f506b0dbfd39a21f9ba9f350c9280f9e2070
     [_carousel reloadData];
 }
 
