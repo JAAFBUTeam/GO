@@ -325,7 +325,6 @@
             NSLog(@"%@", self.filteredLocationsArray[indexPath.section]);
             NSLog(@"%lu", (unsigned long)[media count]);
             NSLog(@"%@", media);
-
         }];
         return carouselTableViewCell;
     }

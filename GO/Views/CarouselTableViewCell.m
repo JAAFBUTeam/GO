@@ -20,9 +20,6 @@
 }
 
 - (void)prepareForReuse {
-//    for (UIView *view in self.subviews){
-//        [view removeFromSuperview];
-//    }
     [super prepareForReuse];
 }
 
@@ -47,7 +44,7 @@
     for (InstagramMedia *media in instagramImages){
         [self.locationImagesArray addObject:media.standardResolutionImageURL];
     }
-    //[_carousel reloadData];
+    [_carousel reloadData];
 }
 
 -(void)setImages: (NSMutableArray *) favorites {
